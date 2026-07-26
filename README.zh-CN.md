@@ -37,8 +37,6 @@ $iclr-reviewer 审查 /path/to/paper.pdf，并解释每个评分和修改优先�
 - 用于确定性过滤、提取、批处理、校验和审稿画像生成的 Python 脚本
 - 通用审稿 Agent 分组及其协作规则
 - 可安装的 `$iclr-reviewer` Codex Skill
-- Agent、Education 和交叉领域论文清单
-- 已验证的 1% 端到端分析样本
 
 仓库不包含论文 PDF、Workshop 记录、认证信息、API 请求/响应日志或本机路径。
 
@@ -94,29 +92,6 @@ $iclr-reviewer 审查 /path/to/paper.pdf，并解释每个评分和修改优先�
 | `ac_meta_reviewer` (AC / 元审稿人) | 决策与审计 | 2026-07-26 |
 <!-- RECENT_AGENTS:END -->
 
-## 定时提取
-
-本地自动化每天按照长期精确平均 0.05% 的比例处理未分析主会论文，每周日整合规范化结果，每月 1 日刷新中英文 README 的 Agent 和进度区块。
-
-```bash
-python automation/install_cron.py \
-  --reviews-root /path/to/iclr_reviews \
-  --auth-file /path/to/auth
-```
-
-日任务先执行 Python 确定性过滤，再调用配置的 `OPENAI_WEAK_MODEL_ID`。运行状态、原始路径、提示词和模型响应保存在仓库之外；公开仓库只更新 [`automation/public/progress.json`](automation/public/progress.json) 中的聚合进度。
-
-<!-- AUTOMATION_PROGRESS:START -->
-| 指标 | 当前值 |
-|---|---:|
-| 每日目标 | 0.05% |
-| 成功日批次 | 1 |
-| 已分析论文 | 408 / 38890 |
-| 深度分析覆盖率 | 1.0491% |
-| 累计 tokens | 186,650 |
-| 最近日批次 | 2026-07-26 |
-<!-- AUTOMATION_PROGRESS:END -->
-
 ## 题目与摘要目录
 
 [`raw/`](raw/) 按年份和主会主题展示论文，并为每年提供轻量 JSONL gzip 索引。字段仅包含主题、题目、摘要、关键词、OpenReview ID 和页面链接，不包含 review、rebuttal、decision、作者或 PDF。
@@ -136,15 +111,6 @@ python automation/install_cron.py \
 - 2026：完全留出测试
 
 使用者可以为自己的实验定义其他划分，但项目的历史审稿孪生协议不会把 2026 证据加入画像生成提示词。
-
-## 已提取领域与冒烟测试
-
-- Agent：1,745 篇，其中 1,594 篇为核心相关
-- Education：52 篇，其中 45 篇为核心相关
-- Agent + Education：7 篇，其中 6 篇为 core/core
-- 1% 主会冒烟测试：389 篇，使用 3,428,182 tokens，Python 确定性过滤减少 13.61% payload
-
-相关文件位于 [`twin_smoke/output/priority_agent_education/`](twin_smoke/output/priority_agent_education/) 和 [`smoke_report.md`](twin_smoke/output/smoke_report.md)。公开清单均移除了本机 `source_path`。
 
 ## 安装
 

@@ -284,31 +284,6 @@ def render_agents(registry: dict, chinese: bool) -> tuple[str, str]:
     return "\n".join(rows), "\n".join(recent_rows)
 
 
-def render_progress(progress: dict, chinese: bool) -> str:
-    if not progress:
-        return "No scheduled extraction has completed yet." if not chinese else "自动提取尚未完成首个批次。"
-    tokens = progress.get("usage", {}).get("total_tokens", 0)
-    if chinese:
-        return (
-            f"| 指标 | 当前值 |\n|---|---:|\n"
-            f"| 每日目标 | {progress['daily_rate_percent']:.2f}% |\n"
-            f"| 成功日批次 | {progress['successful_daily_runs']} |\n"
-            f"| 已分析论文 | {progress['analyzed_papers']} / {progress['corpus_papers']} |\n"
-            f"| 深度分析覆盖率 | {progress['coverage_percent']:.4f}% |\n"
-            f"| 累计 tokens | {tokens:,} |\n"
-            f"| 最近日批次 | {progress.get('last_daily_run') or 'N/A'} |"
-        )
-    return (
-        f"| Metric | Current value |\n|---|---:|\n"
-        f"| Daily target | {progress['daily_rate_percent']:.2f}% |\n"
-        f"| Successful daily batches | {progress['successful_daily_runs']} |\n"
-        f"| Analyzed papers | {progress['analyzed_papers']} / {progress['corpus_papers']} |\n"
-        f"| Deep-analysis coverage | {progress['coverage_percent']:.4f}% |\n"
-        f"| Cumulative tokens | {tokens:,} |\n"
-        f"| Latest daily batch | {progress.get('last_daily_run') or 'N/A'} |"
-    )
-
-
 def monthly(state: Path, push: bool) -> dict:
     progress = weekly(state)
     registry = json.loads((REPO / "agents/reviewer_groups.json").read_text(encoding="utf-8"))
@@ -318,7 +293,6 @@ def monthly(state: Path, push: bool) -> dict:
         groups, recent = render_agents(registry, chinese)
         text = replace_block(text, "AGENT_GROUPS", groups)
         text = replace_block(text, "RECENT_AGENTS", recent)
-        text = replace_block(text, "AUTOMATION_PROGRESS", render_progress(progress, chinese))
         atomic_write(path, text)
 
     if push:

@@ -37,8 +37,6 @@ The review returns independent role scores, manuscript-grounded strengths and co
 - Python scripts for deterministic filtering, extraction, batching, validation, and reviewer-archetype generation
 - A grouped generic reviewer panel and collaboration rules
 - An installable `$iclr-reviewer` Codex skill
-- Agent, Education, and cross-domain paper manifests
-- A validated 1% end-to-end analysis sample
 
 The repository contains no paper PDFs, Workshop records, credentials, API request or response logs, or local filesystem paths.
 
@@ -94,29 +92,6 @@ The generic panel always runs. Up to three relevant domain specialists may be ad
 | `ac_meta_reviewer` (AC / Meta-Reviewer) | Decision and audit | 2026-07-26 |
 <!-- RECENT_AGENTS:END -->
 
-## Scheduled Extraction
-
-The local automation processes an exact long-run average of 0.05% of the main-track corpus each day, integrates normalized results every Sunday, and refreshes the Agent and progress sections of both READMEs on the first day of each month.
-
-```bash
-python automation/install_cron.py \
-  --reviews-root /path/to/iclr_reviews \
-  --auth-file /path/to/auth
-```
-
-Daily runs use deterministic Python filtering before the configured `OPENAI_WEAK_MODEL_ID`. Runtime state, source paths, prompts, and provider responses stay outside the repository. Only aggregate progress is published in [`automation/public/progress.json`](automation/public/progress.json).
-
-<!-- AUTOMATION_PROGRESS:START -->
-| Metric | Current value |
-|---|---:|
-| Daily target | 0.05% |
-| Successful daily batches | 1 |
-| Analyzed papers | 408 / 38890 |
-| Deep-analysis coverage | 1.0491% |
-| Cumulative tokens | 186,650 |
-| Latest daily batch | 2026-07-26 |
-<!-- AUTOMATION_PROGRESS:END -->
-
 ## Title and Abstract Catalog
 
 [`raw/`](raw/) lists papers by year and main-track topic and provides one lightweight JSONL gzip index per year. Public fields are limited to topic, title, abstract, keywords, OpenReview ID, and page URL. The catalog contains no reviews, rebuttals, decisions, authors, or PDF files.
@@ -136,15 +111,6 @@ Current coverage is 38,890 main-track papers:
 - 2026: completely held-out testing
 
 Users may define a different split for their own experiments, but the project's historical reviewer-twin protocol does not expose 2026 evidence to profile-generation prompts.
-
-## Extracted Domains and Smoke Test
-
-- Agent: 1,745 papers, including 1,594 core papers
-- Education: 52 papers, including 45 core papers
-- Agent + Education: 7 papers, including 6 core/core papers
-- 1% main-track smoke test: 389 papers, 3,428,182 tokens used, and a 13.61% payload reduction from deterministic Python filtering
-
-See [`twin_smoke/output/priority_agent_education/`](twin_smoke/output/priority_agent_education/) and [`smoke_report.md`](twin_smoke/output/smoke_report.md). Exported manifests contain no local `source_path` values.
 
 ## Installation
 

@@ -28,6 +28,12 @@ class AutomationTests(unittest.TestCase):
         rendered = manage.replace_block("before\n<!-- X:START -->\nold\n<!-- X:END -->\nafter", "X", "new")
         self.assertIn("<!-- X:START -->\nnew\n<!-- X:END -->", rendered)
 
+        for filename in ("README.md", "README.zh-CN.md"):
+            readme = (manage.REPO / filename).read_text(encoding="utf-8")
+            self.assertIn("<!-- AGENT_GROUPS:START -->", readme)
+            self.assertIn("<!-- RECENT_AGENTS:START -->", readme)
+            self.assertNotIn("AUTOMATION_PROGRESS", readme)
+
 
 if __name__ == "__main__":
     unittest.main()
