@@ -31,6 +31,32 @@ $iclr-reviewer 审查 /path/to/paper.pdf，并解释每个评分和修改优先�
 
 输出包含各审稿角色的独立评分、基于稿件证据的优点与问题、claim-evidence 审计、AC 决策、置信度、修改优先级，以及每项修改可能影响评分的原因。提供审稿意见和作者回复后，还会判断哪些问题已经解决，以及为什么应该或不应该提分。
 
+## 图示说明
+
+### 从稿件到可执行审稿报告
+
+系统首先建立论文的证据地图，再运行相互独立的角色审稿，由 AC 根据稿件证据解决冲突，最终输出带原因的评分和修改优先级。
+
+<p align="center">
+  <img src="docs/images/promo/01-iclr-reviewer-workflow.png" alt="ICLR Reviewer 从稿件输入到基于证据的审稿报告流程" width="720">
+</p>
+
+### 通用 Agent 分组
+
+14 个通用 Agent 覆盖审稿编排、核心科学评审、按需扩展评审、元决策和独立引用审计。领域角色只补充核心面板，不替代核心审稿流程。
+
+<p align="center">
+  <img src="docs/images/promo/02-common-agent-groups.png" alt="ICLR Reviewer 通用 Agent 分组与协作结构" width="720">
+</p>
+
+### 证据、原因与反事实
+
+每个重要问题都沿着“论断、证据、缺口、影响、修复、可能评分变化”的链路进行记录。审稿人沉默保持为 `unknown`，不会被解释为同意。
+
+<p align="center">
+  <img src="docs/images/promo/03-evidence-to-reason.png" alt="基于证据的审稿原因、评分和 rebuttal 判断" width="720">
+</p>
+
 ## 仓库内容
 
 - ICLR 2024-2026 主会论文的题目、摘要和主题目录

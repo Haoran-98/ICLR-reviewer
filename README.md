@@ -31,6 +31,32 @@ Read skills/iclr-reviewer/SKILL.md and use it to review /path/to/paper.pdf.
 
 The review returns independent role scores, manuscript-grounded strengths and concerns, a claim-evidence audit, an AC decision, confidence, prioritized revisions, and the reason each change could affect the rating. When reviewer comments and an author response are provided, it also evaluates which concerns were resolved and why a score change is or is not justified.
 
+## Visual Overview
+
+### From Manuscript to Actionable Review
+
+The workflow converts a paper into an evidence map, runs independent role-based reviews, resolves disagreements through AC synthesis, and produces scores with reasons and revision priorities.
+
+<p align="center">
+  <img src="docs/images/promo/01-iclr-reviewer-workflow.png" alt="ICLR Reviewer workflow from manuscript input to evidence-grounded review report" width="720">
+</p>
+
+### Common Agent Groups
+
+Fourteen common agents cover orchestration, core scientific review, optional extended review, meta-decision, and independent citation auditing. Specialist roles complement the core panel rather than replacing it.
+
+<p align="center">
+  <img src="docs/images/promo/02-common-agent-groups.png" alt="Grouped ICLR Reviewer agents and their collaboration structure" width="720">
+</p>
+
+### Evidence, Reasons, and Counterfactuals
+
+Every material concern follows a traceable chain from claim and evidence to gap, impact, required fix, and plausible score change. Reviewer silence remains `unknown`, not agreement.
+
+<p align="center">
+  <img src="docs/images/promo/03-evidence-to-reason.png" alt="Evidence-grounded review reasoning, scoring, and rebuttal assessment" width="720">
+</p>
+
 ## Repository Contents
 
 - ICLR 2024-2026 main-track title, abstract, and topic catalogs
