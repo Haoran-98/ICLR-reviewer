@@ -1,0 +1,417 @@
+{
+  "schema_version": "2.0",
+  "generated_on": "2026-07-26",
+  "scope": "ICLR 2024-2026 main-track title and abstract catalog; Workshops excluded",
+  "fields": [
+    "year",
+    "topic",
+    "topic_slug",
+    "title",
+    "abstract",
+    "keywords",
+    "openreview_id",
+    "openreview_url"
+  ],
+  "years": [
+    {
+      "year": 2024,
+      "papers": 7404,
+      "topics": [
+        {
+          "topic": "applications to neuroscience & cognitive science",
+          "slug": "applications_to_neuroscience_cognitive_science",
+          "papers": 134,
+          "file": "topics/applications_to_neuroscience_cognitive_science.md"
+        },
+        {
+          "topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
+          "slug": "applications_to_physical_sciences_physics_chemistry_biology_etc",
+          "papers": 320,
+          "file": "topics/applications_to_physical_sciences_physics_chemistry_biology_etc.md"
+        },
+        {
+          "topic": "applications to robotics, autonomy, planning",
+          "slug": "applications_to_robotics_autonomy_planning",
+          "papers": 180,
+          "file": "topics/applications_to_robotics_autonomy_planning.md"
+        },
+        {
+          "topic": "causal reasoning",
+          "slug": "causal_reasoning",
+          "papers": 101,
+          "file": "topics/causal_reasoning.md"
+        },
+        {
+          "topic": "datasets and benchmarks",
+          "slug": "datasets_and_benchmarks",
+          "papers": 272,
+          "file": "topics/datasets_and_benchmarks.md"
+        },
+        {
+          "topic": "general machine learning (i.e., none of the above)",
+          "slug": "general_machine_learning_i_e_none_of_the_above",
+          "papers": 793,
+          "file": "topics/general_machine_learning_i_e_none_of_the_above.md"
+        },
+        {
+          "topic": "generative models",
+          "slug": "generative_models",
+          "papers": 787,
+          "file": "topics/generative_models.md"
+        },
+        {
+          "topic": "infrastructure, software libraries, hardware, etc.",
+          "slug": "infrastructure_software_libraries_hardware_etc",
+          "papers": 47,
+          "file": "topics/infrastructure_software_libraries_hardware_etc.md"
+        },
+        {
+          "topic": "learning on graphs and other geometries & topologies",
+          "slug": "learning_on_graphs_and_other_geometries_topologies",
+          "papers": 195,
+          "file": "topics/learning_on_graphs_and_other_geometries_topologies.md"
+        },
+        {
+          "topic": "learning theory",
+          "slug": "learning_theory",
+          "papers": 213,
+          "file": "topics/learning_theory.md"
+        },
+        {
+          "topic": "metric learning, kernel learning, and sparse coding",
+          "slug": "metric_learning_kernel_learning_and_sparse_coding",
+          "papers": 36,
+          "file": "topics/metric_learning_kernel_learning_and_sparse_coding.md"
+        },
+        {
+          "topic": "neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.)",
+          "slug": "neurosymbolic_hybrid_ai_systems_physics_informed_logic_formal_reasoning_etc",
+          "papers": 103,
+          "file": "topics/neurosymbolic_hybrid_ai_systems_physics_informed_logic_formal_reasoning_etc.md"
+        },
+        {
+          "topic": "optimization",
+          "slug": "optimization",
+          "papers": 318,
+          "file": "topics/optimization.md"
+        },
+        {
+          "topic": "probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.)",
+          "slug": "probabilistic_methods_bayesian_methods_variational_inference_sampling_uq_etc",
+          "papers": 187,
+          "file": "topics/probabilistic_methods_bayesian_methods_variational_inference_sampling_uq_etc.md"
+        },
+        {
+          "topic": "reinforcement learning",
+          "slug": "reinforcement_learning",
+          "papers": 661,
+          "file": "topics/reinforcement_learning.md"
+        },
+        {
+          "topic": "representation learning for computer vision, audio, language, and other modalities",
+          "slug": "representation_learning_for_computer_vision_audio_language_and_other_modalities",
+          "papers": 1050,
+          "file": "topics/representation_learning_for_computer_vision_audio_language_and_other_modalities.md"
+        },
+        {
+          "topic": "societal considerations including fairness, safety, privacy",
+          "slug": "societal_considerations_including_fairness_safety_privacy",
+          "papers": 547,
+          "file": "topics/societal_considerations_including_fairness_safety_privacy.md"
+        },
+        {
+          "topic": "transfer learning, meta learning, and lifelong learning",
+          "slug": "transfer_learning_meta_learning_and_lifelong_learning",
+          "papers": 380,
+          "file": "topics/transfer_learning_meta_learning_and_lifelong_learning.md"
+        },
+        {
+          "topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "slug": "unsupervised_self_supervised_semi_supervised_and_supervised_representation_learning",
+          "papers": 863,
+          "file": "topics/unsupervised_self_supervised_semi_supervised_and_supervised_representation_learning.md"
+        },
+        {
+          "topic": "visualization or interpretation of learned representations",
+          "slug": "visualization_or_interpretation_of_learned_representations",
+          "papers": 217,
+          "file": "topics/visualization_or_interpretation_of_learned_representations.md"
+        }
+      ],
+      "index_file": "2024/papers.jsonl.gz",
+      "index_bytes": 3721126,
+      "index_sha256": "61cbc03dc4cf230d009e0ca846fd73dae2dc2fc53ccf637b6d034defafbe13a8"
+    },
+    {
+      "year": 2025,
+      "papers": 11672,
+      "topics": [
+        {
+          "topic": "alignment, fairness, safety, privacy, and societal considerations",
+          "slug": "alignment_fairness_safety_privacy_and_societal_considerations",
+          "papers": 1048,
+          "file": "topics/alignment_fairness_safety_privacy_and_societal_considerations.md"
+        },
+        {
+          "topic": "applications to computer vision, audio, language, and other modalities",
+          "slug": "applications_to_computer_vision_audio_language_and_other_modalities",
+          "papers": 1373,
+          "file": "topics/applications_to_computer_vision_audio_language_and_other_modalities.md"
+        },
+        {
+          "topic": "applications to neuroscience & cognitive science",
+          "slug": "applications_to_neuroscience_cognitive_science",
+          "papers": 214,
+          "file": "topics/applications_to_neuroscience_cognitive_science.md"
+        },
+        {
+          "topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
+          "slug": "applications_to_physical_sciences_physics_chemistry_biology_etc",
+          "papers": 543,
+          "file": "topics/applications_to_physical_sciences_physics_chemistry_biology_etc.md"
+        },
+        {
+          "topic": "applications to robotics, autonomy, planning",
+          "slug": "applications_to_robotics_autonomy_planning",
+          "papers": 244,
+          "file": "topics/applications_to_robotics_autonomy_planning.md"
+        },
+        {
+          "topic": "causal reasoning",
+          "slug": "causal_reasoning",
+          "papers": 119,
+          "file": "topics/causal_reasoning.md"
+        },
+        {
+          "topic": "datasets and benchmarks",
+          "slug": "datasets_and_benchmarks",
+          "papers": 760,
+          "file": "topics/datasets_and_benchmarks.md"
+        },
+        {
+          "topic": "foundation or frontier models, including LLMs",
+          "slug": "foundation_or_frontier_models_including_llms",
+          "papers": 1297,
+          "file": "topics/foundation_or_frontier_models_including_llms.md"
+        },
+        {
+          "topic": "generative models",
+          "slug": "generative_models",
+          "papers": 1063,
+          "file": "topics/generative_models.md"
+        },
+        {
+          "topic": "infrastructure, software libraries, hardware, systems, etc.",
+          "slug": "infrastructure_software_libraries_hardware_systems_etc",
+          "papers": 89,
+          "file": "topics/infrastructure_software_libraries_hardware_systems_etc.md"
+        },
+        {
+          "topic": "interpretability and explainable AI",
+          "slug": "interpretability_and_explainable_ai",
+          "papers": 516,
+          "file": "topics/interpretability_and_explainable_ai.md"
+        },
+        {
+          "topic": "learning on graphs and other geometries & topologies",
+          "slug": "learning_on_graphs_and_other_geometries_topologies",
+          "papers": 429,
+          "file": "topics/learning_on_graphs_and_other_geometries_topologies.md"
+        },
+        {
+          "topic": "learning on time series and dynamical systems",
+          "slug": "learning_on_time_series_and_dynamical_systems",
+          "papers": 270,
+          "file": "topics/learning_on_time_series_and_dynamical_systems.md"
+        },
+        {
+          "topic": "learning theory",
+          "slug": "learning_theory",
+          "papers": 365,
+          "file": "topics/learning_theory.md"
+        },
+        {
+          "topic": "neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.)",
+          "slug": "neurosymbolic_hybrid_ai_systems_physics_informed_logic_formal_reasoning_etc",
+          "papers": 105,
+          "file": "topics/neurosymbolic_hybrid_ai_systems_physics_informed_logic_formal_reasoning_etc.md"
+        },
+        {
+          "topic": "optimization",
+          "slug": "optimization",
+          "papers": 521,
+          "file": "topics/optimization.md"
+        },
+        {
+          "topic": "other topics in machine learning (i.e., none of the above)",
+          "slug": "other_topics_in_machine_learning_i_e_none_of_the_above",
+          "papers": 562,
+          "file": "topics/other_topics_in_machine_learning_i_e_none_of_the_above.md"
+        },
+        {
+          "topic": "probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.)",
+          "slug": "probabilistic_methods_bayesian_methods_variational_inference_sampling_uq_etc",
+          "papers": 236,
+          "file": "topics/probabilistic_methods_bayesian_methods_variational_inference_sampling_uq_etc.md"
+        },
+        {
+          "topic": "reinforcement learning",
+          "slug": "reinforcement_learning",
+          "papers": 676,
+          "file": "topics/reinforcement_learning.md"
+        },
+        {
+          "topic": "transfer learning, meta learning, and lifelong learning",
+          "slug": "transfer_learning_meta_learning_and_lifelong_learning",
+          "papers": 374,
+          "file": "topics/transfer_learning_meta_learning_and_lifelong_learning.md"
+        },
+        {
+          "topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "slug": "unsupervised_self_supervised_semi_supervised_and_supervised_representation_learning",
+          "papers": 868,
+          "file": "topics/unsupervised_self_supervised_semi_supervised_and_supervised_representation_learning.md"
+        }
+      ],
+      "index_file": "2025/papers.jsonl.gz",
+      "index_bytes": 5978991,
+      "index_sha256": "808380d612bb7bce15f1b709b3895002663077cd1ba7b958200b09140429d02e"
+    },
+    {
+      "year": 2026,
+      "papers": 19814,
+      "topics": [
+        {
+          "topic": "alignment, fairness, safety, privacy, and societal considerations",
+          "slug": "alignment_fairness_safety_privacy_and_societal_considerations",
+          "papers": 1697,
+          "file": "topics/alignment_fairness_safety_privacy_and_societal_considerations.md"
+        },
+        {
+          "topic": "applications to computer vision, audio, language, and other modalities",
+          "slug": "applications_to_computer_vision_audio_language_and_other_modalities",
+          "papers": 2708,
+          "file": "topics/applications_to_computer_vision_audio_language_and_other_modalities.md"
+        },
+        {
+          "topic": "applications to neuroscience & cognitive science",
+          "slug": "applications_to_neuroscience_cognitive_science",
+          "papers": 381,
+          "file": "topics/applications_to_neuroscience_cognitive_science.md"
+        },
+        {
+          "topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
+          "slug": "applications_to_physical_sciences_physics_chemistry_biology_etc",
+          "papers": 860,
+          "file": "topics/applications_to_physical_sciences_physics_chemistry_biology_etc.md"
+        },
+        {
+          "topic": "applications to robotics, autonomy, planning",
+          "slug": "applications_to_robotics_autonomy_planning",
+          "papers": 598,
+          "file": "topics/applications_to_robotics_autonomy_planning.md"
+        },
+        {
+          "topic": "causal reasoning",
+          "slug": "causal_reasoning",
+          "papers": 194,
+          "file": "topics/causal_reasoning.md"
+        },
+        {
+          "topic": "datasets and benchmarks",
+          "slug": "datasets_and_benchmarks",
+          "papers": 1591,
+          "file": "topics/datasets_and_benchmarks.md"
+        },
+        {
+          "topic": "foundation or frontier models, including LLMs",
+          "slug": "foundation_or_frontier_models_including_llms",
+          "papers": 2660,
+          "file": "topics/foundation_or_frontier_models_including_llms.md"
+        },
+        {
+          "topic": "generative models",
+          "slug": "generative_models",
+          "papers": 1682,
+          "file": "topics/generative_models.md"
+        },
+        {
+          "topic": "infrastructure, software libraries, hardware, systems, etc.",
+          "slug": "infrastructure_software_libraries_hardware_systems_etc",
+          "papers": 179,
+          "file": "topics/infrastructure_software_libraries_hardware_systems_etc.md"
+        },
+        {
+          "topic": "interpretability and explainable AI",
+          "slug": "interpretability_and_explainable_ai",
+          "papers": 789,
+          "file": "topics/interpretability_and_explainable_ai.md"
+        },
+        {
+          "topic": "learning on graphs and other geometries & topologies",
+          "slug": "learning_on_graphs_and_other_geometries_topologies",
+          "papers": 534,
+          "file": "topics/learning_on_graphs_and_other_geometries_topologies.md"
+        },
+        {
+          "topic": "learning on time series and dynamical systems",
+          "slug": "learning_on_time_series_and_dynamical_systems",
+          "papers": 466,
+          "file": "topics/learning_on_time_series_and_dynamical_systems.md"
+        },
+        {
+          "topic": "learning theory",
+          "slug": "learning_theory",
+          "papers": 515,
+          "file": "topics/learning_theory.md"
+        },
+        {
+          "topic": "neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.)",
+          "slug": "neurosymbolic_hybrid_ai_systems_physics_informed_logic_formal_reasoning_etc",
+          "papers": 225,
+          "file": "topics/neurosymbolic_hybrid_ai_systems_physics_informed_logic_formal_reasoning_etc.md"
+        },
+        {
+          "topic": "optimization",
+          "slug": "optimization",
+          "papers": 740,
+          "file": "topics/optimization.md"
+        },
+        {
+          "topic": "other topics in machine learning (i.e., none of the above)",
+          "slug": "other_topics_in_machine_learning_i_e_none_of_the_above",
+          "papers": 813,
+          "file": "topics/other_topics_in_machine_learning_i_e_none_of_the_above.md"
+        },
+        {
+          "topic": "probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.)",
+          "slug": "probabilistic_methods_bayesian_methods_variational_inference_sampling_uq_etc",
+          "papers": 382,
+          "file": "topics/probabilistic_methods_bayesian_methods_variational_inference_sampling_uq_etc.md"
+        },
+        {
+          "topic": "reinforcement learning",
+          "slug": "reinforcement_learning",
+          "papers": 1063,
+          "file": "topics/reinforcement_learning.md"
+        },
+        {
+          "topic": "transfer learning, meta learning, and lifelong learning",
+          "slug": "transfer_learning_meta_learning_and_lifelong_learning",
+          "papers": 571,
+          "file": "topics/transfer_learning_meta_learning_and_lifelong_learning.md"
+        },
+        {
+          "topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "slug": "unsupervised_self_supervised_semi_supervised_and_supervised_representation_learning",
+          "papers": 1166,
+          "file": "topics/unsupervised_self_supervised_semi_supervised_and_supervised_representation_learning.md"
+        }
+      ],
+      "index_file": "2026/papers.jsonl.gz",
+      "index_bytes": 10585094,
+      "index_sha256": "2059a4ac73541666b744bb1d5f65fea7209ee7e3b47edd1bbc1ea07ccfe9d5fe"
+    }
+  ],
+  "total_papers": 38890
+}

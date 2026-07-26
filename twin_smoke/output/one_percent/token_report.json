@@ -1,0 +1,39 @@
+{
+  "dataset_papers": 38890,
+  "sample_rate": 0.01,
+  "sample_papers": 389,
+  "seed": 20260720,
+  "encoding": "o200k_base",
+  "group_counts": {
+    "2024_main": 7404,
+    "2025_main": 11672,
+    "2026_main": 19814
+  },
+  "sample_quotas": {
+    "2024_main": 74,
+    "2025_main": 117,
+    "2026_main": 198
+  },
+  "full_input_tokens": {
+    "paper": 13669161,
+    "reviews": 100848838,
+    "discussion": 256338898,
+    "payload_total": 370856897,
+    "system_prompt_per_request": 77
+  },
+  "full_payload_distribution": {
+    "mean": 9536.05,
+    "p50": 8862,
+    "p90": 17370,
+    "p95": 20665,
+    "p99": 28275,
+    "max": 61150
+  },
+  "sample_input_tokens": {
+    "payload_total": 3707174,
+    "mean": 9530.01,
+    "min": 251,
+    "max": 33264
+  },
+  "prompt_file_tokens": 3709260
+}

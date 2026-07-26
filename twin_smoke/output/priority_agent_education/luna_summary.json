@@ -1,0 +1,54 @@
+{
+  "expected": 1803,
+  "returned": 1803,
+  "unique_ids": 1803,
+  "errors": [],
+  "agent_papers": 1745,
+  "agent_core_papers": 1594,
+  "education_papers": 52,
+  "education_core_papers": 45,
+  "intersection": 7,
+  "intersection_core": 6,
+  "luna_only_agent_candidates": 26,
+  "luna_only_education_candidates": 12,
+  "rejected": 13,
+  "agent_relevance": {
+    "core": 1597,
+    "no": 32,
+    "adjacent": 174
+  },
+  "education_relevance": {
+    "no": 1739,
+    "core": 46,
+    "adjacent": 18
+  },
+  "by_year": {
+    "2024": {
+      "agent": 136,
+      "education": 6,
+      "intersection": 0
+    },
+    "2025": {
+      "agent": 354,
+      "education": 14,
+      "intersection": 1
+    },
+    "2026": {
+      "agent": 1255,
+      "education": 32,
+      "intersection": 6
+    }
+  },
+  "accepted_main": {
+    "agent": 475,
+    "education": 3,
+    "intersection": 1
+  },
+  "usage": {
+    "input_tokens": 629959,
+    "cached_tokens": 23040,
+    "output_tokens": 113916,
+    "reasoning_tokens": 1862,
+    "total_tokens": 743875
+  }
+}

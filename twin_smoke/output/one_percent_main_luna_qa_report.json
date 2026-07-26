@@ -1,0 +1,30 @@
+{
+  "expected_papers": 389,
+  "returned_papers": 389,
+  "model_returned_papers": 384,
+  "python_only_papers": 5,
+  "unique_ids": 389,
+  "errors": [],
+  "truncation_violations": {
+    "research_tags": 1,
+    "positive_factors": 77,
+    "negative_factors": 5,
+    "response_outcomes": 0,
+    "counterfactuals": 0
+  },
+  "normalized_effectiveness": {
+    "strong_success": 119,
+    "partial_success": 180,
+    "no_effect": 36,
+    "unknown": 260
+  },
+  "normalized_score_action": {
+    "increased": 135,
+    "promised_increase": 4,
+    "maintained": 135,
+    "decreased": 1,
+    "unknown": 320
+  },
+  "python_events_merged": 47,
+  "python_events_reconciled": 194
+}

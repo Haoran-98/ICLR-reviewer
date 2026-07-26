@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+auth
+*.key
+*.pem
+*.pdf
+
+# Local source corpus; curated public shards live in /raw.
+data/iclr_reviews/
+raw_data/
+
+# Model requests and raw provider responses may contain large copied text.
+**/api_luna/
+**/luna_batches/
+**/invalid_temporal_leakage/

@@ -1,0 +1,24 @@
+{
+  "scope": "ICLR main track only",
+  "sample_papers": 389,
+  "llm_papers": 384,
+  "python_only_papers": 5,
+  "before_payload_tokens": 3709133,
+  "after_payload_tokens": 3204224,
+  "prepared_prompt_tokens": 3209456,
+  "payload_token_reduction": 504909,
+  "payload_reduction_percent": 13.61,
+  "batches": 18,
+  "filter_counts": {
+    "excluded_workshop": 0,
+    "dropped_reminders": 8,
+    "dropped_author_nudges": 3,
+    "locally_classified_comments": 249,
+    "quoted_lines": 3020,
+    "table_lines": 8548,
+    "reference_blocks": 160,
+    "duplicate_paragraphs": 3442,
+    "courtesy_paragraphs": 1098,
+    "truncated_messages": 0
+  }
+}

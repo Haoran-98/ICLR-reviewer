@@ -1,0 +1,33 @@
+{
+  "version": "0.2",
+  "scoring_system": "ICLR",
+  "purpose": "A grouped ICLR review panel with optional domain-specialist routing.",
+  "groups": {
+    "core_reviewers": [
+      "best_justified",
+      "critical",
+      "method_soundness",
+      "evidence_experiment",
+      "novelty_positioning",
+      "writing_clarity",
+      "ethics_reproducibility"
+    ],
+    "extended_reviewers": [
+      "domain_application",
+      "evidence_ablation",
+      "reproducibility",
+      "novice_advocate"
+    ],
+    "decision_and_audit": [
+      "ac_meta_reviewer",
+      "citation_auditor"
+    ]
+  },
+  "routing": {
+    "generic_panel_required": true,
+    "max_domain_specialists": 3,
+    "specialists_complement_generic_reviewers": true,
+    "fatal_concerns_cannot_be_averaged_away": true,
+    "citation_auditor_is_independent_from_ac": true
+  }
+}
