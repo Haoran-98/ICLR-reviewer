@@ -1,0 +1,4 @@
+interface:
+  display_name: "ICLR Reviewer"
+  short_description: "Evidence-grounded ICLR paper review"
+  default_prompt: "Use $iclr-reviewer to review this manuscript and explain every score and recommendation."

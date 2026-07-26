@@ -6,11 +6,37 @@ ICLR Reviewer 将 ICLR 公开论文、审稿意见、作者回复和最终决定
 
 即使目标是其他会议，项目也统一使用 ICLR 视角审视研究：创新性、技术可靠性、实验与证据、清晰度、可复现性、伦理风险和领域匹配。目标不是模仿可识别的真实个人，而是从公开历史证据中构建可审计的审稿行为模型，并保留不确定性与反事实假设。
 
+## 作为 Codex Skill 使用
+
+克隆仓库并安装内置 Skill：
+
+```bash
+git clone https://github.com/Haoran-98/ICLR-reviewer.git
+cd ICLR-reviewer
+mkdir -p "$HOME/.codex/skills"
+ln -s "$PWD/skills/iclr-reviewer" "$HOME/.codex/skills/iclr-reviewer"
+```
+
+重启 Codex 后，可以直接审查 PDF、LaTeX 项目、Markdown 稿件或粘贴的论文内容：
+
+```text
+$iclr-reviewer 审查 /path/to/paper.pdf，并解释每个评分和修改优先级。
+```
+
+对于不能自动发现 Codex Skill 的 Agent：
+
+```text
+读取 skills/iclr-reviewer/SKILL.md，并用它审查 /path/to/paper.pdf。
+```
+
+输出包含各审稿角色的独立评分、基于稿件证据的优点与问题、claim-evidence 审计、AC 决策、置信度、修改优先级，以及每项修改可能影响评分的原因。提供审稿意见和作者回复后，还会判断哪些问题已经解决，以及为什么应该或不应该提分。
+
 ## 仓库内容
 
 - ICLR 2024-2026 主会论文的题目、摘要和主题目录
 - 用于确定性过滤、提取、批处理、校验和审稿画像生成的 Python 脚本
 - 通用审稿 Agent 分组及其协作规则
+- 可安装的 `$iclr-reviewer` Codex Skill
 - Agent、Education 和交叉领域论文清单
 - 已验证的 1% 端到端分析样本
 

@@ -6,11 +6,37 @@ ICLR Reviewer turns public ICLR papers, reviews, author responses, and decisions
 
 The project applies an ICLR review perspective even when evaluating work intended for another venue: originality, technical soundness, empirical evidence, clarity, reproducibility, ethics, and venue fit. Its goal is not to imitate identifiable people, but to build auditable review models from public historical evidence while preserving uncertainty and counterfactual assumptions.
 
+## Use as a Codex Skill
+
+Clone the repository and install the included skill:
+
+```bash
+git clone https://github.com/Haoran-98/ICLR-reviewer.git
+cd ICLR-reviewer
+mkdir -p "$HOME/.codex/skills"
+ln -s "$PWD/skills/iclr-reviewer" "$HOME/.codex/skills/iclr-reviewer"
+```
+
+Restart Codex, then review a PDF, LaTeX project, Markdown manuscript, or pasted paper:
+
+```text
+$iclr-reviewer Review /path/to/paper.pdf and explain every score and revision priority.
+```
+
+For an agent that does not auto-discover Codex skills:
+
+```text
+Read skills/iclr-reviewer/SKILL.md and use it to review /path/to/paper.pdf.
+```
+
+The review returns independent role scores, manuscript-grounded strengths and concerns, a claim-evidence audit, an AC decision, confidence, prioritized revisions, and the reason each change could affect the rating. When reviewer comments and an author response are provided, it also evaluates which concerns were resolved and why a score change is or is not justified.
+
 ## Repository Contents
 
 - ICLR 2024-2026 main-track title, abstract, and topic catalogs
 - Python scripts for deterministic filtering, extraction, batching, validation, and reviewer-archetype generation
 - A grouped generic reviewer panel and collaboration rules
+- An installable `$iclr-reviewer` Codex skill
 - Agent, Education, and cross-domain paper manifests
 - A validated 1% end-to-end analysis sample
 
