@@ -20,6 +20,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 TWIN = REPO / "twin_smoke"
 PUBLIC_PROGRESS = REPO / "automation" / "public" / "progress.json"
+PUBLIC_ACTIVITY = REPO / "automation" / "public" / "activity.json"
 YEARS = (2024, 2025, 2026)
 DAILY_RATE = 0.0005
 GROUP_LABELS = {
@@ -284,41 +285,186 @@ def render_agents(registry: dict, chinese: bool) -> tuple[str, str]:
     return "\n".join(rows), "\n".join(recent_rows)
 
 
-def monthly(state: Path, push: bool) -> dict:
+def public_run(run_dir: Path) -> dict:
+    success = json.loads((run_dir / "SUCCESS.json").read_text(encoding="utf-8"))
+    normalized = {
+        item["openreview_id"]: item
+        for item in json.loads((run_dir / "normalized_results.json").read_text(encoding="utf-8")).get("papers", [])
+    }
+    papers = []
+    for item in (json.loads(line) for line in (run_dir / "manifest.jsonl").read_text(encoding="utf-8").splitlines()):
+        paper = json.loads(Path(item["path"]).read_text(encoding="utf-8"))
+        result = normalized.get(item["openreview_id"], {})
+        tags = [name for value in result.get("research_tags") or [] if (name := tag_name(value))][:3]
+        papers.append({
+            "openreview_id": item["openreview_id"],
+            "year": item["year"],
+            "title": paper.get("title") or item["openreview_id"],
+            "primary_topic": paper.get("primary_area") or "unknown",
+            "openreview_url": paper.get("openreview_url") or f"https://openreview.net/forum?id={item['openreview_id']}",
+            "research_tags": tags,
+        })
+    return {"date": success["date"], "papers": papers}
+
+
+def agents_added(registry: dict, start: date, end: date) -> list[dict]:
+    membership = {agent_id: group for group, ids in registry["groups"].items() for agent_id in ids}
+    return [
+        {
+            "agent_id": agent_id,
+            "display_name": agent["display_name"],
+            "display_name_zh": agent["display_name_zh"],
+            "group": membership[agent_id],
+            "added_on": agent["added_on"],
+        }
+        for agent_id, agent in sorted(registry["agents"].items())
+        if start <= date.fromisoformat(agent["added_on"]) <= end
+    ]
+
+
+def build_activity(state: Path, as_of: date | None = None) -> dict:
+    as_of = as_of or date.today()
+    recent_start = as_of - timedelta(days=2)
+    current_monday = as_of - timedelta(days=as_of.weekday())
+    week_end = current_monday - timedelta(days=1)
+    week_start = week_end - timedelta(days=6)
+    registry = json.loads((REPO / "agents/reviewer_groups.json").read_text(encoding="utf-8"))
+    runs = {}
+    for run_dir in successful_runs(state):
+        run_date = date.fromisoformat(run_dir.name)
+        if recent_start <= run_date <= as_of or week_start <= run_date <= week_end:
+            runs[run_date] = public_run(run_dir)
+
+    recent_days = []
+    for offset in range(3):
+        day = as_of - timedelta(days=offset)
+        recent_days.append({
+            "date": day.isoformat(),
+            "papers": runs.get(day, {}).get("papers", []),
+            "agents": agents_added(registry, day, day),
+        })
+
+    weekly_papers = [paper for day, run_data in runs.items() if week_start <= day <= week_end for paper in run_data["papers"]]
+    weekly_tags = Counter(tag for paper in weekly_papers for tag in paper["research_tags"])
+    activity = {
+        "generated_on": datetime.now(timezone.utc).isoformat(),
+        "recent_days": recent_days,
+        "previous_week": {
+            "start": week_start.isoformat(),
+            "end": week_end.isoformat(),
+            "paper_count": len(weekly_papers),
+            "by_year": dict(Counter(str(paper["year"]) for paper in weekly_papers)),
+            "top_research_tags": [{"tag": tag, "papers": count} for tag, count in weekly_tags.most_common(10)],
+            "agents": agents_added(registry, week_start, week_end),
+        },
+    }
+    return activity
+
+
+def markdown_text(value: object) -> str:
+    return str(value).replace("|", "\\|").replace("\n", " ")
+
+
+def render_daily_activity(activity: dict, chinese: bool) -> str:
+    lines = ["## 最近 3 天新增" if chinese else "## New in the Last 3 Days", ""]
+    for index, day in enumerate(activity["recent_days"]):
+        papers = day["papers"]
+        agents = day["agents"]
+        if chinese:
+            summary = f"{day['date']} - 新分析 {len(papers)} 篇论文，新增 {len(agents)} 个通用 Agent"
+        else:
+            summary = f"{day['date']} - {len(papers)} newly analyzed papers, {len(agents)} common Agents added"
+        lines.append(f"<details{' open' if index == 0 else ''}>")
+        lines.append(f"<summary>{summary}</summary>")
+        lines.append("")
+        if papers:
+            lines.extend([
+                "| 年份 | 论文 | 主题 | 研究标签 |" if chinese else "| Year | Paper | Topic | Research tags |",
+                "|---:|---|---|---|",
+            ])
+            for paper in papers:
+                title = markdown_text(paper["title"])
+                topic = markdown_text(paper["primary_topic"])
+                tags = markdown_text(", ".join(paper["research_tags"]) or "-")
+                lines.append(f"| {paper['year']} | [{title}]({paper['openreview_url']}) | {topic} | {tags} |")
+        else:
+            lines.append("当天没有公开新增论文。" if chinese else "No public paper additions on this day.")
+        if agents:
+            label = "新增通用 Agent：" if chinese else "Common Agents added: "
+            names = ", ".join(f"`{agent['agent_id']}` ({agent['display_name_zh' if chinese else 'display_name']})" for agent in agents)
+            lines.extend(["", label + names])
+        lines.extend(["", "</details>", ""])
+    return "\n".join(lines).rstrip()
+
+
+def render_weekly_activity(activity: dict, chinese: bool) -> str:
+    week = activity["previous_week"]
+    heading = "## 上周新增" if chinese else "## Added Last Week"
+    period = f"{week['start']} - {week['end']}"
+    if not week["paper_count"] and not week["agents"]:
+        message = f"**{period}：** 没有公开新增内容。" if chinese else f"**{period}:** No public additions."
+        return f"{heading}\n\n{message}"
+    years = ", ".join(f"{year}: {count}" for year, count in sorted(week["by_year"].items())) or "-"
+    tags = ", ".join(f"{item['tag']} ({item['papers']})" for item in week["top_research_tags"]) or "-"
+    lines = [
+        heading,
+        "",
+        "| 周期 | 新分析论文 | 年份分布 | 高频研究标签 |" if chinese else "| Period | Newly analyzed papers | Year distribution | Top research tags |",
+        "|---|---:|---|---|",
+        f"| {period} | {week['paper_count']} | {markdown_text(years)} | {markdown_text(tags)} |",
+    ]
+    if week["agents"]:
+        label = "新增通用 Agent：" if chinese else "Common Agents added: "
+        names = ", ".join(f"`{agent['agent_id']}`" for agent in week["agents"])
+        lines.extend(["", label + names])
+    return "\n".join(lines)
+
+
+def refresh_readmes(state: Path) -> dict:
     progress = weekly(state)
+    activity = build_activity(state)
+    atomic_write(PUBLIC_ACTIVITY, json.dumps(activity, ensure_ascii=False, indent=2) + "\n")
     registry = json.loads((REPO / "agents/reviewer_groups.json").read_text(encoding="utf-8"))
     for filename, chinese in (("README.md", False), ("README.zh-CN.md", True)):
         path = REPO / filename
         text = path.read_text(encoding="utf-8")
         groups, recent = render_agents(registry, chinese)
+        text = replace_block(text, "DAILY_ACTIVITY", render_daily_activity(activity, chinese))
+        text = replace_block(text, "WEEKLY_ACTIVITY", render_weekly_activity(activity, chinese))
         text = replace_block(text, "AGENT_GROUPS", groups)
         text = replace_block(text, "RECENT_AGENTS", recent)
         atomic_write(path, text)
-
-    if push:
-        allowed = {"README.md", "README.zh-CN.md", "automation/public/progress.json"}
-        dirty = subprocess.run(["git", "status", "--porcelain"], cwd=REPO, check=True, text=True, capture_output=True).stdout.splitlines()
-        unexpected = [line for line in dirty if line[3:] not in allowed]
-        if unexpected:
-            raise RuntimeError(f"refusing monthly commit with unrelated changes: {unexpected}")
-        run(["git", "add", *sorted(allowed)])
-        changed = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=REPO).returncode != 0
-        if changed:
-            run(["git", "commit", "-m", f"Update monthly agent and extraction summary ({date.today().isoformat()})"])
-            run(["git", "push", "origin", "main"])
     return progress
+
+
+def publish(command: str) -> None:
+    allowed = {"README.md", "README.zh-CN.md", "automation/public/activity.json", "automation/public/progress.json"}
+    dirty = subprocess.run(["git", "status", "--porcelain"], cwd=REPO, check=True, text=True, capture_output=True).stdout.splitlines()
+    unexpected = [line for line in dirty if line[3:] not in allowed]
+    if unexpected:
+        raise RuntimeError(f"refusing automated commit with unrelated changes: {unexpected}")
+    run(["git", "add", *sorted(allowed)])
+    changed = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=REPO).returncode != 0
+    if changed:
+        run(["git", "commit", "-m", f"Update {command} ICLR Reviewer activity ({date.today().isoformat()})"])
+        run(["git", "push", "origin", "main"])
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=("daily", "weekly", "monthly"))
-    parser.add_argument("--push", action="store_true", help="Commit and push monthly README updates")
+    parser.add_argument("--push", action="store_true", help="Commit and push public README and activity updates")
     args = parser.parse_args()
     state = state_dir()
     state.mkdir(parents=True, exist_ok=True)
     with (state / "automation.lock").open("w") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
-        result = daily(state) if args.command == "daily" else weekly(state) if args.command == "weekly" else monthly(state, args.push)
+        daily_result = daily(state) if args.command == "daily" else None
+        result = refresh_readmes(state)
+        if args.push:
+            publish(args.command)
+        if daily_result is not None:
+            result = daily_result
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

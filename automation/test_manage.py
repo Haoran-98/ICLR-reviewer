@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
 import json
+import tempfile
 import unittest
 from collections import Counter
+from datetime import date
+from pathlib import Path
 
 import manage
 
@@ -30,9 +33,41 @@ class AutomationTests(unittest.TestCase):
 
         for filename in ("README.md", "README.zh-CN.md"):
             readme = (manage.REPO / filename).read_text(encoding="utf-8")
+            self.assertIn("<!-- DAILY_ACTIVITY:START -->", readme)
+            self.assertIn("<!-- WEEKLY_ACTIVITY:START -->", readme)
             self.assertIn("<!-- AGENT_GROUPS:START -->", readme)
             self.assertIn("<!-- RECENT_AGENTS:START -->", readme)
             self.assertNotIn("AUTOMATION_PROGRESS", readme)
+
+    def test_public_activity_contains_only_publishable_paper_metadata(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            paper_path = root / "paper.json"
+            paper_path.write_text(json.dumps({
+                "title": "A Paper | With a Pipe",
+                "primary_area": "education",
+                "openreview_url": "https://openreview.net/forum?id=test-paper",
+            }), encoding="utf-8")
+            run_dir = root / "daily" / "2026-07-26"
+            run_dir.mkdir(parents=True)
+            (run_dir / "SUCCESS.json").write_text(json.dumps({"date": "2026-07-26"}), encoding="utf-8")
+            (run_dir / "manifest.jsonl").write_text(json.dumps({
+                "path": str(paper_path), "openreview_id": "test-paper", "year": 2026,
+            }) + "\n", encoding="utf-8")
+            (run_dir / "normalized_results.json").write_text(json.dumps({"papers": [{
+                "openreview_id": "test-paper",
+                "research_tags": ["agent", "education", "evaluation", "unused"],
+                "response_outcomes": [{"reviewer_id": "must-not-leak"}],
+            }]}), encoding="utf-8")
+
+            activity = manage.build_activity(root, date(2026, 7, 26))
+            public_paper = activity["recent_days"][0]["papers"][0]
+            self.assertEqual(["agent", "education", "evaluation"], public_paper["research_tags"])
+            self.assertNotIn("path", public_paper)
+            self.assertNotIn("response_outcomes", public_paper)
+            rendered = manage.render_daily_activity(activity, chinese=False)
+            self.assertIn("A Paper \\| With a Pipe", rendered)
+            self.assertNotIn("must-not-leak", json.dumps(activity))
 
 
 if __name__ == "__main__":
