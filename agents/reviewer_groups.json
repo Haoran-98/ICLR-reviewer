@@ -3,6 +3,9 @@
   "scoring_system": "ICLR",
   "purpose": "A grouped ICLR review panel with optional domain-specialist routing.",
   "groups": {
+    "orchestration": [
+      "iclr_reviewer_orchestrator"
+    ],
     "core_reviewers": [
       "best_justified",
       "critical",
@@ -22,6 +25,106 @@
       "ac_meta_reviewer",
       "citation_auditor"
     ]
+  },
+  "agents": {
+    "iclr_reviewer_orchestrator": {
+      "display_name": "ICLR Reviewer Orchestrator",
+      "display_name_zh": "ICLR 审稿编排器",
+      "description": "Routes the panel, preserves independent reviews, and produces the final evidence-grounded report.",
+      "description_zh": "路由审稿组、保持独立评审，并生成基于证据的最终报告。",
+      "added_on": "2026-07-26"
+    },
+    "best_justified": {
+      "display_name": "Best-Justified Reviewer",
+      "display_name_zh": "最强正向论证审稿人",
+      "description": "Builds the strongest manuscript-supported case for acceptance.",
+      "description_zh": "基于稿件证据构建最充分的接收理由。",
+      "added_on": "2026-07-26"
+    },
+    "critical": {
+      "display_name": "Critical Reviewer",
+      "display_name_zh": "严格批判审稿人",
+      "description": "Finds the most consequential unresolved failure mode.",
+      "description_zh": "寻找影响最大的未解决失败模式。",
+      "added_on": "2026-07-26"
+    },
+    "method_soundness": {
+      "display_name": "Method Soundness Reviewer",
+      "display_name_zh": "方法可靠性审稿人",
+      "description": "Checks formulation, assumptions, derivations, algorithms, and leakage.",
+      "description_zh": "检查问题定义、假设、推导、算法和数据泄漏。",
+      "added_on": "2026-07-26"
+    },
+    "evidence_experiment": {
+      "display_name": "Evidence and Experiment Reviewer",
+      "display_name_zh": "实验与证据审稿人",
+      "description": "Audits baselines, controls, metrics, ablations, statistics, and robustness.",
+      "description_zh": "审查基线、控制实验、指标、消融、统计和鲁棒性。",
+      "added_on": "2026-07-26"
+    },
+    "novelty_positioning": {
+      "display_name": "Novelty and Positioning Reviewer",
+      "display_name_zh": "创新与定位审稿人",
+      "description": "Tests the claimed contribution against the closest related work.",
+      "description_zh": "根据最接近的相关工作检验真实贡献。",
+      "added_on": "2026-07-26"
+    },
+    "writing_clarity": {
+      "display_name": "Writing and Clarity Reviewer",
+      "display_name_zh": "写作与清晰度审稿人",
+      "description": "Checks definitions, logical flow, figures, tables, and readability.",
+      "description_zh": "检查定义、逻辑结构、图表和可读性。",
+      "added_on": "2026-07-26"
+    },
+    "ethics_reproducibility": {
+      "display_name": "Ethics and Reproducibility Reviewer",
+      "display_name_zh": "伦理与复现审稿人",
+      "description": "Checks harms, data rights, privacy, misuse, limitations, and reproducibility.",
+      "description_zh": "检查潜在伤害、数据权利、隐私、滥用、局限和复现性。",
+      "added_on": "2026-07-26"
+    },
+    "domain_application": {
+      "display_name": "Domain Application Reviewer",
+      "display_name_zh": "领域应用审稿人",
+      "description": "Validates domain assumptions, utility, and evaluation realism.",
+      "description_zh": "验证领域假设、实际效用和评测真实性。",
+      "added_on": "2026-07-26"
+    },
+    "evidence_ablation": {
+      "display_name": "Ablation Reviewer",
+      "display_name_zh": "消融审稿人",
+      "description": "Tests whether evidence isolates the contribution of each component.",
+      "description_zh": "检验实验是否隔离了各组件的真实贡献。",
+      "added_on": "2026-07-26"
+    },
+    "reproducibility": {
+      "display_name": "Reproducibility Reviewer",
+      "display_name_zh": "复现审稿人",
+      "description": "Reconstructs the implementation and experimental protocol from the paper.",
+      "description_zh": "根据论文重建实现细节和实验流程。",
+      "added_on": "2026-07-26"
+    },
+    "novice_advocate": {
+      "display_name": "Novice Advocate",
+      "display_name_zh": "非专家可理解性审稿人",
+      "description": "Identifies unexplained prerequisites and inaccessible presentation.",
+      "description_zh": "识别未解释的前置知识和难以理解的表达。",
+      "added_on": "2026-07-26"
+    },
+    "ac_meta_reviewer": {
+      "display_name": "AC / Meta-Reviewer",
+      "display_name_zh": "AC / 元审稿人",
+      "description": "Resolves reviewer disagreements from evidence without averaging away blockers.",
+      "description_zh": "根据证据解决评审冲突，不用平均分掩盖致命问题。",
+      "added_on": "2026-07-26"
+    },
+    "citation_auditor": {
+      "display_name": "Citation Auditor",
+      "display_name_zh": "引用审计员",
+      "description": "Independently checks citation existence and claim support when sources are available.",
+      "description_zh": "在来源可用时独立核验引用存在性和论断支持关系。",
+      "added_on": "2026-07-26"
+    }
   },
   "routing": {
     "generic_panel_required": true,

@@ -52,6 +52,71 @@ The public panel is defined in [`agents/reviewer_groups.json`](agents/reviewer_g
 
 The generic panel always runs. Up to three relevant domain specialists may be added. The AC resolves disagreements from manuscript evidence, fatal concerns cannot be averaged away, and citation auditing remains independent from the AC.
 
+### Available Agent Groups
+
+<!-- AGENT_GROUPS:START -->
+| Group | Agent | Purpose | Added |
+|---|---|---|---|
+| Orchestration | `iclr_reviewer_orchestrator` (ICLR Reviewer Orchestrator) | Routes the panel, preserves independent reviews, and produces the final evidence-grounded report. | 2026-07-26 |
+| Core reviewers | `best_justified` (Best-Justified Reviewer) | Builds the strongest manuscript-supported case for acceptance. | 2026-07-26 |
+| Core reviewers | `critical` (Critical Reviewer) | Finds the most consequential unresolved failure mode. | 2026-07-26 |
+| Core reviewers | `method_soundness` (Method Soundness Reviewer) | Checks formulation, assumptions, derivations, algorithms, and leakage. | 2026-07-26 |
+| Core reviewers | `evidence_experiment` (Evidence and Experiment Reviewer) | Audits baselines, controls, metrics, ablations, statistics, and robustness. | 2026-07-26 |
+| Core reviewers | `novelty_positioning` (Novelty and Positioning Reviewer) | Tests the claimed contribution against the closest related work. | 2026-07-26 |
+| Core reviewers | `writing_clarity` (Writing and Clarity Reviewer) | Checks definitions, logical flow, figures, tables, and readability. | 2026-07-26 |
+| Core reviewers | `ethics_reproducibility` (Ethics and Reproducibility Reviewer) | Checks harms, data rights, privacy, misuse, limitations, and reproducibility. | 2026-07-26 |
+| Extended reviewers | `domain_application` (Domain Application Reviewer) | Validates domain assumptions, utility, and evaluation realism. | 2026-07-26 |
+| Extended reviewers | `evidence_ablation` (Ablation Reviewer) | Tests whether evidence isolates the contribution of each component. | 2026-07-26 |
+| Extended reviewers | `reproducibility` (Reproducibility Reviewer) | Reconstructs the implementation and experimental protocol from the paper. | 2026-07-26 |
+| Extended reviewers | `novice_advocate` (Novice Advocate) | Identifies unexplained prerequisites and inaccessible presentation. | 2026-07-26 |
+| Decision and audit | `ac_meta_reviewer` (AC / Meta-Reviewer) | Resolves reviewer disagreements from evidence without averaging away blockers. | 2026-07-26 |
+| Decision and audit | `citation_auditor` (Citation Auditor) | Independently checks citation existence and claim support when sources are available. | 2026-07-26 |
+<!-- AGENT_GROUPS:END -->
+
+### Added in the Last 30 Days
+
+<!-- RECENT_AGENTS:START -->
+| Agent | Group | Added |
+|---|---|---|
+| `writing_clarity` (Writing and Clarity Reviewer) | Core reviewers | 2026-07-26 |
+| `reproducibility` (Reproducibility Reviewer) | Extended reviewers | 2026-07-26 |
+| `novice_advocate` (Novice Advocate) | Extended reviewers | 2026-07-26 |
+| `novelty_positioning` (Novelty and Positioning Reviewer) | Core reviewers | 2026-07-26 |
+| `method_soundness` (Method Soundness Reviewer) | Core reviewers | 2026-07-26 |
+| `iclr_reviewer_orchestrator` (ICLR Reviewer Orchestrator) | Orchestration | 2026-07-26 |
+| `evidence_experiment` (Evidence and Experiment Reviewer) | Core reviewers | 2026-07-26 |
+| `evidence_ablation` (Ablation Reviewer) | Extended reviewers | 2026-07-26 |
+| `ethics_reproducibility` (Ethics and Reproducibility Reviewer) | Core reviewers | 2026-07-26 |
+| `domain_application` (Domain Application Reviewer) | Extended reviewers | 2026-07-26 |
+| `critical` (Critical Reviewer) | Core reviewers | 2026-07-26 |
+| `citation_auditor` (Citation Auditor) | Decision and audit | 2026-07-26 |
+| `best_justified` (Best-Justified Reviewer) | Core reviewers | 2026-07-26 |
+| `ac_meta_reviewer` (AC / Meta-Reviewer) | Decision and audit | 2026-07-26 |
+<!-- RECENT_AGENTS:END -->
+
+## Scheduled Extraction
+
+The local automation processes an exact long-run average of 0.05% of the main-track corpus each day, integrates normalized results every Sunday, and refreshes the Agent and progress sections of both READMEs on the first day of each month.
+
+```bash
+python automation/install_cron.py \
+  --reviews-root /path/to/iclr_reviews \
+  --auth-file /path/to/auth
+```
+
+Daily runs use deterministic Python filtering before the configured `OPENAI_WEAK_MODEL_ID`. Runtime state, source paths, prompts, and provider responses stay outside the repository. Only aggregate progress is published in [`automation/public/progress.json`](automation/public/progress.json).
+
+<!-- AUTOMATION_PROGRESS:START -->
+| Metric | Current value |
+|---|---:|
+| Daily target | 0.05% |
+| Successful daily batches | 1 |
+| Analyzed papers | 408 / 38890 |
+| Deep-analysis coverage | 1.0491% |
+| Cumulative tokens | 186,650 |
+| Latest daily batch | 2026-07-26 |
+<!-- AUTOMATION_PROGRESS:END -->
+
 ## Title and Abstract Catalog
 
 [`raw/`](raw/) lists papers by year and main-track topic and provides one lightweight JSONL gzip index per year. Public fields are limited to topic, title, abstract, keywords, OpenReview ID, and page URL. The catalog contains no reviews, rebuttals, decisions, authors, or PDF files.

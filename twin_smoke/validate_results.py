@@ -122,9 +122,15 @@ def main() -> None:
     )
     parser.add_argument("--prefix", default="")
     parser.add_argument("--local-records", type=Path)
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=Path(__file__).resolve().parent / "output",
+    )
     args = parser.parse_args()
 
-    base = Path(__file__).resolve().parent / "output"
+    base = args.output_dir
+    base.mkdir(parents=True, exist_ok=True)
     manifest = [
         json.loads(line)
         for line in args.manifest.read_text(encoding="utf-8").splitlines()

@@ -16,3 +16,6 @@ raw_data/
 **/api_luna/
 **/luna_batches/
 **/invalid_temporal_leakage/
+
+# Scheduled extraction state contains source paths and model outputs.
+automation/state/

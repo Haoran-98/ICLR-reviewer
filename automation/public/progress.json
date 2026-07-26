@@ -1,0 +1,114 @@
+{
+  "generated_on": "2026-07-26T08:21:53.520965+00:00",
+  "daily_rate_percent": 0.05,
+  "corpus_papers": 38890,
+  "successful_daily_runs": 1,
+  "analyzed_papers": 408,
+  "coverage_percent": 1.0491,
+  "by_year": {
+    "2026": 208,
+    "2025": 123,
+    "2024": 77
+  },
+  "last_daily_run": "2026-07-26",
+  "usage": {
+    "input_tokens": 177977,
+    "output_tokens": 8673,
+    "total_tokens": 186650
+  },
+  "top_research_tags": [
+    {
+      "tag": "diffusion models",
+      "papers": 25
+    },
+    {
+      "tag": "reinforcement learning",
+      "papers": 22
+    },
+    {
+      "tag": "contrastive learning",
+      "papers": 19
+    },
+    {
+      "tag": "vision-language models",
+      "papers": 17
+    },
+    {
+      "tag": "self-supervised learning",
+      "papers": 17
+    },
+    {
+      "tag": "transformers",
+      "papers": 17
+    },
+    {
+      "tag": "representation learning",
+      "papers": 16
+    },
+    {
+      "tag": "adversarial robustness",
+      "papers": 12
+    },
+    {
+      "tag": "graph neural networks",
+      "papers": 12
+    },
+    {
+      "tag": "interpretability",
+      "papers": 11
+    },
+    {
+      "tag": "large language models",
+      "papers": 10
+    },
+    {
+      "tag": "vision transformers",
+      "papers": 10
+    },
+    {
+      "tag": "flow matching",
+      "papers": 9
+    },
+    {
+      "tag": "robustness",
+      "papers": 9
+    },
+    {
+      "tag": "benchmark construction",
+      "papers": 9
+    },
+    {
+      "tag": "transfer learning",
+      "papers": 9
+    },
+    {
+      "tag": "benchmark",
+      "papers": 8
+    },
+    {
+      "tag": "uncertainty quantification",
+      "papers": 8
+    },
+    {
+      "tag": "LLM evaluation",
+      "papers": 8
+    },
+    {
+      "tag": "language models",
+      "papers": 8
+    }
+  ],
+  "response_effectiveness": {
+    "unknown": 294,
+    "partial_success": 205,
+    "no_effect": 39,
+    "strong_success": 125
+  },
+  "score_actions": {
+    "unknown": 362,
+    "maintained": 150,
+    "increased": 146,
+    "decreased": 1,
+    "promised_increase": 4
+  }
+}

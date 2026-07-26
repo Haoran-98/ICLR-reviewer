@@ -52,6 +52,71 @@ $iclr-reviewer 审查 /path/to/paper.pdf，并解释每个评分和修改优先�
 
 通用面板始终运行，并可增加最多三个匹配的领域专科角色。AC 必须基于稿件证据解决冲突，不能用平均分掩盖致命问题；引用审计独立于 AC。
 
+### 现有 Agent 分组
+
+<!-- AGENT_GROUPS:START -->
+| 分组 | Agent | 作用 | 加入日期 |
+|---|---|---|---|
+| 编排 | `iclr_reviewer_orchestrator` (ICLR 审稿编排器) | 路由审稿组、保持独立评审，并生成基于证据的最终报告。 | 2026-07-26 |
+| 核心审稿组 | `best_justified` (最强正向论证审稿人) | 基于稿件证据构建最充分的接收理由。 | 2026-07-26 |
+| 核心审稿组 | `critical` (严格批判审稿人) | 寻找影响最大的未解决失败模式。 | 2026-07-26 |
+| 核心审稿组 | `method_soundness` (方法可靠性审稿人) | 检查问题定义、假设、推导、算法和数据泄漏。 | 2026-07-26 |
+| 核心审稿组 | `evidence_experiment` (实验与证据审稿人) | 审查基线、控制实验、指标、消融、统计和鲁棒性。 | 2026-07-26 |
+| 核心审稿组 | `novelty_positioning` (创新与定位审稿人) | 根据最接近的相关工作检验真实贡献。 | 2026-07-26 |
+| 核心审稿组 | `writing_clarity` (写作与清晰度审稿人) | 检查定义、逻辑结构、图表和可读性。 | 2026-07-26 |
+| 核心审稿组 | `ethics_reproducibility` (伦理与复现审稿人) | 检查潜在伤害、数据权利、隐私、滥用、局限和复现性。 | 2026-07-26 |
+| 扩展审稿组 | `domain_application` (领域应用审稿人) | 验证领域假设、实际效用和评测真实性。 | 2026-07-26 |
+| 扩展审稿组 | `evidence_ablation` (消融审稿人) | 检验实验是否隔离了各组件的真实贡献。 | 2026-07-26 |
+| 扩展审稿组 | `reproducibility` (复现审稿人) | 根据论文重建实现细节和实验流程。 | 2026-07-26 |
+| 扩展审稿组 | `novice_advocate` (非专家可理解性审稿人) | 识别未解释的前置知识和难以理解的表达。 | 2026-07-26 |
+| 决策与审计 | `ac_meta_reviewer` (AC / 元审稿人) | 根据证据解决评审冲突，不用平均分掩盖致命问题。 | 2026-07-26 |
+| 决策与审计 | `citation_auditor` (引用审计员) | 在来源可用时独立核验引用存在性和论断支持关系。 | 2026-07-26 |
+<!-- AGENT_GROUPS:END -->
+
+### 最近 30 天新增 Agent
+
+<!-- RECENT_AGENTS:START -->
+| Agent | 分组 | 加入日期 |
+|---|---|---|
+| `writing_clarity` (写作与清晰度审稿人) | 核心审稿组 | 2026-07-26 |
+| `reproducibility` (复现审稿人) | 扩展审稿组 | 2026-07-26 |
+| `novice_advocate` (非专家可理解性审稿人) | 扩展审稿组 | 2026-07-26 |
+| `novelty_positioning` (创新与定位审稿人) | 核心审稿组 | 2026-07-26 |
+| `method_soundness` (方法可靠性审稿人) | 核心审稿组 | 2026-07-26 |
+| `iclr_reviewer_orchestrator` (ICLR 审稿编排器) | 编排 | 2026-07-26 |
+| `evidence_experiment` (实验与证据审稿人) | 核心审稿组 | 2026-07-26 |
+| `evidence_ablation` (消融审稿人) | 扩展审稿组 | 2026-07-26 |
+| `ethics_reproducibility` (伦理与复现审稿人) | 核心审稿组 | 2026-07-26 |
+| `domain_application` (领域应用审稿人) | 扩展审稿组 | 2026-07-26 |
+| `critical` (严格批判审稿人) | 核心审稿组 | 2026-07-26 |
+| `citation_auditor` (引用审计员) | 决策与审计 | 2026-07-26 |
+| `best_justified` (最强正向论证审稿人) | 核心审稿组 | 2026-07-26 |
+| `ac_meta_reviewer` (AC / 元审稿人) | 决策与审计 | 2026-07-26 |
+<!-- RECENT_AGENTS:END -->
+
+## 定时提取
+
+本地自动化每天按照长期精确平均 0.05% 的比例处理未分析主会论文，每周日整合规范化结果，每月 1 日刷新中英文 README 的 Agent 和进度区块。
+
+```bash
+python automation/install_cron.py \
+  --reviews-root /path/to/iclr_reviews \
+  --auth-file /path/to/auth
+```
+
+日任务先执行 Python 确定性过滤，再调用配置的 `OPENAI_WEAK_MODEL_ID`。运行状态、原始路径、提示词和模型响应保存在仓库之外；公开仓库只更新 [`automation/public/progress.json`](automation/public/progress.json) 中的聚合进度。
+
+<!-- AUTOMATION_PROGRESS:START -->
+| 指标 | 当前值 |
+|---|---:|
+| 每日目标 | 0.05% |
+| 成功日批次 | 1 |
+| 已分析论文 | 408 / 38890 |
+| 深度分析覆盖率 | 1.0491% |
+| 累计 tokens | 186,650 |
+| 最近日批次 | 2026-07-26 |
+<!-- AUTOMATION_PROGRESS:END -->
+
 ## 题目与摘要目录
 
 [`raw/`](raw/) 按年份和主会主题展示论文，并为每年提供轻量 JSONL gzip 索引。字段仅包含主题、题目、摘要、关键词、OpenReview ID 和页面链接，不包含 review、rebuttal、decision、作者或 PDF。
