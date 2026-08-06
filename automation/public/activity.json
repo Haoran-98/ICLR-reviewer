@@ -1,6 +1,240 @@
 {
-  "generated_on": "2026-08-06T14:16:39.192937+00:00",
+  "generated_on": "2026-08-06T18:18:00.333144+00:00",
   "recent_days": [
+    {
+      "date": "2026-08-07",
+      "papers": [
+        {
+          "openreview_id": "2SuA42Mq1c",
+          "year": 2024,
+          "title": "BMAD: Benchmarks for Medical Anomaly Detection",
+          "primary_topic": "datasets and benchmarks",
+          "openreview_url": "https://openreview.net/forum?id=2SuA42Mq1c",
+          "research_tags": [
+            "medical anomaly detection",
+            "medical imaging",
+            "benchmark datasets"
+          ]
+        },
+        {
+          "openreview_id": "1Akd36hG9z",
+          "year": 2024,
+          "title": "Enhancing Offline Reinforcement Learning with an Optimal Supported Dataset",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=1Akd36hG9z",
+          "research_tags": [
+            "offline reinforcement learning",
+            "behavior regularization",
+            "distribution correction estimation"
+          ]
+        },
+        {
+          "openreview_id": "ufZp6pvOvE",
+          "year": 2024,
+          "title": "AROID: Improving Adversarial Robustness through Online Instance-wise Data Augmentation",
+          "primary_topic": "general machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=ufZp6pvOvE",
+          "research_tags": [
+            "adversarial robustness",
+            "adversarial training",
+            "automated data augmentation"
+          ]
+        },
+        {
+          "openreview_id": "j7b4mm7Ec9",
+          "year": 2025,
+          "title": "Towards Lightweight Deep Watermarking Framework",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=j7b4mm7Ec9",
+          "research_tags": [
+            "deep watermarking",
+            "lightweight neural networks",
+            "copyright protection"
+          ]
+        },
+        {
+          "openreview_id": "ofiZbAmrZh",
+          "year": 2025,
+          "title": "Consistency-based Black-box Uncertainty Quantification for Text-to-SQL by Similarity Aggregation",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=ofiZbAmrZh",
+          "research_tags": [
+            "uncertainty quantification",
+            "black-box models",
+            "text-to-SQL"
+          ]
+        },
+        {
+          "openreview_id": "vtCkb4KJxr",
+          "year": 2025,
+          "title": "Adaptive Threshold Sampling for Fast Noisy Submodular Maximization",
+          "primary_topic": "optimization",
+          "openreview_url": "https://openreview.net/forum?id=vtCkb4KJxr",
+          "research_tags": [
+            "submodular maximization",
+            "noisy value oracles",
+            "adaptive sampling"
+          ]
+        },
+        {
+          "openreview_id": "1qgZXeMTTU",
+          "year": 2025,
+          "title": "Coreset Spectral Clustering",
+          "primary_topic": "learning on graphs and other geometries & topologies",
+          "openreview_url": "https://openreview.net/forum?id=1qgZXeMTTU",
+          "research_tags": [
+            "spectral clustering",
+            "coresets",
+            "kernel k-means"
+          ]
+        },
+        {
+          "openreview_id": "XUJcsLvpaQ",
+          "year": 2025,
+          "title": "G-Transformer for Conditional Average Potential Outcome Estimation over Time",
+          "primary_topic": "causal reasoning",
+          "openreview_url": "https://openreview.net/forum?id=XUJcsLvpaQ",
+          "research_tags": [
+            "causal inference",
+            "potential outcomes",
+            "conditional average potential outcomes"
+          ]
+        },
+        {
+          "openreview_id": "r6aX67YhD9",
+          "year": 2025,
+          "title": "Learning to Watermark LLM-generated Text via Reinforcement Learning",
+          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
+          "openreview_url": "https://openreview.net/forum?id=r6aX67YhD9",
+          "research_tags": [
+            "LLM watermarking",
+            "model-level watermarking",
+            "text provenance"
+          ]
+        },
+        {
+          "openreview_id": "64Ea2Dx0JJ",
+          "year": 2026,
+          "title": "Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?",
+          "primary_topic": "datasets and benchmarks",
+          "openreview_url": "https://openreview.net/forum?id=64Ea2Dx0JJ",
+          "research_tags": [
+            "datasets and benchmarks",
+            "vision-language models",
+            "contextual integrity"
+          ]
+        },
+        {
+          "openreview_id": "qPKTDOJ5Xs",
+          "year": 2026,
+          "title": "Closed-form $\\ell_r$ norm scaling with data for overparameterized linear regression and diagonal linear networks under $\\ell_p$ bias",
+          "primary_topic": "learning theory",
+          "openreview_url": "https://openreview.net/forum?id=qPKTDOJ5Xs",
+          "research_tags": [
+            "learning theory",
+            "overparameterized linear regression",
+            "minimum-norm interpolation"
+          ]
+        },
+        {
+          "openreview_id": "z2idLjqzBe",
+          "year": 2026,
+          "title": "Death of the Novel(ty): Beyond N-Gram Novelty as a Metric for Textual Creativity",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=z2idLjqzBe",
+          "research_tags": [
+            "computational creativity",
+            "text evaluation",
+            "n-gram novelty"
+          ]
+        },
+        {
+          "openreview_id": "NLsUsrOIuh",
+          "year": 2026,
+          "title": "Compact Attention: Exploiting Structured Spatio-Temporal Sparsity for Fast Video Generation",
+          "primary_topic": "generative models",
+          "openreview_url": "https://openreview.net/forum?id=NLsUsrOIuh",
+          "research_tags": [
+            "video generation",
+            "video diffusion transformers",
+            "sparse attention"
+          ]
+        },
+        {
+          "openreview_id": "Xhf9YqwlM4",
+          "year": 2026,
+          "title": "Tokenisation over Bounded Alphabets is Hard",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=Xhf9YqwlM4",
+          "research_tags": [
+            "tokenisation",
+            "tokenization",
+            "computational complexity"
+          ]
+        },
+        {
+          "openreview_id": "7lw6s9ELfr",
+          "year": 2026,
+          "title": "MVR: Multi-view Video Reward Shaping for Reinforcement Learning",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=7lw6s9ELfr",
+          "research_tags": [
+            "reinforcement learning",
+            "reward shaping",
+            "vision-language models"
+          ]
+        },
+        {
+          "openreview_id": "Wj0Sc9WBHZ",
+          "year": 2026,
+          "title": "InfoDet: A Dataset for Infographic Element Detection",
+          "primary_topic": "datasets and benchmarks",
+          "openreview_url": "https://openreview.net/forum?id=Wj0Sc9WBHZ",
+          "research_tags": [
+            "datasets and benchmarks",
+            "infographic understanding",
+            "object detection"
+          ]
+        },
+        {
+          "openreview_id": "MIRtxjuZF6",
+          "year": 2026,
+          "title": "SEDiT: Mask-Free Video Subtitle Erasure with Prompt Instruction",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=MIRtxjuZF6",
+          "research_tags": [
+            "video editing",
+            "subtitle erasure",
+            "video inpainting"
+          ]
+        },
+        {
+          "openreview_id": "N7ziRPTNdT",
+          "year": 2026,
+          "title": "Generation is Required for Data-Efficient Perception",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=N7ziRPTNdT",
+          "research_tags": [
+            "representation learning",
+            "generative models",
+            "compositional generalization"
+          ]
+        },
+        {
+          "openreview_id": "pPNtJDpY6q",
+          "year": 2026,
+          "title": "Can LLM Agents Assist Dynamic Network Simulation? A Case Study on Email Networks and Phishing Synthesis",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=pPNtJDpY6q",
+          "research_tags": [
+            "dynamic network simulation",
+            "LLM agents",
+            "multi-agent systems"
+          ]
+        }
+      ],
+      "agents": []
+    },
     {
       "date": "2026-08-06",
       "papers": [],
@@ -8,11 +242,6 @@
     },
     {
       "date": "2026-08-05",
-      "papers": [],
-      "agents": []
-    },
-    {
-      "date": "2026-08-04",
       "papers": [],
       "agents": []
     }

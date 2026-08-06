@@ -1,17 +1,21 @@
 {
-  "generated_on": "2026-08-06T14:16:39.182617+00:00",
+  "generated_on": "2026-08-06T18:18:00.320948+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 0,
-  "analyzed_papers": 389,
-  "coverage_percent": 1.0003,
+  "successful_daily_runs": 1,
+  "analyzed_papers": 408,
+  "coverage_percent": 1.0491,
   "by_year": {
-    "2026": 198,
-    "2025": 117,
-    "2024": 74
+    "2026": 208,
+    "2025": 123,
+    "2024": 77
   },
-  "last_daily_run": null,
-  "usage": {},
+  "last_daily_run": "2026-08-07",
+  "usage": {
+    "input_tokens": 183062,
+    "output_tokens": 8799,
+    "total_tokens": 191861
+  },
   "top_research_tags": [
     {
       "tag": "diffusion models",
@@ -19,11 +23,15 @@
     },
     {
       "tag": "reinforcement learning",
-      "papers": 20
+      "papers": 23
     },
     {
       "tag": "contrastive learning",
       "papers": 19
+    },
+    {
+      "tag": "vision-language models",
+      "papers": 17
     },
     {
       "tag": "self-supervised learning",
@@ -31,31 +39,27 @@
     },
     {
       "tag": "transformers",
-      "papers": 16
+      "papers": 17
     },
     {
       "tag": "representation learning",
-      "papers": 15
+      "papers": 16
     },
     {
-      "tag": "vision-language models",
-      "papers": 14
+      "tag": "adversarial robustness",
+      "papers": 13
     },
     {
       "tag": "graph neural networks",
       "papers": 12
     },
     {
+      "tag": "large language models",
+      "papers": 11
+    },
+    {
       "tag": "interpretability",
       "papers": 11
-    },
-    {
-      "tag": "adversarial robustness",
-      "papers": 11
-    },
-    {
-      "tag": "large language models",
-      "papers": 10
     },
     {
       "tag": "flow matching",
@@ -78,6 +82,10 @@
       "papers": 8
     },
     {
+      "tag": "uncertainty quantification",
+      "papers": 8
+    },
+    {
       "tag": "robustness",
       "papers": 8
     },
@@ -88,22 +96,18 @@
     {
       "tag": "training dynamics",
       "papers": 8
-    },
-    {
-      "tag": "uncertainty quantification",
-      "papers": 7
     }
   ],
   "response_effectiveness": {
-    "unknown": 260,
-    "partial_success": 180,
-    "no_effect": 36,
-    "strong_success": 119
+    "unknown": 268,
+    "partial_success": 191,
+    "no_effect": 40,
+    "strong_success": 120
   },
   "score_actions": {
-    "unknown": 320,
-    "maintained": 135,
-    "increased": 135,
+    "unknown": 326,
+    "maintained": 146,
+    "increased": 142,
     "decreased": 1,
     "promised_increase": 4
   }
