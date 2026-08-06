@@ -1,21 +1,17 @@
 {
-  "generated_on": "2026-07-26T13:07:12.651605+00:00",
+  "generated_on": "2026-08-06T14:16:39.182617+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 1,
-  "analyzed_papers": 408,
-  "coverage_percent": 1.0491,
+  "successful_daily_runs": 0,
+  "analyzed_papers": 389,
+  "coverage_percent": 1.0003,
   "by_year": {
-    "2026": 208,
-    "2025": 123,
-    "2024": 77
+    "2026": 198,
+    "2025": 117,
+    "2024": 74
   },
-  "last_daily_run": "2026-07-26",
-  "usage": {
-    "input_tokens": 177977,
-    "output_tokens": 8673,
-    "total_tokens": 186650
-  },
+  "last_daily_run": null,
+  "usage": {},
   "top_research_tags": [
     {
       "tag": "diffusion models",
@@ -23,15 +19,11 @@
     },
     {
       "tag": "reinforcement learning",
-      "papers": 22
+      "papers": 20
     },
     {
       "tag": "contrastive learning",
       "papers": 19
-    },
-    {
-      "tag": "vision-language models",
-      "papers": 17
     },
     {
       "tag": "self-supervised learning",
@@ -39,15 +31,15 @@
     },
     {
       "tag": "transformers",
-      "papers": 17
-    },
-    {
-      "tag": "representation learning",
       "papers": 16
     },
     {
-      "tag": "adversarial robustness",
-      "papers": 12
+      "tag": "representation learning",
+      "papers": 15
+    },
+    {
+      "tag": "vision-language models",
+      "papers": 14
     },
     {
       "tag": "graph neural networks",
@@ -58,11 +50,11 @@
       "papers": 11
     },
     {
-      "tag": "large language models",
-      "papers": 10
+      "tag": "adversarial robustness",
+      "papers": 11
     },
     {
-      "tag": "vision transformers",
+      "tag": "large language models",
       "papers": 10
     },
     {
@@ -70,7 +62,7 @@
       "papers": 9
     },
     {
-      "tag": "robustness",
+      "tag": "vision transformers",
       "papers": 9
     },
     {
@@ -86,28 +78,32 @@
       "papers": 8
     },
     {
-      "tag": "uncertainty quantification",
-      "papers": 8
-    },
-    {
-      "tag": "LLM evaluation",
+      "tag": "robustness",
       "papers": 8
     },
     {
       "tag": "language models",
       "papers": 8
+    },
+    {
+      "tag": "training dynamics",
+      "papers": 8
+    },
+    {
+      "tag": "uncertainty quantification",
+      "papers": 7
     }
   ],
   "response_effectiveness": {
-    "unknown": 294,
-    "partial_success": 205,
-    "no_effect": 39,
-    "strong_success": 125
+    "unknown": 260,
+    "partial_success": 180,
+    "no_effect": 36,
+    "strong_success": 119
   },
   "score_actions": {
-    "unknown": 362,
-    "maintained": 150,
-    "increased": 146,
+    "unknown": 320,
+    "maintained": 135,
+    "increased": 135,
     "decreased": 1,
     "promised_increase": 4
   }

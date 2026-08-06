@@ -6,43 +6,21 @@
 ## 最近 3 天新增
 
 <details open>
-<summary>2026-07-26 - 新分析 19 篇论文，新增 14 个通用 Agent</summary>
-
-| 年份 | 论文 | 主题 | 研究标签 |
-|---:|---|---|---|
-| 2024 | [BMAD: Benchmarks for Medical Anomaly Detection](https://openreview.net/forum?id=2SuA42Mq1c) | datasets and benchmarks | medical anomaly detection, medical imaging, benchmark datasets |
-| 2024 | [Enhancing Offline Reinforcement Learning with an Optimal Supported Dataset](https://openreview.net/forum?id=1Akd36hG9z) | reinforcement learning | offline reinforcement learning, distribution shift, behavior regularization |
-| 2024 | [AROID: Improving Adversarial Robustness through Online Instance-wise Data Augmentation](https://openreview.net/forum?id=ufZp6pvOvE) | general machine learning (i.e., none of the above) | adversarial robustness, adversarial training, automated data augmentation |
-| 2025 | [Towards Lightweight Deep Watermarking Framework](https://openreview.net/forum?id=j7b4mm7Ec9) | applications to computer vision, audio, language, and other modalities | digital watermarking, lightweight deep learning, decoding-oriented loss |
-| 2025 | [Consistency-based Black-box Uncertainty Quantification for Text-to-SQL by Similarity Aggregation](https://openreview.net/forum?id=ofiZbAmrZh) | foundation or frontier models, including LLMs | uncertainty quantification, text-to-SQL, black-box LLMs |
-| 2025 | [Adaptive Threshold Sampling for Fast Noisy Submodular Maximization](https://openreview.net/forum?id=vtCkb4KJxr) | optimization | submodular maximization, noisy optimization, adaptive sampling |
-| 2025 | [Coreset Spectral Clustering](https://openreview.net/forum?id=1qgZXeMTTU) | learning on graphs and other geometries & topologies | spectral clustering, kernel k-means, coresets |
-| 2025 | [G-Transformer for Conditional Average Potential Outcome Estimation over Time](https://openreview.net/forum?id=XUJcsLvpaQ) | causal reasoning | causal inference, potential outcomes, CAPO estimation |
-| 2025 | [Learning to Watermark LLM-generated Text via Reinforcement Learning](https://openreview.net/forum?id=r6aX67YhD9) | alignment, fairness, safety, privacy, and societal considerations | LLM watermarking, model-level watermarking, reinforcement learning |
-| 2026 | [Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](https://openreview.net/forum?id=64Ea2Dx0JJ) | datasets and benchmarks | privacy, contextual integrity, geolocation |
-| 2026 | [Closed-form $\ell_r$ norm scaling with data for overparameterized linear regression and diagonal linear networks under $\ell_p$ bias](https://openreview.net/forum?id=qPKTDOJ5Xs) | learning theory | learning theory, overparameterized regression, minimum-norm interpolation |
-| 2026 | [Death of the Novel(ty): Beyond N-Gram Novelty as a Metric for Textual Creativity](https://openreview.net/forum?id=z2idLjqzBe) | foundation or frontier models, including LLMs | textual creativity, creativity evaluation, n-gram novelty |
-| 2026 | [Compact Attention: Exploiting Structured Spatio-Temporal Sparsity for Fast Video Generation](https://openreview.net/forum?id=NLsUsrOIuh) | generative models | video generation, diffusion transformers, sparse attention |
-| 2026 | [Tokenisation over Bounded Alphabets is Hard](https://openreview.net/forum?id=Xhf9YqwlM4) | foundation or frontier models, including LLMs | tokenization, tokenisation, computational complexity |
-| 2026 | [MVR: Multi-view Video Reward Shaping for Reinforcement Learning](https://openreview.net/forum?id=7lw6s9ELfr) | reinforcement learning | reinforcement learning, reward shaping, vision-language models |
-| 2026 | [InfoDet: A Dataset for Infographic Element Detection](https://openreview.net/forum?id=Wj0Sc9WBHZ) | datasets and benchmarks | computer vision, infographic understanding, object detection |
-| 2026 | [SEDiT: Mask-Free Video Subtitle Erasure with Prompt Instruction](https://openreview.net/forum?id=MIRtxjuZF6) | applications to computer vision, audio, language, and other modalities | video editing, subtitle erasure, video inpainting |
-| 2026 | [Generation is Required for Data-Efficient Perception](https://openreview.net/forum?id=N7ziRPTNdT) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | visual perception, generative models, representation learning |
-| 2026 | [Can LLM Agents Assist Dynamic Network Simulation? A Case Study on Email Networks and Phishing Synthesis](https://openreview.net/forum?id=pPNtJDpY6q) | foundation or frontier models, including LLMs | dynamic network simulation, LLM agents, multi-agent systems |
-
-新增通用 Agent：`ac_meta_reviewer` (AC / 元审稿人), `best_justified` (最强正向论证审稿人), `citation_auditor` (引用审计员), `critical` (严格批判审稿人), `domain_application` (领域应用审稿人), `ethics_reproducibility` (伦理与复现审稿人), `evidence_ablation` (消融审稿人), `evidence_experiment` (实验与证据审稿人), `iclr_reviewer_orchestrator` (ICLR 审稿编排器), `method_soundness` (方法可靠性审稿人), `novelty_positioning` (创新与定位审稿人), `novice_advocate` (非专家可理解性审稿人), `reproducibility` (复现审稿人), `writing_clarity` (写作与清晰度审稿人)
-
-</details>
-
-<details>
-<summary>2026-07-25 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
+<summary>2026-08-06 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
 
 当天没有公开新增论文。
 
 </details>
 
 <details>
-<summary>2026-07-24 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
+<summary>2026-08-05 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
+
+当天没有公开新增论文。
+
+</details>
+
+<details>
+<summary>2026-08-04 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
 
 当天没有公开新增论文。
 
@@ -54,7 +32,7 @@
 <!-- WEEKLY_ACTIVITY:START -->
 ## 上周新增
 
-**2026-07-13 - 2026-07-19：** 没有公开新增内容。
+**2026-07-27 - 2026-08-02：** 没有公开新增内容。
 <!-- WEEKLY_ACTIVITY:END -->
 
 ---
