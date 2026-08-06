@@ -7,10 +7,10 @@ import argparse
 import json
 import os
 import shlex
+import time
 from pathlib import Path
-
-from openai import OpenAI
-
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 
 def load_auth(path: Path) -> dict[str, str]:
     values = {}
@@ -28,6 +28,53 @@ def load_auth(path: Path) -> dict[str, str]:
     if missing:
         raise ValueError(f"Missing auth fields: {', '.join(missing)}")
     return values
+
+
+def response_url(base_url: str) -> str:
+    return base_url.rstrip("/") + "/responses"
+
+
+def output_text(payload: dict) -> str:
+    parts = []
+    for output in payload.get("output") or []:
+        for content in output.get("content") or []:
+            if content.get("type") == "output_text" and content.get("text") is not None:
+                parts.append(str(content["text"]))
+    return "".join(parts)
+
+
+def create_response(auth: dict[str, str], input_text: str, max_output_tokens: int) -> dict:
+    body = json.dumps(
+        {
+            "model": auth["OPENAI_WEAK_MODEL_ID"],
+            "input": input_text,
+            "max_output_tokens": max_output_tokens,
+        }
+    ).encode("utf-8")
+    request = Request(
+        response_url(auth["OPENAI_BASE_URL"]),
+        data=body,
+        headers={
+            "Authorization": f"Bearer {auth['OPENAI_API_KEY']}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    last_error = None
+    for attempt in range(4):
+        try:
+            with urlopen(request, timeout=900) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except HTTPError as exc:
+            detail = exc.read().decode("utf-8", errors="replace")
+            last_error = RuntimeError(f"Responses API HTTP {exc.code}: {detail[:1000]}")
+            if exc.code < 500 and exc.code != 429:
+                break
+        except (URLError, TimeoutError) as exc:
+            last_error = exc
+        if attempt < 3:
+            time.sleep(2**attempt)
+    raise RuntimeError(f"Responses API request failed: {last_error}")
 
 
 def main() -> None:
@@ -54,24 +101,18 @@ def main() -> None:
     args = parser.parse_args()
 
     auth = load_auth(args.auth)
-    client = OpenAI(
-        base_url=auth["OPENAI_BASE_URL"],
-        api_key=auth["OPENAI_API_KEY"],
-        timeout=900,
-        max_retries=3,
-    )
     if args.probe:
-        response = client.responses.create(
-            model=auth["OPENAI_WEAK_MODEL_ID"],
-            input='Return exactly this JSON and nothing else: {"ok":true}',
-            max_output_tokens=20,
+        response = create_response(
+            auth,
+            'Return exactly this JSON and nothing else: {"ok":true}',
+            20,
         )
         print(
             json.dumps(
                 {
-                    "model": response.model,
-                    "output": response.output_text,
-                    "usage": response.usage.model_dump() if response.usage else None,
+                    "model": response.get("model"),
+                    "output": output_text(response),
+                    "usage": response.get("usage"),
                 },
                 ensure_ascii=False,
             )
@@ -103,37 +144,32 @@ def main() -> None:
                 write_summary()
                 continue
         try:
-            response = client.responses.create(
-                model=auth["OPENAI_WEAK_MODEL_ID"],
-                input=path.read_text(encoding="utf-8"),
-                max_output_tokens=args.max_output_tokens,
-            )
+            response = create_response(auth, path.read_text(encoding="utf-8"), args.max_output_tokens)
         except Exception as exc:
             run = {"batch": int(index), "model": auth["OPENAI_WEAK_MODEL_ID"], "error": str(exc)}
             meta_path.write_text(json.dumps(run, ensure_ascii=False, indent=2), encoding="utf-8")
             runs.append(run)
             write_summary()
             raise
-        result_path.write_text(response.output_text, encoding="utf-8")
+        text = output_text(response)
+        result_path.write_text(text, encoding="utf-8")
         valid_json = False
         result_papers = 0
         try:
-            parsed = json.loads(response.output_text)
+            parsed = json.loads(text)
             valid_json = True
             result_papers = len(parsed.get("papers", []))
         except json.JSONDecodeError:
             pass
-        usage = response.usage.model_dump() if response.usage else None
+        usage = response.get("usage")
         run = {
             "batch": int(index),
-            "model": response.model,
+            "model": response.get("model"),
             "usage": usage,
             "valid_json": valid_json,
             "result_papers": result_papers,
-            "status": response.status,
-            "incomplete_details": (
-                response.incomplete_details.model_dump() if response.incomplete_details else None
-            ),
+            "status": response.get("status"),
+            "incomplete_details": response.get("incomplete_details"),
         }
         meta_path.write_text(json.dumps(run, ensure_ascii=False, indent=2), encoding="utf-8")
         runs.append(run)

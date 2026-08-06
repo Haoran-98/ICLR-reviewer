@@ -11,7 +11,7 @@ import random
 from collections import defaultdict
 from pathlib import Path
 
-import tiktoken
+from token_utils import get_encoder
 
 
 PAPER_FIELDS = (
@@ -118,7 +118,7 @@ def main() -> None:
     parser.add_argument("--include-workshops", action="store_true")
     args = parser.parse_args()
 
-    encoder = tiktoken.get_encoding("o200k_base")
+    encoder = get_encoder()
     rows = []
     group_counts = defaultdict(int)
     field_totals = defaultdict(int)
@@ -221,7 +221,7 @@ def main() -> None:
         "sample_rate": args.sample_rate,
         "sample_papers": len(sample),
         "seed": args.seed,
-        "encoding": "o200k_base",
+        "encoding": getattr(encoder, "name", "o200k_base"),
         "group_counts": {f"{year}_{track}": count for (year, track), count in sorted(group_counts.items())},
         "sample_quotas": {f"{year}_{track}": count for (year, track), count in sorted(quotas.items())},
         "full_input_tokens": {

@@ -6,9 +6,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-import tiktoken
-
 from smoke_test import SYSTEM_PROMPT, compact_payload, token_count
+from token_utils import get_encoder
 
 
 def main() -> None:
@@ -53,7 +52,7 @@ def main() -> None:
     path.write_text(
         json.dumps(prompt, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
     )
-    encoder = tiktoken.get_encoding("o200k_base")
+    encoder = get_encoder()
     print(json.dumps({"papers": len(papers), "prompt_tokens": token_count(encoder, prompt)}))
 
 

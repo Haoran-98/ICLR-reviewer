@@ -8,7 +8,7 @@ import json
 import subprocess
 from pathlib import Path
 
-import tiktoken
+from token_utils import get_encoder
 
 
 OUTPUT_INSTRUCTIONS = """Do not use tools. Return one compact JSON object:
@@ -113,7 +113,7 @@ def main() -> None:
     output_dir = args.input.parent / "llm"
     output_dir.mkdir(parents=True, exist_ok=True)
     prompt = json.loads(args.input.read_text(encoding="utf-8"))
-    encoder = tiktoken.get_encoding("o200k_base")
+    encoder = get_encoder()
     batches = prepare_batches(prompt, encoder, args.batches)
 
     prepared = []

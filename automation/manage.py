@@ -9,6 +9,7 @@ import hashlib
 import json
 import math
 import os
+import shlex
 import shutil
 import subprocess
 import sys
@@ -23,6 +24,12 @@ PUBLIC_PROGRESS = REPO / "automation" / "public" / "progress.json"
 PUBLIC_ACTIVITY = REPO / "automation" / "public" / "activity.json"
 YEARS = (2024, 2025, 2026)
 DAILY_RATE = 0.0005
+PUBLISHABLE_FILES = {
+    "README.md",
+    "README.zh-CN.md",
+    "automation/public/activity.json",
+    "automation/public/progress.json",
+}
 GROUP_LABELS = {
     "orchestration": ("Orchestration", "编排"),
     "core_reviewers": ("Core reviewers", "核心审稿组"),
@@ -38,8 +45,61 @@ def atomic_write(path: Path, text: str) -> None:
     temporary.replace(path)
 
 
-def run(command: list[str], cwd: Path = REPO) -> None:
-    subprocess.run(command, cwd=cwd, check=True)
+def run(command: list[str], cwd: Path = REPO, env: dict[str, str] | None = None) -> None:
+    subprocess.run(command, cwd=cwd, check=True, env=env)
+
+
+def load_export_value(path: Path, key: str) -> str:
+    if not path.is_file():
+        return ""
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line.startswith("export "):
+            continue
+        assignment = shlex.split(line[len("export ") :])
+        if len(assignment) == 1 and assignment[0].startswith(f"{key}="):
+            return assignment[0].split("=", 1)[1]
+    return ""
+
+
+def git_environment() -> dict[str, str]:
+    env = os.environ.copy()
+    env["GIT_TERMINAL_PROMPT"] = "0"
+    token = load_export_value(auth_file(), "GITHUB_TOKEN")
+    if token:
+        env.update({
+            "GIT_ASKPASS": str(REPO / "automation" / "git_askpass.py"),
+            "ICLR_GITHUB_TOKEN": token,
+        })
+    return env
+
+
+def unexpected_git_changes() -> list[str]:
+    dirty = subprocess.run(
+        ["git", "status", "--porcelain"],
+        cwd=REPO,
+        check=True,
+        text=True,
+        capture_output=True,
+    ).stdout.splitlines()
+    return [line for line in dirty if line[3:] not in PUBLISHABLE_FILES]
+
+
+def ensure_publish_ready() -> None:
+    unexpected = unexpected_git_changes()
+    if unexpected:
+        raise RuntimeError(f"refusing automation with unrelated changes: {unexpected}")
+    probe = subprocess.run(
+        ["git", "push", "--dry-run", "origin", "HEAD:main"],
+        cwd=REPO,
+        text=True,
+        capture_output=True,
+        env=git_environment(),
+    )
+    if probe.returncode:
+        detail = (probe.stderr or probe.stdout).strip().splitlines()
+        message = detail[-1] if detail else "unknown git push error"
+        raise RuntimeError(f"GitHub publish preflight failed: {message}")
 
 
 def state_dir() -> Path:
@@ -103,6 +163,11 @@ def daily(state: Path) -> dict:
     success_path = run_dir / "SUCCESS.json"
     if success_path.exists():
         return json.loads(success_path.read_text(encoding="utf-8"))
+
+    if not reviews_root().is_dir():
+        raise FileNotFoundError(f"ICLR review corpus not found: {reviews_root()}")
+    if not auth_file().is_file():
+        raise FileNotFoundError(f"API auth file not found: {auth_file()}")
 
     inventory = load_inventory(state)
     processed_path = state / "processed_ids.txt"
@@ -438,16 +503,14 @@ def refresh_readmes(state: Path) -> dict:
 
 
 def publish(command: str) -> None:
-    allowed = {"README.md", "README.zh-CN.md", "automation/public/activity.json", "automation/public/progress.json"}
-    dirty = subprocess.run(["git", "status", "--porcelain"], cwd=REPO, check=True, text=True, capture_output=True).stdout.splitlines()
-    unexpected = [line for line in dirty if line[3:] not in allowed]
+    unexpected = unexpected_git_changes()
     if unexpected:
         raise RuntimeError(f"refusing automated commit with unrelated changes: {unexpected}")
-    run(["git", "add", *sorted(allowed)])
+    run(["git", "add", *sorted(PUBLISHABLE_FILES)])
     changed = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=REPO).returncode != 0
     if changed:
         run(["git", "commit", "-m", f"Update {command} ICLR Reviewer activity ({date.today().isoformat()})"])
-        run(["git", "push", "origin", "main"])
+        run(["git", "push", "origin", "main"], env=git_environment())
 
 
 def main() -> None:
@@ -459,6 +522,8 @@ def main() -> None:
     state.mkdir(parents=True, exist_ok=True)
     with (state / "automation.lock").open("w") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
+        if args.push:
+            ensure_publish_ready()
         daily_result = daily(state) if args.command == "daily" else None
         result = refresh_readmes(state)
         if args.push:

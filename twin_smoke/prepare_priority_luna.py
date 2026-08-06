@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-import tiktoken
+from token_utils import get_encoder
 
 
 INSTRUCTIONS = """Return JSON only as {"papers":[...]}, exactly one item per input ID.
@@ -36,7 +36,7 @@ def main() -> None:
     parser.add_argument("--batch-tokens", type=int, default=180000)
     args = parser.parse_args()
 
-    encoder = tiktoken.get_encoding("o200k_base")
+    encoder = get_encoder()
     papers = []
     for line in args.input.read_text(encoding="utf-8").splitlines():
         row = json.loads(line)

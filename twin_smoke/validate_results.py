@@ -20,6 +20,29 @@ LIMITS = {
 }
 
 
+def item_completeness(item: dict) -> tuple[int, int]:
+    """Prefer the duplicate record carrying the most structured evidence."""
+    populated = sum(bool(item.get(key)) for key in LIMITS)
+    return populated, len(json.dumps(item, ensure_ascii=False, sort_keys=True))
+
+
+def deduplicate_model_items(items: list[dict]) -> tuple[list[dict], list[str], int]:
+    """Keep one deterministic, information-rich record per OpenReview ID."""
+    selected = {}
+    counts = {}
+    order = []
+    for item in items:
+        paper_id = item.get("openreview_id")
+        counts[paper_id] = counts.get(paper_id, 0) + 1
+        if paper_id not in selected:
+            selected[paper_id] = item
+            order.append(paper_id)
+        elif item_completeness(item) > item_completeness(selected[paper_id]):
+            selected[paper_id] = item
+    duplicate_ids = sorted(str(paper_id) for paper_id, count in counts.items() if count > 1)
+    return [selected[paper_id] for paper_id in order], duplicate_ids, len(items) - len(selected)
+
+
 def normalize_effectiveness(value) -> str:
     text = str(value or "").lower()
     if any(
@@ -140,17 +163,19 @@ def main() -> None:
     if args.local_records:
         local_payload = json.loads(args.local_records.read_text(encoding="utf-8"))
         local_by_id = {item["openreview_id"]: item for item in local_payload.get("papers", [])}
-    items = []
+    raw_model_items = []
     for path in sorted(args.input_dir.glob("batch_*_result.json")):
-        items.extend(json.loads(path.read_text(encoding="utf-8"))["papers"])
+        raw_model_items.extend(json.loads(path.read_text(encoding="utf-8"))["papers"])
 
-    model_returned = [item.get("openreview_id") for item in items]
+    model_returned = [item.get("openreview_id") for item in raw_model_items]
+    items, duplicate_ids, duplicates_dropped = deduplicate_model_items(raw_model_items)
     python_only = {
         paper_id for paper_id, record in local_by_id.items() if record.get("python_only")
     }
     errors = []
-    if len(model_returned) != len(set(model_returned)):
-        errors.append("duplicate_openreview_id")
+    warnings = []
+    if duplicate_ids:
+        warnings.append("duplicate_openreview_id_deduplicated")
     if set(model_returned) != expected - python_only:
         errors.append("openreview_id_mismatch")
     for paper_id in sorted(python_only):
@@ -241,9 +266,13 @@ def main() -> None:
         "expected_papers": len(expected),
         "returned_papers": len(items),
         "model_returned_papers": len(model_returned),
+        "unique_model_papers": len(set(model_returned)),
         "python_only_papers": len(python_only),
         "unique_ids": len(set(returned)),
         "errors": errors,
+        "warnings": warnings,
+        "duplicate_openreview_ids": duplicate_ids,
+        "duplicates_dropped": duplicates_dropped,
         "truncation_violations": truncations,
         "normalized_effectiveness": {
             key: sum(

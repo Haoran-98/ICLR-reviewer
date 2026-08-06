@@ -9,9 +9,8 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
-import tiktoken
-
 from python_filter import classify_resolution, classify_score_action
+from token_utils import get_encoder
 
 
 ARCHETYPES = [
@@ -247,7 +246,7 @@ def compact_for_luna(evidence: dict) -> dict:
 
 
 def prepare_batches(output: Path, evidence: list[dict], batch_tokens: int) -> dict:
-    encoder = tiktoken.get_encoding("o200k_base")
+    encoder = get_encoder()
     base_tokens = len(encoder.encode_ordinary(SYNTHESIS_INSTRUCTIONS))
     batches, current, size = [], [], base_tokens
     for item in evidence:

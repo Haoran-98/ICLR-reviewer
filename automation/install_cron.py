@@ -45,6 +45,7 @@ def main() -> None:
     log = shlex.quote(str((args.state_dir / "automation.log").resolve()))
     block = [
         START,
+        "CRON_TZ=Asia/Shanghai",
         f"15 2 * * * {base} daily --push >> {log} 2>&1",
         f"15 3 * * 0 {base} weekly --push >> {log} 2>&1",
         f"15 4 1 * * {base} monthly --push >> {log} 2>&1",

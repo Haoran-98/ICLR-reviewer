@@ -9,10 +9,9 @@ import math
 import re
 from pathlib import Path
 
-import tiktoken
-
 from run_llm_smoke import OUTPUT_INSTRUCTIONS
 from smoke_test import SYSTEM_PROMPT, compact_payload, token_count
+from token_utils import get_encoder
 
 
 SCORE_TERMS = re.compile(r"\b(score|rating|accept|reject|threshold)\b", re.I)
@@ -272,7 +271,7 @@ def main() -> None:
     parser.add_argument("--batch-tokens", type=int, default=180000)
     args = parser.parse_args()
 
-    encoder = tiktoken.get_encoding("o200k_base")
+    encoder = get_encoder()
     rows = [json.loads(line) for line in args.manifest.read_text(encoding="utf-8").splitlines()]
     rows = [row for row in rows if row.get("track_group") == "main"]
     payloads = []

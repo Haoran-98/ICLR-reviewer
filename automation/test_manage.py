@@ -11,6 +11,16 @@ import manage
 
 
 class AutomationTests(unittest.TestCase):
+    def test_load_export_value(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            auth = Path(temporary) / "auth"
+            auth.write_text(
+                "# comment\nexport OTHER=value\nexport GITHUB_TOKEN='test-token'\n",
+                encoding="utf-8",
+            )
+            self.assertEqual("test-token", manage.load_export_value(auth, "GITHUB_TOKEN"))
+            self.assertEqual("", manage.load_export_value(auth, "MISSING"))
+
     def test_allocation_and_rendering(self):
         records = [
             {"year": 2024, "openreview_id": f"a{i}"} for i in range(4)
