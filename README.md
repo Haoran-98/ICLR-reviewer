@@ -6,6 +6,34 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-08 - 20 newly analyzed papers, 0 common Agents added</summary>
+
+| Year | Paper | Topic | Research tags |
+|---:|---|---|---|
+| 2024 | [Orthogonal Sequential Fusion in Multimodal Learning](https://openreview.net/forum?id=XuNkuoihgG) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | multimodal learning, information fusion, sequential fusion |
+| 2024 | [On the Paradox of Generalizable Logical Reasoning in Large Language Models](https://openreview.net/forum?id=jzvWwv4gMx) | representation learning for computer vision, audio, language, and other modalities | large language models, formal logical reasoning, deduction |
+| 2024 | [Adaptive Environmental Modeling for Task-Oriented Language Agents](https://openreview.net/forum?id=H0RztJssmQ) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | language agents, environment adaptation, environmental information modeling |
+| 2024 | [Personalization Mitigates the Perils of Local SGD for Heterogeneous Distributed Learning](https://openreview.net/forum?id=LPFxzTSZtR) | optimization | federated learning, personalized learning, Local SGD |
+| 2025 | [SORSA: Singular Values and Orthonormal Regularized Singular Vectors Adaptation of Large Language Models](https://openreview.net/forum?id=PDV3SmO6Iw) | foundation or frontier models, including LLMs | parameter-efficient fine-tuning, large language models, singular value decomposition |
+| 2025 | [White-Basilisk: A Hybrid Model for Code Vulnerability Detection](https://openreview.net/forum?id=RcmJ9NpqeA) | foundation or frontier models, including LLMs | code vulnerability detection, source code modeling, Mamba |
+| 2025 | [Learning Augmentation Policies from A Model Zoo for Time Series Forecasting](https://openreview.net/forum?id=56Zn3halhq) | learning on time series and dynamical systems | time-series forecasting, data augmentation, reinforcement learning |
+| 2025 | [Subtask-Aware Visual Reward Learning from Segmented Demonstrations](https://openreview.net/forum?id=mqKVe6F3Up) | applications to robotics, autonomy, planning | robotic manipulation, reinforcement learning, inverse reinforcement learning |
+| 2025 | [CITER: Collaborative Inference for Efficient Large Language Model Decoding with Token-Level Routing](https://openreview.net/forum?id=J2FyEVg8HR) | foundation or frontier models, including LLMs | large language models, efficient inference, collaborative decoding |
+| 2025 | [Enabling Pareto-Stationarity Exploration in Multi-Objective Reinforcement Learning: A Weighted-Chebyshev Multi-Objective Actor-Critic Approach](https://openreview.net/forum?id=BPQMd2gTYI) | reinforcement learning | multi-objective reinforcement learning, actor-critic, weighted-Chebyshev scalarization |
+| 2026 | [Geo-R1: Unlocking VLM Geospatial Reasoning with Cross-View Reinforcement Learning](https://openreview.net/forum?id=nJam0e7wvJ) | applications to computer vision, audio, language, and other modalities | vision-language models, geospatial reasoning, reinforcement learning |
+| 2026 | [DAL: A Practical Prior-Free Black-Box Framework for Non-Stationary Bandits](https://openreview.net/forum?id=Els0yUtxNK) | reinforcement learning | non-stationary bandits, piecewise-stationary bandits, black-box learning |
+| 2026 | [DuoLLM: A Dual-Stream Decoupled Visual Language Model for 3D Spatial Reasoning](https://openreview.net/forum?id=2PjBGzP7mw) | foundation or frontier models, including LLMs | 3D spatial reasoning, vision-language models, dual-stream architecture |
+| 2026 | [AVEX: What Matters for Animal Vocalization Encoding](https://openreview.net/forum?id=MFuM9KAEYc) | applications to computer vision, audio, language, and other modalities | bioacoustics, audio representation learning, self-supervised pretraining |
+| 2026 | [Learning to Orchestrate Agents in Natural Language with the Conductor](https://openreview.net/forum?id=U23A2BUKYt) | foundation or frontier models, including LLMs | large language models, multi-agent systems, reinforcement learning |
+| 2026 | [VeriBench: End-to-End Formal Verification Benchmark for AI Code Generation in Lean 4](https://openreview.net/forum?id=P7NUVF6wo4) | neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.) | formal verification, Lean 4, code generation |
+| 2026 | [MM-Eureka: Exploring the Frontiers of Multimodal Reasoning with Rule-based Reinforcement Learning](https://openreview.net/forum?id=YwvQpLS8gq) | applications to computer vision, audio, language, and other modalities | multimodal reasoning, multimodal mathematics, vision-language models |
+| 2026 | [Active speech enhancement: beyond passive denoising declipping and dereverberation](https://openreview.net/forum?id=QN4WZ5QoqC) | applications to computer vision, audio, language, and other modalities | speech enhancement, active speech enhancement, active noise cancellation |
+| 2026 | [Decoupled Diffusion Models for Efficient Spatio-Temporal Graph Forecasting](https://openreview.net/forum?id=i6YOXKtzqN) | learning on graphs and other geometries & topologies | spatio-temporal graph forecasting, diffusion models, graph neural networks |
+| 2026 | [DeepRepoQA: Code Repository Question Answering with Deep Agent Exploration](https://openreview.net/forum?id=k3R9Dq1N6P) | foundation or frontier models, including LLMs | repository question answering, software engineering, LLM agents |
+
+</details>
+
+<details>
 <summary>2026-08-07 - 19 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -34,13 +62,6 @@
 
 <details>
 <summary>2026-08-06 - 0 newly analyzed papers, 0 common Agents added</summary>
-
-No public paper additions on this day.
-
-</details>
-
-<details>
-<summary>2026-08-05 - 0 newly analyzed papers, 0 common Agents added</summary>
 
 No public paper additions on this day.
 

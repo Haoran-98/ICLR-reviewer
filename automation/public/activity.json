@@ -1,6 +1,252 @@
 {
-  "generated_on": "2026-08-06T18:18:00.333144+00:00",
+  "generated_on": "2026-08-07T18:18:30.344728+00:00",
   "recent_days": [
+    {
+      "date": "2026-08-08",
+      "papers": [
+        {
+          "openreview_id": "XuNkuoihgG",
+          "year": 2024,
+          "title": "Orthogonal Sequential Fusion in Multimodal Learning",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=XuNkuoihgG",
+          "research_tags": [
+            "multimodal learning",
+            "information fusion",
+            "sequential fusion"
+          ]
+        },
+        {
+          "openreview_id": "jzvWwv4gMx",
+          "year": 2024,
+          "title": "On the Paradox of Generalizable Logical Reasoning in Large Language Models",
+          "primary_topic": "representation learning for computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=jzvWwv4gMx",
+          "research_tags": [
+            "large language models",
+            "formal logical reasoning",
+            "deduction"
+          ]
+        },
+        {
+          "openreview_id": "H0RztJssmQ",
+          "year": 2024,
+          "title": "Adaptive Environmental Modeling for Task-Oriented Language Agents",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=H0RztJssmQ",
+          "research_tags": [
+            "language agents",
+            "environment adaptation",
+            "environmental information modeling"
+          ]
+        },
+        {
+          "openreview_id": "LPFxzTSZtR",
+          "year": 2024,
+          "title": "Personalization Mitigates the Perils of Local SGD for Heterogeneous Distributed Learning",
+          "primary_topic": "optimization",
+          "openreview_url": "https://openreview.net/forum?id=LPFxzTSZtR",
+          "research_tags": [
+            "federated learning",
+            "personalized learning",
+            "Local SGD"
+          ]
+        },
+        {
+          "openreview_id": "PDV3SmO6Iw",
+          "year": 2025,
+          "title": "SORSA: Singular Values and Orthonormal Regularized Singular Vectors Adaptation of Large Language Models",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=PDV3SmO6Iw",
+          "research_tags": [
+            "parameter-efficient fine-tuning",
+            "large language models",
+            "singular value decomposition"
+          ]
+        },
+        {
+          "openreview_id": "RcmJ9NpqeA",
+          "year": 2025,
+          "title": "White-Basilisk: A Hybrid Model for Code Vulnerability Detection",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=RcmJ9NpqeA",
+          "research_tags": [
+            "code vulnerability detection",
+            "source code modeling",
+            "Mamba"
+          ]
+        },
+        {
+          "openreview_id": "56Zn3halhq",
+          "year": 2025,
+          "title": "Learning Augmentation Policies from A Model Zoo for Time Series Forecasting",
+          "primary_topic": "learning on time series and dynamical systems",
+          "openreview_url": "https://openreview.net/forum?id=56Zn3halhq",
+          "research_tags": [
+            "time-series forecasting",
+            "data augmentation",
+            "reinforcement learning"
+          ]
+        },
+        {
+          "openreview_id": "mqKVe6F3Up",
+          "year": 2025,
+          "title": "Subtask-Aware Visual Reward Learning from Segmented Demonstrations",
+          "primary_topic": "applications to robotics, autonomy, planning",
+          "openreview_url": "https://openreview.net/forum?id=mqKVe6F3Up",
+          "research_tags": [
+            "robotic manipulation",
+            "reinforcement learning",
+            "inverse reinforcement learning"
+          ]
+        },
+        {
+          "openreview_id": "J2FyEVg8HR",
+          "year": 2025,
+          "title": "CITER: Collaborative Inference for Efficient Large Language Model Decoding with Token-Level Routing",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=J2FyEVg8HR",
+          "research_tags": [
+            "large language models",
+            "efficient inference",
+            "collaborative decoding"
+          ]
+        },
+        {
+          "openreview_id": "BPQMd2gTYI",
+          "year": 2025,
+          "title": "Enabling Pareto-Stationarity Exploration in Multi-Objective Reinforcement Learning: A Weighted-Chebyshev Multi-Objective Actor-Critic Approach",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=BPQMd2gTYI",
+          "research_tags": [
+            "multi-objective reinforcement learning",
+            "actor-critic",
+            "weighted-Chebyshev scalarization"
+          ]
+        },
+        {
+          "openreview_id": "nJam0e7wvJ",
+          "year": 2026,
+          "title": "Geo-R1: Unlocking VLM Geospatial Reasoning with Cross-View Reinforcement Learning",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=nJam0e7wvJ",
+          "research_tags": [
+            "vision-language models",
+            "geospatial reasoning",
+            "reinforcement learning"
+          ]
+        },
+        {
+          "openreview_id": "Els0yUtxNK",
+          "year": 2026,
+          "title": "DAL: A Practical Prior-Free Black-Box Framework for Non-Stationary Bandits",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=Els0yUtxNK",
+          "research_tags": [
+            "non-stationary bandits",
+            "piecewise-stationary bandits",
+            "black-box learning"
+          ]
+        },
+        {
+          "openreview_id": "2PjBGzP7mw",
+          "year": 2026,
+          "title": "DuoLLM: A Dual-Stream Decoupled Visual Language Model for 3D Spatial Reasoning",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=2PjBGzP7mw",
+          "research_tags": [
+            "3D spatial reasoning",
+            "vision-language models",
+            "dual-stream architecture"
+          ]
+        },
+        {
+          "openreview_id": "MFuM9KAEYc",
+          "year": 2026,
+          "title": "AVEX: What Matters for Animal Vocalization Encoding",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=MFuM9KAEYc",
+          "research_tags": [
+            "bioacoustics",
+            "audio representation learning",
+            "self-supervised pretraining"
+          ]
+        },
+        {
+          "openreview_id": "U23A2BUKYt",
+          "year": 2026,
+          "title": "Learning to Orchestrate Agents in Natural Language with the Conductor",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=U23A2BUKYt",
+          "research_tags": [
+            "large language models",
+            "multi-agent systems",
+            "reinforcement learning"
+          ]
+        },
+        {
+          "openreview_id": "P7NUVF6wo4",
+          "year": 2026,
+          "title": "VeriBench: End-to-End Formal Verification Benchmark for AI Code Generation in Lean 4",
+          "primary_topic": "neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.)",
+          "openreview_url": "https://openreview.net/forum?id=P7NUVF6wo4",
+          "research_tags": [
+            "formal verification",
+            "Lean 4",
+            "code generation"
+          ]
+        },
+        {
+          "openreview_id": "YwvQpLS8gq",
+          "year": 2026,
+          "title": "MM-Eureka: Exploring the Frontiers of Multimodal Reasoning with Rule-based Reinforcement Learning",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=YwvQpLS8gq",
+          "research_tags": [
+            "multimodal reasoning",
+            "multimodal mathematics",
+            "vision-language models"
+          ]
+        },
+        {
+          "openreview_id": "QN4WZ5QoqC",
+          "year": 2026,
+          "title": "Active speech enhancement: beyond passive denoising declipping and dereverberation",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=QN4WZ5QoqC",
+          "research_tags": [
+            "speech enhancement",
+            "active speech enhancement",
+            "active noise cancellation"
+          ]
+        },
+        {
+          "openreview_id": "i6YOXKtzqN",
+          "year": 2026,
+          "title": "Decoupled Diffusion Models for Efficient Spatio-Temporal Graph Forecasting",
+          "primary_topic": "learning on graphs and other geometries & topologies",
+          "openreview_url": "https://openreview.net/forum?id=i6YOXKtzqN",
+          "research_tags": [
+            "spatio-temporal graph forecasting",
+            "diffusion models",
+            "graph neural networks"
+          ]
+        },
+        {
+          "openreview_id": "k3R9Dq1N6P",
+          "year": 2026,
+          "title": "DeepRepoQA: Code Repository Question Answering with Deep Agent Exploration",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=k3R9Dq1N6P",
+          "research_tags": [
+            "repository question answering",
+            "software engineering",
+            "LLM agents"
+          ]
+        }
+      ],
+      "agents": []
+    },
     {
       "date": "2026-08-07",
       "papers": [
@@ -237,11 +483,6 @@
     },
     {
       "date": "2026-08-06",
-      "papers": [],
-      "agents": []
-    },
-    {
-      "date": "2026-08-05",
       "papers": [],
       "agents": []
     }
