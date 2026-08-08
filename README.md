@@ -6,6 +6,33 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-09 - 19 newly analyzed papers, 0 common Agents added</summary>
+
+| Year | Paper | Topic | Research tags |
+|---:|---|---|---|
+| 2024 | [Controllable Data Generation via Iterative Data-Property Mutual Mappings](https://openreview.net/forum?id=A6kK5e3DhR) | generative models | controllable generation, variational autoencoders, property control |
+| 2024 | [Scalable Diffusion for Materials Generation](https://openreview.net/forum?id=wm4WlHoXpC) | applications to physical sciences (physics, chemistry, biology, etc.) | materials generation, crystal structures, diffusion models |
+| 2024 | [SEPT: Towards Efficient Scene Representation Learning for Motion Prediction](https://openreview.net/forum?id=efeBC1sQj9) | applications to robotics, autonomy, planning | autonomous driving, motion forecasting, self-supervised learning |
+| 2025 | [Long-context Protein Language Model](https://openreview.net/forum?id=Et0SIGDpP5) | applications to physical sciences (physics, chemistry, biology, etc.) | protein language models, long-context modeling, structured state-space models |
+| 2025 | [Active partitioning: inverting the paradigm of active learning](https://openreview.net/forum?id=zUlK1qMIcE) | transfer learning, meta learning, and lifelong learning | dataset partitioning, mixture of experts, model specialization |
+| 2025 | [Feature Driven Graph Coarsening for Scaling Graph Representation Learning](https://openreview.net/forum?id=6VuTXirQIv) | learning on graphs and other geometries & topologies | graph coarsening, graph structure learning, feature-driven learning |
+| 2025 | [Hidden in Plain Text: Emergence & Mitigation of Steganographic Collusion in LLMs](https://openreview.net/forum?id=urQi0TgXFY) | alignment, fairness, safety, privacy, and societal considerations | LLM safety, steganographic collusion, linguistic steganography |
+| 2025 | [Language Model Alignment in Multilingual Trolley Problems](https://openreview.net/forum?id=VEqPDZIDAh) | alignment, fairness, safety, privacy, and societal considerations | multilingual LLM alignment, moral dilemma evaluation, cross-lingual evaluation |
+| 2025 | [Emergent Geometry in Neural Representations of the Visual World](https://openreview.net/forum?id=KJFyOwAnLR) | applications to neuroscience & cognitive science | neural representations, visual neuroscience, neural manifolds |
+| 2026 | [What Is Preference Optimization Doing, How and Why?](https://openreview.net/forum?id=lM3dNuwy2r) | foundation or frontier models, including LLMs | large language models, preference optimization, DPO |
+| 2026 | [UnRe: Zero-Shot LLM Unlearning via Dynamic Contextual Retrieval](https://openreview.net/forum?id=3ZesmvOJ6o) | alignment, fairness, safety, privacy, and societal considerations | large language models, machine unlearning, zero-shot unlearning |
+| 2026 | [Position-Aware Modeling for Next-Token Prediction](https://openreview.net/forum?id=60Vj3aBnjw) | foundation or frontier models, including LLMs | large language models, next-token prediction, position-aware modeling |
+| 2026 | [Noise-Robust Density Estimation for Tabular Data Anomaly Detection](https://openreview.net/forum?id=JdbqDiguyO) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | tabular data, anomaly detection, density estimation |
+| 2026 | [DYNAMIC NOVEL VIEW SYNTHESIS FROM UNSYNCHRONIZED VIDEOS USING GLOBAL-LOCAL MOTION CONSISTENCY PRIOR](https://openreview.net/forum?id=0KiCONP0xD) | applications to computer vision, audio, language, and other modalities | dynamic novel view synthesis, unsynchronized videos, multi-view reconstruction |
+| 2026 | [A tale of two tails: Preferred and anti-preferred natural stimuli in visual cortex](https://openreview.net/forum?id=RZ8esDBqMJ) | applications to neuroscience & cognitive science | computational neuroscience, visual cortex, V4 neurons |
+| 2026 | [Distinguishing Resistance-equivalent Isomorphic Graphs via Spectral-based Graph Representations](https://openreview.net/forum?id=8IDcN8QKCz) | learning on graphs and other geometries & topologies | - |
+| 2026 | [Failure makes the agent stronger: Enhancing Accuracy through Structured Reflection for Reliable Tool Interactions](https://openreview.net/forum?id=agRa60l7rn) | foundation or frontier models, including LLMs | tool-augmented LLMs, structured reflection, self-correction |
+| 2026 | [1S-DAug: One-Shot Data Augmentation for Robust Few-Shot Generalization](https://openreview.net/forum?id=dZTggNBlTq) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | few-shot learning, test-time augmentation, generative augmentation |
+| 2026 | [QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture](https://openreview.net/forum?id=em0jPLYjaS) | applications to computer vision, audio, language, and other modalities | 3D human motion capture, online pose estimation, human kinematics |
+
+</details>
+
+<details>
 <summary>2026-08-08 - 20 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -57,13 +84,6 @@
 | 2026 | [SEDiT: Mask-Free Video Subtitle Erasure with Prompt Instruction](https://openreview.net/forum?id=MIRtxjuZF6) | applications to computer vision, audio, language, and other modalities | video editing, subtitle erasure, video inpainting |
 | 2026 | [Generation is Required for Data-Efficient Perception](https://openreview.net/forum?id=N7ziRPTNdT) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | representation learning, generative models, compositional generalization |
 | 2026 | [Can LLM Agents Assist Dynamic Network Simulation? A Case Study on Email Networks and Phishing Synthesis](https://openreview.net/forum?id=pPNtJDpY6q) | foundation or frontier models, including LLMs | dynamic network simulation, LLM agents, multi-agent systems |
-
-</details>
-
-<details>
-<summary>2026-08-06 - 0 newly analyzed papers, 0 common Agents added</summary>
-
-No public paper additions on this day.
 
 </details>
 <!-- DAILY_ACTIVITY:END -->

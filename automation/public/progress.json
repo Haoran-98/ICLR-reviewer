@@ -1,29 +1,29 @@
 {
-  "generated_on": "2026-08-07T18:18:29.996503+00:00",
+  "generated_on": "2026-08-08T18:18:05.288354+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 2,
-  "analyzed_papers": 428,
-  "coverage_percent": 1.1005,
+  "successful_daily_runs": 3,
+  "analyzed_papers": 447,
+  "coverage_percent": 1.1494,
   "by_year": {
-    "2026": 218,
-    "2025": 129,
-    "2024": 81
+    "2026": 228,
+    "2025": 135,
+    "2024": 84
   },
-  "last_daily_run": "2026-08-08",
+  "last_daily_run": "2026-08-09",
   "usage": {
-    "input_tokens": 356258,
-    "output_tokens": 19286,
-    "total_tokens": 375544
+    "input_tokens": 548263,
+    "output_tokens": 28232,
+    "total_tokens": 576495
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 28
+      "papers": 31
     },
     {
       "tag": "diffusion models",
-      "papers": 26
+      "papers": 28
     },
     {
       "tag": "vision-language models",
@@ -34,32 +34,36 @@
       "papers": 20
     },
     {
+      "tag": "large language models",
+      "papers": 18
+    },
+    {
+      "tag": "self-supervised learning",
+      "papers": 18
+    },
+    {
+      "tag": "transformers",
+      "papers": 18
+    },
+    {
       "tag": "representation learning",
       "papers": 17
     },
     {
-      "tag": "self-supervised learning",
-      "papers": 17
-    },
-    {
-      "tag": "transformers",
-      "papers": 17
-    },
-    {
-      "tag": "large language models",
-      "papers": 15
-    },
-    {
       "tag": "adversarial robustness",
-      "papers": 13
+      "papers": 14
     },
     {
       "tag": "graph neural networks",
-      "papers": 13
+      "papers": 14
     },
     {
       "tag": "interpretability",
       "papers": 11
+    },
+    {
+      "tag": "transfer learning",
+      "papers": 10
     },
     {
       "tag": "flow matching",
@@ -71,10 +75,6 @@
     },
     {
       "tag": "benchmark construction",
-      "papers": 9
-    },
-    {
-      "tag": "transfer learning",
       "papers": 9
     },
     {
@@ -90,24 +90,24 @@
       "papers": 8
     },
     {
-      "tag": "in-context learning",
+      "tag": "preference optimization",
       "papers": 8
     },
     {
-      "tag": "language models",
+      "tag": "in-context learning",
       "papers": 8
     }
   ],
   "response_effectiveness": {
-    "unknown": 279,
-    "partial_success": 213,
-    "no_effect": 40,
-    "strong_success": 131
+    "unknown": 293,
+    "partial_success": 221,
+    "no_effect": 43,
+    "strong_success": 133
   },
   "score_actions": {
-    "unknown": 365,
-    "maintained": 150,
-    "increased": 143,
+    "unknown": 379,
+    "maintained": 156,
+    "increased": 150,
     "decreased": 1,
     "promised_increase": 4
   }
