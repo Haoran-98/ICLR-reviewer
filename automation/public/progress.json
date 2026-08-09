@@ -1,20 +1,20 @@
 {
-  "generated_on": "2026-08-08T19:15:09.606540+00:00",
+  "generated_on": "2026-08-09T18:18:38.886522+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 3,
-  "analyzed_papers": 447,
-  "coverage_percent": 1.1494,
+  "successful_daily_runs": 4,
+  "analyzed_papers": 467,
+  "coverage_percent": 1.2008,
   "by_year": {
-    "2026": 228,
-    "2025": 135,
-    "2024": 84
+    "2026": 238,
+    "2025": 141,
+    "2024": 88
   },
-  "last_daily_run": "2026-08-09",
+  "last_daily_run": "2026-08-10",
   "usage": {
-    "input_tokens": 548263,
-    "output_tokens": 28232,
-    "total_tokens": 576495
+    "input_tokens": 743711,
+    "output_tokens": 39070,
+    "total_tokens": 782781
   },
   "top_research_tags": [
     {
@@ -31,11 +31,15 @@
     },
     {
       "tag": "contrastive learning",
-      "papers": 20
+      "papers": 21
     },
     {
       "tag": "large language models",
-      "papers": 18
+      "papers": 20
+    },
+    {
+      "tag": "representation learning",
+      "papers": 19
     },
     {
       "tag": "self-supervised learning",
@@ -46,23 +50,23 @@
       "papers": 18
     },
     {
-      "tag": "representation learning",
-      "papers": 17
-    },
-    {
       "tag": "adversarial robustness",
-      "papers": 14
+      "papers": 15
     },
     {
       "tag": "graph neural networks",
-      "papers": 14
+      "papers": 15
+    },
+    {
+      "tag": "transfer learning",
+      "papers": 12
     },
     {
       "tag": "interpretability",
       "papers": 11
     },
     {
-      "tag": "transfer learning",
+      "tag": "vision transformers",
       "papers": 10
     },
     {
@@ -70,12 +74,16 @@
       "papers": 9
     },
     {
-      "tag": "vision transformers",
+      "tag": "language models",
       "papers": 9
     },
     {
       "tag": "benchmark construction",
       "papers": 9
+    },
+    {
+      "tag": "LLM safety",
+      "papers": 8
     },
     {
       "tag": "benchmark",
@@ -88,26 +96,18 @@
     {
       "tag": "robustness",
       "papers": 8
-    },
-    {
-      "tag": "preference optimization",
-      "papers": 8
-    },
-    {
-      "tag": "in-context learning",
-      "papers": 8
     }
   ],
   "response_effectiveness": {
-    "unknown": 293,
-    "partial_success": 221,
-    "no_effect": 43,
-    "strong_success": 133
+    "unknown": 301,
+    "partial_success": 252,
+    "no_effect": 48,
+    "strong_success": 138
   },
   "score_actions": {
-    "unknown": 379,
-    "maintained": 156,
-    "increased": 150,
+    "unknown": 415,
+    "maintained": 165,
+    "increased": 154,
     "decreased": 1,
     "promised_increase": 4
   }
