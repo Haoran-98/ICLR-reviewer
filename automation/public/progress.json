@@ -1,29 +1,33 @@
 {
-  "generated_on": "2026-08-09T18:18:38.886522+00:00",
+  "generated_on": "2026-08-10T18:17:47.187033+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 4,
-  "analyzed_papers": 467,
-  "coverage_percent": 1.2008,
+  "successful_daily_runs": 5,
+  "analyzed_papers": 486,
+  "coverage_percent": 1.2497,
   "by_year": {
-    "2026": 238,
-    "2025": 141,
-    "2024": 88
+    "2026": 248,
+    "2025": 147,
+    "2024": 91
   },
-  "last_daily_run": "2026-08-10",
+  "last_daily_run": "2026-08-11",
   "usage": {
-    "input_tokens": 743711,
-    "output_tokens": 39070,
-    "total_tokens": 782781
+    "input_tokens": 895071,
+    "output_tokens": 47417,
+    "total_tokens": 942488
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 31
+      "papers": 34
     },
     {
       "tag": "diffusion models",
-      "papers": 28
+      "papers": 29
+    },
+    {
+      "tag": "large language models",
+      "papers": 24
     },
     {
       "tag": "vision-language models",
@@ -34,16 +38,12 @@
       "papers": 21
     },
     {
-      "tag": "large language models",
-      "papers": 20
-    },
-    {
       "tag": "representation learning",
       "papers": 19
     },
     {
       "tag": "self-supervised learning",
-      "papers": 18
+      "papers": 19
     },
     {
       "tag": "transformers",
@@ -51,7 +51,7 @@
     },
     {
       "tag": "adversarial robustness",
-      "papers": 15
+      "papers": 16
     },
     {
       "tag": "graph neural networks",
@@ -67,19 +67,27 @@
     },
     {
       "tag": "vision transformers",
-      "papers": 10
+      "papers": 11
     },
     {
       "tag": "flow matching",
-      "papers": 9
+      "papers": 10
+    },
+    {
+      "tag": "benchmark construction",
+      "papers": 10
     },
     {
       "tag": "language models",
       "papers": 9
     },
     {
-      "tag": "benchmark construction",
+      "tag": "offline reinforcement learning",
       "papers": 9
+    },
+    {
+      "tag": "dataset construction",
+      "papers": 8
     },
     {
       "tag": "LLM safety",
@@ -88,26 +96,18 @@
     {
       "tag": "benchmark",
       "papers": 8
-    },
-    {
-      "tag": "uncertainty quantification",
-      "papers": 8
-    },
-    {
-      "tag": "robustness",
-      "papers": 8
     }
   ],
   "response_effectiveness": {
-    "unknown": 301,
-    "partial_success": 252,
-    "no_effect": 48,
-    "strong_success": 138
+    "unknown": 309,
+    "partial_success": 257,
+    "no_effect": 49,
+    "strong_success": 141
   },
   "score_actions": {
-    "unknown": 415,
-    "maintained": 165,
-    "increased": 154,
+    "unknown": 418,
+    "maintained": 174,
+    "increased": 159,
     "decreased": 1,
     "promised_increase": 4
   }
