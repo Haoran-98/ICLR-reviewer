@@ -1,40 +1,40 @@
 {
-  "generated_on": "2026-08-10T18:17:47.187033+00:00",
+  "generated_on": "2026-08-11T18:18:22.462008+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 5,
-  "analyzed_papers": 486,
-  "coverage_percent": 1.2497,
+  "successful_daily_runs": 6,
+  "analyzed_papers": 506,
+  "coverage_percent": 1.3011,
   "by_year": {
-    "2026": 248,
-    "2025": 147,
-    "2024": 91
+    "2026": 258,
+    "2025": 153,
+    "2024": 95
   },
-  "last_daily_run": "2026-08-11",
+  "last_daily_run": "2026-08-12",
   "usage": {
-    "input_tokens": 895071,
-    "output_tokens": 47417,
-    "total_tokens": 942488
+    "input_tokens": 1079017,
+    "output_tokens": 57582,
+    "total_tokens": 1136599
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 34
+      "papers": 36
     },
     {
       "tag": "diffusion models",
-      "papers": 29
+      "papers": 32
     },
     {
       "tag": "large language models",
       "papers": 24
     },
     {
-      "tag": "vision-language models",
-      "papers": 21
+      "tag": "contrastive learning",
+      "papers": 22
     },
     {
-      "tag": "contrastive learning",
+      "tag": "vision-language models",
       "papers": 21
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "tag": "transformers",
-      "papers": 18
+      "papers": 19
     },
     {
       "tag": "adversarial robustness",
@@ -58,6 +58,10 @@
       "papers": 15
     },
     {
+      "tag": "vision transformers",
+      "papers": 12
+    },
+    {
       "tag": "transfer learning",
       "papers": 12
     },
@@ -66,11 +70,19 @@
       "papers": 11
     },
     {
-      "tag": "vision transformers",
-      "papers": 11
+      "tag": "dataset construction",
+      "papers": 10
+    },
+    {
+      "tag": "benchmark",
+      "papers": 10
     },
     {
       "tag": "flow matching",
+      "papers": 10
+    },
+    {
+      "tag": "language models",
       "papers": 10
     },
     {
@@ -78,36 +90,24 @@
       "papers": 10
     },
     {
-      "tag": "language models",
+      "tag": "supervised fine-tuning",
+      "papers": 10
+    },
+    {
+      "tag": "uncertainty quantification",
       "papers": 9
-    },
-    {
-      "tag": "offline reinforcement learning",
-      "papers": 9
-    },
-    {
-      "tag": "dataset construction",
-      "papers": 8
-    },
-    {
-      "tag": "LLM safety",
-      "papers": 8
-    },
-    {
-      "tag": "benchmark",
-      "papers": 8
     }
   ],
   "response_effectiveness": {
-    "unknown": 309,
-    "partial_success": 257,
-    "no_effect": 49,
-    "strong_success": 141
+    "unknown": 324,
+    "partial_success": 269,
+    "no_effect": 50,
+    "strong_success": 158
   },
   "score_actions": {
-    "unknown": 418,
-    "maintained": 174,
-    "increased": 159,
+    "unknown": 448,
+    "maintained": 180,
+    "increased": 168,
     "decreased": 1,
     "promised_increase": 4
   }

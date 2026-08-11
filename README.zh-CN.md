@@ -6,6 +6,34 @@
 ## 最近 3 天新增
 
 <details open>
+<summary>2026-08-12 - 新分析 20 篇论文，新增 0 个通用 Agent</summary>
+
+| 年份 | 论文 | 主题 | 研究标签 |
+|---:|---|---|---|
+| 2024 | [Beyond Imitation: Leveraging Fine-grained Quality Signals for Alignment](https://openreview.net/forum?id=LNLjU5C5dK) | representation learning for computer vision, audio, language, and other modalities | LLM alignment, fine-grained supervision, supervised fine-tuning |
+| 2024 | [3D Dense Captioning beyond Nouns: A Middleware for Autonomous Driving](https://openreview.net/forum?id=8T7m27VC3S) | datasets and benchmarks | autonomous driving, 3D dense captioning, multimodal representation |
+| 2024 | [Understanding and addressing spurious correlation via Neural Tangent Kernels: A spectral bias perspective](https://openreview.net/forum?id=89AOrk05uy) | general machine learning (i.e., none of the above) | spurious correlations, neural tangent kernel, spectral bias |
+| 2024 | [ReFACT: Updating Text-to-Image Models by Editing the Text Encoder](https://openreview.net/forum?id=u2as4lHoyl) | generative models | text-to-image generation, diffusion models, knowledge editing |
+| 2025 | [Investigating Memorization in Video Diffusion Models](https://openreview.net/forum?id=RFZV2tOWYN) | alignment, fairness, safety, privacy, and societal considerations | video diffusion models, memorization, copyright |
+| 2025 | [GuardAgent: Safeguard LLM Agent by a Guard Agent via Knowledge-Enabled Reasoning](https://openreview.net/forum?id=YixNDE12wm) | foundation or frontier models, including LLMs | LLM agents, agent safety, guardrails |
+| 2025 | [Dissecting Bit-Level Scaling Laws in Quantizing Vision Generative Models](https://openreview.net/forum?id=7X2BFPl18T) | other topics in machine learning (i.e., none of the above) | quantization, vision generative models, bit-level scaling laws |
+| 2025 | [JudgeBench: A Benchmark for Evaluating LLM-Based Judges](https://openreview.net/forum?id=G0dksFayVq) | datasets and benchmarks | LLM judges, benchmark, meta-evaluation |
+| 2025 | [Noise Prompt Learning: Learning the Winning Tickets for Diffusion Sampling](https://openreview.net/forum?id=qIJenSdGbW) | generative models | text-to-image generation, diffusion models, noise optimization |
+| 2025 | [Does Instruction Tuning Reduce Diversity? A Case Study Using Code Generation](https://openreview.net/forum?id=hMEHnLJyrU) | interpretability and explainable AI | LLM diversity, instruction tuning, preference tuning |
+| 2026 | [Learning Across the Noise Spectrum: An Approach to Reinforcement Learning with Asynchronous Signals](https://openreview.net/forum?id=Id1YBclGbz) | reinforcement learning | reinforcement learning, robotics, asynchronous sensing |
+| 2026 | [FedGMR: Federated Learning with Gradual Model Restoration under Asynchrony and Model Heterogeneity](https://openreview.net/forum?id=KL1LNgg73s) | infrastructure, software libraries, hardware, systems, etc. | federated learning, asynchronous federated learning, model heterogeneity |
+| 2026 | [Improving Block-Wise LLM Quantization by 4-bit Block-Wise Optimal Float (BOF4): Analysis and Variations](https://openreview.net/forum?id=VpZ8YYdBmT) | foundation or frontier models, including LLMs | LLM quantization, 4-bit quantization, block-wise quantization |
+| 2026 | [Strongly Convex Sets in Riemannian Manifolds](https://openreview.net/forum?id=4sDszSYKP6) | optimization | Riemannian optimization, Riemannian manifolds, strongly convex sets |
+| 2026 | [It’s Not You, It’s Clipping: A Soft Trust-Region via Probability Smoothing for LLM RL](https://openreview.net/forum?id=1spOYCVPPg) | reinforcement learning | reinforcement learning, LLM alignment, PPO |
+| 2026 | [Change of Thought: Adaptive Test-Time Computation](https://openreview.net/forum?id=86PhVA7veh) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | adaptive computation, test-time computation, fixed-point iteration |
+| 2026 | [DataS3: Dataset Subset Selection for Specialization](https://openreview.net/forum?id=KSdpxppcIm) | datasets and benchmarks | dataset subset selection, deployment specialization, dataset curation |
+| 2026 | [Exposing Mixture and Annotating Confusion for Active Universal Test-Time Adaptation](https://openreview.net/forum?id=89gxHJkCXk) | transfer learning, meta learning, and lifelong learning | test-time adaptation, universal test-time adaptation, active learning |
+| 2026 | [Bridging Bag-Level and Instance-Level Uncertainty with Conformalizable MIL](https://openreview.net/forum?id=PBmV8bOIsi) | probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.) | conformal prediction, multiple instance learning, instance-level uncertainty |
+| 2026 | [Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](https://openreview.net/forum?id=ulvp7cbZeU) | alignment, fairness, safety, privacy, and societal considerations | post-training, distributional modeling, in-context steerability |
+
+</details>
+
+<details>
 <summary>2026-08-11 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
 
 | 年份 | 论文 | 主题 | 研究标签 |
@@ -57,33 +85,6 @@
 | 2026 | [Lang-PINN: From Language to Physics-Informed Neural Networks via a Multi-Agent Framework](https://openreview.net/forum?id=ONEyVpgK34) | applications to physical sciences (physics, chemistry, biology, etc.) | AI for science, physics-informed neural networks, partial differential equations |
 | 2026 | [Jailbreaking the Matrix: Nullspace Steering for Controlled Model Subversion](https://openreview.net/forum?id=qlf6y1A4Zu) | alignment, fairness, safety, privacy, and societal considerations | LLM safety, jailbreak attacks, white-box model attacks |
 | 2026 | [Adaptive Preconditioners Trigger Loss Spikes in Adam](https://openreview.net/forum?id=dwx3rjWGju) | learning theory | deep learning optimization, Adam, adaptive preconditioning |
-
-</details>
-
-<details>
-<summary>2026-08-09 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
-
-| 年份 | 论文 | 主题 | 研究标签 |
-|---:|---|---|---|
-| 2024 | [Controllable Data Generation via Iterative Data-Property Mutual Mappings](https://openreview.net/forum?id=A6kK5e3DhR) | generative models | controllable generation, variational autoencoders, property control |
-| 2024 | [Scalable Diffusion for Materials Generation](https://openreview.net/forum?id=wm4WlHoXpC) | applications to physical sciences (physics, chemistry, biology, etc.) | materials generation, crystal structures, diffusion models |
-| 2024 | [SEPT: Towards Efficient Scene Representation Learning for Motion Prediction](https://openreview.net/forum?id=efeBC1sQj9) | applications to robotics, autonomy, planning | autonomous driving, motion forecasting, self-supervised learning |
-| 2025 | [Long-context Protein Language Model](https://openreview.net/forum?id=Et0SIGDpP5) | applications to physical sciences (physics, chemistry, biology, etc.) | protein language models, long-context modeling, structured state-space models |
-| 2025 | [Active partitioning: inverting the paradigm of active learning](https://openreview.net/forum?id=zUlK1qMIcE) | transfer learning, meta learning, and lifelong learning | dataset partitioning, mixture of experts, model specialization |
-| 2025 | [Feature Driven Graph Coarsening for Scaling Graph Representation Learning](https://openreview.net/forum?id=6VuTXirQIv) | learning on graphs and other geometries & topologies | graph coarsening, graph structure learning, feature-driven learning |
-| 2025 | [Hidden in Plain Text: Emergence & Mitigation of Steganographic Collusion in LLMs](https://openreview.net/forum?id=urQi0TgXFY) | alignment, fairness, safety, privacy, and societal considerations | LLM safety, steganographic collusion, linguistic steganography |
-| 2025 | [Language Model Alignment in Multilingual Trolley Problems](https://openreview.net/forum?id=VEqPDZIDAh) | alignment, fairness, safety, privacy, and societal considerations | multilingual LLM alignment, moral dilemma evaluation, cross-lingual evaluation |
-| 2025 | [Emergent Geometry in Neural Representations of the Visual World](https://openreview.net/forum?id=KJFyOwAnLR) | applications to neuroscience & cognitive science | neural representations, visual neuroscience, neural manifolds |
-| 2026 | [What Is Preference Optimization Doing, How and Why?](https://openreview.net/forum?id=lM3dNuwy2r) | foundation or frontier models, including LLMs | large language models, preference optimization, DPO |
-| 2026 | [UnRe: Zero-Shot LLM Unlearning via Dynamic Contextual Retrieval](https://openreview.net/forum?id=3ZesmvOJ6o) | alignment, fairness, safety, privacy, and societal considerations | large language models, machine unlearning, zero-shot unlearning |
-| 2026 | [Position-Aware Modeling for Next-Token Prediction](https://openreview.net/forum?id=60Vj3aBnjw) | foundation or frontier models, including LLMs | large language models, next-token prediction, position-aware modeling |
-| 2026 | [Noise-Robust Density Estimation for Tabular Data Anomaly Detection](https://openreview.net/forum?id=JdbqDiguyO) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | tabular data, anomaly detection, density estimation |
-| 2026 | [DYNAMIC NOVEL VIEW SYNTHESIS FROM UNSYNCHRONIZED VIDEOS USING GLOBAL-LOCAL MOTION CONSISTENCY PRIOR](https://openreview.net/forum?id=0KiCONP0xD) | applications to computer vision, audio, language, and other modalities | dynamic novel view synthesis, unsynchronized videos, multi-view reconstruction |
-| 2026 | [A tale of two tails: Preferred and anti-preferred natural stimuli in visual cortex](https://openreview.net/forum?id=RZ8esDBqMJ) | applications to neuroscience & cognitive science | computational neuroscience, visual cortex, V4 neurons |
-| 2026 | [Distinguishing Resistance-equivalent Isomorphic Graphs via Spectral-based Graph Representations](https://openreview.net/forum?id=8IDcN8QKCz) | learning on graphs and other geometries & topologies | - |
-| 2026 | [Failure makes the agent stronger: Enhancing Accuracy through Structured Reflection for Reliable Tool Interactions](https://openreview.net/forum?id=agRa60l7rn) | foundation or frontier models, including LLMs | tool-augmented LLMs, structured reflection, self-correction |
-| 2026 | [1S-DAug: One-Shot Data Augmentation for Robust Few-Shot Generalization](https://openreview.net/forum?id=dZTggNBlTq) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | few-shot learning, test-time augmentation, generative augmentation |
-| 2026 | [QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture](https://openreview.net/forum?id=em0jPLYjaS) | applications to computer vision, audio, language, and other modalities | 3D human motion capture, online pose estimation, human kinematics |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->
