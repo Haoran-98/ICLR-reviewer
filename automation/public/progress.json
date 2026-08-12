@@ -1,61 +1,61 @@
 {
-  "generated_on": "2026-08-11T18:18:22.462008+00:00",
+  "generated_on": "2026-08-12T18:18:03.144272+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 6,
-  "analyzed_papers": 506,
-  "coverage_percent": 1.3011,
+  "successful_daily_runs": 7,
+  "analyzed_papers": 525,
+  "coverage_percent": 1.35,
   "by_year": {
-    "2026": 258,
-    "2025": 153,
-    "2024": 95
+    "2026": 268,
+    "2025": 159,
+    "2024": 98
   },
-  "last_daily_run": "2026-08-12",
+  "last_daily_run": "2026-08-13",
   "usage": {
-    "input_tokens": 1079017,
-    "output_tokens": 57582,
-    "total_tokens": 1136599
+    "input_tokens": 1244169,
+    "output_tokens": 66504,
+    "total_tokens": 1310673
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 36
+      "papers": 37
     },
     {
       "tag": "diffusion models",
-      "papers": 32
+      "papers": 33
     },
     {
       "tag": "large language models",
-      "papers": 24
+      "papers": 25
     },
     {
       "tag": "contrastive learning",
-      "papers": 22
+      "papers": 24
     },
     {
       "tag": "vision-language models",
-      "papers": 21
+      "papers": 23
     },
     {
       "tag": "representation learning",
-      "papers": 19
+      "papers": 20
     },
     {
       "tag": "self-supervised learning",
-      "papers": 19
+      "papers": 20
     },
     {
       "tag": "transformers",
       "papers": 19
     },
     {
-      "tag": "adversarial robustness",
-      "papers": 16
+      "tag": "graph neural networks",
+      "papers": 17
     },
     {
-      "tag": "graph neural networks",
-      "papers": 15
+      "tag": "adversarial robustness",
+      "papers": 16
     },
     {
       "tag": "vision transformers",
@@ -99,15 +99,15 @@
     }
   ],
   "response_effectiveness": {
-    "unknown": 324,
-    "partial_success": 269,
-    "no_effect": 50,
-    "strong_success": 158
+    "unknown": 333,
+    "partial_success": 273,
+    "no_effect": 58,
+    "strong_success": 159
   },
   "score_actions": {
-    "unknown": 448,
-    "maintained": 180,
-    "increased": 168,
+    "unknown": 456,
+    "maintained": 185,
+    "increased": 177,
     "decreased": 1,
     "promised_increase": 4
   }

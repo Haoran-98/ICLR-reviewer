@@ -6,6 +6,33 @@
 ## 最近 3 天新增
 
 <details open>
+<summary>2026-08-13 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
+
+| 年份 | 论文 | 主题 | 研究标签 |
+|---:|---|---|---|
+| 2024 | [GNN-based Probabilistic Supply and Inventory Predictions in Supply Chain Networks](https://openreview.net/forum?id=qYoIuM095A) | learning on graphs and other geometries & topologies | graph neural networks, graph attention networks, supply-chain forecasting |
+| 2024 | [Towards Deep Viticultural Representations: Joint Region and Grape Variety Embeddings](https://openreview.net/forum?id=q4cfN6PGY7) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | representation learning, self-supervised learning, joint embeddings |
+| 2024 | [Set Learning for Accurate and Calibrated Models](https://openreview.net/forum?id=HZ3S17EI0o) | general machine learning (i.e., none of the above) | set learning, classification, calibration |
+| 2025 | [IBCL: Zero-shot Model Generation under Stability-Plasticity Trade-offs](https://openreview.net/forum?id=8shi3NhgJp) | transfer learning, meta learning, and lifelong learning | continual learning, stability-plasticity trade-off, zero-shot model generation |
+| 2025 | [ECGN: A CLUSTER-AWARE APPROACH TO GRAPH NEURAL NETWORKS FOR IMBALANCED CLASSIFICATION.](https://openreview.net/forum?id=el2pNeLrRC) | learning on graphs and other geometries & topologies | graph neural networks, imbalanced node classification, cluster-aware learning |
+| 2025 | [Maximum Next-State Entropy for Efficient Reinforcement Learning](https://openreview.net/forum?id=0G6rRLYcxm) | reinforcement learning | reinforcement learning, maximum entropy reinforcement learning, next-state entropy |
+| 2025 | [Efficient Action-Constrained Reinforcement Learning via Acceptance-Rejection Method and Augmented MDPs](https://openreview.net/forum?id=AgMpK7z4bz) | reinforcement learning | action-constrained reinforcement learning, acceptance-rejection sampling, augmented MDP |
+| 2025 | [Nexus: Specialization meets Adaptability for Efficiently Training Mixture of Experts](https://openreview.net/forum?id=WkHkwo8rpL) | foundation or frontier models, including LLMs | mixture of experts, sparse MoE, expert upcycling |
+| 2025 | [Show or Tell? Effectively prompting Vision-Language Models for semantic segmentation](https://openreview.net/forum?id=mXh8LbXXpx) | foundation or frontier models, including LLMs | vision-language models, semantic segmentation, prompting |
+| 2026 | [Inductive Representation Learning of Temporal Pattern Subgraphs in Temporal Networks](https://openreview.net/forum?id=tApEmMRIgi) | learning on time series and dynamical systems | temporal graph learning, graph representation learning, inductive learning |
+| 2026 | [Random Controlled Differential Equations](https://openreview.net/forum?id=kHqt0ZSbKT) | learning on time series and dynamical systems | time-series learning, random features, controlled differential equations |
+| 2026 | [The Realignment Problem: When Right becomes Wrong in LLMs](https://openreview.net/forum?id=wbnGAHI4Ev) | alignment, fairness, safety, privacy, and societal considerations | large language models, alignment, policy realignment |
+| 2026 | [Degree-Conscious Spiking Graph for Cross-Domain Adaptation](https://openreview.net/forum?id=NylOrth5EH) | other topics in machine learning (i.e., none of the above) | spiking graph networks, graph domain adaptation, degree-aware thresholding |
+| 2026 | [Decoupling Safety into Orthogonal Subspace: Cost-Efficient and Performance-Preserving Alignment for Large Language Models](https://openreview.net/forum?id=hUii0ju5aA) | alignment, fairness, safety, privacy, and societal considerations | LLM safety alignment, LoRA, refusal SFT |
+| 2026 | [ERTACache: Error Rectification and Timesteps Adjustment for Efficient Diffusion](https://openreview.net/forum?id=InvyBiYcK5) | generative models | diffusion models, feature caching, training-free acceleration |
+| 2026 | [A2SF: Accumulative Attention Score with Forgetting Factor](https://openreview.net/forum?id=5aYGpjJ8WY) | optimization | - |
+| 2026 | [PPBOOST: PROGRESSIVE PROMPT BOOSTING FOR TEXT-DRIVEN MEDICAL IMAGE SEGMENTATION](https://openreview.net/forum?id=0EXuliYnfW) | applications to physical sciences (physics, chemistry, biology, etc.) | medical image segmentation, zero-shot segmentation, vision-language models |
+| 2026 | [Robust Domain Generalization under Divergent Marginal and Conditional Distributions](https://openreview.net/forum?id=I5Qgn23qAz) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | domain generalization, compound distribution shift, prior shift |
+| 2026 | [NeurALigner: Scalable and Robust DNA Sequence Alignment via Embedding-Based Similarity Search](https://openreview.net/forum?id=aZjdkgvPbh) | applications to physical sciences (physics, chemistry, biology, etc.) | DNA sequence alignment, sequence embeddings, contrastive learning |
+
+</details>
+
+<details>
 <summary>2026-08-12 - 新分析 20 篇论文，新增 0 个通用 Agent</summary>
 
 | 年份 | 论文 | 主题 | 研究标签 |
@@ -57,34 +84,6 @@
 | 2026 | [Learning to Refine: Self-Refinement of Parallel Reasoning in LLMs](https://openreview.net/forum?id=nbhDNDDZMe) | generative models | large language models, test-time scaling, parallel reasoning |
 | 2026 | [G-CUT3R: Guided 3D Reconstruction with Camera and Depth Prior Integration](https://openreview.net/forum?id=J7DiMqmIFl) | applications to computer vision, audio, language, and other modalities | 3D scene reconstruction, feed-forward reconstruction, geometric priors |
 | 2026 | [In-Place Test-Time Training](https://openreview.net/forum?id=dTWfCLSoyl) | foundation or frontier models, including LLMs | test-time training, large language models, fast weights |
-
-</details>
-
-<details>
-<summary>2026-08-10 - 新分析 20 篇论文，新增 0 个通用 Agent</summary>
-
-| 年份 | 论文 | 主题 | 研究标签 |
-|---:|---|---|---|
-| 2024 | [Probabilistically Rewired Message-Passing Neural Networks](https://openreview.net/forum?id=Tj6Wcx7gVk) | learning on graphs and other geometries & topologies | graph neural networks, message passing, graph rewiring |
-| 2024 | [LMEye: An Interactive Perception Network for Large Language Models](https://openreview.net/forum?id=c4QgNn9WeO) | representation learning for computer vision, audio, language, and other modalities | multimodal large language models, vision-language learning, interactive perception |
-| 2024 | [3D Tissue Reconstruction and Generation for Single-Cell Spatial Transcriptomics using Neural Radiance Fields](https://openreview.net/forum?id=3DdCB6MRvu) | applications to physical sciences (physics, chemistry, biology, etc.) | single-cell spatial transcriptomics, 3D reconstruction, Neural Radiance Fields |
-| 2024 | [LumiNet: The Bright Side of Perceptual Knowledge Distillation](https://openreview.net/forum?id=3ZWdgOvmAA) | transfer learning, meta learning, and lifelong learning | knowledge distillation, logit-based distillation, inter-class relations |
-| 2025 | [Video Q-Former: Multimodal Large Language Model with Spatio-Temporal Querying Transformer Towards Video Understanding](https://openreview.net/forum?id=R6sIi9Kbxv) | foundation or frontier models, including LLMs | video-language models, multimodal large language models, video understanding |
-| 2025 | [SATE: A Two-Stage Approach for Performance Prediction in Subpopulation Shift Scenarios](https://openreview.net/forum?id=BWYR9rfGOU) | transfer learning, meta learning, and lifelong learning | performance prediction, subpopulation shift, unsupervised accuracy estimation |
-| 2025 | [Relaxing Representation Alignment with Knowledge Preservation for Multi-Modal Continual Learning](https://openreview.net/forum?id=CagdoUkvvl) | transfer learning, meta learning, and lifelong learning | multimodal continual learning, catastrophic forgetting, representation alignment |
-| 2025 | [How language models extrapolate outside the training data: A Case study in Textualized Gridworld](https://openreview.net/forum?id=CfdPELywGN) | neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.) | language models, neuro-symbolic AI, textual Gridworld |
-| 2025 | [SimUSER: When Language Models Pretend to Be Believable Users in Recommender Systems](https://openreview.net/forum?id=rv9c1BqY0L) | applications to computer vision, audio, language, and other modalities | recommender systems, recommender-system evaluation, user simulation |
-| 2025 | [Adaptive Priors from Learning Trajectories for Function-Space Bayesian Neural Networks](https://openreview.net/forum?id=Pdh1yMqwev) | probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.) | Bayesian neural networks, function-space variational inference, uncertainty estimation |
-| 2026 | [Modality-Balanced Decoupling Alignment for Text-Video Retrieval](https://openreview.net/forum?id=POTch0RnWL) | applications to computer vision, audio, language, and other modalities | domain:text-video retrieval, domain:video understanding, method:cross-modal embedding alignment |
-| 2026 | [BioX-Bridge: Model Bridging for Unsupervised Cross-Modal Knowledge Transfer across Biosignals](https://openreview.net/forum?id=1448q0s3zZ) | applications to physical sciences (physics, chemistry, biology, etc.) | biosignal AI, health monitoring, cross-modal transfer |
-| 2026 | [Sparse Imagination for Efficient Visual World Model Planning](https://openreview.net/forum?id=faxcxKINBC) | applications to robotics, autonomy, planning | visual world models, robotics, visual planning |
-| 2026 | [WAFER-QA: Evaluating Vulnerabilities of Agentic Workflows with Agent-as-Judge](https://openreview.net/forum?id=V9fU8Pw9qr) | datasets and benchmarks | agentic workflows, agent-as-a-judge, LLM robustness |
-| 2026 | [KAN or MLP? Point Cloud Shows the Way Forward](https://openreview.net/forum?id=1x0eJ8uUx6) | applications to computer vision, audio, language, and other modalities | point cloud analysis, Kolmogorov-Arnold networks, KAN |
-| 2026 | [Generalization Error Bound via Embedding Dimension and Network Lipschitz Constant](https://openreview.net/forum?id=a7n5ZrsD2U) | learning theory | learning theory, generalization bounds, representation learning |
-| 2026 | [Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](https://openreview.net/forum?id=Timsb74vIY) | interpretability and explainable AI | mechanistic interpretability, circuit discovery, formal verification |
-| 2026 | [Lang-PINN: From Language to Physics-Informed Neural Networks via a Multi-Agent Framework](https://openreview.net/forum?id=ONEyVpgK34) | applications to physical sciences (physics, chemistry, biology, etc.) | AI for science, physics-informed neural networks, partial differential equations |
-| 2026 | [Jailbreaking the Matrix: Nullspace Steering for Controlled Model Subversion](https://openreview.net/forum?id=qlf6y1A4Zu) | alignment, fairness, safety, privacy, and societal considerations | LLM safety, jailbreak attacks, white-box model attacks |
-| 2026 | [Adaptive Preconditioners Trigger Loss Spikes in Adam](https://openreview.net/forum?id=dwx3rjWGju) | learning theory | deep learning optimization, Adam, adaptive preconditioning |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->

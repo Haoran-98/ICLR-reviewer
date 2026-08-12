@@ -1,6 +1,236 @@
 {
-  "generated_on": "2026-08-11T18:18:22.501806+00:00",
+  "generated_on": "2026-08-12T18:18:03.179541+00:00",
   "recent_days": [
+    {
+      "date": "2026-08-13",
+      "papers": [
+        {
+          "openreview_id": "qYoIuM095A",
+          "year": 2024,
+          "title": "GNN-based Probabilistic Supply and Inventory Predictions in Supply Chain Networks",
+          "primary_topic": "learning on graphs and other geometries & topologies",
+          "openreview_url": "https://openreview.net/forum?id=qYoIuM095A",
+          "research_tags": [
+            "graph neural networks",
+            "graph attention networks",
+            "supply-chain forecasting"
+          ]
+        },
+        {
+          "openreview_id": "q4cfN6PGY7",
+          "year": 2024,
+          "title": "Towards Deep Viticultural Representations: Joint Region and Grape Variety Embeddings",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=q4cfN6PGY7",
+          "research_tags": [
+            "representation learning",
+            "self-supervised learning",
+            "joint embeddings"
+          ]
+        },
+        {
+          "openreview_id": "HZ3S17EI0o",
+          "year": 2024,
+          "title": "Set Learning for Accurate and Calibrated Models",
+          "primary_topic": "general machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=HZ3S17EI0o",
+          "research_tags": [
+            "set learning",
+            "classification",
+            "calibration"
+          ]
+        },
+        {
+          "openreview_id": "8shi3NhgJp",
+          "year": 2025,
+          "title": "IBCL: Zero-shot Model Generation under Stability-Plasticity Trade-offs",
+          "primary_topic": "transfer learning, meta learning, and lifelong learning",
+          "openreview_url": "https://openreview.net/forum?id=8shi3NhgJp",
+          "research_tags": [
+            "continual learning",
+            "stability-plasticity trade-off",
+            "zero-shot model generation"
+          ]
+        },
+        {
+          "openreview_id": "el2pNeLrRC",
+          "year": 2025,
+          "title": "ECGN: A CLUSTER-AWARE APPROACH TO GRAPH NEURAL NETWORKS FOR IMBALANCED CLASSIFICATION.",
+          "primary_topic": "learning on graphs and other geometries & topologies",
+          "openreview_url": "https://openreview.net/forum?id=el2pNeLrRC",
+          "research_tags": [
+            "graph neural networks",
+            "imbalanced node classification",
+            "cluster-aware learning"
+          ]
+        },
+        {
+          "openreview_id": "0G6rRLYcxm",
+          "year": 2025,
+          "title": "Maximum Next-State Entropy for Efficient Reinforcement Learning",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=0G6rRLYcxm",
+          "research_tags": [
+            "reinforcement learning",
+            "maximum entropy reinforcement learning",
+            "next-state entropy"
+          ]
+        },
+        {
+          "openreview_id": "AgMpK7z4bz",
+          "year": 2025,
+          "title": "Efficient Action-Constrained Reinforcement Learning via Acceptance-Rejection Method and Augmented MDPs",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=AgMpK7z4bz",
+          "research_tags": [
+            "action-constrained reinforcement learning",
+            "acceptance-rejection sampling",
+            "augmented MDP"
+          ]
+        },
+        {
+          "openreview_id": "WkHkwo8rpL",
+          "year": 2025,
+          "title": "Nexus: Specialization meets Adaptability for Efficiently Training Mixture of Experts",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=WkHkwo8rpL",
+          "research_tags": [
+            "mixture of experts",
+            "sparse MoE",
+            "expert upcycling"
+          ]
+        },
+        {
+          "openreview_id": "mXh8LbXXpx",
+          "year": 2025,
+          "title": "Show or Tell? Effectively prompting Vision-Language Models for semantic segmentation",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=mXh8LbXXpx",
+          "research_tags": [
+            "vision-language models",
+            "semantic segmentation",
+            "prompting"
+          ]
+        },
+        {
+          "openreview_id": "tApEmMRIgi",
+          "year": 2026,
+          "title": "Inductive Representation Learning of Temporal Pattern Subgraphs in Temporal Networks",
+          "primary_topic": "learning on time series and dynamical systems",
+          "openreview_url": "https://openreview.net/forum?id=tApEmMRIgi",
+          "research_tags": [
+            "temporal graph learning",
+            "graph representation learning",
+            "inductive learning"
+          ]
+        },
+        {
+          "openreview_id": "kHqt0ZSbKT",
+          "year": 2026,
+          "title": "Random Controlled Differential Equations",
+          "primary_topic": "learning on time series and dynamical systems",
+          "openreview_url": "https://openreview.net/forum?id=kHqt0ZSbKT",
+          "research_tags": [
+            "time-series learning",
+            "random features",
+            "controlled differential equations"
+          ]
+        },
+        {
+          "openreview_id": "wbnGAHI4Ev",
+          "year": 2026,
+          "title": "The Realignment Problem: When Right becomes Wrong in LLMs",
+          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
+          "openreview_url": "https://openreview.net/forum?id=wbnGAHI4Ev",
+          "research_tags": [
+            "large language models",
+            "alignment",
+            "policy realignment"
+          ]
+        },
+        {
+          "openreview_id": "NylOrth5EH",
+          "year": 2026,
+          "title": "Degree-Conscious Spiking Graph for Cross-Domain Adaptation",
+          "primary_topic": "other topics in machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=NylOrth5EH",
+          "research_tags": [
+            "spiking graph networks",
+            "graph domain adaptation",
+            "degree-aware thresholding"
+          ]
+        },
+        {
+          "openreview_id": "hUii0ju5aA",
+          "year": 2026,
+          "title": "Decoupling Safety into Orthogonal Subspace: Cost-Efficient and Performance-Preserving Alignment for Large Language Models",
+          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
+          "openreview_url": "https://openreview.net/forum?id=hUii0ju5aA",
+          "research_tags": [
+            "LLM safety alignment",
+            "LoRA",
+            "refusal SFT"
+          ]
+        },
+        {
+          "openreview_id": "InvyBiYcK5",
+          "year": 2026,
+          "title": "ERTACache: Error Rectification and Timesteps Adjustment for Efficient Diffusion",
+          "primary_topic": "generative models",
+          "openreview_url": "https://openreview.net/forum?id=InvyBiYcK5",
+          "research_tags": [
+            "diffusion models",
+            "feature caching",
+            "training-free acceleration"
+          ]
+        },
+        {
+          "openreview_id": "5aYGpjJ8WY",
+          "year": 2026,
+          "title": "A2SF: Accumulative Attention Score with Forgetting Factor",
+          "primary_topic": "optimization",
+          "openreview_url": "https://openreview.net/forum?id=5aYGpjJ8WY",
+          "research_tags": []
+        },
+        {
+          "openreview_id": "0EXuliYnfW",
+          "year": 2026,
+          "title": "PPBOOST: PROGRESSIVE PROMPT BOOSTING FOR TEXT-DRIVEN MEDICAL IMAGE SEGMENTATION",
+          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
+          "openreview_url": "https://openreview.net/forum?id=0EXuliYnfW",
+          "research_tags": [
+            "medical image segmentation",
+            "zero-shot segmentation",
+            "vision-language models"
+          ]
+        },
+        {
+          "openreview_id": "I5Qgn23qAz",
+          "year": 2026,
+          "title": "Robust Domain Generalization under Divergent Marginal and Conditional Distributions",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=I5Qgn23qAz",
+          "research_tags": [
+            "domain generalization",
+            "compound distribution shift",
+            "prior shift"
+          ]
+        },
+        {
+          "openreview_id": "aZjdkgvPbh",
+          "year": 2026,
+          "title": "NeurALigner: Scalable and Robust DNA Sequence Alignment via Embedding-Based Similarity Search",
+          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
+          "openreview_url": "https://openreview.net/forum?id=aZjdkgvPbh",
+          "research_tags": [
+            "DNA sequence alignment",
+            "sequence embeddings",
+            "contrastive learning"
+          ]
+        }
+      ],
+      "agents": []
+    },
     {
       "date": "2026-08-12",
       "papers": [
@@ -472,252 +702,6 @@
             "test-time training",
             "large language models",
             "fast weights"
-          ]
-        }
-      ],
-      "agents": []
-    },
-    {
-      "date": "2026-08-10",
-      "papers": [
-        {
-          "openreview_id": "Tj6Wcx7gVk",
-          "year": 2024,
-          "title": "Probabilistically Rewired Message-Passing Neural Networks",
-          "primary_topic": "learning on graphs and other geometries & topologies",
-          "openreview_url": "https://openreview.net/forum?id=Tj6Wcx7gVk",
-          "research_tags": [
-            "graph neural networks",
-            "message passing",
-            "graph rewiring"
-          ]
-        },
-        {
-          "openreview_id": "c4QgNn9WeO",
-          "year": 2024,
-          "title": "LMEye: An Interactive Perception Network for Large Language Models",
-          "primary_topic": "representation learning for computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=c4QgNn9WeO",
-          "research_tags": [
-            "multimodal large language models",
-            "vision-language learning",
-            "interactive perception"
-          ]
-        },
-        {
-          "openreview_id": "3DdCB6MRvu",
-          "year": 2024,
-          "title": "3D Tissue Reconstruction and Generation for Single-Cell Spatial Transcriptomics using Neural Radiance Fields",
-          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
-          "openreview_url": "https://openreview.net/forum?id=3DdCB6MRvu",
-          "research_tags": [
-            "single-cell spatial transcriptomics",
-            "3D reconstruction",
-            "Neural Radiance Fields"
-          ]
-        },
-        {
-          "openreview_id": "3ZWdgOvmAA",
-          "year": 2024,
-          "title": "LumiNet: The Bright Side of Perceptual Knowledge Distillation",
-          "primary_topic": "transfer learning, meta learning, and lifelong learning",
-          "openreview_url": "https://openreview.net/forum?id=3ZWdgOvmAA",
-          "research_tags": [
-            "knowledge distillation",
-            "logit-based distillation",
-            "inter-class relations"
-          ]
-        },
-        {
-          "openreview_id": "R6sIi9Kbxv",
-          "year": 2025,
-          "title": "Video Q-Former: Multimodal Large Language Model with Spatio-Temporal Querying Transformer Towards Video Understanding",
-          "primary_topic": "foundation or frontier models, including LLMs",
-          "openreview_url": "https://openreview.net/forum?id=R6sIi9Kbxv",
-          "research_tags": [
-            "video-language models",
-            "multimodal large language models",
-            "video understanding"
-          ]
-        },
-        {
-          "openreview_id": "BWYR9rfGOU",
-          "year": 2025,
-          "title": "SATE: A Two-Stage Approach for Performance Prediction in Subpopulation Shift Scenarios",
-          "primary_topic": "transfer learning, meta learning, and lifelong learning",
-          "openreview_url": "https://openreview.net/forum?id=BWYR9rfGOU",
-          "research_tags": [
-            "performance prediction",
-            "subpopulation shift",
-            "unsupervised accuracy estimation"
-          ]
-        },
-        {
-          "openreview_id": "CagdoUkvvl",
-          "year": 2025,
-          "title": "Relaxing Representation Alignment with Knowledge Preservation for Multi-Modal Continual Learning",
-          "primary_topic": "transfer learning, meta learning, and lifelong learning",
-          "openreview_url": "https://openreview.net/forum?id=CagdoUkvvl",
-          "research_tags": [
-            "multimodal continual learning",
-            "catastrophic forgetting",
-            "representation alignment"
-          ]
-        },
-        {
-          "openreview_id": "CfdPELywGN",
-          "year": 2025,
-          "title": "How language models extrapolate outside the training data: A Case study in Textualized Gridworld",
-          "primary_topic": "neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.)",
-          "openreview_url": "https://openreview.net/forum?id=CfdPELywGN",
-          "research_tags": [
-            "language models",
-            "neuro-symbolic AI",
-            "textual Gridworld"
-          ]
-        },
-        {
-          "openreview_id": "rv9c1BqY0L",
-          "year": 2025,
-          "title": "SimUSER: When Language Models Pretend to Be Believable Users in Recommender Systems",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=rv9c1BqY0L",
-          "research_tags": [
-            "recommender systems",
-            "recommender-system evaluation",
-            "user simulation"
-          ]
-        },
-        {
-          "openreview_id": "Pdh1yMqwev",
-          "year": 2025,
-          "title": "Adaptive Priors from Learning Trajectories for Function-Space Bayesian Neural Networks",
-          "primary_topic": "probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.)",
-          "openreview_url": "https://openreview.net/forum?id=Pdh1yMqwev",
-          "research_tags": [
-            "Bayesian neural networks",
-            "function-space variational inference",
-            "uncertainty estimation"
-          ]
-        },
-        {
-          "openreview_id": "POTch0RnWL",
-          "year": 2026,
-          "title": "Modality-Balanced Decoupling Alignment for Text-Video Retrieval",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=POTch0RnWL",
-          "research_tags": [
-            "domain:text-video retrieval",
-            "domain:video understanding",
-            "method:cross-modal embedding alignment"
-          ]
-        },
-        {
-          "openreview_id": "1448q0s3zZ",
-          "year": 2026,
-          "title": "BioX-Bridge: Model Bridging for Unsupervised Cross-Modal Knowledge Transfer across Biosignals",
-          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
-          "openreview_url": "https://openreview.net/forum?id=1448q0s3zZ",
-          "research_tags": [
-            "biosignal AI",
-            "health monitoring",
-            "cross-modal transfer"
-          ]
-        },
-        {
-          "openreview_id": "faxcxKINBC",
-          "year": 2026,
-          "title": "Sparse Imagination for Efficient Visual World Model Planning",
-          "primary_topic": "applications to robotics, autonomy, planning",
-          "openreview_url": "https://openreview.net/forum?id=faxcxKINBC",
-          "research_tags": [
-            "visual world models",
-            "robotics",
-            "visual planning"
-          ]
-        },
-        {
-          "openreview_id": "V9fU8Pw9qr",
-          "year": 2026,
-          "title": "WAFER-QA: Evaluating Vulnerabilities of Agentic Workflows with Agent-as-Judge",
-          "primary_topic": "datasets and benchmarks",
-          "openreview_url": "https://openreview.net/forum?id=V9fU8Pw9qr",
-          "research_tags": [
-            "agentic workflows",
-            "agent-as-a-judge",
-            "LLM robustness"
-          ]
-        },
-        {
-          "openreview_id": "1x0eJ8uUx6",
-          "year": 2026,
-          "title": "KAN or MLP? Point Cloud Shows the Way Forward",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=1x0eJ8uUx6",
-          "research_tags": [
-            "point cloud analysis",
-            "Kolmogorov-Arnold networks",
-            "KAN"
-          ]
-        },
-        {
-          "openreview_id": "a7n5ZrsD2U",
-          "year": 2026,
-          "title": "Generalization Error Bound via Embedding Dimension and Network Lipschitz Constant",
-          "primary_topic": "learning theory",
-          "openreview_url": "https://openreview.net/forum?id=a7n5ZrsD2U",
-          "research_tags": [
-            "learning theory",
-            "generalization bounds",
-            "representation learning"
-          ]
-        },
-        {
-          "openreview_id": "Timsb74vIY",
-          "year": 2026,
-          "title": "Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees",
-          "primary_topic": "interpretability and explainable AI",
-          "openreview_url": "https://openreview.net/forum?id=Timsb74vIY",
-          "research_tags": [
-            "mechanistic interpretability",
-            "circuit discovery",
-            "formal verification"
-          ]
-        },
-        {
-          "openreview_id": "ONEyVpgK34",
-          "year": 2026,
-          "title": "Lang-PINN: From Language to Physics-Informed Neural Networks via a Multi-Agent Framework",
-          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
-          "openreview_url": "https://openreview.net/forum?id=ONEyVpgK34",
-          "research_tags": [
-            "AI for science",
-            "physics-informed neural networks",
-            "partial differential equations"
-          ]
-        },
-        {
-          "openreview_id": "qlf6y1A4Zu",
-          "year": 2026,
-          "title": "Jailbreaking the Matrix: Nullspace Steering for Controlled Model Subversion",
-          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
-          "openreview_url": "https://openreview.net/forum?id=qlf6y1A4Zu",
-          "research_tags": [
-            "LLM safety",
-            "jailbreak attacks",
-            "white-box model attacks"
-          ]
-        },
-        {
-          "openreview_id": "dwx3rjWGju",
-          "year": 2026,
-          "title": "Adaptive Preconditioners Trigger Loss Spikes in Adam",
-          "primary_topic": "learning theory",
-          "openreview_url": "https://openreview.net/forum?id=dwx3rjWGju",
-          "research_tags": [
-            "deep learning optimization",
-            "Adam",
-            "adaptive preconditioning"
           ]
         }
       ],
