@@ -1,37 +1,37 @@
 {
-  "generated_on": "2026-08-12T18:18:03.144272+00:00",
+  "generated_on": "2026-08-13T18:18:08.065068+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 7,
-  "analyzed_papers": 525,
-  "coverage_percent": 1.35,
+  "successful_daily_runs": 8,
+  "analyzed_papers": 545,
+  "coverage_percent": 1.4014,
   "by_year": {
-    "2026": 268,
-    "2025": 159,
-    "2024": 98
+    "2026": 278,
+    "2025": 165,
+    "2024": 102
   },
-  "last_daily_run": "2026-08-13",
+  "last_daily_run": "2026-08-14",
   "usage": {
-    "input_tokens": 1244169,
-    "output_tokens": 66504,
-    "total_tokens": 1310673
+    "input_tokens": 1425756,
+    "output_tokens": 75578,
+    "total_tokens": 1501334
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 37
+      "papers": 39
     },
     {
       "tag": "diffusion models",
-      "papers": 33
+      "papers": 35
     },
     {
       "tag": "large language models",
-      "papers": 25
+      "papers": 26
     },
     {
       "tag": "contrastive learning",
-      "papers": 24
+      "papers": 25
     },
     {
       "tag": "vision-language models",
@@ -39,7 +39,7 @@
     },
     {
       "tag": "representation learning",
-      "papers": 20
+      "papers": 22
     },
     {
       "tag": "self-supervised learning",
@@ -51,7 +51,7 @@
     },
     {
       "tag": "graph neural networks",
-      "papers": 17
+      "papers": 18
     },
     {
       "tag": "adversarial robustness",
@@ -59,6 +59,10 @@
     },
     {
       "tag": "vision transformers",
+      "papers": 13
+    },
+    {
+      "tag": "interpretability",
       "papers": 12
     },
     {
@@ -66,48 +70,44 @@
       "papers": 12
     },
     {
-      "tag": "interpretability",
+      "tag": "dataset construction",
       "papers": 11
     },
     {
-      "tag": "dataset construction",
-      "papers": 10
+      "tag": "flow matching",
+      "papers": 11
+    },
+    {
+      "tag": "language models",
+      "papers": 11
+    },
+    {
+      "tag": "code generation",
+      "papers": 11
+    },
+    {
+      "tag": "benchmark construction",
+      "papers": 11
+    },
+    {
+      "tag": "DPO",
+      "papers": 11
     },
     {
       "tag": "benchmark",
       "papers": 10
-    },
-    {
-      "tag": "flow matching",
-      "papers": 10
-    },
-    {
-      "tag": "language models",
-      "papers": 10
-    },
-    {
-      "tag": "benchmark construction",
-      "papers": 10
-    },
-    {
-      "tag": "supervised fine-tuning",
-      "papers": 10
-    },
-    {
-      "tag": "uncertainty quantification",
-      "papers": 9
     }
   ],
   "response_effectiveness": {
-    "unknown": 333,
-    "partial_success": 273,
-    "no_effect": 58,
-    "strong_success": 159
+    "unknown": 338,
+    "partial_success": 278,
+    "no_effect": 61,
+    "strong_success": 160
   },
   "score_actions": {
-    "unknown": 456,
-    "maintained": 185,
-    "increased": 177,
+    "unknown": 461,
+    "maintained": 191,
+    "increased": 180,
     "decreased": 1,
     "promised_increase": 4
   }

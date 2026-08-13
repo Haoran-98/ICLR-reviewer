@@ -6,6 +6,34 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-14 - 20 newly analyzed papers, 0 common Agents added</summary>
+
+| Year | Paper | Topic | Research tags |
+|---:|---|---|---|
+| 2024 | [Window Attention is Bugged: How not to Interpolate Position Embeddings](https://openreview.net/forum?id=IPhm01y9a9) | representation learning for computer vision, audio, language, and other modalities | computer vision, vision transformers, window attention |
+| 2024 | [Evaluating Hallucinations in Chinese Large Language Models](https://openreview.net/forum?id=1AXvGjfF0V) | datasets and benchmarks | hallucination evaluation, Chinese LLMs, benchmark construction |
+| 2024 | [$\sigma$-PCA: a unified neural model for linear and nonlinear principal component analysis](https://openreview.net/forum?id=fzc3eleTxX) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | PCA, nonlinear PCA, ICA |
+| 2024 | [Global minima, recoverability thresholds, and higher-order structure in GNNs](https://openreview.net/forum?id=qqDeICpLFo) | learning on graphs and other geometries & topologies | graph neural networks, contextual stochastic block model, random graph theory |
+| 2025 | [VoiceNoNG: High-Quality Speech Editing Model without Hallucinations](https://openreview.net/forum?id=BVsFp5rQxd) | applications to computer vision, audio, language, and other modalities | speech editing, speech generation, flow matching |
+| 2025 | [Beyond the convexity assumption: Realistic tabular data generation under quantifier-free real linear constraints](https://openreview.net/forum?id=rx0TCew0Lj) | neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.) | tabular data generation, neuro-symbolic AI, quantifier-free linear arithmetic |
+| 2025 | [SparsePO: Controlling Preference Alignment of LLMs via Sparse Token Masks](https://openreview.net/forum?id=YOrN9vNrqo) | alignment, fairness, safety, privacy, and societal considerations | preference optimization, LLM alignment, token-level masking |
+| 2025 | [DiffBody: Human Body Restoration by Imagining with Generative Diffusion Prior](https://openreview.net/forum?id=R8t9Q3jmCQ) | generative models | human body restoration, image restoration, diffusion models |
+| 2025 | [Pay Attention to Real World Perturbations! Natural Robustness Evaluation in Machine Reading Comprehension](https://openreview.net/forum?id=L5dUM6prKw) | alignment, fairness, safety, privacy, and societal considerations | machine reading comprehension, robustness evaluation, natural perturbations |
+| 2025 | [Dual-cycle Consistency Learning for Weakly Supervised Phrase Grounding](https://openreview.net/forum?id=9IMQJ8HmIq) | applications to computer vision, audio, language, and other modalities | weakly supervised phrase grounding, visual grounding, pseudo-label learning |
+| 2026 | [RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks](https://openreview.net/forum?id=dBmjnRR1bC) | foundation or frontier models, including LLMs | LLM post-training, reinforcement learning, adversarial critics |
+| 2026 | [FedMuon: Accelerating Federated Learning with Matrix Orthogonalization](https://openreview.net/forum?id=3aoOMhwHia) | optimization | federated learning, optimization, Muon optimizer |
+| 2026 | [Can Global XAI Methods Reveal Injected Bias in LLMs? SHAP vs Rule Extraction vs RuleSHAP](https://openreview.net/forum?id=s2vWrgO4OA) | interpretability and explainable AI | interpretability, explainable AI, global SHAP |
+| 2026 | [Temporal Grounding as a Learning Signal for Referring Video Object Segmentation](https://openreview.net/forum?id=oUSQnvL8xA) | applications to computer vision, audio, language, and other modalities | referring video object segmentation, temporal grounding, video-text alignment |
+| 2026 | [The Unreasonable Effectiveness of Scaling Agents for Computer Use](https://openreview.net/forum?id=R0viKzJ70t) | applications to robotics, autonomy, planning | computer-use agents, GUI agents, test-time scaling |
+| 2026 | [Breaking Training Bottlenecks: Effective Reinforcement Learning for Modern Coding Models](https://openreview.net/forum?id=ryosylfHX2) | reinforcement learning | reinforcement learning, code generation, GRPO |
+| 2026 | [Secure Autoregressive Inference with Prompt Separation via Key-Value Caching](https://openreview.net/forum?id=tFNsosNMHT) | alignment, fairness, safety, privacy, and societal considerations | privacy-preserving inference, secure inference, MPC |
+| 2026 | [SwiftMax: Reducing Training Time for Learnable Softmax Alternative in Customized Acceleration](https://openreview.net/forum?id=nqWlwwavTN) | infrastructure, software libraries, hardware, systems, etc. | efficient attention, Softmax alternatives, hardware-software co-design |
+| 2026 | [MM-Prompt: Cross-Modal Prompt Tuning for Continual Visual Question Answering](https://openreview.net/forum?id=fQFX5G1rnJ) | transfer learning, meta learning, and lifelong learning | continual learning, visual question answering, multimodal prompt tuning |
+| 2026 | [EasyCreator: Empowering 4D Creation through Video Inpainting](https://openreview.net/forum?id=mU8Ubd8aNK) | generative models | 4D video generation, video inpainting, novel-view synthesis |
+
+</details>
+
+<details>
 <summary>2026-08-13 - 19 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -57,33 +85,6 @@
 | 2026 | [Exposing Mixture and Annotating Confusion for Active Universal Test-Time Adaptation](https://openreview.net/forum?id=89gxHJkCXk) | transfer learning, meta learning, and lifelong learning | test-time adaptation, universal test-time adaptation, active learning |
 | 2026 | [Bridging Bag-Level and Instance-Level Uncertainty with Conformalizable MIL](https://openreview.net/forum?id=PBmV8bOIsi) | probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.) | conformal prediction, multiple instance learning, instance-level uncertainty |
 | 2026 | [Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](https://openreview.net/forum?id=ulvp7cbZeU) | alignment, fairness, safety, privacy, and societal considerations | post-training, distributional modeling, in-context steerability |
-
-</details>
-
-<details>
-<summary>2026-08-11 - 19 newly analyzed papers, 0 common Agents added</summary>
-
-| Year | Paper | Topic | Research tags |
-|---:|---|---|---|
-| 2024 | [TransNeXt: Aggregating Diverse Attentions in One Vision Model](https://openreview.net/forum?id=yMwJiJoadt) | representation learning for computer vision, audio, language, and other modalities | computer vision, vision transformers, attention mechanisms |
-| 2024 | [USB-NeRF: Unrolling Shutter Bundle Adjusted Neural Radiance Fields](https://openreview.net/forum?id=igfDXfMvm5) | representation learning for computer vision, audio, language, and other modalities | Neural Radiance Fields, rolling shutter imaging, bundle adjustment |
-| 2024 | [Agent-Centric State Discovery for Finite-Memory POMDPs](https://openreview.net/forum?id=67t4ikhlvP) | reinforcement learning | reinforcement learning, POMDPs, finite-memory POMDPs |
-| 2025 | [Geometry-Aware Approaches for Balancing Performance and Theoretical Guarantees in Linear Bandits](https://openreview.net/forum?id=Oeb0I3JcVc) | other topics in machine learning (i.e., none of the above) | linear bandits, stochastic decision making, Thompson sampling |
-| 2025 | [Heterogeneous Federated Learning: A Dual Matching Dataset Distillation Approach](https://openreview.net/forum?id=In0phMs7BK) | alignment, fairness, safety, privacy, and societal considerations | federated learning, dataset distillation, heterogeneous data |
-| 2025 | [Learning Monotonic Attention in Transducer for Streaming Generation](https://openreview.net/forum?id=pbJMPo4HwR) | applications to computer vision, audio, language, and other modalities | streaming generation, transducer models, monotonic attention |
-| 2025 | [On Pre-training of Multimodal Language Models Customized for Chart Understanding](https://openreview.net/forum?id=94LyPGDi0Y) | applications to computer vision, audio, language, and other modalities | multimodal language models, chart understanding, visual instruction tuning |
-| 2025 | [Coreset Selection via Reducible Loss in Continual Learning](https://openreview.net/forum?id=mAztx8QO3B) | transfer learning, meta learning, and lifelong learning | continual learning, coreset selection, reducible loss |
-| 2025 | [Improved Diffusion-based Generative Model with Better Adversarial Robustness](https://openreview.net/forum?id=1DVgysiIt7) | generative models | generative models, diffusion probabilistic models, consistency models |
-| 2026 | [AudioMoG: Guiding Audio Generation with Mixture-of-Guidance](https://openreview.net/forum?id=LElJH6EYBq) | applications to computer vision, audio, language, and other modalities | audio generation, cross-modal generation, text-to-audio generation |
-| 2026 | [CC-Learn: Cohort-Based Consistency Learning](https://openreview.net/forum?id=ppIkPCrTe6) | foundation or frontier models, including LLMs | large language models, reasoning consistency, reinforcement learning |
-| 2026 | [ComformalMOS: Uncertainty-Aware MOS Prediction with Conformal Intervals and Ordinal Modeling](https://openreview.net/forum?id=3y5JUNuhHP) | probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.) | - |
-| 2026 | [BTC-LLM: Efficient Sub-1-Bit LLM Quantization via Learnable Transformation and Binary Codebook](https://openreview.net/forum?id=yBDBCpEzsO) | foundation or frontier models, including LLMs | large language models, model compression, binary quantization |
-| 2026 | [Toward Stable Representations of Physical Systems](https://openreview.net/forum?id=ZAz5acC6cJ) | generative models | generative models, physical systems, dynamical systems |
-| 2026 | [Flow-Guided Neural Operator For Self- Supervised Learning On Time Series Data](https://openreview.net/forum?id=D4CH3hCNdb) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | self-supervised learning, time series representation learning, flow matching |
-| 2026 | [AVSU-Bench and VSpeech-R1: A Dataset and MLLM for Audio-Visual Speech Understanding](https://openreview.net/forum?id=M9jciGcJpC) | datasets and benchmarks | audio-visual speech understanding, multimodal language models, speech recognition |
-| 2026 | [Learning to Refine: Self-Refinement of Parallel Reasoning in LLMs](https://openreview.net/forum?id=nbhDNDDZMe) | generative models | large language models, test-time scaling, parallel reasoning |
-| 2026 | [G-CUT3R: Guided 3D Reconstruction with Camera and Depth Prior Integration](https://openreview.net/forum?id=J7DiMqmIFl) | applications to computer vision, audio, language, and other modalities | 3D scene reconstruction, feed-forward reconstruction, geometric priors |
-| 2026 | [In-Place Test-Time Training](https://openreview.net/forum?id=dTWfCLSoyl) | foundation or frontier models, including LLMs | test-time training, large language models, fast weights |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->
