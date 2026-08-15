@@ -6,6 +6,40 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-16 - 19 newly analyzed papers, 0 common Agents added</summary>
+
+| Year | Paper | Topic | Research tags |
+|---:|---|---|---|
+| 2024 | [Adaptive Self-training Framework for Fine-grained Scene Graph Generation](https://openreview.net/forum?id=WipsLtH77t) | representation learning for computer vision, audio, language, and other modalities | scene graph generation, self-training, pseudo-labeling |
+| 2024 | [Overcoming the Stability Gap in Continual Learning](https://openreview.net/forum?id=A4YlfnbaSD) | transfer learning, meta learning, and lifelong learning | continual learning, stability gap, catastrophic forgetting |
+| 2024 | [Generation, Reconstruction, Representation All-in-One: A Joint Autoencoding Diffusion Model](https://openreview.net/forum?id=bgIZDxd2bM) | generative models | diffusion models, joint autoencoding diffusion, latent representations |
+| 2025 | [The GECo algorithm for Graph Neural Networks Explanation](https://openreview.net/forum?id=sTQC4TeYo1) | interpretability and explainable AI | graph neural networks, graph explainability, community detection |
+| 2025 | [GFlowNets Need Automorphism Correction for Unbiased Graph Generation](https://openreview.net/forum?id=BkR4QG4azn) | generative models | GFlowNets, graph generation, automorphism correction |
+| 2025 | [TF-score: Time-series Forecasting using score-based diffusion model](https://openreview.net/forum?id=RDLvnUJ5JZ) | learning on time series and dynamical systems | time-series forecasting, score-based diffusion models, conditional diffusion |
+| 2025 | [CipherPrune: Efficient and Scalable Private Transformer Inference](https://openreview.net/forum?id=mUMvr33FTu) | alignment, fairness, safety, privacy, and societal considerations | private inference, privacy-preserving ML, secure multiparty computation |
+| 2025 | [Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models](https://openreview.net/forum?id=77gQUdQhE7) | foundation or frontier models, including LLMs | large language models, inference-time compute, Best-of-N sampling |
+| 2025 | [MobileSafetyBench: Evaluating Safety of Autonomous Agents in Mobile Device Control](https://openreview.net/forum?id=lpBzjYlt3u) | alignment, fairness, safety, privacy, and societal considerations | mobile agent safety, LLM agents, Android benchmark |
+| 2026 | [Lifelong Embodied Navigation Learning](https://openreview.net/forum?id=PaYo96rjij) | applications to robotics, autonomy, planning | lifelong learning, embodied navigation, continual learning |
+| 2026 | [Kolmogorov-Arnold Attention: Is Learnable Attention Better For Vision Transformers?](https://openreview.net/forum?id=EyY8wLpjS5) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | vision transformers, Kolmogorov-Arnold networks, learnable attention |
+| 2026 | [FRABench and UFEval: Unified Fine-grained Evaluation with Task and Aspect Generalization](https://openreview.net/forum?id=7WdY3Cojy9) | datasets and benchmarks | MLLM evaluation, fine-grained evaluation, MLLM-as-a-judge |
+| 2026 | [LVSPM: Long Sequence View Synthesis and Pose Estimation Model](https://openreview.net/forum?id=TNKCbZmBGw) | applications to computer vision, audio, language, and other modalities | novel view synthesis, camera pose estimation, long-sequence vision |
+| 2026 | [Tiny-R1V: Lightweight Multimodal Unified Reasoning Model via Model Merging](https://openreview.net/forum?id=1FDBJPYWCb) | foundation or frontier models, including LLMs | multimodal large language models, lightweight models, reasoning efficiency |
+| 2026 | [SIGHT: Synthesizing Image-Text Conditioned and Geometry-Guided 3D Hand-Object Trajectories](https://openreview.net/forum?id=ff3gboFkss) | applications to computer vision, audio, language, and other modalities | 3D hand-object interaction, trajectory generation, image-text conditioning |
+| 2026 | [Proof of Forgeability: Universal Repudiation against Membership Inference Attacks](https://openreview.net/forum?id=jnVppkiQyV) | alignment, fairness, safety, privacy, and societal considerations | membership inference, privacy auditing, privacy protection |
+| 2026 | [DroneDreamer: Multi-View Low-Altitude World Model with Adaptive Control](https://openreview.net/forum?id=eDyMFksVCl) | generative models | world models, low-altitude UAVs, multi-view video generation |
+| 2026 | [h1: Bootstrapping Models to Reason over Longer Horizons via Reinforcement Learning](https://openreview.net/forum?id=SP7W06tphZ) | foundation or frontier models, including LLMs | long-horizon reasoning, reinforcement learning, RLVR |
+| 2026 | [From Evaluation to Defense: Advancing Safety in Video Large Language Models](https://openreview.net/forum?id=QuW5RUDwMo) | alignment, fairness, safety, privacy, and societal considerations | video LLM safety, multimodal safety benchmark, safety alignment |
+
+</details>
+
+<details>
+<summary>2026-08-15 - 0 newly analyzed papers, 0 common Agents added</summary>
+
+No public paper additions on this day.
+
+</details>
+
+<details>
 <summary>2026-08-14 - 20 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -30,61 +64,6 @@
 | 2026 | [SwiftMax: Reducing Training Time for Learnable Softmax Alternative in Customized Acceleration](https://openreview.net/forum?id=nqWlwwavTN) | infrastructure, software libraries, hardware, systems, etc. | efficient attention, Softmax alternatives, hardware-software co-design |
 | 2026 | [MM-Prompt: Cross-Modal Prompt Tuning for Continual Visual Question Answering](https://openreview.net/forum?id=fQFX5G1rnJ) | transfer learning, meta learning, and lifelong learning | continual learning, visual question answering, multimodal prompt tuning |
 | 2026 | [EasyCreator: Empowering 4D Creation through Video Inpainting](https://openreview.net/forum?id=mU8Ubd8aNK) | generative models | 4D video generation, video inpainting, novel-view synthesis |
-
-</details>
-
-<details>
-<summary>2026-08-13 - 19 newly analyzed papers, 0 common Agents added</summary>
-
-| Year | Paper | Topic | Research tags |
-|---:|---|---|---|
-| 2024 | [GNN-based Probabilistic Supply and Inventory Predictions in Supply Chain Networks](https://openreview.net/forum?id=qYoIuM095A) | learning on graphs and other geometries & topologies | graph neural networks, graph attention networks, supply-chain forecasting |
-| 2024 | [Towards Deep Viticultural Representations: Joint Region and Grape Variety Embeddings](https://openreview.net/forum?id=q4cfN6PGY7) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | representation learning, self-supervised learning, joint embeddings |
-| 2024 | [Set Learning for Accurate and Calibrated Models](https://openreview.net/forum?id=HZ3S17EI0o) | general machine learning (i.e., none of the above) | set learning, classification, calibration |
-| 2025 | [IBCL: Zero-shot Model Generation under Stability-Plasticity Trade-offs](https://openreview.net/forum?id=8shi3NhgJp) | transfer learning, meta learning, and lifelong learning | continual learning, stability-plasticity trade-off, zero-shot model generation |
-| 2025 | [ECGN: A CLUSTER-AWARE APPROACH TO GRAPH NEURAL NETWORKS FOR IMBALANCED CLASSIFICATION.](https://openreview.net/forum?id=el2pNeLrRC) | learning on graphs and other geometries & topologies | graph neural networks, imbalanced node classification, cluster-aware learning |
-| 2025 | [Maximum Next-State Entropy for Efficient Reinforcement Learning](https://openreview.net/forum?id=0G6rRLYcxm) | reinforcement learning | reinforcement learning, maximum entropy reinforcement learning, next-state entropy |
-| 2025 | [Efficient Action-Constrained Reinforcement Learning via Acceptance-Rejection Method and Augmented MDPs](https://openreview.net/forum?id=AgMpK7z4bz) | reinforcement learning | action-constrained reinforcement learning, acceptance-rejection sampling, augmented MDP |
-| 2025 | [Nexus: Specialization meets Adaptability for Efficiently Training Mixture of Experts](https://openreview.net/forum?id=WkHkwo8rpL) | foundation or frontier models, including LLMs | mixture of experts, sparse MoE, expert upcycling |
-| 2025 | [Show or Tell? Effectively prompting Vision-Language Models for semantic segmentation](https://openreview.net/forum?id=mXh8LbXXpx) | foundation or frontier models, including LLMs | vision-language models, semantic segmentation, prompting |
-| 2026 | [Inductive Representation Learning of Temporal Pattern Subgraphs in Temporal Networks](https://openreview.net/forum?id=tApEmMRIgi) | learning on time series and dynamical systems | temporal graph learning, graph representation learning, inductive learning |
-| 2026 | [Random Controlled Differential Equations](https://openreview.net/forum?id=kHqt0ZSbKT) | learning on time series and dynamical systems | time-series learning, random features, controlled differential equations |
-| 2026 | [The Realignment Problem: When Right becomes Wrong in LLMs](https://openreview.net/forum?id=wbnGAHI4Ev) | alignment, fairness, safety, privacy, and societal considerations | large language models, alignment, policy realignment |
-| 2026 | [Degree-Conscious Spiking Graph for Cross-Domain Adaptation](https://openreview.net/forum?id=NylOrth5EH) | other topics in machine learning (i.e., none of the above) | spiking graph networks, graph domain adaptation, degree-aware thresholding |
-| 2026 | [Decoupling Safety into Orthogonal Subspace: Cost-Efficient and Performance-Preserving Alignment for Large Language Models](https://openreview.net/forum?id=hUii0ju5aA) | alignment, fairness, safety, privacy, and societal considerations | LLM safety alignment, LoRA, refusal SFT |
-| 2026 | [ERTACache: Error Rectification and Timesteps Adjustment for Efficient Diffusion](https://openreview.net/forum?id=InvyBiYcK5) | generative models | diffusion models, feature caching, training-free acceleration |
-| 2026 | [A2SF: Accumulative Attention Score with Forgetting Factor](https://openreview.net/forum?id=5aYGpjJ8WY) | optimization | - |
-| 2026 | [PPBOOST: PROGRESSIVE PROMPT BOOSTING FOR TEXT-DRIVEN MEDICAL IMAGE SEGMENTATION](https://openreview.net/forum?id=0EXuliYnfW) | applications to physical sciences (physics, chemistry, biology, etc.) | medical image segmentation, zero-shot segmentation, vision-language models |
-| 2026 | [Robust Domain Generalization under Divergent Marginal and Conditional Distributions](https://openreview.net/forum?id=I5Qgn23qAz) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | domain generalization, compound distribution shift, prior shift |
-| 2026 | [NeurALigner: Scalable and Robust DNA Sequence Alignment via Embedding-Based Similarity Search](https://openreview.net/forum?id=aZjdkgvPbh) | applications to physical sciences (physics, chemistry, biology, etc.) | DNA sequence alignment, sequence embeddings, contrastive learning |
-
-</details>
-
-<details>
-<summary>2026-08-12 - 20 newly analyzed papers, 0 common Agents added</summary>
-
-| Year | Paper | Topic | Research tags |
-|---:|---|---|---|
-| 2024 | [Beyond Imitation: Leveraging Fine-grained Quality Signals for Alignment](https://openreview.net/forum?id=LNLjU5C5dK) | representation learning for computer vision, audio, language, and other modalities | LLM alignment, fine-grained supervision, supervised fine-tuning |
-| 2024 | [3D Dense Captioning beyond Nouns: A Middleware for Autonomous Driving](https://openreview.net/forum?id=8T7m27VC3S) | datasets and benchmarks | autonomous driving, 3D dense captioning, multimodal representation |
-| 2024 | [Understanding and addressing spurious correlation via Neural Tangent Kernels: A spectral bias perspective](https://openreview.net/forum?id=89AOrk05uy) | general machine learning (i.e., none of the above) | spurious correlations, neural tangent kernel, spectral bias |
-| 2024 | [ReFACT: Updating Text-to-Image Models by Editing the Text Encoder](https://openreview.net/forum?id=u2as4lHoyl) | generative models | text-to-image generation, diffusion models, knowledge editing |
-| 2025 | [Investigating Memorization in Video Diffusion Models](https://openreview.net/forum?id=RFZV2tOWYN) | alignment, fairness, safety, privacy, and societal considerations | video diffusion models, memorization, copyright |
-| 2025 | [GuardAgent: Safeguard LLM Agent by a Guard Agent via Knowledge-Enabled Reasoning](https://openreview.net/forum?id=YixNDE12wm) | foundation or frontier models, including LLMs | LLM agents, agent safety, guardrails |
-| 2025 | [Dissecting Bit-Level Scaling Laws in Quantizing Vision Generative Models](https://openreview.net/forum?id=7X2BFPl18T) | other topics in machine learning (i.e., none of the above) | quantization, vision generative models, bit-level scaling laws |
-| 2025 | [JudgeBench: A Benchmark for Evaluating LLM-Based Judges](https://openreview.net/forum?id=G0dksFayVq) | datasets and benchmarks | LLM judges, benchmark, meta-evaluation |
-| 2025 | [Noise Prompt Learning: Learning the Winning Tickets for Diffusion Sampling](https://openreview.net/forum?id=qIJenSdGbW) | generative models | text-to-image generation, diffusion models, noise optimization |
-| 2025 | [Does Instruction Tuning Reduce Diversity? A Case Study Using Code Generation](https://openreview.net/forum?id=hMEHnLJyrU) | interpretability and explainable AI | LLM diversity, instruction tuning, preference tuning |
-| 2026 | [Learning Across the Noise Spectrum: An Approach to Reinforcement Learning with Asynchronous Signals](https://openreview.net/forum?id=Id1YBclGbz) | reinforcement learning | reinforcement learning, robotics, asynchronous sensing |
-| 2026 | [FedGMR: Federated Learning with Gradual Model Restoration under Asynchrony and Model Heterogeneity](https://openreview.net/forum?id=KL1LNgg73s) | infrastructure, software libraries, hardware, systems, etc. | federated learning, asynchronous federated learning, model heterogeneity |
-| 2026 | [Improving Block-Wise LLM Quantization by 4-bit Block-Wise Optimal Float (BOF4): Analysis and Variations](https://openreview.net/forum?id=VpZ8YYdBmT) | foundation or frontier models, including LLMs | LLM quantization, 4-bit quantization, block-wise quantization |
-| 2026 | [Strongly Convex Sets in Riemannian Manifolds](https://openreview.net/forum?id=4sDszSYKP6) | optimization | Riemannian optimization, Riemannian manifolds, strongly convex sets |
-| 2026 | [It’s Not You, It’s Clipping: A Soft Trust-Region via Probability Smoothing for LLM RL](https://openreview.net/forum?id=1spOYCVPPg) | reinforcement learning | reinforcement learning, LLM alignment, PPO |
-| 2026 | [Change of Thought: Adaptive Test-Time Computation](https://openreview.net/forum?id=86PhVA7veh) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | adaptive computation, test-time computation, fixed-point iteration |
-| 2026 | [DataS3: Dataset Subset Selection for Specialization](https://openreview.net/forum?id=KSdpxppcIm) | datasets and benchmarks | dataset subset selection, deployment specialization, dataset curation |
-| 2026 | [Exposing Mixture and Annotating Confusion for Active Universal Test-Time Adaptation](https://openreview.net/forum?id=89gxHJkCXk) | transfer learning, meta learning, and lifelong learning | test-time adaptation, universal test-time adaptation, active learning |
-| 2026 | [Bridging Bag-Level and Instance-Level Uncertainty with Conformalizable MIL](https://openreview.net/forum?id=PBmV8bOIsi) | probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.) | conformal prediction, multiple instance learning, instance-level uncertainty |
-| 2026 | [Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](https://openreview.net/forum?id=ulvp7cbZeU) | alignment, fairness, safety, privacy, and societal considerations | post-training, distributional modeling, in-context steerability |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->

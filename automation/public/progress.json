@@ -1,33 +1,33 @@
 {
-  "generated_on": "2026-08-13T18:18:08.065068+00:00",
+  "generated_on": "2026-08-15T18:18:15.859383+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 8,
-  "analyzed_papers": 545,
-  "coverage_percent": 1.4014,
+  "successful_daily_runs": 9,
+  "analyzed_papers": 564,
+  "coverage_percent": 1.4502,
   "by_year": {
-    "2026": 278,
-    "2025": 165,
-    "2024": 102
+    "2026": 288,
+    "2025": 171,
+    "2024": 105
   },
-  "last_daily_run": "2026-08-14",
+  "last_daily_run": "2026-08-16",
   "usage": {
-    "input_tokens": 1425756,
-    "output_tokens": 75578,
-    "total_tokens": 1501334
+    "input_tokens": 1590050,
+    "output_tokens": 85380,
+    "total_tokens": 1675430
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 39
+      "papers": 43
     },
     {
       "tag": "diffusion models",
-      "papers": 35
+      "papers": 37
     },
     {
       "tag": "large language models",
-      "papers": 26
+      "papers": 27
     },
     {
       "tag": "contrastive learning",
@@ -39,7 +39,7 @@
     },
     {
       "tag": "representation learning",
-      "papers": 22
+      "papers": 23
     },
     {
       "tag": "self-supervised learning",
@@ -47,23 +47,23 @@
     },
     {
       "tag": "transformers",
-      "papers": 19
+      "papers": 20
     },
     {
       "tag": "graph neural networks",
-      "papers": 18
+      "papers": 19
     },
     {
       "tag": "adversarial robustness",
       "papers": 16
     },
     {
-      "tag": "vision transformers",
-      "papers": 13
+      "tag": "interpretability",
+      "papers": 14
     },
     {
-      "tag": "interpretability",
-      "papers": 12
+      "tag": "vision transformers",
+      "papers": 14
     },
     {
       "tag": "transfer learning",
@@ -90,24 +90,24 @@
       "papers": 11
     },
     {
-      "tag": "DPO",
+      "tag": "continual learning",
       "papers": 11
     },
     {
-      "tag": "benchmark",
-      "papers": 10
+      "tag": "DPO",
+      "papers": 11
     }
   ],
   "response_effectiveness": {
-    "unknown": 338,
-    "partial_success": 278,
+    "unknown": 346,
+    "partial_success": 288,
     "no_effect": 61,
-    "strong_success": 160
+    "strong_success": 172
   },
   "score_actions": {
-    "unknown": 461,
-    "maintained": 191,
-    "increased": 180,
+    "unknown": 480,
+    "maintained": 198,
+    "increased": 184,
     "decreased": 1,
     "promised_increase": 4
   }
