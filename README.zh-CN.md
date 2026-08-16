@@ -6,6 +6,33 @@
 ## 最近 3 天新增
 
 <details open>
+<summary>2026-08-17 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
+
+| 年份 | 论文 | 主题 | 研究标签 |
+|---:|---|---|---|
+| 2024 | [Adaptive Offline Data Replay in Offline-to-Online Reinforcement Learning](https://openreview.net/forum?id=wWI1RYngAA) | reinforcement learning | offline-to-online reinforcement learning, offline data replay, adaptive mixing |
+| 2024 | [Scaling Supervised Local Learning with Augmented Auxiliary Networks](https://openreview.net/forum?id=Qbf1hy8b7m) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | local learning, auxiliary networks, biologically plausible learning |
+| 2024 | [Provably Accurate ODE Forecasting Through Explicit Trajectory Optimization](https://openreview.net/forum?id=UH4HinPK9d) | probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.) | ODE forecasting, dynamical systems, trajectory optimization |
+| 2025 | [Backdoor in Seconds: Unlocking Vulnerabilities in Large Pre-trained Models via Model Editing](https://openreview.net/forum?id=ZyPRwskBli) | alignment, fairness, safety, privacy, and societal considerations | backdoor attacks, model editing, training-free attacks |
+| 2025 | [Cross-Attention Head Position Patterns Can Align with Human Visual Concepts in Text-to-Image Generative Models](https://openreview.net/forum?id=1vggIT5vvj) | generative models | text-to-image diffusion, cross-attention analysis, mechanistic interpretability |
+| 2025 | [Multimodal Instruction Tuning with Hybrid State Space Models](https://openreview.net/forum?id=cagNCwQEEN) | applications to computer vision, audio, language, and other modalities | multimodal instruction tuning, vision-language models, hybrid state space models |
+| 2025 | [GLOV: Guided Large Language Models as Implicit Optimizers for Vision Language Models](https://openreview.net/forum?id=3Mia9aFpgo) | foundation or frontier models, including LLMs | vision-language models, prompt optimization, LLM-guided optimization |
+| 2025 | [TRACE: Temporal Grounding Video LLM via Causal Event Modeling](https://openreview.net/forum?id=14fFV0chUS) | applications to computer vision, audio, language, and other modalities | video temporal grounding, video large language models, causal event modeling |
+| 2025 | [MagicDec: Breaking the Latency-Throughput Tradeoff for Long Context Generation with Speculative Decoding](https://openreview.net/forum?id=CS2JWaziYr) | generative models | LLM inference, speculative decoding, long-context generation |
+| 2026 | [Inference-time Correction of Errors in AI-Generated Chest X-ray Radiology Reports](https://openreview.net/forum?id=xDnRK6E6SU) | other topics in machine learning (i.e., none of the above) | radiology report generation, chest X-ray, inference-time correction |
+| 2026 | [TOOLWEAVE: FINE-GRAINED AND CONTROLLABLE SYNTHETIC DATA GENERATION FOR MULTI-TURN TOOL CALLING WITH NON-FRONTIER LLMS](https://openreview.net/forum?id=KM7qycd8EB) | foundation or frontier models, including LLMs | LLM agents, multi-turn tool calling, synthetic data generation |
+| 2026 | [Lookahead Branching for Neural Network Verification](https://openreview.net/forum?id=p7YBRutxdS) | alignment, fairness, safety, privacy, and societal considerations | neural network verification, branch-and-bound, lookahead branching |
+| 2026 | [KV-CoRE: Benchmarking Data-Dependent Low-Rank Compressibility of KV-Caches in LLMs](https://openreview.net/forum?id=bZuCGZuPPQ) | foundation or frontier models, including LLMs | KV-cache compression, low-rank approximation, SVD |
+| 2026 | [Preventing Model Collapse Under Overparametrization: Optimal Mixing Ratios for Interpolation Learning and Ridge Regression](https://openreview.net/forum?id=9RdhTvYbX0) | learning theory | model collapse, overparameterized regression, minimum-norm interpolation |
+| 2026 | [How Effective is Your Rebuttal? Identifying Causal Models from the OpenReview System](https://openreview.net/forum?id=tysOWd3RWm) | interpretability and explainable AI | peer review analysis, OpenReview, rebuttal effectiveness |
+| 2026 | [Sample Complexity and Representation Ability of Test-time Scaling Paradigms](https://openreview.net/forum?id=RJDIX75TEE) | learning theory | large language models, test-time scaling, self-consistency |
+| 2026 | [Universality of Many-body Projected Ensemble for Learning Quantum Data Distribution](https://openreview.net/forum?id=QOp4bYWpJQ) | learning theory | quantum machine learning, quantum generative models, many-body projected ensemble |
+| 2026 | [Learning Materials Interatomic Potentials via Hybrid Invariant-Equivariant Architectures](https://openreview.net/forum?id=ccUlvMG31m) | applications to physical sciences (physics, chemistry, biology, etc.) | machine-learning interatomic potentials, materials science, invariant networks |
+| 2026 | [RectiWeather: Photo-Realistic Adverse Weather Removal via Zero-shot Soft Weather Perception and Rectified Flow](https://openreview.net/forum?id=Fa3C0TkWYi) | applications to computer vision, audio, language, and other modalities | adverse weather removal, image restoration, vision-language models |
+
+</details>
+
+<details>
 <summary>2026-08-16 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
 
 | 年份 | 论文 | 主题 | 研究标签 |
@@ -38,34 +65,6 @@
 当天没有公开新增论文。
 
 </details>
-
-<details>
-<summary>2026-08-14 - 新分析 20 篇论文，新增 0 个通用 Agent</summary>
-
-| 年份 | 论文 | 主题 | 研究标签 |
-|---:|---|---|---|
-| 2024 | [Window Attention is Bugged: How not to Interpolate Position Embeddings](https://openreview.net/forum?id=IPhm01y9a9) | representation learning for computer vision, audio, language, and other modalities | computer vision, vision transformers, window attention |
-| 2024 | [Evaluating Hallucinations in Chinese Large Language Models](https://openreview.net/forum?id=1AXvGjfF0V) | datasets and benchmarks | hallucination evaluation, Chinese LLMs, benchmark construction |
-| 2024 | [$\sigma$-PCA: a unified neural model for linear and nonlinear principal component analysis](https://openreview.net/forum?id=fzc3eleTxX) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | PCA, nonlinear PCA, ICA |
-| 2024 | [Global minima, recoverability thresholds, and higher-order structure in GNNs](https://openreview.net/forum?id=qqDeICpLFo) | learning on graphs and other geometries & topologies | graph neural networks, contextual stochastic block model, random graph theory |
-| 2025 | [VoiceNoNG: High-Quality Speech Editing Model without Hallucinations](https://openreview.net/forum?id=BVsFp5rQxd) | applications to computer vision, audio, language, and other modalities | speech editing, speech generation, flow matching |
-| 2025 | [Beyond the convexity assumption: Realistic tabular data generation under quantifier-free real linear constraints](https://openreview.net/forum?id=rx0TCew0Lj) | neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.) | tabular data generation, neuro-symbolic AI, quantifier-free linear arithmetic |
-| 2025 | [SparsePO: Controlling Preference Alignment of LLMs via Sparse Token Masks](https://openreview.net/forum?id=YOrN9vNrqo) | alignment, fairness, safety, privacy, and societal considerations | preference optimization, LLM alignment, token-level masking |
-| 2025 | [DiffBody: Human Body Restoration by Imagining with Generative Diffusion Prior](https://openreview.net/forum?id=R8t9Q3jmCQ) | generative models | human body restoration, image restoration, diffusion models |
-| 2025 | [Pay Attention to Real World Perturbations! Natural Robustness Evaluation in Machine Reading Comprehension](https://openreview.net/forum?id=L5dUM6prKw) | alignment, fairness, safety, privacy, and societal considerations | machine reading comprehension, robustness evaluation, natural perturbations |
-| 2025 | [Dual-cycle Consistency Learning for Weakly Supervised Phrase Grounding](https://openreview.net/forum?id=9IMQJ8HmIq) | applications to computer vision, audio, language, and other modalities | weakly supervised phrase grounding, visual grounding, pseudo-label learning |
-| 2026 | [RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks](https://openreview.net/forum?id=dBmjnRR1bC) | foundation or frontier models, including LLMs | LLM post-training, reinforcement learning, adversarial critics |
-| 2026 | [FedMuon: Accelerating Federated Learning with Matrix Orthogonalization](https://openreview.net/forum?id=3aoOMhwHia) | optimization | federated learning, optimization, Muon optimizer |
-| 2026 | [Can Global XAI Methods Reveal Injected Bias in LLMs? SHAP vs Rule Extraction vs RuleSHAP](https://openreview.net/forum?id=s2vWrgO4OA) | interpretability and explainable AI | interpretability, explainable AI, global SHAP |
-| 2026 | [Temporal Grounding as a Learning Signal for Referring Video Object Segmentation](https://openreview.net/forum?id=oUSQnvL8xA) | applications to computer vision, audio, language, and other modalities | referring video object segmentation, temporal grounding, video-text alignment |
-| 2026 | [The Unreasonable Effectiveness of Scaling Agents for Computer Use](https://openreview.net/forum?id=R0viKzJ70t) | applications to robotics, autonomy, planning | computer-use agents, GUI agents, test-time scaling |
-| 2026 | [Breaking Training Bottlenecks: Effective Reinforcement Learning for Modern Coding Models](https://openreview.net/forum?id=ryosylfHX2) | reinforcement learning | reinforcement learning, code generation, GRPO |
-| 2026 | [Secure Autoregressive Inference with Prompt Separation via Key-Value Caching](https://openreview.net/forum?id=tFNsosNMHT) | alignment, fairness, safety, privacy, and societal considerations | privacy-preserving inference, secure inference, MPC |
-| 2026 | [SwiftMax: Reducing Training Time for Learnable Softmax Alternative in Customized Acceleration](https://openreview.net/forum?id=nqWlwwavTN) | infrastructure, software libraries, hardware, systems, etc. | efficient attention, Softmax alternatives, hardware-software co-design |
-| 2026 | [MM-Prompt: Cross-Modal Prompt Tuning for Continual Visual Question Answering](https://openreview.net/forum?id=fQFX5G1rnJ) | transfer learning, meta learning, and lifelong learning | continual learning, visual question answering, multimodal prompt tuning |
-| 2026 | [EasyCreator: Empowering 4D Creation through Video Inpainting](https://openreview.net/forum?id=mU8Ubd8aNK) | generative models | 4D video generation, video inpainting, novel-view synthesis |
-
-</details>
 <!-- DAILY_ACTIVITY:END -->
 
 ---
@@ -75,7 +74,7 @@
 
 | 周期 | 新分析论文 | 年份分布 | 高频研究标签 |
 |---|---:|---|---|
-| 2026-08-03 - 2026-08-09 | 58 | 2024: 10, 2025: 18, 2026: 30 | large language models (7), vision-language models (5), reinforcement learning (5), datasets and benchmarks (2), LLM agents (2), multi-agent systems (2), diffusion models (2), medical anomaly detection (1), medical imaging (1), benchmark datasets (1) |
+| 2026-08-10 - 2026-08-16 | 117 | 2024: 21, 2025: 36, 2026: 60 | reinforcement learning (8), large language models (6), graph neural networks (5), continual learning (5), diffusion models (5), multimodal large language models (3), vision transformers (3), federated learning (3), LLM alignment (3), Neural Radiance Fields (2) |
 <!-- WEEKLY_ACTIVITY:END -->
 
 ---

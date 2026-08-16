@@ -1,20 +1,20 @@
 {
-  "generated_on": "2026-08-15T19:15:05.210714+00:00",
+  "generated_on": "2026-08-16T18:18:32.397327+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 9,
-  "analyzed_papers": 564,
-  "coverage_percent": 1.4502,
+  "successful_daily_runs": 10,
+  "analyzed_papers": 583,
+  "coverage_percent": 1.4991,
   "by_year": {
-    "2026": 288,
-    "2025": 171,
-    "2024": 105
+    "2026": 298,
+    "2025": 177,
+    "2024": 108
   },
-  "last_daily_run": "2026-08-16",
+  "last_daily_run": "2026-08-17",
   "usage": {
-    "input_tokens": 1590050,
-    "output_tokens": 85380,
-    "total_tokens": 1675430
+    "input_tokens": 1753788,
+    "output_tokens": 95632,
+    "total_tokens": 1849420
   },
   "top_research_tags": [
     {
@@ -27,15 +27,15 @@
     },
     {
       "tag": "large language models",
-      "papers": 27
+      "papers": 28
+    },
+    {
+      "tag": "vision-language models",
+      "papers": 26
     },
     {
       "tag": "contrastive learning",
       "papers": 25
-    },
-    {
-      "tag": "vision-language models",
-      "papers": 23
     },
     {
       "tag": "representation learning",
@@ -59,11 +59,11 @@
     },
     {
       "tag": "interpretability",
-      "papers": 14
+      "papers": 15
     },
     {
       "tag": "vision transformers",
-      "papers": 14
+      "papers": 15
     },
     {
       "tag": "transfer learning",
@@ -99,15 +99,15 @@
     }
   ],
   "response_effectiveness": {
-    "unknown": 346,
-    "partial_success": 288,
-    "no_effect": 61,
-    "strong_success": 172
+    "unknown": 384,
+    "partial_success": 304,
+    "no_effect": 64,
+    "strong_success": 174
   },
   "score_actions": {
-    "unknown": 480,
-    "maintained": 198,
-    "increased": 184,
+    "unknown": 524,
+    "maintained": 205,
+    "increased": 192,
     "decreased": 1,
     "promised_increase": 4
   }
