@@ -1,29 +1,29 @@
 {
-  "generated_on": "2026-08-16T18:18:32.397327+00:00",
+  "generated_on": "2026-08-18T18:18:52.153046+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 10,
-  "analyzed_papers": 583,
-  "coverage_percent": 1.4991,
+  "successful_daily_runs": 11,
+  "analyzed_papers": 603,
+  "coverage_percent": 1.5505,
   "by_year": {
-    "2026": 298,
-    "2025": 177,
-    "2024": 108
+    "2026": 308,
+    "2025": 183,
+    "2024": 112
   },
-  "last_daily_run": "2026-08-17",
+  "last_daily_run": "2026-08-19",
   "usage": {
-    "input_tokens": 1753788,
-    "output_tokens": 95632,
-    "total_tokens": 1849420
+    "input_tokens": 1969599,
+    "output_tokens": 106969,
+    "total_tokens": 2076568
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 43
+      "papers": 44
     },
     {
       "tag": "diffusion models",
-      "papers": 37
+      "papers": 39
     },
     {
       "tag": "large language models",
@@ -39,30 +39,30 @@
     },
     {
       "tag": "representation learning",
-      "papers": 23
+      "papers": 24
     },
     {
       "tag": "self-supervised learning",
-      "papers": 20
+      "papers": 21
+    },
+    {
+      "tag": "graph neural networks",
+      "papers": 21
     },
     {
       "tag": "transformers",
       "papers": 20
     },
     {
-      "tag": "graph neural networks",
-      "papers": 19
-    },
-    {
       "tag": "adversarial robustness",
       "papers": 16
     },
     {
-      "tag": "interpretability",
-      "papers": 15
+      "tag": "vision transformers",
+      "papers": 16
     },
     {
-      "tag": "vision transformers",
+      "tag": "interpretability",
       "papers": 15
     },
     {
@@ -99,16 +99,16 @@
     }
   ],
   "response_effectiveness": {
-    "unknown": 384,
-    "partial_success": 304,
-    "no_effect": 64,
-    "strong_success": 174
+    "unknown": 400,
+    "partial_success": 313,
+    "no_effect": 65,
+    "strong_success": 183
   },
   "score_actions": {
-    "unknown": 524,
-    "maintained": 205,
-    "increased": 192,
-    "decreased": 1,
+    "unknown": 545,
+    "maintained": 212,
+    "increased": 198,
+    "decreased": 2,
     "promised_increase": 4
   }
 }
