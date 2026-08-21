@@ -1,6 +1,237 @@
 {
-  "generated_on": "2026-08-18T18:18:52.198584+00:00",
+  "generated_on": "2026-08-21T14:37:43.917683+00:00",
   "recent_days": [
+    {
+      "date": "2026-08-21",
+      "papers": [
+        {
+          "openreview_id": "370Bvdd3z7",
+          "year": 2024,
+          "title": "EC-Conf: An Ultra-fast Diffusion Model for Molecular Conformation Generation with Equivariant Consistency",
+          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
+          "openreview_url": "https://openreview.net/forum?id=370Bvdd3z7",
+          "research_tags": []
+        },
+        {
+          "openreview_id": "LIW88mwqgv",
+          "year": 2024,
+          "title": "Enhancing Chain-of-Thoughts Prompting with Iterative Bootstrapping in Large Language Models",
+          "primary_topic": "general machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=LIW88mwqgv",
+          "research_tags": [
+            "chain-of-thought prompting",
+            "in-context learning",
+            "iterative refinement"
+          ]
+        },
+        {
+          "openreview_id": "fNOewRJLgQ",
+          "year": 2024,
+          "title": "Ophiuchus: Scalable Modeling of Protein Structures through Hierarchical Coarse-graining SO(3)-Equivariant Autoencoders",
+          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
+          "openreview_url": "https://openreview.net/forum?id=fNOewRJLgQ",
+          "research_tags": [
+            "protein structure modeling",
+            "geometric deep learning",
+            "SO(3)-equivariance"
+          ]
+        },
+        {
+          "openreview_id": "0QnKnt411O",
+          "year": 2025,
+          "title": "Unsupervised Zero-Shot Reinforcement Learning via Dual-Value Forward-Backward Representation",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=0QnKnt411O",
+          "research_tags": [
+            "unsupervised reinforcement learning",
+            "zero-shot generalization",
+            "online reinforcement learning"
+          ]
+        },
+        {
+          "openreview_id": "gCSEQIgbWH",
+          "year": 2025,
+          "title": "Generalist Policy for k-Server Problem on Graphs using Deep Reinforcement Learning with Action-Value Decomposition",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=gCSEQIgbWH",
+          "research_tags": [
+            "reinforcement learning",
+            "k-server problem",
+            "online optimization"
+          ]
+        },
+        {
+          "openreview_id": "Iu8RytBaji",
+          "year": 2025,
+          "title": "Post-hoc Reward Calibration: A Case Study on Length Bias",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=Iu8RytBaji",
+          "research_tags": [
+            "RLHF",
+            "reward models",
+            "reward calibration"
+          ]
+        },
+        {
+          "openreview_id": "AFMi0kUtDr",
+          "year": 2025,
+          "title": "PruneFuse: Efficient Data Selection via Weight Pruning and Network Fusion",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=AFMi0kUtDr",
+          "research_tags": [
+            "active learning",
+            "data selection",
+            "dataset pruning"
+          ]
+        },
+        {
+          "openreview_id": "l4fMj4Vnly",
+          "year": 2025,
+          "title": "ADIFF: Explaining audio difference using natural language",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=l4fMj4Vnly",
+          "research_tags": [
+            "audio-language models",
+            "audio difference explanation",
+            "audio captioning"
+          ]
+        },
+        {
+          "openreview_id": "PzkYyZH9Fx",
+          "year": 2025,
+          "title": "Narcissus: Leveraging Early Training Dynamics for Unsupervised Anomaly Detection",
+          "primary_topic": "learning on time series and dynamical systems",
+          "openreview_url": "https://openreview.net/forum?id=PzkYyZH9Fx",
+          "research_tags": [
+            "unsupervised anomaly detection",
+            "early training dynamics",
+            "early stopping"
+          ]
+        },
+        {
+          "openreview_id": "Wt6K1uoMPQ",
+          "year": 2026,
+          "title": "Deep Positive-Unlabeled Anomaly Detection for Contaminated Unlabeled Data",
+          "primary_topic": "other topics in machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=Wt6K1uoMPQ",
+          "research_tags": [
+            "anomaly detection",
+            "semi-supervised anomaly detection",
+            "positive-unlabeled learning"
+          ]
+        },
+        {
+          "openreview_id": "DQ1SMxND8r",
+          "year": 2026,
+          "title": "PITA: Preference-Guided Inference-Time Alignment for LLM Post-Training",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=DQ1SMxND8r",
+          "research_tags": []
+        },
+        {
+          "openreview_id": "HsbhmxBmam",
+          "year": 2026,
+          "title": "RFG: Test-Time Scaling for Diffusion Large Language Model Reasoning with Reward-Free Guidance",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=HsbhmxBmam",
+          "research_tags": [
+            "diffusion LLMs",
+            "test-time scaling",
+            "reasoning"
+          ]
+        },
+        {
+          "openreview_id": "dsIBpBJWhm",
+          "year": 2026,
+          "title": "Physics-Informed Graph Convolutional Network for Data-Free Learning of Channel Flow Fields",
+          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
+          "openreview_url": "https://openreview.net/forum?id=dsIBpBJWhm",
+          "research_tags": [
+            "physics-informed machine learning",
+            "physics-informed neural networks",
+            "graph convolutional networks"
+          ]
+        },
+        {
+          "openreview_id": "tOOAWDRjrb",
+          "year": 2026,
+          "title": "Massive Activations are the Key to Local Detail Synthesis in Diffusion Transformers",
+          "primary_topic": "generative models",
+          "openreview_url": "https://openreview.net/forum?id=tOOAWDRjrb",
+          "research_tags": [
+            "diffusion transformers",
+            "massive activations",
+            "image generation"
+          ]
+        },
+        {
+          "openreview_id": "vBTzW3UHen",
+          "year": 2026,
+          "title": "A Unified Evaluation Framework for Frozen Visual Models on Forecasting Tasks",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=vBTzW3UHen",
+          "research_tags": [
+            "visual forecasting",
+            "frozen vision models",
+            "representation evaluation"
+          ]
+        },
+        {
+          "openreview_id": "1Ne3tfQC0T",
+          "year": 2026,
+          "title": "Gauge Symmetries for Efficient Zero- Knowledge Proofs of Transformers",
+          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
+          "openreview_url": "https://openreview.net/forum?id=1Ne3tfQC0T",
+          "research_tags": [
+            "zero-knowledge proofs",
+            "zero-knowledge machine learning",
+            "Transformer verification"
+          ]
+        },
+        {
+          "openreview_id": "ry0pzTX87l",
+          "year": 2026,
+          "title": "AH-UGC: $\\underline{\\text{A}}$daptive and $\\underline{\\text{H}}$eterogeneous-$\\underline{\\text{U}}$niversal $\\underline{\\text{G}}$raph $\\underline{\\text{C}}$oarsening",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=ry0pzTX87l",
+          "research_tags": [
+            "graph coarsening",
+            "adaptive graph coarsening",
+            "heterogeneous graphs"
+          ]
+        },
+        {
+          "openreview_id": "YCXWIfVakj",
+          "year": 2026,
+          "title": "WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=YCXWIfVakj",
+          "research_tags": [
+            "web search agents",
+            "LLM tool use",
+            "reinforcement learning"
+          ]
+        },
+        {
+          "openreview_id": "KAGR7Mqu4h",
+          "year": 2026,
+          "title": "Unified and Efficient Multi-view Clustering from Probabilistic Perspective",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=KAGR7Mqu4h",
+          "research_tags": [
+            "multi-view clustering",
+            "anchor graphs",
+            "probabilistic clustering"
+          ]
+        }
+      ],
+      "agents": []
+    },
+    {
+      "date": "2026-08-20",
+      "papers": [],
+      "agents": []
+    },
     {
       "date": "2026-08-19",
       "papers": [
@@ -242,245 +473,6 @@
             "knowledge distillation",
             "mechanistic interpretability",
             "circuit alignment"
-          ]
-        }
-      ],
-      "agents": []
-    },
-    {
-      "date": "2026-08-18",
-      "papers": [],
-      "agents": []
-    },
-    {
-      "date": "2026-08-17",
-      "papers": [
-        {
-          "openreview_id": "wWI1RYngAA",
-          "year": 2024,
-          "title": "Adaptive Offline Data Replay in Offline-to-Online Reinforcement Learning",
-          "primary_topic": "reinforcement learning",
-          "openreview_url": "https://openreview.net/forum?id=wWI1RYngAA",
-          "research_tags": [
-            "offline-to-online reinforcement learning",
-            "offline data replay",
-            "adaptive mixing"
-          ]
-        },
-        {
-          "openreview_id": "Qbf1hy8b7m",
-          "year": 2024,
-          "title": "Scaling Supervised Local Learning with Augmented Auxiliary Networks",
-          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
-          "openreview_url": "https://openreview.net/forum?id=Qbf1hy8b7m",
-          "research_tags": [
-            "local learning",
-            "auxiliary networks",
-            "biologically plausible learning"
-          ]
-        },
-        {
-          "openreview_id": "UH4HinPK9d",
-          "year": 2024,
-          "title": "Provably Accurate ODE Forecasting Through Explicit Trajectory Optimization",
-          "primary_topic": "probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.)",
-          "openreview_url": "https://openreview.net/forum?id=UH4HinPK9d",
-          "research_tags": [
-            "ODE forecasting",
-            "dynamical systems",
-            "trajectory optimization"
-          ]
-        },
-        {
-          "openreview_id": "ZyPRwskBli",
-          "year": 2025,
-          "title": "Backdoor in Seconds: Unlocking Vulnerabilities in Large Pre-trained Models via Model Editing",
-          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
-          "openreview_url": "https://openreview.net/forum?id=ZyPRwskBli",
-          "research_tags": [
-            "backdoor attacks",
-            "model editing",
-            "training-free attacks"
-          ]
-        },
-        {
-          "openreview_id": "1vggIT5vvj",
-          "year": 2025,
-          "title": "Cross-Attention Head Position Patterns Can Align with Human Visual Concepts in Text-to-Image Generative Models",
-          "primary_topic": "generative models",
-          "openreview_url": "https://openreview.net/forum?id=1vggIT5vvj",
-          "research_tags": [
-            "text-to-image diffusion",
-            "cross-attention analysis",
-            "mechanistic interpretability"
-          ]
-        },
-        {
-          "openreview_id": "cagNCwQEEN",
-          "year": 2025,
-          "title": "Multimodal Instruction Tuning with Hybrid State Space Models",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=cagNCwQEEN",
-          "research_tags": [
-            "multimodal instruction tuning",
-            "vision-language models",
-            "hybrid state space models"
-          ]
-        },
-        {
-          "openreview_id": "3Mia9aFpgo",
-          "year": 2025,
-          "title": "GLOV: Guided Large Language Models as Implicit Optimizers for Vision Language Models",
-          "primary_topic": "foundation or frontier models, including LLMs",
-          "openreview_url": "https://openreview.net/forum?id=3Mia9aFpgo",
-          "research_tags": [
-            "vision-language models",
-            "prompt optimization",
-            "LLM-guided optimization"
-          ]
-        },
-        {
-          "openreview_id": "14fFV0chUS",
-          "year": 2025,
-          "title": "TRACE: Temporal Grounding Video LLM via Causal Event Modeling",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=14fFV0chUS",
-          "research_tags": [
-            "video temporal grounding",
-            "video large language models",
-            "causal event modeling"
-          ]
-        },
-        {
-          "openreview_id": "CS2JWaziYr",
-          "year": 2025,
-          "title": "MagicDec: Breaking the Latency-Throughput Tradeoff for Long Context Generation with Speculative Decoding",
-          "primary_topic": "generative models",
-          "openreview_url": "https://openreview.net/forum?id=CS2JWaziYr",
-          "research_tags": [
-            "LLM inference",
-            "speculative decoding",
-            "long-context generation"
-          ]
-        },
-        {
-          "openreview_id": "xDnRK6E6SU",
-          "year": 2026,
-          "title": "Inference-time Correction of Errors in AI-Generated Chest X-ray Radiology Reports",
-          "primary_topic": "other topics in machine learning (i.e., none of the above)",
-          "openreview_url": "https://openreview.net/forum?id=xDnRK6E6SU",
-          "research_tags": [
-            "radiology report generation",
-            "chest X-ray",
-            "inference-time correction"
-          ]
-        },
-        {
-          "openreview_id": "KM7qycd8EB",
-          "year": 2026,
-          "title": "TOOLWEAVE: FINE-GRAINED AND CONTROLLABLE SYNTHETIC DATA GENERATION FOR MULTI-TURN TOOL CALLING WITH NON-FRONTIER LLMS",
-          "primary_topic": "foundation or frontier models, including LLMs",
-          "openreview_url": "https://openreview.net/forum?id=KM7qycd8EB",
-          "research_tags": [
-            "LLM agents",
-            "multi-turn tool calling",
-            "synthetic data generation"
-          ]
-        },
-        {
-          "openreview_id": "p7YBRutxdS",
-          "year": 2026,
-          "title": "Lookahead Branching for Neural Network Verification",
-          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
-          "openreview_url": "https://openreview.net/forum?id=p7YBRutxdS",
-          "research_tags": [
-            "neural network verification",
-            "branch-and-bound",
-            "lookahead branching"
-          ]
-        },
-        {
-          "openreview_id": "bZuCGZuPPQ",
-          "year": 2026,
-          "title": "KV-CoRE: Benchmarking Data-Dependent Low-Rank Compressibility of KV-Caches in LLMs",
-          "primary_topic": "foundation or frontier models, including LLMs",
-          "openreview_url": "https://openreview.net/forum?id=bZuCGZuPPQ",
-          "research_tags": [
-            "KV-cache compression",
-            "low-rank approximation",
-            "SVD"
-          ]
-        },
-        {
-          "openreview_id": "9RdhTvYbX0",
-          "year": 2026,
-          "title": "Preventing Model Collapse Under Overparametrization: Optimal Mixing Ratios for Interpolation Learning and Ridge Regression",
-          "primary_topic": "learning theory",
-          "openreview_url": "https://openreview.net/forum?id=9RdhTvYbX0",
-          "research_tags": [
-            "model collapse",
-            "overparameterized regression",
-            "minimum-norm interpolation"
-          ]
-        },
-        {
-          "openreview_id": "tysOWd3RWm",
-          "year": 2026,
-          "title": "How Effective is Your Rebuttal? Identifying Causal Models from the OpenReview System",
-          "primary_topic": "interpretability and explainable AI",
-          "openreview_url": "https://openreview.net/forum?id=tysOWd3RWm",
-          "research_tags": [
-            "peer review analysis",
-            "OpenReview",
-            "rebuttal effectiveness"
-          ]
-        },
-        {
-          "openreview_id": "RJDIX75TEE",
-          "year": 2026,
-          "title": "Sample Complexity and Representation Ability of Test-time Scaling Paradigms",
-          "primary_topic": "learning theory",
-          "openreview_url": "https://openreview.net/forum?id=RJDIX75TEE",
-          "research_tags": [
-            "large language models",
-            "test-time scaling",
-            "self-consistency"
-          ]
-        },
-        {
-          "openreview_id": "QOp4bYWpJQ",
-          "year": 2026,
-          "title": "Universality of Many-body Projected Ensemble for Learning Quantum Data Distribution",
-          "primary_topic": "learning theory",
-          "openreview_url": "https://openreview.net/forum?id=QOp4bYWpJQ",
-          "research_tags": [
-            "quantum machine learning",
-            "quantum generative models",
-            "many-body projected ensemble"
-          ]
-        },
-        {
-          "openreview_id": "ccUlvMG31m",
-          "year": 2026,
-          "title": "Learning Materials Interatomic Potentials via Hybrid Invariant-Equivariant Architectures",
-          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
-          "openreview_url": "https://openreview.net/forum?id=ccUlvMG31m",
-          "research_tags": [
-            "machine-learning interatomic potentials",
-            "materials science",
-            "invariant networks"
-          ]
-        },
-        {
-          "openreview_id": "Fa3C0TkWYi",
-          "year": 2026,
-          "title": "RectiWeather: Photo-Realistic Adverse Weather Removal via Zero-shot Soft Weather Perception and Rectified Flow",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=Fa3C0TkWYi",
-          "research_tags": [
-            "adverse weather removal",
-            "image restoration",
-            "vision-language models"
           ]
         }
       ],

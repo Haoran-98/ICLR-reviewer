@@ -6,6 +6,40 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-21 - 19 newly analyzed papers, 0 common Agents added</summary>
+
+| Year | Paper | Topic | Research tags |
+|---:|---|---|---|
+| 2024 | [EC-Conf: An Ultra-fast Diffusion Model for Molecular Conformation Generation with Equivariant Consistency](https://openreview.net/forum?id=370Bvdd3z7) | applications to physical sciences (physics, chemistry, biology, etc.) | - |
+| 2024 | [Enhancing Chain-of-Thoughts Prompting with Iterative Bootstrapping in Large Language Models](https://openreview.net/forum?id=LIW88mwqgv) | general machine learning (i.e., none of the above) | chain-of-thought prompting, in-context learning, iterative refinement |
+| 2024 | [Ophiuchus: Scalable Modeling of Protein Structures through Hierarchical Coarse-graining SO(3)-Equivariant Autoencoders](https://openreview.net/forum?id=fNOewRJLgQ) | applications to physical sciences (physics, chemistry, biology, etc.) | protein structure modeling, geometric deep learning, SO(3)-equivariance |
+| 2025 | [Unsupervised Zero-Shot Reinforcement Learning via Dual-Value Forward-Backward Representation](https://openreview.net/forum?id=0QnKnt411O) | reinforcement learning | unsupervised reinforcement learning, zero-shot generalization, online reinforcement learning |
+| 2025 | [Generalist Policy for k-Server Problem on Graphs using Deep Reinforcement Learning with Action-Value Decomposition](https://openreview.net/forum?id=gCSEQIgbWH) | reinforcement learning | reinforcement learning, k-server problem, online optimization |
+| 2025 | [Post-hoc Reward Calibration: A Case Study on Length Bias](https://openreview.net/forum?id=Iu8RytBaji) | foundation or frontier models, including LLMs | RLHF, reward models, reward calibration |
+| 2025 | [PruneFuse: Efficient Data Selection via Weight Pruning and Network Fusion](https://openreview.net/forum?id=AFMi0kUtDr) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | active learning, data selection, dataset pruning |
+| 2025 | [ADIFF: Explaining audio difference using natural language](https://openreview.net/forum?id=l4fMj4Vnly) | applications to computer vision, audio, language, and other modalities | audio-language models, audio difference explanation, audio captioning |
+| 2025 | [Narcissus: Leveraging Early Training Dynamics for Unsupervised Anomaly Detection](https://openreview.net/forum?id=PzkYyZH9Fx) | learning on time series and dynamical systems | unsupervised anomaly detection, early training dynamics, early stopping |
+| 2026 | [Deep Positive-Unlabeled Anomaly Detection for Contaminated Unlabeled Data](https://openreview.net/forum?id=Wt6K1uoMPQ) | other topics in machine learning (i.e., none of the above) | anomaly detection, semi-supervised anomaly detection, positive-unlabeled learning |
+| 2026 | [PITA: Preference-Guided Inference-Time Alignment for LLM Post-Training](https://openreview.net/forum?id=DQ1SMxND8r) | foundation or frontier models, including LLMs | - |
+| 2026 | [RFG: Test-Time Scaling for Diffusion Large Language Model Reasoning with Reward-Free Guidance](https://openreview.net/forum?id=HsbhmxBmam) | foundation or frontier models, including LLMs | diffusion LLMs, test-time scaling, reasoning |
+| 2026 | [Physics-Informed Graph Convolutional Network for Data-Free Learning of Channel Flow Fields](https://openreview.net/forum?id=dsIBpBJWhm) | applications to physical sciences (physics, chemistry, biology, etc.) | physics-informed machine learning, physics-informed neural networks, graph convolutional networks |
+| 2026 | [Massive Activations are the Key to Local Detail Synthesis in Diffusion Transformers](https://openreview.net/forum?id=tOOAWDRjrb) | generative models | diffusion transformers, massive activations, image generation |
+| 2026 | [A Unified Evaluation Framework for Frozen Visual Models on Forecasting Tasks](https://openreview.net/forum?id=vBTzW3UHen) | applications to computer vision, audio, language, and other modalities | visual forecasting, frozen vision models, representation evaluation |
+| 2026 | [Gauge Symmetries for Efficient Zero- Knowledge Proofs of Transformers](https://openreview.net/forum?id=1Ne3tfQC0T) | alignment, fairness, safety, privacy, and societal considerations | zero-knowledge proofs, zero-knowledge machine learning, Transformer verification |
+| 2026 | [AH-UGC: $\underline{\text{A}}$daptive and $\underline{\text{H}}$eterogeneous-$\underline{\text{U}}$niversal $\underline{\text{G}}$raph $\underline{\text{C}}$oarsening](https://openreview.net/forum?id=ry0pzTX87l) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | graph coarsening, adaptive graph coarsening, heterogeneous graphs |
+| 2026 | [WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](https://openreview.net/forum?id=YCXWIfVakj) | foundation or frontier models, including LLMs | web search agents, LLM tool use, reinforcement learning |
+| 2026 | [Unified and Efficient Multi-view Clustering from Probabilistic Perspective](https://openreview.net/forum?id=KAGR7Mqu4h) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | multi-view clustering, anchor graphs, probabilistic clustering |
+
+</details>
+
+<details>
+<summary>2026-08-20 - 0 newly analyzed papers, 0 common Agents added</summary>
+
+No public paper additions on this day.
+
+</details>
+
+<details>
 <summary>2026-08-19 - 20 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -30,40 +64,6 @@
 | 2026 | [CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](https://openreview.net/forum?id=M8gSCScVR7) | generative models | text-to-image synthesis, diffusion models, flow-based generative models |
 | 2026 | [Connecting the Dots: Generating Realistic Tabular Data with Structural Causal Models](https://openreview.net/forum?id=dW2ToB9u89) | generative models | causal generative models, structural causal models, tabular data synthesis |
 | 2026 | [Circuit Distillation](https://openreview.net/forum?id=HVShyTzRgy) | interpretability and explainable AI | knowledge distillation, mechanistic interpretability, circuit alignment |
-
-</details>
-
-<details>
-<summary>2026-08-18 - 0 newly analyzed papers, 0 common Agents added</summary>
-
-No public paper additions on this day.
-
-</details>
-
-<details>
-<summary>2026-08-17 - 19 newly analyzed papers, 0 common Agents added</summary>
-
-| Year | Paper | Topic | Research tags |
-|---:|---|---|---|
-| 2024 | [Adaptive Offline Data Replay in Offline-to-Online Reinforcement Learning](https://openreview.net/forum?id=wWI1RYngAA) | reinforcement learning | offline-to-online reinforcement learning, offline data replay, adaptive mixing |
-| 2024 | [Scaling Supervised Local Learning with Augmented Auxiliary Networks](https://openreview.net/forum?id=Qbf1hy8b7m) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | local learning, auxiliary networks, biologically plausible learning |
-| 2024 | [Provably Accurate ODE Forecasting Through Explicit Trajectory Optimization](https://openreview.net/forum?id=UH4HinPK9d) | probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.) | ODE forecasting, dynamical systems, trajectory optimization |
-| 2025 | [Backdoor in Seconds: Unlocking Vulnerabilities in Large Pre-trained Models via Model Editing](https://openreview.net/forum?id=ZyPRwskBli) | alignment, fairness, safety, privacy, and societal considerations | backdoor attacks, model editing, training-free attacks |
-| 2025 | [Cross-Attention Head Position Patterns Can Align with Human Visual Concepts in Text-to-Image Generative Models](https://openreview.net/forum?id=1vggIT5vvj) | generative models | text-to-image diffusion, cross-attention analysis, mechanistic interpretability |
-| 2025 | [Multimodal Instruction Tuning with Hybrid State Space Models](https://openreview.net/forum?id=cagNCwQEEN) | applications to computer vision, audio, language, and other modalities | multimodal instruction tuning, vision-language models, hybrid state space models |
-| 2025 | [GLOV: Guided Large Language Models as Implicit Optimizers for Vision Language Models](https://openreview.net/forum?id=3Mia9aFpgo) | foundation or frontier models, including LLMs | vision-language models, prompt optimization, LLM-guided optimization |
-| 2025 | [TRACE: Temporal Grounding Video LLM via Causal Event Modeling](https://openreview.net/forum?id=14fFV0chUS) | applications to computer vision, audio, language, and other modalities | video temporal grounding, video large language models, causal event modeling |
-| 2025 | [MagicDec: Breaking the Latency-Throughput Tradeoff for Long Context Generation with Speculative Decoding](https://openreview.net/forum?id=CS2JWaziYr) | generative models | LLM inference, speculative decoding, long-context generation |
-| 2026 | [Inference-time Correction of Errors in AI-Generated Chest X-ray Radiology Reports](https://openreview.net/forum?id=xDnRK6E6SU) | other topics in machine learning (i.e., none of the above) | radiology report generation, chest X-ray, inference-time correction |
-| 2026 | [TOOLWEAVE: FINE-GRAINED AND CONTROLLABLE SYNTHETIC DATA GENERATION FOR MULTI-TURN TOOL CALLING WITH NON-FRONTIER LLMS](https://openreview.net/forum?id=KM7qycd8EB) | foundation or frontier models, including LLMs | LLM agents, multi-turn tool calling, synthetic data generation |
-| 2026 | [Lookahead Branching for Neural Network Verification](https://openreview.net/forum?id=p7YBRutxdS) | alignment, fairness, safety, privacy, and societal considerations | neural network verification, branch-and-bound, lookahead branching |
-| 2026 | [KV-CoRE: Benchmarking Data-Dependent Low-Rank Compressibility of KV-Caches in LLMs](https://openreview.net/forum?id=bZuCGZuPPQ) | foundation or frontier models, including LLMs | KV-cache compression, low-rank approximation, SVD |
-| 2026 | [Preventing Model Collapse Under Overparametrization: Optimal Mixing Ratios for Interpolation Learning and Ridge Regression](https://openreview.net/forum?id=9RdhTvYbX0) | learning theory | model collapse, overparameterized regression, minimum-norm interpolation |
-| 2026 | [How Effective is Your Rebuttal? Identifying Causal Models from the OpenReview System](https://openreview.net/forum?id=tysOWd3RWm) | interpretability and explainable AI | peer review analysis, OpenReview, rebuttal effectiveness |
-| 2026 | [Sample Complexity and Representation Ability of Test-time Scaling Paradigms](https://openreview.net/forum?id=RJDIX75TEE) | learning theory | large language models, test-time scaling, self-consistency |
-| 2026 | [Universality of Many-body Projected Ensemble for Learning Quantum Data Distribution](https://openreview.net/forum?id=QOp4bYWpJQ) | learning theory | quantum machine learning, quantum generative models, many-body projected ensemble |
-| 2026 | [Learning Materials Interatomic Potentials via Hybrid Invariant-Equivariant Architectures](https://openreview.net/forum?id=ccUlvMG31m) | applications to physical sciences (physics, chemistry, biology, etc.) | machine-learning interatomic potentials, materials science, invariant networks |
-| 2026 | [RectiWeather: Photo-Realistic Adverse Weather Removal via Zero-shot Soft Weather Perception and Rectified Flow](https://openreview.net/forum?id=Fa3C0TkWYi) | applications to computer vision, audio, language, and other modalities | adverse weather removal, image restoration, vision-language models |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->
