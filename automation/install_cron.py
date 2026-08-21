@@ -6,7 +6,6 @@ from __future__ import annotations
 import argparse
 import shlex
 import subprocess
-import sys
 from pathlib import Path
 
 
@@ -36,19 +35,14 @@ def main() -> None:
         if not skipping:
             kept.append(line)
 
-    env = (
-        f"ICLR_REVIEWS_ROOT={shlex.quote(str(args.reviews_root.resolve()))} "
-        f"ICLR_AUTH_FILE={shlex.quote(str(args.auth_file.resolve()))} "
-        f"ICLR_REVIEWER_STATE={shlex.quote(str(args.state_dir.resolve()))}"
-    )
-    base = f"cd {shlex.quote(str(repo))} && {env} {shlex.quote(sys.executable)} automation/manage.py"
+    retry = shlex.quote(str((repo / "automation" / "run_with_retry.sh").resolve()))
     log = shlex.quote(str((args.state_dir / "automation.log").resolve()))
     block = [
         START,
         "CRON_TZ=Asia/Shanghai",
-        f"15 2 * * * {base} daily --push >> {log} 2>&1",
-        f"15 3 * * 0 {base} weekly --push >> {log} 2>&1",
-        f"15 4 1 * * {base} monthly --push >> {log} 2>&1",
+        f"15 2 * * * ICLR_AUTH_FILE={shlex.quote(str(args.auth_file.resolve()))} ICLR_REVIEWS_ROOT={shlex.quote(str(args.reviews_root.resolve()))} ICLR_REVIEWER_STATE={shlex.quote(str(args.state_dir.resolve()))} {retry} daily >> {log} 2>&1",
+        f"15 3 * * 0 ICLR_AUTH_FILE={shlex.quote(str(args.auth_file.resolve()))} ICLR_REVIEWS_ROOT={shlex.quote(str(args.reviews_root.resolve()))} ICLR_REVIEWER_STATE={shlex.quote(str(args.state_dir.resolve()))} {retry} weekly >> {log} 2>&1",
+        f"15 4 1 * * ICLR_AUTH_FILE={shlex.quote(str(args.auth_file.resolve()))} ICLR_REVIEWS_ROOT={shlex.quote(str(args.reviews_root.resolve()))} ICLR_REVIEWER_STATE={shlex.quote(str(args.state_dir.resolve()))} {retry} monthly >> {log} 2>&1",
         END,
     ]
     payload = "\n".join([*kept, *block]).strip() + "\n"

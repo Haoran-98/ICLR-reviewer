@@ -23,6 +23,14 @@ def load_auth(path: Path) -> dict[str, str]:
             continue
         key, value = assignment[0].split("=", 1)
         values[key] = value
+    # Automation has its own endpoint/key so scheduled jobs do not consume the
+    # interactive account quota.
+    if values.get("OPENAI_BASE_AUTOMATION_URL"):
+        values["OPENAI_BASE_URL"] = values["OPENAI_BASE_AUTOMATION_URL"]
+    if values.get("OPENAI_API_AUTOMATION_KEY"):
+        values["OPENAI_API_KEY"] = values["OPENAI_API_AUTOMATION_KEY"]
+    if values.get("OPENAI_AUTOMATION_MODEL_ID"):
+        values["OPENAI_WEAK_MODEL_ID"] = values["OPENAI_AUTOMATION_MODEL_ID"]
     required = {"OPENAI_BASE_URL", "OPENAI_API_KEY", "OPENAI_WEAK_MODEL_ID"}
     missing = sorted(required - values.keys())
     if missing:
