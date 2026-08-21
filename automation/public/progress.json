@@ -1,41 +1,41 @@
 {
-  "generated_on": "2026-08-21T14:37:43.869375+00:00",
+  "generated_on": "2026-08-21T18:19:06.501797+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 12,
-  "analyzed_papers": 622,
-  "coverage_percent": 1.5994,
+  "successful_daily_runs": 13,
+  "analyzed_papers": 642,
+  "coverage_percent": 1.6508,
   "by_year": {
-    "2026": 318,
-    "2025": 189,
-    "2024": 115
+    "2026": 328,
+    "2025": 195,
+    "2024": 119
   },
-  "last_daily_run": "2026-08-21",
+  "last_daily_run": "2026-08-22",
   "usage": {
-    "input_tokens": 2119918,
-    "output_tokens": 114274,
-    "total_tokens": 2234192
+    "input_tokens": 2303293,
+    "output_tokens": 121707,
+    "total_tokens": 2425000
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 46
+      "papers": 47
     },
     {
       "tag": "diffusion models",
-      "papers": 39
+      "papers": 41
     },
     {
       "tag": "large language models",
+      "papers": 31
+    },
+    {
+      "tag": "contrastive learning",
       "papers": 28
     },
     {
       "tag": "vision-language models",
-      "papers": 26
-    },
-    {
-      "tag": "contrastive learning",
-      "papers": 26
+      "papers": 27
     },
     {
       "tag": "representation learning",
@@ -47,11 +47,15 @@
     },
     {
       "tag": "self-supervised learning",
-      "papers": 21
+      "papers": 22
     },
     {
       "tag": "transformers",
       "papers": 20
+    },
+    {
+      "tag": "interpretability",
+      "papers": 16
     },
     {
       "tag": "adversarial robustness",
@@ -62,8 +66,8 @@
       "papers": 16
     },
     {
-      "tag": "interpretability",
-      "papers": 15
+      "tag": "multimodal learning",
+      "papers": 14
     },
     {
       "tag": "transfer learning",
@@ -74,7 +78,11 @@
       "papers": 12
     },
     {
-      "tag": "multimodal learning",
+      "tag": "continual learning",
+      "papers": 12
+    },
+    {
+      "tag": "GRPO",
       "papers": 12
     },
     {
@@ -88,26 +96,18 @@
     {
       "tag": "language models",
       "papers": 11
-    },
-    {
-      "tag": "benchmark construction",
-      "papers": 11
-    },
-    {
-      "tag": "continual learning",
-      "papers": 11
     }
   ],
   "response_effectiveness": {
-    "unknown": 412,
-    "partial_success": 317,
-    "no_effect": 65,
-    "strong_success": 189
+    "unknown": 428,
+    "partial_success": 325,
+    "no_effect": 66,
+    "strong_success": 195
   },
   "score_actions": {
-    "unknown": 551,
-    "maintained": 217,
-    "increased": 208,
+    "unknown": 567,
+    "maintained": 225,
+    "increased": 215,
     "decreased": 2,
     "promised_increase": 5
   }
