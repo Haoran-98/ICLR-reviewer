@@ -1,49 +1,49 @@
 {
-  "generated_on": "2026-08-22T19:26:18.744188+00:00",
+  "generated_on": "2026-08-22T21:52:41.708804+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 13,
-  "analyzed_papers": 642,
-  "coverage_percent": 1.6508,
+  "successful_daily_runs": 14,
+  "analyzed_papers": 661,
+  "coverage_percent": 1.6997,
   "by_year": {
-    "2026": 328,
-    "2025": 195,
-    "2024": 119
+    "2026": 338,
+    "2025": 201,
+    "2024": 122
   },
-  "last_daily_run": "2026-08-22",
+  "last_daily_run": "2026-08-23",
   "usage": {
-    "input_tokens": 2303293,
-    "output_tokens": 121707,
-    "total_tokens": 2425000
+    "input_tokens": 2455797,
+    "output_tokens": 130560,
+    "total_tokens": 2586357
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 47
+      "papers": 50
     },
     {
       "tag": "diffusion models",
-      "papers": 41
+      "papers": 42
     },
     {
       "tag": "large language models",
-      "papers": 31
-    },
-    {
-      "tag": "contrastive learning",
-      "papers": 28
+      "papers": 33
     },
     {
       "tag": "vision-language models",
-      "papers": 27
+      "papers": 30
+    },
+    {
+      "tag": "contrastive learning",
+      "papers": 29
     },
     {
       "tag": "representation learning",
-      "papers": 24
+      "papers": 25
     },
     {
       "tag": "graph neural networks",
-      "papers": 23
+      "papers": 24
     },
     {
       "tag": "self-supervised learning",
@@ -51,7 +51,7 @@
     },
     {
       "tag": "transformers",
-      "papers": 20
+      "papers": 22
     },
     {
       "tag": "interpretability",
@@ -67,47 +67,47 @@
     },
     {
       "tag": "multimodal learning",
-      "papers": 14
+      "papers": 16
+    },
+    {
+      "tag": "continual learning",
+      "papers": 13
     },
     {
       "tag": "transfer learning",
       "papers": 13
     },
     {
-      "tag": "code generation",
+      "tag": "generative models",
       "papers": 12
     },
     {
-      "tag": "continual learning",
+      "tag": "flow matching",
+      "papers": 12
+    },
+    {
+      "tag": "language models",
+      "papers": 12
+    },
+    {
+      "tag": "code generation",
       "papers": 12
     },
     {
       "tag": "GRPO",
       "papers": 12
-    },
-    {
-      "tag": "dataset construction",
-      "papers": 11
-    },
-    {
-      "tag": "flow matching",
-      "papers": 11
-    },
-    {
-      "tag": "language models",
-      "papers": 11
     }
   ],
   "response_effectiveness": {
-    "unknown": 428,
-    "partial_success": 325,
-    "no_effect": 66,
-    "strong_success": 195
+    "unknown": 435,
+    "partial_success": 341,
+    "no_effect": 69,
+    "strong_success": 204
   },
   "score_actions": {
-    "unknown": 567,
-    "maintained": 225,
-    "increased": 215,
+    "unknown": 592,
+    "maintained": 231,
+    "increased": 219,
     "decreased": 2,
     "promised_increase": 5
   }

@@ -1,9 +1,238 @@
 {
-  "generated_on": "2026-08-22T19:26:18.789383+00:00",
+  "generated_on": "2026-08-22T21:52:41.757923+00:00",
   "recent_days": [
     {
       "date": "2026-08-23",
-      "papers": [],
+      "papers": [
+        {
+          "openreview_id": "dLrhRIMVmB",
+          "year": 2024,
+          "title": "Topological data analysis on noisy quantum computers",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=dLrhRIMVmB",
+          "research_tags": [
+            "quantum computing",
+            "NISQ algorithms",
+            "topological data analysis"
+          ]
+        },
+        {
+          "openreview_id": "yIKjkRZBrX",
+          "year": 2024,
+          "title": "Learning variable-length skills through Novelty-based Decision Point Identification",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=yIKjkRZBrX",
+          "research_tags": [
+            "reinforcement learning",
+            "hierarchical reinforcement learning",
+            "skill learning"
+          ]
+        },
+        {
+          "openreview_id": "SNGANmQPLv",
+          "year": 2024,
+          "title": "Understanding Multimodal Instruction Format for In-context Learning",
+          "primary_topic": "transfer learning, meta learning, and lifelong learning",
+          "openreview_url": "https://openreview.net/forum?id=SNGANmQPLv",
+          "research_tags": [
+            "multimodal learning",
+            "vision-language models",
+            "instruction tuning"
+          ]
+        },
+        {
+          "openreview_id": "uxYbEAEWm4",
+          "year": 2025,
+          "title": "Knowledge Lift Alignment Fine Tuning",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=uxYbEAEWm4",
+          "research_tags": [
+            "vision-language models",
+            "image captioning",
+            "expressive captioning"
+          ]
+        },
+        {
+          "openreview_id": "bEbQBiMpUI",
+          "year": 2025,
+          "title": "Convergence Towards Stable Intrinsic Self-correction of Large Language Models",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=bEbQBiMpUI",
+          "research_tags": [
+            "large language models",
+            "intrinsic self-correction",
+            "self-reflection prompting"
+          ]
+        },
+        {
+          "openreview_id": "7Qa2SpjxIS",
+          "year": 2025,
+          "title": "AI Sandbagging: Language Models can Strategically Underperform on Evaluations",
+          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
+          "openreview_url": "https://openreview.net/forum?id=7Qa2SpjxIS",
+          "research_tags": [
+            "AI safety",
+            "AI evaluations",
+            "sandbagging"
+          ]
+        },
+        {
+          "openreview_id": "dj0TktJcVI",
+          "year": 2025,
+          "title": "Fine-Tuning Attention Modules Only: Enhancing Weight Disentanglement in Task Arithmetic",
+          "primary_topic": "transfer learning, meta learning, and lifelong learning",
+          "openreview_url": "https://openreview.net/forum?id=dj0TktJcVI",
+          "research_tags": [
+            "task arithmetic",
+            "model merging",
+            "weight disentanglement"
+          ]
+        },
+        {
+          "openreview_id": "tZiMLgsHMu",
+          "year": 2025,
+          "title": "JudgeRank: Leveraging Large Language Models for Reasoning-Intensive Reranking",
+          "primary_topic": "generative models",
+          "openreview_url": "https://openreview.net/forum?id=tZiMLgsHMu",
+          "research_tags": [
+            "information retrieval",
+            "document reranking",
+            "retrieval-augmented generation"
+          ]
+        },
+        {
+          "openreview_id": "gN4stDLq3t",
+          "year": 2025,
+          "title": "Power Scheduler: A Batch Size and Token Number Agnostic Learning Rate Scheduler",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=gN4stDLq3t",
+          "research_tags": [
+            "learning-rate scheduling",
+            "language-model pretraining",
+            "power-law scaling"
+          ]
+        },
+        {
+          "openreview_id": "ZOREAbteO5",
+          "year": 2026,
+          "title": "PTNET: A PROPOSAL-CENTRIC TRANSFORMER NET- WORK FOR 3D OBJECT DETECTION",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=ZOREAbteO5",
+          "research_tags": [
+            "3D object detection",
+            "LiDAR point clouds",
+            "autonomous driving"
+          ]
+        },
+        {
+          "openreview_id": "IuZoTgsUws",
+          "year": 2026,
+          "title": "AgentFold: Long-Horizon Web Agents with Proactive Context Folding",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=IuZoTgsUws",
+          "research_tags": [
+            "web agents",
+            "long-horizon reasoning",
+            "context management"
+          ]
+        },
+        {
+          "openreview_id": "e6RCMY64au",
+          "year": 2026,
+          "title": "Node-Centric Knowledge Graph",
+          "primary_topic": "learning on graphs and other geometries & topologies",
+          "openreview_url": "https://openreview.net/forum?id=e6RCMY64au",
+          "research_tags": [
+            "knowledge graph completion",
+            "node-centric architecture",
+            "local MLPs"
+          ]
+        },
+        {
+          "openreview_id": "isNjWnVsUR",
+          "year": 2026,
+          "title": "Anchor Frame Bridging for Coherent First-Last Frame Video Generation",
+          "primary_topic": "generative models",
+          "openreview_url": "https://openreview.net/forum?id=isNjWnVsUR",
+          "research_tags": [
+            "generative models",
+            "video generation",
+            "first-last frame video generation"
+          ]
+        },
+        {
+          "openreview_id": "wbIYlFCPPq",
+          "year": 2026,
+          "title": "Provably Efficient High-Order Flow Matching in Pixel Space",
+          "primary_topic": "generative models",
+          "openreview_url": "https://openreview.net/forum?id=wbIYlFCPPq",
+          "research_tags": [
+            "flow matching",
+            "generative models",
+            "pixel-space generation"
+          ]
+        },
+        {
+          "openreview_id": "E6KButTanu",
+          "year": 2026,
+          "title": "Data Valuation by Leveraging Global and Local Statistical Information",
+          "primary_topic": "other topics in machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=E6KButTanu",
+          "research_tags": [
+            "data valuation",
+            "Shapley values",
+            "AME"
+          ]
+        },
+        {
+          "openreview_id": "7CyXgo9tys",
+          "year": 2026,
+          "title": "Bioacoustic Geolocation: Species Sounds as Geographic Signals",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=7CyXgo9tys",
+          "research_tags": [
+            "audio geolocation",
+            "bioacoustics",
+            "wildlife audio"
+          ]
+        },
+        {
+          "openreview_id": "I30HO3xth3",
+          "year": 2026,
+          "title": "Degree-Corrected Ricci Curvature for Networks",
+          "primary_topic": "learning on graphs and other geometries & topologies",
+          "openreview_url": "https://openreview.net/forum?id=I30HO3xth3",
+          "research_tags": [
+            "network curvature",
+            "degree-corrected block model",
+            "stochastic block model"
+          ]
+        },
+        {
+          "openreview_id": "7SkGH9yW3s",
+          "year": 2026,
+          "title": "Hierarchical Object-Oriented POMDP Planning for Object Rearrangement",
+          "primary_topic": "applications to robotics, autonomy, planning",
+          "openreview_url": "https://openreview.net/forum?id=7SkGH9yW3s",
+          "research_tags": [
+            "robotics",
+            "object rearrangement",
+            "POMDP"
+          ]
+        },
+        {
+          "openreview_id": "ldYKqmtLm5",
+          "year": 2026,
+          "title": "Differentially Private One Permutation Hashing",
+          "primary_topic": "other topics in machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=ldYKqmtLm5",
+          "research_tags": [
+            "differential privacy",
+            "one permutation hashing",
+            "MinHash"
+          ]
+        }
+      ],
       "agents": []
     },
     {

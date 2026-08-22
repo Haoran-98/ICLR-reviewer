@@ -6,9 +6,29 @@
 ## 最近 3 天新增
 
 <details open>
-<summary>2026-08-23 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
+<summary>2026-08-23 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
 
-当天没有公开新增论文。
+| 年份 | 论文 | 主题 | 研究标签 |
+|---:|---|---|---|
+| 2024 | [Topological data analysis on noisy quantum computers](https://openreview.net/forum?id=dLrhRIMVmB) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | quantum computing, NISQ algorithms, topological data analysis |
+| 2024 | [Learning variable-length skills through Novelty-based Decision Point Identification](https://openreview.net/forum?id=yIKjkRZBrX) | reinforcement learning | reinforcement learning, hierarchical reinforcement learning, skill learning |
+| 2024 | [Understanding Multimodal Instruction Format for In-context Learning](https://openreview.net/forum?id=SNGANmQPLv) | transfer learning, meta learning, and lifelong learning | multimodal learning, vision-language models, instruction tuning |
+| 2025 | [Knowledge Lift Alignment Fine Tuning](https://openreview.net/forum?id=uxYbEAEWm4) | foundation or frontier models, including LLMs | vision-language models, image captioning, expressive captioning |
+| 2025 | [Convergence Towards Stable Intrinsic Self-correction of Large Language Models](https://openreview.net/forum?id=bEbQBiMpUI) | applications to computer vision, audio, language, and other modalities | large language models, intrinsic self-correction, self-reflection prompting |
+| 2025 | [AI Sandbagging: Language Models can Strategically Underperform on Evaluations](https://openreview.net/forum?id=7Qa2SpjxIS) | alignment, fairness, safety, privacy, and societal considerations | AI safety, AI evaluations, sandbagging |
+| 2025 | [Fine-Tuning Attention Modules Only: Enhancing Weight Disentanglement in Task Arithmetic](https://openreview.net/forum?id=dj0TktJcVI) | transfer learning, meta learning, and lifelong learning | task arithmetic, model merging, weight disentanglement |
+| 2025 | [JudgeRank: Leveraging Large Language Models for Reasoning-Intensive Reranking](https://openreview.net/forum?id=tZiMLgsHMu) | generative models | information retrieval, document reranking, retrieval-augmented generation |
+| 2025 | [Power Scheduler: A Batch Size and Token Number Agnostic Learning Rate Scheduler](https://openreview.net/forum?id=gN4stDLq3t) | foundation or frontier models, including LLMs | learning-rate scheduling, language-model pretraining, power-law scaling |
+| 2026 | [PTNET: A PROPOSAL-CENTRIC TRANSFORMER NET- WORK FOR 3D OBJECT DETECTION](https://openreview.net/forum?id=ZOREAbteO5) | applications to computer vision, audio, language, and other modalities | 3D object detection, LiDAR point clouds, autonomous driving |
+| 2026 | [AgentFold: Long-Horizon Web Agents with Proactive Context Folding](https://openreview.net/forum?id=IuZoTgsUws) | applications to computer vision, audio, language, and other modalities | web agents, long-horizon reasoning, context management |
+| 2026 | [Node-Centric Knowledge Graph](https://openreview.net/forum?id=e6RCMY64au) | learning on graphs and other geometries & topologies | knowledge graph completion, node-centric architecture, local MLPs |
+| 2026 | [Anchor Frame Bridging for Coherent First-Last Frame Video Generation](https://openreview.net/forum?id=isNjWnVsUR) | generative models | generative models, video generation, first-last frame video generation |
+| 2026 | [Provably Efficient High-Order Flow Matching in Pixel Space](https://openreview.net/forum?id=wbIYlFCPPq) | generative models | flow matching, generative models, pixel-space generation |
+| 2026 | [Data Valuation by Leveraging Global and Local Statistical Information](https://openreview.net/forum?id=E6KButTanu) | other topics in machine learning (i.e., none of the above) | data valuation, Shapley values, AME |
+| 2026 | [Bioacoustic Geolocation: Species Sounds as Geographic Signals](https://openreview.net/forum?id=7CyXgo9tys) | applications to computer vision, audio, language, and other modalities | audio geolocation, bioacoustics, wildlife audio |
+| 2026 | [Degree-Corrected Ricci Curvature for Networks](https://openreview.net/forum?id=I30HO3xth3) | learning on graphs and other geometries & topologies | network curvature, degree-corrected block model, stochastic block model |
+| 2026 | [Hierarchical Object-Oriented POMDP Planning for Object Rearrangement](https://openreview.net/forum?id=7SkGH9yW3s) | applications to robotics, autonomy, planning | robotics, object rearrangement, POMDP |
+| 2026 | [Differentially Private One Permutation Hashing](https://openreview.net/forum?id=ldYKqmtLm5) | other topics in machine learning (i.e., none of the above) | differential privacy, one permutation hashing, MinHash |
 
 </details>
 
