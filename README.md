@@ -6,6 +6,13 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-23 - 0 newly analyzed papers, 0 common Agents added</summary>
+
+No public paper additions on this day.
+
+</details>
+
+<details>
 <summary>2026-08-22 - 20 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -57,13 +64,6 @@
 | 2026 | [AH-UGC: $\underline{\text{A}}$daptive and $\underline{\text{H}}$eterogeneous-$\underline{\text{U}}$niversal $\underline{\text{G}}$raph $\underline{\text{C}}$oarsening](https://openreview.net/forum?id=ry0pzTX87l) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | graph coarsening, adaptive graph coarsening, heterogeneous graphs |
 | 2026 | [WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](https://openreview.net/forum?id=YCXWIfVakj) | foundation or frontier models, including LLMs | web search agents, LLM tool use, reinforcement learning |
 | 2026 | [Unified and Efficient Multi-view Clustering from Probabilistic Perspective](https://openreview.net/forum?id=KAGR7Mqu4h) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | multi-view clustering, anchor graphs, probabilistic clustering |
-
-</details>
-
-<details>
-<summary>2026-08-20 - 0 newly analyzed papers, 0 common Agents added</summary>
-
-No public paper additions on this day.
 
 </details>
 <!-- DAILY_ACTIVITY:END -->
