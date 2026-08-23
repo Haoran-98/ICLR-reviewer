@@ -1,25 +1,25 @@
 {
-  "generated_on": "2026-08-22T21:52:41.708804+00:00",
+  "generated_on": "2026-08-23T18:19:07.801127+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 14,
-  "analyzed_papers": 661,
-  "coverage_percent": 1.6997,
+  "successful_daily_runs": 15,
+  "analyzed_papers": 681,
+  "coverage_percent": 1.7511,
   "by_year": {
-    "2026": 338,
-    "2025": 201,
-    "2024": 122
+    "2026": 348,
+    "2025": 207,
+    "2024": 126
   },
-  "last_daily_run": "2026-08-23",
+  "last_daily_run": "2026-08-24",
   "usage": {
-    "input_tokens": 2455797,
-    "output_tokens": 130560,
-    "total_tokens": 2586357
+    "input_tokens": 2678154,
+    "output_tokens": 141088,
+    "total_tokens": 2819242
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 50
+      "papers": 51
     },
     {
       "tag": "diffusion models",
@@ -27,15 +27,15 @@
     },
     {
       "tag": "large language models",
-      "papers": 33
+      "papers": 35
     },
     {
       "tag": "vision-language models",
-      "papers": 30
+      "papers": 31
     },
     {
       "tag": "contrastive learning",
-      "papers": 29
+      "papers": 30
     },
     {
       "tag": "representation learning",
@@ -47,7 +47,7 @@
     },
     {
       "tag": "self-supervised learning",
-      "papers": 22
+      "papers": 23
     },
     {
       "tag": "transformers",
@@ -55,15 +55,15 @@
     },
     {
       "tag": "interpretability",
-      "papers": 16
+      "papers": 17
     },
     {
       "tag": "adversarial robustness",
-      "papers": 16
+      "papers": 17
     },
     {
       "tag": "vision transformers",
-      "papers": 16
+      "papers": 17
     },
     {
       "tag": "multimodal learning",
@@ -71,7 +71,7 @@
     },
     {
       "tag": "continual learning",
-      "papers": 13
+      "papers": 14
     },
     {
       "tag": "transfer learning",
@@ -86,29 +86,29 @@
       "papers": 12
     },
     {
+      "tag": "image classification",
+      "papers": 12
+    },
+    {
       "tag": "language models",
       "papers": 12
     },
     {
       "tag": "code generation",
       "papers": 12
-    },
-    {
-      "tag": "GRPO",
-      "papers": 12
     }
   ],
   "response_effectiveness": {
-    "unknown": 435,
-    "partial_success": 341,
-    "no_effect": 69,
-    "strong_success": 204
+    "unknown": 455,
+    "partial_success": 354,
+    "no_effect": 72,
+    "strong_success": 212
   },
   "score_actions": {
-    "unknown": 592,
-    "maintained": 231,
-    "increased": 219,
+    "unknown": 620,
+    "maintained": 237,
+    "increased": 228,
     "decreased": 2,
-    "promised_increase": 5
+    "promised_increase": 6
   }
 }

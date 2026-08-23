@@ -6,6 +6,34 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-24 - 20 newly analyzed papers, 0 common Agents added</summary>
+
+| Year | Paper | Topic | Research tags |
+|---:|---|---|---|
+| 2024 | [Change Point Detection via Variational Time-Varying Hidden Markov Model](https://openreview.net/forum?id=I5MquO1g7R) | probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.) | change point detection, time-varying hidden Markov model, variational inference |
+| 2024 | [Learn What You Need in Personalized Federated Learning](https://openreview.net/forum?id=Ut4lyQnJ7Y) | general machine learning (i.e., none of the above) | personalized federated learning, adaptive aggregation, algorithm unrolling |
+| 2024 | [Unified Projection-Free Algorithms for Adversarial DR-Submodular Optimization](https://openreview.net/forum?id=H4A9e8HvIn) | reinforcement learning | online optimization, adversarial optimization, continuous DR-submodular optimization |
+| 2024 | [Uni-RLHF: Universal Platform and Benchmark Suite for Reinforcement Learning with Diverse Human Feedback](https://openreview.net/forum?id=WesY0H9ghM) | reinforcement learning | reinforcement learning from human feedback, diverse human feedback, offline reinforcement learning |
+| 2025 | [Shh, don't say that! Domain Certification in LLMs](https://openreview.net/forum?id=F64wTvQBum) | alignment, fairness, safety, privacy, and societal considerations | large language models, domain certification, adversarial robustness |
+| 2025 | [NarrativeBridge: Enhancing Video Captioning with Causal-Temporal Narrative](https://openreview.net/forum?id=bBoetBIN2R) | applications to computer vision, audio, language, and other modalities | video captioning, video-language modeling, causal reasoning |
+| 2025 | [Mitigating Reward Over-optimization in Direct Alignment Algorithms with Adaptive Importance Sampling](https://openreview.net/forum?id=H9dNX6TaRE) | alignment, fairness, safety, privacy, and societal considerations | LLM alignment, direct alignment algorithms, DPO |
+| 2025 | [No Pose, No Problem: Surprisingly Simple 3D Gaussian Splats from Sparse Unposed Images](https://openreview.net/forum?id=P4o9akekdf) | applications to computer vision, audio, language, and other modalities | 3D Gaussian Splatting, pose-free reconstruction, sparse-view reconstruction |
+| 2025 | [Unsupervised Learning of Categorical Structure](https://openreview.net/forum?id=IwxxnY98sf) | applications to neuroscience & cognitive science | unsupervised representation learning, binary matrix factorization, categorical structure |
+| 2025 | [From Overconnectivity to Sparsity: Emulating Synaptic Pruning with Long Connections](https://openreview.net/forum?id=qMUtej58Pc) | other topics in machine learning (i.e., none of the above) | neural network architecture, long connections, synaptic pruning |
+| 2026 | [FINSIGHT: TOWARDS REAL-WORLD FINANCIAL DEEP RESEARCH](https://openreview.net/forum?id=65iJEaVixf) | applications to computer vision, audio, language, and other modalities | financial research, deep research agents, multimodal report generation |
+| 2026 | [Multi-objective Hyperparameter Optimization in the Age of Deep Learning](https://openreview.net/forum?id=1lLWZzikiT) | optimization | hyperparameter optimization, multi-objective optimization, Bayesian optimization |
+| 2026 | [AdaptiVision: A Flexible and Efficient Vision Transformer for Adaptive Token Pruning](https://openreview.net/forum?id=ZIRpP9nBMv) | other topics in machine learning (i.e., none of the above) | vision transformers, adaptive token pruning, token condensation |
+| 2026 | [Predictive Differential Training Guided by Training Dynamics](https://openreview.net/forum?id=zSTgrLkpRi) | optimization | optimization, deep neural network training, training dynamics |
+| 2026 | [Dynamic Orthogonal Continual Fine-tuning for Mitigating Catastrophic Forgetting of LLMs](https://openreview.net/forum?id=14Sq0m94oA) | transfer learning, meta learning, and lifelong learning | continual learning, large language models, catastrophic forgetting |
+| 2026 | [Geometry-aware Policy Imitation](https://openreview.net/forum?id=ggofj6tyr3) | applications to robotics, autonomy, planning | robot imitation learning, geometry-aware policy, distance fields |
+| 2026 | [Physically Ground Commonsense Knowledge for Articulated Object Manipulation with Analytic Concepts](https://openreview.net/forum?id=tkLDNUzL80) | applications to robotics, autonomy, planning | robotic manipulation, articulated object manipulation, physical commonsense reasoning |
+| 2026 | [Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement](https://openreview.net/forum?id=qsra0EsUpe) | applications to computer vision, audio, language, and other modalities | 3D point clouds, multimodal large language models, 3D understanding |
+| 2026 | [HeLutNet: Extremely Fast Privacy-preserving Inference in Milliseconds via LUT-based Machine Learning Models](https://openreview.net/forum?id=j0SJyQMALf) | alignment, fairness, safety, privacy, and societal considerations | privacy-preserving machine learning, fully homomorphic encryption, BGV |
+| 2026 | [When Human Data Runs Out: Self-Supervised Reasoning via Negotiation Self-Play](https://openreview.net/forum?id=HemCbcjdIo) | foundation or frontier models, including LLMs | LLM reasoning, self-supervised learning, language-agent self-play |
+
+</details>
+
+<details>
 <summary>2026-08-23 - 19 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -59,33 +87,6 @@
 | 2026 | [ADAM: A Diverse Archive of Mankind for Multimodal Benchmarking and Enhancing LLMs’ Cognitive Skills in Biographical Contexts](https://openreview.net/forum?id=mU00BTMaSw) | datasets and benchmarks | biographical reasoning, multilingual datasets, multimodal benchmarks |
 
 </details>
-
-<details>
-<summary>2026-08-21 - 19 newly analyzed papers, 0 common Agents added</summary>
-
-| Year | Paper | Topic | Research tags |
-|---:|---|---|---|
-| 2024 | [EC-Conf: An Ultra-fast Diffusion Model for Molecular Conformation Generation with Equivariant Consistency](https://openreview.net/forum?id=370Bvdd3z7) | applications to physical sciences (physics, chemistry, biology, etc.) | - |
-| 2024 | [Enhancing Chain-of-Thoughts Prompting with Iterative Bootstrapping in Large Language Models](https://openreview.net/forum?id=LIW88mwqgv) | general machine learning (i.e., none of the above) | chain-of-thought prompting, in-context learning, iterative refinement |
-| 2024 | [Ophiuchus: Scalable Modeling of Protein Structures through Hierarchical Coarse-graining SO(3)-Equivariant Autoencoders](https://openreview.net/forum?id=fNOewRJLgQ) | applications to physical sciences (physics, chemistry, biology, etc.) | protein structure modeling, geometric deep learning, SO(3)-equivariance |
-| 2025 | [Unsupervised Zero-Shot Reinforcement Learning via Dual-Value Forward-Backward Representation](https://openreview.net/forum?id=0QnKnt411O) | reinforcement learning | unsupervised reinforcement learning, zero-shot generalization, online reinforcement learning |
-| 2025 | [Generalist Policy for k-Server Problem on Graphs using Deep Reinforcement Learning with Action-Value Decomposition](https://openreview.net/forum?id=gCSEQIgbWH) | reinforcement learning | reinforcement learning, k-server problem, online optimization |
-| 2025 | [Post-hoc Reward Calibration: A Case Study on Length Bias](https://openreview.net/forum?id=Iu8RytBaji) | foundation or frontier models, including LLMs | RLHF, reward models, reward calibration |
-| 2025 | [PruneFuse: Efficient Data Selection via Weight Pruning and Network Fusion](https://openreview.net/forum?id=AFMi0kUtDr) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | active learning, data selection, dataset pruning |
-| 2025 | [ADIFF: Explaining audio difference using natural language](https://openreview.net/forum?id=l4fMj4Vnly) | applications to computer vision, audio, language, and other modalities | audio-language models, audio difference explanation, audio captioning |
-| 2025 | [Narcissus: Leveraging Early Training Dynamics for Unsupervised Anomaly Detection](https://openreview.net/forum?id=PzkYyZH9Fx) | learning on time series and dynamical systems | unsupervised anomaly detection, early training dynamics, early stopping |
-| 2026 | [Deep Positive-Unlabeled Anomaly Detection for Contaminated Unlabeled Data](https://openreview.net/forum?id=Wt6K1uoMPQ) | other topics in machine learning (i.e., none of the above) | anomaly detection, semi-supervised anomaly detection, positive-unlabeled learning |
-| 2026 | [PITA: Preference-Guided Inference-Time Alignment for LLM Post-Training](https://openreview.net/forum?id=DQ1SMxND8r) | foundation or frontier models, including LLMs | - |
-| 2026 | [RFG: Test-Time Scaling for Diffusion Large Language Model Reasoning with Reward-Free Guidance](https://openreview.net/forum?id=HsbhmxBmam) | foundation or frontier models, including LLMs | diffusion LLMs, test-time scaling, reasoning |
-| 2026 | [Physics-Informed Graph Convolutional Network for Data-Free Learning of Channel Flow Fields](https://openreview.net/forum?id=dsIBpBJWhm) | applications to physical sciences (physics, chemistry, biology, etc.) | physics-informed machine learning, physics-informed neural networks, graph convolutional networks |
-| 2026 | [Massive Activations are the Key to Local Detail Synthesis in Diffusion Transformers](https://openreview.net/forum?id=tOOAWDRjrb) | generative models | diffusion transformers, massive activations, image generation |
-| 2026 | [A Unified Evaluation Framework for Frozen Visual Models on Forecasting Tasks](https://openreview.net/forum?id=vBTzW3UHen) | applications to computer vision, audio, language, and other modalities | visual forecasting, frozen vision models, representation evaluation |
-| 2026 | [Gauge Symmetries for Efficient Zero- Knowledge Proofs of Transformers](https://openreview.net/forum?id=1Ne3tfQC0T) | alignment, fairness, safety, privacy, and societal considerations | zero-knowledge proofs, zero-knowledge machine learning, Transformer verification |
-| 2026 | [AH-UGC: $\underline{\text{A}}$daptive and $\underline{\text{H}}$eterogeneous-$\underline{\text{U}}$niversal $\underline{\text{G}}$raph $\underline{\text{C}}$oarsening](https://openreview.net/forum?id=ry0pzTX87l) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | graph coarsening, adaptive graph coarsening, heterogeneous graphs |
-| 2026 | [WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](https://openreview.net/forum?id=YCXWIfVakj) | foundation or frontier models, including LLMs | web search agents, LLM tool use, reinforcement learning |
-| 2026 | [Unified and Efficient Multi-view Clustering from Probabilistic Perspective](https://openreview.net/forum?id=KAGR7Mqu4h) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | multi-view clustering, anchor graphs, probabilistic clustering |
-
-</details>
 <!-- DAILY_ACTIVITY:END -->
 
 ---
@@ -95,7 +96,7 @@
 
 | Period | Newly analyzed papers | Year distribution | Top research tags |
 |---|---:|---|---|
-| 2026-08-10 - 2026-08-16 | 117 | 2024: 21, 2025: 36, 2026: 60 | reinforcement learning (8), large language models (6), graph neural networks (5), continual learning (5), diffusion models (5), multimodal large language models (3), vision transformers (3), federated learning (3), LLM alignment (3), Neural Radiance Fields (2) |
+| 2026-08-17 - 2026-08-23 | 97 | 2024: 17, 2025: 30, 2026: 50 | vision-language models (6), large language models (4), reinforcement learning (4), multimodal learning (4), diffusion models (3), dynamical systems (2), mechanistic interpretability (2), test-time scaling (2), autonomous driving (2), tabular data synthesis (2) |
 <!-- WEEKLY_ACTIVITY:END -->
 
 ---
