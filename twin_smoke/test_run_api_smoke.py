@@ -20,7 +20,7 @@ class ResponsesApiHelpersTests(unittest.TestCase):
         }
         self.assertEqual("first second", output_text(payload))
 
-    def test_automation_credentials_take_precedence(self):
+    def test_standard_credentials_are_not_overridden(self):
         with TemporaryDirectory() as directory:
             auth_path = Path(directory) / "auth"
             auth_path.write_text(
@@ -39,9 +39,9 @@ class ResponsesApiHelpersTests(unittest.TestCase):
 
             auth = load_auth(auth_path)
 
-        self.assertEqual("https://automation.example/v1", auth["OPENAI_BASE_URL"])
-        self.assertEqual("automation-key", auth["OPENAI_API_KEY"])
-        self.assertEqual("automation-model", auth["OPENAI_WEAK_MODEL_ID"])
+        self.assertEqual("https://interactive.example/v1", auth["OPENAI_BASE_URL"])
+        self.assertEqual("interactive-key", auth["OPENAI_API_KEY"])
+        self.assertEqual("interactive-model", auth["OPENAI_WEAK_MODEL_ID"])
 
 
 if __name__ == "__main__":

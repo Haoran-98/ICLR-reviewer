@@ -18,12 +18,9 @@ for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
     (
         set -e
         source "$AUTH_FILE"
-        : "${OPENAI_BASE_AUTOMATION_URL:?Missing OPENAI_BASE_AUTOMATION_URL}"
-        : "${OPENAI_API_AUTOMATION_KEY:?Missing OPENAI_API_AUTOMATION_KEY}"
-        : "${OPENAI_AUTOMATION_MODEL_ID:?Missing OPENAI_AUTOMATION_MODEL_ID}"
-        export OPENAI_BASE_URL="$OPENAI_BASE_AUTOMATION_URL"
-        export OPENAI_API_KEY="$OPENAI_API_AUTOMATION_KEY"
-        export OPENAI_WEAK_MODEL_ID="$OPENAI_AUTOMATION_MODEL_ID"
+        : "${OPENAI_BASE_URL:?Missing OPENAI_BASE_URL}"
+        : "${OPENAI_API_KEY:?Missing OPENAI_API_KEY}"
+        : "${OPENAI_WEAK_MODEL_ID:?Missing OPENAI_WEAK_MODEL_ID}"
         cd "$ROOT"
         "$PYTHON" automation/manage.py "$TASK" --push
     )
