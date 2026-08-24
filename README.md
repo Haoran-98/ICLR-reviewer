@@ -6,6 +6,33 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-25 - 19 newly analyzed papers, 0 common Agents added</summary>
+
+| Year | Paper | Topic | Research tags |
+|---:|---|---|---|
+| 2024 | [Gradual Optimization Learning for Conformational Energy Minimization](https://openreview.net/forum?id=FMMF1a9ifL) | applications to physical sciences (physics, chemistry, biology, etc.) | molecular conformation optimization, neural network potentials, active learning |
+| 2024 | [FedImpro: Measuring and Improving Client Update in Federated Learning](https://openreview.net/forum?id=giU9fYGTND) | general machine learning (i.e., none of the above) | federated learning, client drift, data heterogeneity |
+| 2024 | [Universal Jailbreak Backdoors from Poisoned Human Feedback](https://openreview.net/forum?id=GxCGsxiAaK) | societal considerations including fairness, safety, privacy | large language models, RLHF, data poisoning |
+| 2025 | [Non-invasive Neural Decoding in Source Reconstructed Brain Space](https://openreview.net/forum?id=g3PuaFh5vV) | applications to neuroscience & cognitive science | neural decoding, MEG, source reconstruction |
+| 2025 | [End-to-End Reinforcement Learning for Traffic Signal Control: Real-Time Video to Signal Decisions](https://openreview.net/forum?id=eM5dar35Ys) | reinforcement learning | traffic signal control, reinforcement learning, end-to-end perception |
+| 2025 | [Graph Neural Networks Can (Often) Count Substructures](https://openreview.net/forum?id=sZQRUrvLn4) | learning on graphs and other geometries & topologies | graph neural networks, subgraph counting, GNN expressivity |
+| 2025 | [SPIN: Self-Supervised Prompt INjection](https://openreview.net/forum?id=PNHGYziAsL) | alignment, fairness, safety, privacy, and societal considerations | LLM safety, jailbreak defense, prompt injection defense |
+| 2025 | [VILA^2: VLM Augmented VLM with Self-Improvement](https://openreview.net/forum?id=M2YCdfxNVx) | foundation or frontier models, including LLMs | vision-language models, self-training, data curation |
+| 2025 | [Unpacking SDXL Turbo: Interpreting Text-to-Image Models with Sparse Autoencoders](https://openreview.net/forum?id=Ch8s4FdUXS) | interpretability and explainable AI | interpretability, explainable AI, text-to-image generation |
+| 2026 | [Not Just a Flash in Time: Interpreting Long Event Streams through Language](https://openreview.net/forum?id=Q3t0QBVFSG) | applications to computer vision, audio, language, and other modalities | event cameras, event streams, multimodal large language models |
+| 2026 | [MoCA: Mixture-of-Components Attention for Scalable Compositional 3D Generation](https://openreview.net/forum?id=Othf7vEtg7) | applications to computer vision, audio, language, and other modalities | compositional 3D generation, 3D object generation, 3D scene generation |
+| 2026 | [SUIT: Knowledge Editing with Subspace-Aware Key-Value Mappings](https://openreview.net/forum?id=qz3BkyyHWJ) | interpretability and explainable AI | knowledge editing, large language models, subspace methods |
+| 2026 | [Multi-Agent Debate with Memory Masking](https://openreview.net/forum?id=EdTt8nMAMA) | foundation or frontier models, including LLMs | multi-agent debate, LLM reasoning, memory masking |
+| 2026 | [Can vision language models learn intuitive physics from interaction?](https://openreview.net/forum?id=XdLgOm5giq) | applications to neuroscience & cognitive science | vision-language models, intuitive physics, reinforcement learning |
+| 2026 | [Sparser Block-Sparse Attention via Token Permutation](https://openreview.net/forum?id=wTZt07hzZf) | other topics in machine learning (i.e., none of the above) | sparse attention, block-sparse attention, token permutation |
+| 2026 | [ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask](https://openreview.net/forum?id=zgqFQM8VNe) | generative models | autonomous driving, driving world models, video generation |
+| 2026 | [Bimodality of Sparse Autoencoder Features is Still There and Can Be Fixed](https://openreview.net/forum?id=soMC0uESuz) | interpretability and explainable AI | sparse autoencoders, mechanistic interpretability, feature alignment |
+| 2026 | [Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants](https://openreview.net/forum?id=gxCOTacltM) | learning on time series and dynamical systems | dynamic time warping, differentiable dynamic programming, perturbed optimization |
+| 2026 | [Unpaired-to-paired data synthesis: Learning to model disease effects via contrastive analysis of neuroimaging-derived features](https://openreview.net/forum?id=iL2QSWKHkK) | applications to neuroscience & cognitive science | neuroimaging, structural MRI, regional brain volumes |
+
+</details>
+
+<details>
 <summary>2026-08-24 - 20 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -57,34 +84,6 @@
 | 2026 | [Degree-Corrected Ricci Curvature for Networks](https://openreview.net/forum?id=I30HO3xth3) | learning on graphs and other geometries & topologies | network curvature, degree-corrected block model, stochastic block model |
 | 2026 | [Hierarchical Object-Oriented POMDP Planning for Object Rearrangement](https://openreview.net/forum?id=7SkGH9yW3s) | applications to robotics, autonomy, planning | robotics, object rearrangement, POMDP |
 | 2026 | [Differentially Private One Permutation Hashing](https://openreview.net/forum?id=ldYKqmtLm5) | other topics in machine learning (i.e., none of the above) | differential privacy, one permutation hashing, MinHash |
-
-</details>
-
-<details>
-<summary>2026-08-22 - 20 newly analyzed papers, 0 common Agents added</summary>
-
-| Year | Paper | Topic | Research tags |
-|---:|---|---|---|
-| 2024 | [Self-Specialization: Uncovering Latent Expertise within Large Language Models](https://openreview.net/forum?id=RTL8fWgJaS) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | large language models, self-alignment, instruction tuning |
-| 2024 | [Periodic and Random Sparsity for Multivariate Long-Term Time-Series Forecasting](https://openreview.net/forum?id=ZRzlhfMqHt) | general machine learning (i.e., none of the above) | long-term time-series forecasting, multivariate forecasting, sparse attention |
-| 2024 | [CCD-3DR: Consistent Conditioning in Diffusion for Single-Image 3D Reconstruction](https://openreview.net/forum?id=w5oP27fmYW) | representation learning for computer vision, audio, language, and other modalities | single-image 3D reconstruction, point cloud generation, diffusion models |
-| 2024 | [Leveraging Human Revisions for Improving Text-to-Layout Models](https://openreview.net/forum?id=3bmjHYX42n) | generative models | human feedback, human revisions, reinforcement learning from human feedback |
-| 2025 | [Second-order finite-time and fixed-time systems for sparse recovery and dynamic sparse recovery](https://openreview.net/forum?id=0fXcrl35V0) | optimization | - |
-| 2025 | [Do Deep Neural Network Solutions Form a Star Domain?](https://openreview.net/forum?id=QjO0fUlVYK) | optimization | mode connectivity, loss landscapes, star-shaped solution sets |
-| 2025 | [Temporally coherent visualisation of time-dependent data](https://openreview.net/forum?id=FrmVRUVOEF) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | temporal visualization, dimensionality reduction, t-SNE |
-| 2025 | [Lost in the Averages: Evaluating record-specific MIAs against Machine Learning models](https://openreview.net/forum?id=Nx8lVqyKeZ) | alignment, fairness, safety, privacy, and societal considerations | membership inference attacks, privacy auditing, record-level privacy |
-| 2025 | [The impact of allocation strategies in subset learning on the expressive power of neural networks](https://openreview.net/forum?id=upoxXRRTQ2) | applications to neuroscience & cognitive science | subset learning, expressive power, learnable-weight allocation |
-| 2025 | [ConcreTizer: Model Inversion Attack via Occupancy Classification and Dispersion Control for 3D Point Cloud Restoration](https://openreview.net/forum?id=I4iZmsV4HM) | alignment, fairness, safety, privacy, and societal considerations | 3D point cloud inversion attack, voxel-based feature inversion, model inversion |
-| 2026 | [CoSA: Compressed Sensing-Based Adaptation of Large Language Models](https://openreview.net/forum?id=W2gumMWtWf) | foundation or frontier models, including LLMs | parameter-efficient fine-tuning, large language models, compressed sensing |
-| 2026 | [Forecasting Diabetic Complications from Brazilian Billing Codes with Time-Aware Attention](https://openreview.net/forum?id=yACLq4HoKi) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | healthcare claims, diabetic complication forecasting, longitudinal patient modeling |
-| 2026 | [SA-ResGS: Self-Augmented Residual 3D Gaussian Splatting for Next Best View Selection](https://openreview.net/forum?id=iXp4UywUfr) | applications to robotics, autonomy, planning | 3D Gaussian Splatting, active view selection, next-best-view planning |
-| 2026 | [Visual Smell: Learning Olfactory Representations for the Natural World](https://openreview.net/forum?id=q57PbzNl1c) | applications to computer vision, audio, language, and other modalities | olfaction, electronic nose, multimodal learning |
-| 2026 | [SAFE: Improving LLM Systems using Sentence-Level In-generation Attribution](https://openreview.net/forum?id=wo5y09nns1) | foundation or frontier models, including LLMs | retrieval-augmented generation, sentence-level attribution, citation verification |
-| 2026 | [STream3R: Scalable Sequential 3D Reconstruction with Causal Transformer](https://openreview.net/forum?id=RTTYGeC2Io) | applications to computer vision, audio, language, and other modalities | sequential 3D reconstruction, streaming inference, causal Transformer |
-| 2026 | [Mitigating Hallucination in Vision-Language Model with Depth and Spatial-aware Key-Value Refinement](https://openreview.net/forum?id=FHTt9ipAra) | applications to computer vision, audio, language, and other modalities | vision-language models, visual hallucination, multimodal learning |
-| 2026 | [ALERT: Adaptive Learning with Embeddings and Reinforcement for Transparent Few-Shot Learning](https://openreview.net/forum?id=oJoLQlnNiB) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | few-shot learning, large vision-language models, interpretability |
-| 2026 | [Test-Time Adaptation without Source Data for Out-of-Domain Bioactivity Prediction](https://openreview.net/forum?id=0R6HLWvWYk) | applications to physical sciences (physics, chemistry, biology, etc.) | test-time adaptation, source-free adaptation, out-of-domain generalization |
-| 2026 | [ADAM: A Diverse Archive of Mankind for Multimodal Benchmarking and Enhancing LLMs’ Cognitive Skills in Biographical Contexts](https://openreview.net/forum?id=mU00BTMaSw) | datasets and benchmarks | biographical reasoning, multilingual datasets, multimodal benchmarks |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->

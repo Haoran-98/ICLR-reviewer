@@ -1,6 +1,240 @@
 {
-  "generated_on": "2026-08-23T18:19:07.837971+00:00",
+  "generated_on": "2026-08-24T18:18:27.592813+00:00",
   "recent_days": [
+    {
+      "date": "2026-08-25",
+      "papers": [
+        {
+          "openreview_id": "FMMF1a9ifL",
+          "year": 2024,
+          "title": "Gradual Optimization Learning for Conformational Energy Minimization",
+          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
+          "openreview_url": "https://openreview.net/forum?id=FMMF1a9ifL",
+          "research_tags": [
+            "molecular conformation optimization",
+            "neural network potentials",
+            "active learning"
+          ]
+        },
+        {
+          "openreview_id": "giU9fYGTND",
+          "year": 2024,
+          "title": "FedImpro: Measuring and Improving Client Update in Federated Learning",
+          "primary_topic": "general machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=giU9fYGTND",
+          "research_tags": [
+            "federated learning",
+            "client drift",
+            "data heterogeneity"
+          ]
+        },
+        {
+          "openreview_id": "GxCGsxiAaK",
+          "year": 2024,
+          "title": "Universal Jailbreak Backdoors from Poisoned Human Feedback",
+          "primary_topic": "societal considerations including fairness, safety, privacy",
+          "openreview_url": "https://openreview.net/forum?id=GxCGsxiAaK",
+          "research_tags": [
+            "large language models",
+            "RLHF",
+            "data poisoning"
+          ]
+        },
+        {
+          "openreview_id": "g3PuaFh5vV",
+          "year": 2025,
+          "title": "Non-invasive Neural Decoding in Source Reconstructed Brain Space",
+          "primary_topic": "applications to neuroscience & cognitive science",
+          "openreview_url": "https://openreview.net/forum?id=g3PuaFh5vV",
+          "research_tags": [
+            "neural decoding",
+            "MEG",
+            "source reconstruction"
+          ]
+        },
+        {
+          "openreview_id": "eM5dar35Ys",
+          "year": 2025,
+          "title": "End-to-End Reinforcement Learning for Traffic Signal Control: Real-Time Video to Signal Decisions",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=eM5dar35Ys",
+          "research_tags": [
+            "traffic signal control",
+            "reinforcement learning",
+            "end-to-end perception"
+          ]
+        },
+        {
+          "openreview_id": "sZQRUrvLn4",
+          "year": 2025,
+          "title": "Graph Neural Networks Can (Often) Count Substructures",
+          "primary_topic": "learning on graphs and other geometries & topologies",
+          "openreview_url": "https://openreview.net/forum?id=sZQRUrvLn4",
+          "research_tags": [
+            "graph neural networks",
+            "subgraph counting",
+            "GNN expressivity"
+          ]
+        },
+        {
+          "openreview_id": "PNHGYziAsL",
+          "year": 2025,
+          "title": "SPIN: Self-Supervised Prompt INjection",
+          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
+          "openreview_url": "https://openreview.net/forum?id=PNHGYziAsL",
+          "research_tags": [
+            "LLM safety",
+            "jailbreak defense",
+            "prompt injection defense"
+          ]
+        },
+        {
+          "openreview_id": "M2YCdfxNVx",
+          "year": 2025,
+          "title": "VILA^2: VLM Augmented VLM with Self-Improvement",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=M2YCdfxNVx",
+          "research_tags": [
+            "vision-language models",
+            "self-training",
+            "data curation"
+          ]
+        },
+        {
+          "openreview_id": "Ch8s4FdUXS",
+          "year": 2025,
+          "title": "Unpacking SDXL Turbo: Interpreting Text-to-Image Models with Sparse Autoencoders",
+          "primary_topic": "interpretability and explainable AI",
+          "openreview_url": "https://openreview.net/forum?id=Ch8s4FdUXS",
+          "research_tags": [
+            "interpretability",
+            "explainable AI",
+            "text-to-image generation"
+          ]
+        },
+        {
+          "openreview_id": "Q3t0QBVFSG",
+          "year": 2026,
+          "title": "Not Just a Flash in Time: Interpreting Long Event Streams through Language",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=Q3t0QBVFSG",
+          "research_tags": [
+            "event cameras",
+            "event streams",
+            "multimodal large language models"
+          ]
+        },
+        {
+          "openreview_id": "Othf7vEtg7",
+          "year": 2026,
+          "title": "MoCA: Mixture-of-Components Attention for Scalable Compositional 3D Generation",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=Othf7vEtg7",
+          "research_tags": [
+            "compositional 3D generation",
+            "3D object generation",
+            "3D scene generation"
+          ]
+        },
+        {
+          "openreview_id": "qz3BkyyHWJ",
+          "year": 2026,
+          "title": "SUIT: Knowledge Editing with Subspace-Aware Key-Value Mappings",
+          "primary_topic": "interpretability and explainable AI",
+          "openreview_url": "https://openreview.net/forum?id=qz3BkyyHWJ",
+          "research_tags": [
+            "knowledge editing",
+            "large language models",
+            "subspace methods"
+          ]
+        },
+        {
+          "openreview_id": "EdTt8nMAMA",
+          "year": 2026,
+          "title": "Multi-Agent Debate with Memory Masking",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=EdTt8nMAMA",
+          "research_tags": [
+            "multi-agent debate",
+            "LLM reasoning",
+            "memory masking"
+          ]
+        },
+        {
+          "openreview_id": "XdLgOm5giq",
+          "year": 2026,
+          "title": "Can vision language models learn intuitive physics from interaction?",
+          "primary_topic": "applications to neuroscience & cognitive science",
+          "openreview_url": "https://openreview.net/forum?id=XdLgOm5giq",
+          "research_tags": [
+            "vision-language models",
+            "intuitive physics",
+            "reinforcement learning"
+          ]
+        },
+        {
+          "openreview_id": "wTZt07hzZf",
+          "year": 2026,
+          "title": "Sparser Block-Sparse Attention via Token Permutation",
+          "primary_topic": "other topics in machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=wTZt07hzZf",
+          "research_tags": [
+            "sparse attention",
+            "block-sparse attention",
+            "token permutation"
+          ]
+        },
+        {
+          "openreview_id": "zgqFQM8VNe",
+          "year": 2026,
+          "title": "ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask",
+          "primary_topic": "generative models",
+          "openreview_url": "https://openreview.net/forum?id=zgqFQM8VNe",
+          "research_tags": [
+            "autonomous driving",
+            "driving world models",
+            "video generation"
+          ]
+        },
+        {
+          "openreview_id": "soMC0uESuz",
+          "year": 2026,
+          "title": "Bimodality of Sparse Autoencoder Features is Still There and Can Be Fixed",
+          "primary_topic": "interpretability and explainable AI",
+          "openreview_url": "https://openreview.net/forum?id=soMC0uESuz",
+          "research_tags": [
+            "sparse autoencoders",
+            "mechanistic interpretability",
+            "feature alignment"
+          ]
+        },
+        {
+          "openreview_id": "gxCOTacltM",
+          "year": 2026,
+          "title": "Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants",
+          "primary_topic": "learning on time series and dynamical systems",
+          "openreview_url": "https://openreview.net/forum?id=gxCOTacltM",
+          "research_tags": [
+            "dynamic time warping",
+            "differentiable dynamic programming",
+            "perturbed optimization"
+          ]
+        },
+        {
+          "openreview_id": "iL2QSWKHkK",
+          "year": 2026,
+          "title": "Unpaired-to-paired data synthesis: Learning to model disease effects via contrastive analysis of neuroimaging-derived features",
+          "primary_topic": "applications to neuroscience & cognitive science",
+          "openreview_url": "https://openreview.net/forum?id=iL2QSWKHkK",
+          "research_tags": [
+            "neuroimaging",
+            "structural MRI",
+            "regional brain volumes"
+          ]
+        }
+      ],
+      "agents": []
+    },
     {
       "date": "2026-08-24",
       "papers": [
@@ -476,248 +710,6 @@
             "differential privacy",
             "one permutation hashing",
             "MinHash"
-          ]
-        }
-      ],
-      "agents": []
-    },
-    {
-      "date": "2026-08-22",
-      "papers": [
-        {
-          "openreview_id": "RTL8fWgJaS",
-          "year": 2024,
-          "title": "Self-Specialization: Uncovering Latent Expertise within Large Language Models",
-          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
-          "openreview_url": "https://openreview.net/forum?id=RTL8fWgJaS",
-          "research_tags": [
-            "large language models",
-            "self-alignment",
-            "instruction tuning"
-          ]
-        },
-        {
-          "openreview_id": "ZRzlhfMqHt",
-          "year": 2024,
-          "title": "Periodic and Random Sparsity for Multivariate Long-Term Time-Series Forecasting",
-          "primary_topic": "general machine learning (i.e., none of the above)",
-          "openreview_url": "https://openreview.net/forum?id=ZRzlhfMqHt",
-          "research_tags": [
-            "long-term time-series forecasting",
-            "multivariate forecasting",
-            "sparse attention"
-          ]
-        },
-        {
-          "openreview_id": "w5oP27fmYW",
-          "year": 2024,
-          "title": "CCD-3DR: Consistent Conditioning in Diffusion for Single-Image 3D Reconstruction",
-          "primary_topic": "representation learning for computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=w5oP27fmYW",
-          "research_tags": [
-            "single-image 3D reconstruction",
-            "point cloud generation",
-            "diffusion models"
-          ]
-        },
-        {
-          "openreview_id": "3bmjHYX42n",
-          "year": 2024,
-          "title": "Leveraging Human Revisions for Improving Text-to-Layout Models",
-          "primary_topic": "generative models",
-          "openreview_url": "https://openreview.net/forum?id=3bmjHYX42n",
-          "research_tags": [
-            "human feedback",
-            "human revisions",
-            "reinforcement learning from human feedback"
-          ]
-        },
-        {
-          "openreview_id": "0fXcrl35V0",
-          "year": 2025,
-          "title": "Second-order finite-time and fixed-time systems for sparse recovery and dynamic sparse recovery",
-          "primary_topic": "optimization",
-          "openreview_url": "https://openreview.net/forum?id=0fXcrl35V0",
-          "research_tags": []
-        },
-        {
-          "openreview_id": "QjO0fUlVYK",
-          "year": 2025,
-          "title": "Do Deep Neural Network Solutions Form a Star Domain?",
-          "primary_topic": "optimization",
-          "openreview_url": "https://openreview.net/forum?id=QjO0fUlVYK",
-          "research_tags": [
-            "mode connectivity",
-            "loss landscapes",
-            "star-shaped solution sets"
-          ]
-        },
-        {
-          "openreview_id": "FrmVRUVOEF",
-          "year": 2025,
-          "title": "Temporally coherent visualisation of time-dependent data",
-          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
-          "openreview_url": "https://openreview.net/forum?id=FrmVRUVOEF",
-          "research_tags": [
-            "temporal visualization",
-            "dimensionality reduction",
-            "t-SNE"
-          ]
-        },
-        {
-          "openreview_id": "Nx8lVqyKeZ",
-          "year": 2025,
-          "title": "Lost in the Averages: Evaluating record-specific MIAs against Machine Learning models",
-          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
-          "openreview_url": "https://openreview.net/forum?id=Nx8lVqyKeZ",
-          "research_tags": [
-            "membership inference attacks",
-            "privacy auditing",
-            "record-level privacy"
-          ]
-        },
-        {
-          "openreview_id": "upoxXRRTQ2",
-          "year": 2025,
-          "title": "The impact of allocation strategies in subset learning on the expressive power of neural networks",
-          "primary_topic": "applications to neuroscience & cognitive science",
-          "openreview_url": "https://openreview.net/forum?id=upoxXRRTQ2",
-          "research_tags": [
-            "subset learning",
-            "expressive power",
-            "learnable-weight allocation"
-          ]
-        },
-        {
-          "openreview_id": "I4iZmsV4HM",
-          "year": 2025,
-          "title": "ConcreTizer: Model Inversion Attack via Occupancy Classification and Dispersion Control for 3D Point Cloud Restoration",
-          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
-          "openreview_url": "https://openreview.net/forum?id=I4iZmsV4HM",
-          "research_tags": [
-            "3D point cloud inversion attack",
-            "voxel-based feature inversion",
-            "model inversion"
-          ]
-        },
-        {
-          "openreview_id": "W2gumMWtWf",
-          "year": 2026,
-          "title": "CoSA: Compressed Sensing-Based Adaptation of Large Language Models",
-          "primary_topic": "foundation or frontier models, including LLMs",
-          "openreview_url": "https://openreview.net/forum?id=W2gumMWtWf",
-          "research_tags": [
-            "parameter-efficient fine-tuning",
-            "large language models",
-            "compressed sensing"
-          ]
-        },
-        {
-          "openreview_id": "yACLq4HoKi",
-          "year": 2026,
-          "title": "Forecasting Diabetic Complications from Brazilian Billing Codes with Time-Aware Attention",
-          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
-          "openreview_url": "https://openreview.net/forum?id=yACLq4HoKi",
-          "research_tags": [
-            "healthcare claims",
-            "diabetic complication forecasting",
-            "longitudinal patient modeling"
-          ]
-        },
-        {
-          "openreview_id": "iXp4UywUfr",
-          "year": 2026,
-          "title": "SA-ResGS: Self-Augmented Residual 3D Gaussian Splatting for Next Best View Selection",
-          "primary_topic": "applications to robotics, autonomy, planning",
-          "openreview_url": "https://openreview.net/forum?id=iXp4UywUfr",
-          "research_tags": [
-            "3D Gaussian Splatting",
-            "active view selection",
-            "next-best-view planning"
-          ]
-        },
-        {
-          "openreview_id": "q57PbzNl1c",
-          "year": 2026,
-          "title": "Visual Smell: Learning Olfactory Representations for the Natural World",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=q57PbzNl1c",
-          "research_tags": [
-            "olfaction",
-            "electronic nose",
-            "multimodal learning"
-          ]
-        },
-        {
-          "openreview_id": "wo5y09nns1",
-          "year": 2026,
-          "title": "SAFE: Improving LLM Systems using Sentence-Level In-generation Attribution",
-          "primary_topic": "foundation or frontier models, including LLMs",
-          "openreview_url": "https://openreview.net/forum?id=wo5y09nns1",
-          "research_tags": [
-            "retrieval-augmented generation",
-            "sentence-level attribution",
-            "citation verification"
-          ]
-        },
-        {
-          "openreview_id": "RTTYGeC2Io",
-          "year": 2026,
-          "title": "STream3R: Scalable Sequential 3D Reconstruction with Causal Transformer",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=RTTYGeC2Io",
-          "research_tags": [
-            "sequential 3D reconstruction",
-            "streaming inference",
-            "causal Transformer"
-          ]
-        },
-        {
-          "openreview_id": "FHTt9ipAra",
-          "year": 2026,
-          "title": "Mitigating Hallucination in Vision-Language Model with Depth and Spatial-aware Key-Value Refinement",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=FHTt9ipAra",
-          "research_tags": [
-            "vision-language models",
-            "visual hallucination",
-            "multimodal learning"
-          ]
-        },
-        {
-          "openreview_id": "oJoLQlnNiB",
-          "year": 2026,
-          "title": "ALERT: Adaptive Learning with Embeddings and Reinforcement for Transparent Few-Shot Learning",
-          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
-          "openreview_url": "https://openreview.net/forum?id=oJoLQlnNiB",
-          "research_tags": [
-            "few-shot learning",
-            "large vision-language models",
-            "interpretability"
-          ]
-        },
-        {
-          "openreview_id": "0R6HLWvWYk",
-          "year": 2026,
-          "title": "Test-Time Adaptation without Source Data for Out-of-Domain Bioactivity Prediction",
-          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
-          "openreview_url": "https://openreview.net/forum?id=0R6HLWvWYk",
-          "research_tags": [
-            "test-time adaptation",
-            "source-free adaptation",
-            "out-of-domain generalization"
-          ]
-        },
-        {
-          "openreview_id": "mU00BTMaSw",
-          "year": 2026,
-          "title": "ADAM: A Diverse Archive of Mankind for Multimodal Benchmarking and Enhancing LLMs’ Cognitive Skills in Biographical Contexts",
-          "primary_topic": "datasets and benchmarks",
-          "openreview_url": "https://openreview.net/forum?id=mU00BTMaSw",
-          "research_tags": [
-            "biographical reasoning",
-            "multilingual datasets",
-            "multimodal benchmarks"
           ]
         }
       ],
