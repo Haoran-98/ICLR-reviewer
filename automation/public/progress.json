@@ -1,20 +1,20 @@
 {
-  "generated_on": "2026-08-24T18:18:27.551637+00:00",
+  "generated_on": "2026-08-25T18:17:57.600093+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 16,
-  "analyzed_papers": 700,
-  "coverage_percent": 1.7999,
+  "successful_daily_runs": 17,
+  "analyzed_papers": 720,
+  "coverage_percent": 1.8514,
   "by_year": {
-    "2026": 358,
-    "2025": 213,
-    "2024": 129
+    "2026": 368,
+    "2025": 219,
+    "2024": 133
   },
-  "last_daily_run": "2026-08-25",
+  "last_daily_run": "2026-08-26",
   "usage": {
-    "input_tokens": 2851524,
-    "output_tokens": 151624,
-    "total_tokens": 3003148
+    "input_tokens": 3000162,
+    "output_tokens": 160432,
+    "total_tokens": 3160594
   },
   "top_research_tags": [
     {
@@ -23,15 +23,15 @@
     },
     {
       "tag": "diffusion models",
-      "papers": 43
+      "papers": 44
     },
     {
       "tag": "large language models",
-      "papers": 37
+      "papers": 40
     },
     {
       "tag": "vision-language models",
-      "papers": 33
+      "papers": 35
     },
     {
       "tag": "contrastive learning",
@@ -39,7 +39,7 @@
     },
     {
       "tag": "representation learning",
-      "papers": 25
+      "papers": 26
     },
     {
       "tag": "graph neural networks",
@@ -82,32 +82,32 @@
       "papers": 13
     },
     {
+      "tag": "video generation",
+      "papers": 13
+    },
+    {
       "tag": "GRPO",
       "papers": 13
     },
     {
+      "tag": "dataset construction",
+      "papers": 12
+    },
+    {
       "tag": "generative models",
-      "papers": 12
-    },
-    {
-      "tag": "image classification",
-      "papers": 12
-    },
-    {
-      "tag": "language models",
       "papers": 12
     }
   ],
   "response_effectiveness": {
-    "unknown": 478,
-    "partial_success": 372,
-    "no_effect": 76,
-    "strong_success": 235
+    "unknown": 486,
+    "partial_success": 374,
+    "no_effect": 79,
+    "strong_success": 236
   },
   "score_actions": {
-    "unknown": 672,
-    "maintained": 246,
-    "increased": 234,
+    "unknown": 675,
+    "maintained": 253,
+    "increased": 238,
     "decreased": 2,
     "promised_increase": 7
   }

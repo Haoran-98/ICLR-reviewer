@@ -6,6 +6,34 @@
 ## 最近 3 天新增
 
 <details open>
+<summary>2026-08-26 - 新分析 20 篇论文，新增 0 个通用 Agent</summary>
+
+| 年份 | 论文 | 主题 | 研究标签 |
+|---:|---|---|---|
+| 2024 | [Nonnegative Matrix Factorization through Canonical Edges](https://openreview.net/forum?id=8JKZZxJAZ3) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | nonnegative matrix factorization, orthogonal NMF, canonical edges |
+| 2024 | [In-context Exploration-Exploitation for Reinforcement Learning](https://openreview.net/forum?id=uIKZSStON3) | reinforcement learning | in-context reinforcement learning, exploration-exploitation, offline reinforcement learning |
+| 2024 | [Video Language Planning](https://openreview.net/forum?id=9pKtcJcMP3) | applications to robotics, autonomy, planning | robotics planning, long-horizon planning, video generation |
+| 2024 | [Symphony: Symmetry-Equivariant Point-Centered Spherical Harmonics for 3D Molecule Generation](https://openreview.net/forum?id=MIEnYtlGyv) | applications to physical sciences (physics, chemistry, biology, etc.) | 3D molecule generation, autoregressive generation, E(3) equivariance |
+| 2025 | [SPikE-SSM: A Sparse, Precise, and Efficient Spiking State Space Model for Long Sequences Learning](https://openreview.net/forum?id=4ILqqOJFkS) | foundation or frontier models, including LLMs | spiking neural networks, state space models, long-sequence learning |
+| 2025 | [Efficient Sparse Single-stage 3D Visual Grounding with Text-guided Pruning](https://openreview.net/forum?id=b39J2X4rjT) | applications to computer vision, audio, language, and other modalities | 3D visual grounding, single-stage architecture, sparse convolution |
+| 2025 | [From Loops to Oops: Fallback Behaviors of Language Models Under Uncertainty](https://openreview.net/forum?id=tFwEsrx1hm) | foundation or frontier models, including LLMs | large language models, epistemic uncertainty, hallucination |
+| 2025 | [PyramidKV: Dynamic KV Cache Compression based on Pyramidal Information Funneling](https://openreview.net/forum?id=jZVNmDiU86) | foundation or frontier models, including LLMs | large language models, efficient generative inference, KV cache compression |
+| 2025 | [Effective Text-to-Image Alignment with Quality Aware Pair Ranking](https://openreview.net/forum?id=YeZNN6Iy6Q) | applications to computer vision, audio, language, and other modalities | text-to-image generation, diffusion models, Direct Preference Optimization |
+| 2025 | [Ultra-Low Accumulation Precision Inference with Block Floating Point Arithmetic](https://openreview.net/forum?id=Dzamphz35c) | infrastructure, software libraries, hardware, systems, etc. | block floating point, quantized inference, accumulator precision |
+| 2026 | [Terrarium: Revisiting the Blackboard for Studying Multi-Agent Attacks](https://openreview.net/forum?id=bknuCt8MI7) | alignment, fairness, safety, privacy, and societal considerations | multi-agent systems, LLM agents, safety evaluation |
+| 2026 | [Latent Planning via Embedding Arithmetic: A Contrastive Approach to Strategic Reasoning](https://openreview.net/forum?id=AeF1MeV62d) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | latent planning, representation learning, supervised contrastive learning |
+| 2026 | [Electromagnetic Inverse Scattering from a Single Transmitter](https://openreview.net/forum?id=G62YUhn02k) | applications to physical sciences (physics, chemistry, biology, etc.) | electromagnetic inverse scattering, inverse problems, sparse transmitter reconstruction |
+| 2026 | [Grounded Human-Attributed Description and Activity Recognition in Videos](https://openreview.net/forum?id=myosXZvY84) | applications to computer vision, audio, language, and other modalities | video understanding, grounded video captioning, human-attributed activity recognition |
+| 2026 | [Dyana: Benchmarking Dynamic Hand Intelligence](https://openreview.net/forum?id=xafFC4h8OO) | datasets and benchmarks | dynamic grasping, robotics benchmark, hand-object interaction |
+| 2026 | [What Makes Looped Transformers Perform Better Than Non-Recursive Ones (Provably)](https://openreview.net/forum?id=7kLRpAH5at) | learning theory | looped transformers, recursive transformers, loss landscape geometry |
+| 2026 | [Seeing Beyond Points: Adaptive Gaussian Primitives for 3D Perception](https://openreview.net/forum?id=GoowzgMiOp) | applications to computer vision, audio, language, and other modalities | 3D perception, point clouds, Gaussian primitives |
+| 2026 | [Hybrid Minority Oversampling via LLM-Generated Seeds and SMOTE Expansion](https://openreview.net/forum?id=y6lohf8S9X) | generative models | imbalanced learning, tabular data, oversampling |
+| 2026 | [On The Geometry and Topology of Representations: the Manifolds of Modular Addition](https://openreview.net/forum?id=2olkCiSELH) | interpretability and explainable AI | mechanistic interpretability, modular addition, representation geometry |
+| 2026 | [Unlocking Zero-shot Potential of Semi-dense Image Matching via Gaussian Splatting](https://openreview.net/forum?id=7mmnP3o1Hw) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | image matching, 3D Gaussian Splatting, zero-shot generalization |
+
+</details>
+
+<details>
 <summary>2026-08-25 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
 
 | 年份 | 论文 | 主题 | 研究标签 |
@@ -57,33 +85,6 @@
 | 2026 | [Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement](https://openreview.net/forum?id=qsra0EsUpe) | applications to computer vision, audio, language, and other modalities | 3D point clouds, multimodal large language models, 3D understanding |
 | 2026 | [HeLutNet: Extremely Fast Privacy-preserving Inference in Milliseconds via LUT-based Machine Learning Models](https://openreview.net/forum?id=j0SJyQMALf) | alignment, fairness, safety, privacy, and societal considerations | privacy-preserving machine learning, fully homomorphic encryption, BGV |
 | 2026 | [When Human Data Runs Out: Self-Supervised Reasoning via Negotiation Self-Play](https://openreview.net/forum?id=HemCbcjdIo) | foundation or frontier models, including LLMs | LLM reasoning, self-supervised learning, language-agent self-play |
-
-</details>
-
-<details>
-<summary>2026-08-23 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
-
-| 年份 | 论文 | 主题 | 研究标签 |
-|---:|---|---|---|
-| 2024 | [Topological data analysis on noisy quantum computers](https://openreview.net/forum?id=dLrhRIMVmB) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | quantum computing, NISQ algorithms, topological data analysis |
-| 2024 | [Learning variable-length skills through Novelty-based Decision Point Identification](https://openreview.net/forum?id=yIKjkRZBrX) | reinforcement learning | reinforcement learning, hierarchical reinforcement learning, skill learning |
-| 2024 | [Understanding Multimodal Instruction Format for In-context Learning](https://openreview.net/forum?id=SNGANmQPLv) | transfer learning, meta learning, and lifelong learning | multimodal learning, vision-language models, instruction tuning |
-| 2025 | [Knowledge Lift Alignment Fine Tuning](https://openreview.net/forum?id=uxYbEAEWm4) | foundation or frontier models, including LLMs | vision-language models, image captioning, expressive captioning |
-| 2025 | [Convergence Towards Stable Intrinsic Self-correction of Large Language Models](https://openreview.net/forum?id=bEbQBiMpUI) | applications to computer vision, audio, language, and other modalities | large language models, intrinsic self-correction, self-reflection prompting |
-| 2025 | [AI Sandbagging: Language Models can Strategically Underperform on Evaluations](https://openreview.net/forum?id=7Qa2SpjxIS) | alignment, fairness, safety, privacy, and societal considerations | AI safety, AI evaluations, sandbagging |
-| 2025 | [Fine-Tuning Attention Modules Only: Enhancing Weight Disentanglement in Task Arithmetic](https://openreview.net/forum?id=dj0TktJcVI) | transfer learning, meta learning, and lifelong learning | task arithmetic, model merging, weight disentanglement |
-| 2025 | [JudgeRank: Leveraging Large Language Models for Reasoning-Intensive Reranking](https://openreview.net/forum?id=tZiMLgsHMu) | generative models | information retrieval, document reranking, retrieval-augmented generation |
-| 2025 | [Power Scheduler: A Batch Size and Token Number Agnostic Learning Rate Scheduler](https://openreview.net/forum?id=gN4stDLq3t) | foundation or frontier models, including LLMs | learning-rate scheduling, language-model pretraining, power-law scaling |
-| 2026 | [PTNET: A PROPOSAL-CENTRIC TRANSFORMER NET- WORK FOR 3D OBJECT DETECTION](https://openreview.net/forum?id=ZOREAbteO5) | applications to computer vision, audio, language, and other modalities | 3D object detection, LiDAR point clouds, autonomous driving |
-| 2026 | [AgentFold: Long-Horizon Web Agents with Proactive Context Folding](https://openreview.net/forum?id=IuZoTgsUws) | applications to computer vision, audio, language, and other modalities | web agents, long-horizon reasoning, context management |
-| 2026 | [Node-Centric Knowledge Graph](https://openreview.net/forum?id=e6RCMY64au) | learning on graphs and other geometries & topologies | knowledge graph completion, node-centric architecture, local MLPs |
-| 2026 | [Anchor Frame Bridging for Coherent First-Last Frame Video Generation](https://openreview.net/forum?id=isNjWnVsUR) | generative models | generative models, video generation, first-last frame video generation |
-| 2026 | [Provably Efficient High-Order Flow Matching in Pixel Space](https://openreview.net/forum?id=wbIYlFCPPq) | generative models | flow matching, generative models, pixel-space generation |
-| 2026 | [Data Valuation by Leveraging Global and Local Statistical Information](https://openreview.net/forum?id=E6KButTanu) | other topics in machine learning (i.e., none of the above) | data valuation, Shapley values, AME |
-| 2026 | [Bioacoustic Geolocation: Species Sounds as Geographic Signals](https://openreview.net/forum?id=7CyXgo9tys) | applications to computer vision, audio, language, and other modalities | audio geolocation, bioacoustics, wildlife audio |
-| 2026 | [Degree-Corrected Ricci Curvature for Networks](https://openreview.net/forum?id=I30HO3xth3) | learning on graphs and other geometries & topologies | network curvature, degree-corrected block model, stochastic block model |
-| 2026 | [Hierarchical Object-Oriented POMDP Planning for Object Rearrangement](https://openreview.net/forum?id=7SkGH9yW3s) | applications to robotics, autonomy, planning | robotics, object rearrangement, POMDP |
-| 2026 | [Differentially Private One Permutation Hashing](https://openreview.net/forum?id=ldYKqmtLm5) | other topics in machine learning (i.e., none of the above) | differential privacy, one permutation hashing, MinHash |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->
@@ -202,20 +203,7 @@ $iclr-reviewer 审查 /path/to/paper.pdf，并解释每个评分和修改优先�
 <!-- RECENT_AGENTS:START -->
 | Agent | 分组 | 加入日期 |
 |---|---|---|
-| `writing_clarity` (写作与清晰度审稿人) | 核心审稿组 | 2026-07-26 |
-| `reproducibility` (复现审稿人) | 扩展审稿组 | 2026-07-26 |
-| `novice_advocate` (非专家可理解性审稿人) | 扩展审稿组 | 2026-07-26 |
-| `novelty_positioning` (创新与定位审稿人) | 核心审稿组 | 2026-07-26 |
-| `method_soundness` (方法可靠性审稿人) | 核心审稿组 | 2026-07-26 |
-| `iclr_reviewer_orchestrator` (ICLR 审稿编排器) | 编排 | 2026-07-26 |
-| `evidence_experiment` (实验与证据审稿人) | 核心审稿组 | 2026-07-26 |
-| `evidence_ablation` (消融审稿人) | 扩展审稿组 | 2026-07-26 |
-| `ethics_reproducibility` (伦理与复现审稿人) | 核心审稿组 | 2026-07-26 |
-| `domain_application` (领域应用审稿人) | 扩展审稿组 | 2026-07-26 |
-| `critical` (严格批判审稿人) | 核心审稿组 | 2026-07-26 |
-| `citation_auditor` (引用审计员) | 决策与审计 | 2026-07-26 |
-| `best_justified` (最强正向论证审稿人) | 核心审稿组 | 2026-07-26 |
-| `ac_meta_reviewer` (AC / 元审稿人) | 决策与审计 | 2026-07-26 |
+| 最近 30 天没有新增通用 Agent | - | - |
 <!-- RECENT_AGENTS:END -->
 
 ## 题目与摘要目录
