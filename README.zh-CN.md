@@ -6,6 +6,33 @@
 ## 最近 3 天新增
 
 <details open>
+<summary>2026-08-27 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
+
+| 年份 | 论文 | 主题 | 研究标签 |
+|---:|---|---|---|
+| 2024 | [Improving Robustness and Accuracy with Retrospective Online Adversarial Distillation](https://openreview.net/forum?id=43flsheS4s) | societal considerations including fairness, safety, privacy | adversarial training, adversarial robustness, adversarial distillation |
+| 2024 | [Elephants Never Forget: Testing Language Models for Memorization of Tabular Data](https://openreview.net/forum?id=lwtaEhDx9x) | generative models | large language models, tabular data, data contamination |
+| 2024 | [Missing Data Imputation for Large-Scale Longitudinal Physical Activity Data](https://openreview.net/forum?id=48Abxtv9Mi) | applications to physical sciences (physics, chemistry, biology, etc.) | - |
+| 2025 | [Smooth Probabilistic Interpolation Benefits Generative Modeling for Discrete Graphs](https://openreview.net/forum?id=MhsCDuY4zx) | applications to physical sciences (physics, chemistry, biology, etc.) | graph generation, Bayesian flow networks, molecular graph generation |
+| 2025 | [Event-aided Dense and Continuous Point Tracking](https://openreview.net/forum?id=1GIVx7COef) | applications to computer vision, audio, language, and other modalities | event cameras, dense point tracking, continuous point trajectories |
+| 2025 | [Incorporating Human Preferences into Interpretable Reinforcement Learning with Tree Policies](https://openreview.net/forum?id=sTllbUNLz0) | interpretability and explainable AI | interpretable reinforcement learning, explainable reinforcement learning, preference learning |
+| 2025 | [Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models](https://openreview.net/forum?id=9sOR0nYLtz) | reinforcement learning | reinforcement learning, unsupervised reinforcement learning, behavioral foundation models |
+| 2025 | [Timer-XL: Long-Context Transformers for Unified Time Series Forecasting](https://openreview.net/forum?id=KMCJXjlDDr) | learning on time series and dynamical systems | time series forecasting, long-context modeling, generative transformers |
+| 2025 | [The Wisdom of a Crowd of Brains: A Universal Brain Encoder](https://openreview.net/forum?id=xHGL9XqR8Y) | applications to neuroscience & cognitive science | image-to-fMRI encoding, neuroscience, brain encoding |
+| 2026 | [DiaBlo: Diagonal Blocks Are Sufficient For Finetuning](https://openreview.net/forum?id=cZaI6GmjBm) | foundation or frontier models, including LLMs | parameter-efficient fine-tuning, large language models, block-diagonal updates |
+| 2026 | [DualRPO: All-in-one Visual RL with Internal and External Rewards](https://openreview.net/forum?id=5FSfl8ZPQf) | applications to computer vision, audio, language, and other modalities | vision-language models, multimodal reinforcement learning, unified multi-task training |
+| 2026 | [Distractor Injection Attacks on Large Reasoning Models: Characterization and Defense](https://openreview.net/forum?id=bIJkCBVSgd) | alignment, fairness, safety, privacy, and societal considerations | large reasoning models, prompt injection, reasoning safety |
+| 2026 | [Attacking Logic with Logic: Reasoning Injection Attack to Large Reasoning Models](https://openreview.net/forum?id=rrWWt3LTqo) | alignment, fairness, safety, privacy, and societal considerations | large reasoning models, prompt injection, security |
+| 2026 | [How Should Corruption Be Used in SSL? Empirical Insights for Effective Pretraining](https://openreview.net/forum?id=hf7syLIdQs) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | self-supervised learning, masked image modeling, vision pretraining |
+| 2026 | [MobileGUI-RL: Advancing Mobile GUI Agent through Reinforcement Learning in Online Environment](https://openreview.net/forum?id=LrXGarwVO8) | applications to computer vision, audio, language, and other modalities | mobile GUI agents, vision-language models, online reinforcement learning |
+| 2026 | [Adapting Vision-Language Models for Evaluating World Models](https://openreview.net/forum?id=BXKgPhaOzr) | generative models | world models, vision-language models, rollout evaluation |
+| 2026 | [Understanding Knowledge Distillation in Post-Training: When It Helps and When It Fails](https://openreview.net/forum?id=DvrZRcoT6p) | generative models | knowledge distillation, LLM post-training, instruction tuning |
+| 2026 | [Bandit Learning for Online Scheduling with Immediate Decision](https://openreview.net/forum?id=d2tMZHTFWv) | learning theory | online scheduling, multi-armed bandits, immediate decisions |
+| 2026 | [Repurposing Synthetic Data for Fine-grained Search Agent Supervision](https://openreview.net/forum?id=CByVWPpb8T) | applications to computer vision, audio, language, and other modalities | search agents, large language models, reinforcement learning |
+
+</details>
+
+<details>
 <summary>2026-08-26 - 新分析 20 篇论文，新增 0 个通用 Agent</summary>
 
 | 年份 | 论文 | 主题 | 研究标签 |
@@ -57,34 +84,6 @@
 | 2026 | [Bimodality of Sparse Autoencoder Features is Still There and Can Be Fixed](https://openreview.net/forum?id=soMC0uESuz) | interpretability and explainable AI | sparse autoencoders, mechanistic interpretability, feature alignment |
 | 2026 | [Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants](https://openreview.net/forum?id=gxCOTacltM) | learning on time series and dynamical systems | dynamic time warping, differentiable dynamic programming, perturbed optimization |
 | 2026 | [Unpaired-to-paired data synthesis: Learning to model disease effects via contrastive analysis of neuroimaging-derived features](https://openreview.net/forum?id=iL2QSWKHkK) | applications to neuroscience & cognitive science | neuroimaging, structural MRI, regional brain volumes |
-
-</details>
-
-<details>
-<summary>2026-08-24 - 新分析 20 篇论文，新增 0 个通用 Agent</summary>
-
-| 年份 | 论文 | 主题 | 研究标签 |
-|---:|---|---|---|
-| 2024 | [Change Point Detection via Variational Time-Varying Hidden Markov Model](https://openreview.net/forum?id=I5MquO1g7R) | probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.) | change point detection, time-varying hidden Markov model, variational inference |
-| 2024 | [Learn What You Need in Personalized Federated Learning](https://openreview.net/forum?id=Ut4lyQnJ7Y) | general machine learning (i.e., none of the above) | personalized federated learning, adaptive aggregation, algorithm unrolling |
-| 2024 | [Unified Projection-Free Algorithms for Adversarial DR-Submodular Optimization](https://openreview.net/forum?id=H4A9e8HvIn) | reinforcement learning | online optimization, adversarial optimization, continuous DR-submodular optimization |
-| 2024 | [Uni-RLHF: Universal Platform and Benchmark Suite for Reinforcement Learning with Diverse Human Feedback](https://openreview.net/forum?id=WesY0H9ghM) | reinforcement learning | reinforcement learning from human feedback, diverse human feedback, offline reinforcement learning |
-| 2025 | [Shh, don't say that! Domain Certification in LLMs](https://openreview.net/forum?id=F64wTvQBum) | alignment, fairness, safety, privacy, and societal considerations | large language models, domain certification, adversarial robustness |
-| 2025 | [NarrativeBridge: Enhancing Video Captioning with Causal-Temporal Narrative](https://openreview.net/forum?id=bBoetBIN2R) | applications to computer vision, audio, language, and other modalities | video captioning, video-language modeling, causal reasoning |
-| 2025 | [Mitigating Reward Over-optimization in Direct Alignment Algorithms with Adaptive Importance Sampling](https://openreview.net/forum?id=H9dNX6TaRE) | alignment, fairness, safety, privacy, and societal considerations | LLM alignment, direct alignment algorithms, DPO |
-| 2025 | [No Pose, No Problem: Surprisingly Simple 3D Gaussian Splats from Sparse Unposed Images](https://openreview.net/forum?id=P4o9akekdf) | applications to computer vision, audio, language, and other modalities | 3D Gaussian Splatting, pose-free reconstruction, sparse-view reconstruction |
-| 2025 | [Unsupervised Learning of Categorical Structure](https://openreview.net/forum?id=IwxxnY98sf) | applications to neuroscience & cognitive science | unsupervised representation learning, binary matrix factorization, categorical structure |
-| 2025 | [From Overconnectivity to Sparsity: Emulating Synaptic Pruning with Long Connections](https://openreview.net/forum?id=qMUtej58Pc) | other topics in machine learning (i.e., none of the above) | neural network architecture, long connections, synaptic pruning |
-| 2026 | [FINSIGHT: TOWARDS REAL-WORLD FINANCIAL DEEP RESEARCH](https://openreview.net/forum?id=65iJEaVixf) | applications to computer vision, audio, language, and other modalities | financial research, deep research agents, multimodal report generation |
-| 2026 | [Multi-objective Hyperparameter Optimization in the Age of Deep Learning](https://openreview.net/forum?id=1lLWZzikiT) | optimization | hyperparameter optimization, multi-objective optimization, Bayesian optimization |
-| 2026 | [AdaptiVision: A Flexible and Efficient Vision Transformer for Adaptive Token Pruning](https://openreview.net/forum?id=ZIRpP9nBMv) | other topics in machine learning (i.e., none of the above) | vision transformers, adaptive token pruning, token condensation |
-| 2026 | [Predictive Differential Training Guided by Training Dynamics](https://openreview.net/forum?id=zSTgrLkpRi) | optimization | optimization, deep neural network training, training dynamics |
-| 2026 | [Dynamic Orthogonal Continual Fine-tuning for Mitigating Catastrophic Forgetting of LLMs](https://openreview.net/forum?id=14Sq0m94oA) | transfer learning, meta learning, and lifelong learning | continual learning, large language models, catastrophic forgetting |
-| 2026 | [Geometry-aware Policy Imitation](https://openreview.net/forum?id=ggofj6tyr3) | applications to robotics, autonomy, planning | robot imitation learning, geometry-aware policy, distance fields |
-| 2026 | [Physically Ground Commonsense Knowledge for Articulated Object Manipulation with Analytic Concepts](https://openreview.net/forum?id=tkLDNUzL80) | applications to robotics, autonomy, planning | robotic manipulation, articulated object manipulation, physical commonsense reasoning |
-| 2026 | [Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement](https://openreview.net/forum?id=qsra0EsUpe) | applications to computer vision, audio, language, and other modalities | 3D point clouds, multimodal large language models, 3D understanding |
-| 2026 | [HeLutNet: Extremely Fast Privacy-preserving Inference in Milliseconds via LUT-based Machine Learning Models](https://openreview.net/forum?id=j0SJyQMALf) | alignment, fairness, safety, privacy, and societal considerations | privacy-preserving machine learning, fully homomorphic encryption, BGV |
-| 2026 | [When Human Data Runs Out: Self-Supervised Reasoning via Negotiation Self-Play](https://openreview.net/forum?id=HemCbcjdIo) | foundation or frontier models, including LLMs | LLM reasoning, self-supervised learning, language-agent self-play |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->

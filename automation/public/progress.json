@@ -1,25 +1,25 @@
 {
-  "generated_on": "2026-08-25T18:17:57.600093+00:00",
+  "generated_on": "2026-08-26T18:22:12.378792+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 17,
-  "analyzed_papers": 720,
-  "coverage_percent": 1.8514,
+  "successful_daily_runs": 18,
+  "analyzed_papers": 739,
+  "coverage_percent": 1.9002,
   "by_year": {
-    "2026": 368,
-    "2025": 219,
-    "2024": 133
+    "2026": 378,
+    "2025": 225,
+    "2024": 136
   },
-  "last_daily_run": "2026-08-26",
+  "last_daily_run": "2026-08-27",
   "usage": {
-    "input_tokens": 3000162,
-    "output_tokens": 160432,
-    "total_tokens": 3160594
+    "input_tokens": 3144106,
+    "output_tokens": 169585,
+    "total_tokens": 3313691
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 53
+      "papers": 56
     },
     {
       "tag": "diffusion models",
@@ -27,11 +27,11 @@
     },
     {
       "tag": "large language models",
-      "papers": 40
+      "papers": 43
     },
     {
       "tag": "vision-language models",
-      "papers": 35
+      "papers": 38
     },
     {
       "tag": "contrastive learning",
@@ -39,7 +39,7 @@
     },
     {
       "tag": "representation learning",
-      "papers": 26
+      "papers": 27
     },
     {
       "tag": "graph neural networks",
@@ -47,18 +47,18 @@
     },
     {
       "tag": "self-supervised learning",
-      "papers": 23
+      "papers": 24
     },
     {
       "tag": "transformers",
       "papers": 22
     },
     {
-      "tag": "interpretability",
-      "papers": 18
+      "tag": "adversarial robustness",
+      "papers": 19
     },
     {
-      "tag": "adversarial robustness",
+      "tag": "interpretability",
       "papers": 18
     },
     {
@@ -70,7 +70,23 @@
       "papers": 17
     },
     {
+      "tag": "GRPO",
+      "papers": 15
+    },
+    {
       "tag": "continual learning",
+      "papers": 14
+    },
+    {
+      "tag": "transfer learning",
+      "papers": 14
+    },
+    {
+      "tag": "knowledge distillation",
+      "papers": 14
+    },
+    {
+      "tag": "supervised fine-tuning",
       "papers": 14
     },
     {
@@ -78,37 +94,21 @@
       "papers": 13
     },
     {
-      "tag": "transfer learning",
+      "tag": "code generation",
       "papers": 13
-    },
-    {
-      "tag": "video generation",
-      "papers": 13
-    },
-    {
-      "tag": "GRPO",
-      "papers": 13
-    },
-    {
-      "tag": "dataset construction",
-      "papers": 12
-    },
-    {
-      "tag": "generative models",
-      "papers": 12
     }
   ],
   "response_effectiveness": {
-    "unknown": 486,
-    "partial_success": 374,
-    "no_effect": 79,
-    "strong_success": 236
+    "unknown": 491,
+    "partial_success": 379,
+    "no_effect": 80,
+    "strong_success": 238
   },
   "score_actions": {
-    "unknown": 675,
-    "maintained": 253,
-    "increased": 238,
+    "unknown": 678,
+    "maintained": 258,
+    "increased": 242,
     "decreased": 2,
-    "promised_increase": 7
+    "promised_increase": 8
   }
 }
