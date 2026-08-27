@@ -6,6 +6,33 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-28 - 19 newly analyzed papers, 0 common Agents added</summary>
+
+| Year | Paper | Topic | Research tags |
+|---:|---|---|---|
+| 2024 | [Exploring Modality Collaboration with Modality-Agnostic Transformers in Multi-Modal Federated Learning](https://openreview.net/forum?id=FBDtqWXfuq) | societal considerations including fairness, safety, privacy | federated learning, multimodal learning, modality collaboration |
+| 2024 | [Neural Translation of Input Specifications into Formal Grammars for Test Case Generation](https://openreview.net/forum?id=wC6FQOEfG6) | generative models | automated test-case generation, formal grammars, context-free grammar |
+| 2024 | [Generating Robot Policy Code for High-Precision and Contact-Rich Manipulation Tasks](https://openreview.net/forum?id=WtHKqtHVXo) | applications to robotics, autonomy, planning | robot manipulation, contact-rich manipulation, LLM code generation |
+| 2025 | [Regressing the Relative Future: Efficient Policy Optimization for Multi-turn RLHF](https://openreview.net/forum?id=cVyELMpMRS) | reinforcement learning | reinforcement learning, RLHF, multi-turn dialogue |
+| 2025 | [Dynamic Loss-Based Sample Reweighting for Improved Large Language Model Pretraining](https://openreview.net/forum?id=gU4ZgQNsOC) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | LLM pretraining, dynamic sample reweighting, instance-level weighting |
+| 2025 | [Robust Feature Learning for Multi-Index Models in High Dimensions](https://openreview.net/forum?id=aKkDY1Wca0) | learning theory | learning theory, feature learning, multi-index models |
+| 2025 | [3DMolFormer: A Dual-channel Framework for Structure-based Drug Discovery](https://openreview.net/forum?id=RgE1qiO2ek) | applications to physical sciences (physics, chemistry, biology, etc.) | structure-based drug discovery, protein-ligand docking, 3D molecular generation |
+| 2025 | [Adaptive Graduated Non-Convexity for Point Cloud Registration](https://openreview.net/forum?id=cIKQp84vqN) | optimization | point cloud registration, robust optimization, graduated non-convexity |
+| 2025 | [Differentiable Reasoning about Knowledge Graphs with Reshuffled Embeddings](https://openreview.net/forum?id=PQ6jzz82Nd) | neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.) | knowledge graph embeddings, differentiable reasoning, rule learning |
+| 2026 | [Bird's-eye-view Informed Reasoning Driver](https://openreview.net/forum?id=TuU95FWkyH) | applications to robotics, autonomy, planning | autonomous driving, motion planning, vision-language models |
+| 2026 | [More Than Meets the Eye? Uncovering the Reasoning-Planning Disconnect in Training Vision-Language Driving Models](https://openreview.net/forum?id=r8e7hBhWSG) | applications to robotics, autonomy, planning | vision-language models, autonomous driving, trajectory planning |
+| 2026 | [A dimensional R2 regression metric](https://openreview.net/forum?id=iD6ZD5wE1n) | interpretability and explainable AI | regression metrics, R-squared, multidimensional evaluation |
+| 2026 | [Dual Randomized Smoothing: Beyond Global Noise Variance](https://openreview.net/forum?id=syvfsHSqm2) | alignment, fairness, safety, privacy, and societal considerations | randomized smoothing, certified robustness, input-dependent variance |
+| 2026 | [UserRL: Training Interactive User-Centric Agent via Reinforcement Learning](https://openreview.net/forum?id=kjCzhKVzEJ) | applications to computer vision, audio, language, and other modalities | LLM agents, user-centric interaction, reinforcement learning |
+| 2026 | [Make it NoisEasier: Boosting Text-to-Video Generation with Direct Noise Optimization](https://openreview.net/forum?id=hSUlL8K1Ec) | generative models | text-to-video generation, diffusion models, test-time optimization |
+| 2026 | [Disentangle and Align: Structured Contrastive Learning with Semantic–Domain Separation](https://openreview.net/forum?id=f6DsglOKIq) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | self-supervised learning, domain generalization, contrastive learning |
+| 2026 | [Improved high-dimensional estimation with Langevin dynamics and stochastic weight averaging](https://openreview.net/forum?id=GYXUD3hGTh) | learning theory | learning theory, high-dimensional estimation, Langevin dynamics |
+| 2026 | [Leveraging Visual Embeddings from Instagram for Credit Scoring of Informal Microbusinesses](https://openreview.net/forum?id=5izkRQEo5c) | applications to computer vision, audio, language, and other modalities | alternative credit scoring, financial inclusion, informal microbusinesses |
+| 2026 | [Feature segregation by signed weights in artificial vision systems and biological models](https://openreview.net/forum?id=lnTX3GoeTY) | interpretability and explainable AI | mechanistic interpretability, signed weights, feature segregation |
+
+</details>
+
+<details>
 <summary>2026-08-27 - 19 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -57,33 +84,6 @@
 | 2026 | [Hybrid Minority Oversampling via LLM-Generated Seeds and SMOTE Expansion](https://openreview.net/forum?id=y6lohf8S9X) | generative models | imbalanced learning, tabular data, oversampling |
 | 2026 | [On The Geometry and Topology of Representations: the Manifolds of Modular Addition](https://openreview.net/forum?id=2olkCiSELH) | interpretability and explainable AI | mechanistic interpretability, modular addition, representation geometry |
 | 2026 | [Unlocking Zero-shot Potential of Semi-dense Image Matching via Gaussian Splatting](https://openreview.net/forum?id=7mmnP3o1Hw) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | image matching, 3D Gaussian Splatting, zero-shot generalization |
-
-</details>
-
-<details>
-<summary>2026-08-25 - 19 newly analyzed papers, 0 common Agents added</summary>
-
-| Year | Paper | Topic | Research tags |
-|---:|---|---|---|
-| 2024 | [Gradual Optimization Learning for Conformational Energy Minimization](https://openreview.net/forum?id=FMMF1a9ifL) | applications to physical sciences (physics, chemistry, biology, etc.) | molecular conformation optimization, neural network potentials, active learning |
-| 2024 | [FedImpro: Measuring and Improving Client Update in Federated Learning](https://openreview.net/forum?id=giU9fYGTND) | general machine learning (i.e., none of the above) | federated learning, client drift, data heterogeneity |
-| 2024 | [Universal Jailbreak Backdoors from Poisoned Human Feedback](https://openreview.net/forum?id=GxCGsxiAaK) | societal considerations including fairness, safety, privacy | large language models, RLHF, data poisoning |
-| 2025 | [Non-invasive Neural Decoding in Source Reconstructed Brain Space](https://openreview.net/forum?id=g3PuaFh5vV) | applications to neuroscience & cognitive science | neural decoding, MEG, source reconstruction |
-| 2025 | [End-to-End Reinforcement Learning for Traffic Signal Control: Real-Time Video to Signal Decisions](https://openreview.net/forum?id=eM5dar35Ys) | reinforcement learning | traffic signal control, reinforcement learning, end-to-end perception |
-| 2025 | [Graph Neural Networks Can (Often) Count Substructures](https://openreview.net/forum?id=sZQRUrvLn4) | learning on graphs and other geometries & topologies | graph neural networks, subgraph counting, GNN expressivity |
-| 2025 | [SPIN: Self-Supervised Prompt INjection](https://openreview.net/forum?id=PNHGYziAsL) | alignment, fairness, safety, privacy, and societal considerations | LLM safety, jailbreak defense, prompt injection defense |
-| 2025 | [VILA^2: VLM Augmented VLM with Self-Improvement](https://openreview.net/forum?id=M2YCdfxNVx) | foundation or frontier models, including LLMs | vision-language models, self-training, data curation |
-| 2025 | [Unpacking SDXL Turbo: Interpreting Text-to-Image Models with Sparse Autoencoders](https://openreview.net/forum?id=Ch8s4FdUXS) | interpretability and explainable AI | interpretability, explainable AI, text-to-image generation |
-| 2026 | [Not Just a Flash in Time: Interpreting Long Event Streams through Language](https://openreview.net/forum?id=Q3t0QBVFSG) | applications to computer vision, audio, language, and other modalities | event cameras, event streams, multimodal large language models |
-| 2026 | [MoCA: Mixture-of-Components Attention for Scalable Compositional 3D Generation](https://openreview.net/forum?id=Othf7vEtg7) | applications to computer vision, audio, language, and other modalities | compositional 3D generation, 3D object generation, 3D scene generation |
-| 2026 | [SUIT: Knowledge Editing with Subspace-Aware Key-Value Mappings](https://openreview.net/forum?id=qz3BkyyHWJ) | interpretability and explainable AI | knowledge editing, large language models, subspace methods |
-| 2026 | [Multi-Agent Debate with Memory Masking](https://openreview.net/forum?id=EdTt8nMAMA) | foundation or frontier models, including LLMs | multi-agent debate, LLM reasoning, memory masking |
-| 2026 | [Can vision language models learn intuitive physics from interaction?](https://openreview.net/forum?id=XdLgOm5giq) | applications to neuroscience & cognitive science | vision-language models, intuitive physics, reinforcement learning |
-| 2026 | [Sparser Block-Sparse Attention via Token Permutation](https://openreview.net/forum?id=wTZt07hzZf) | other topics in machine learning (i.e., none of the above) | sparse attention, block-sparse attention, token permutation |
-| 2026 | [ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask](https://openreview.net/forum?id=zgqFQM8VNe) | generative models | autonomous driving, driving world models, video generation |
-| 2026 | [Bimodality of Sparse Autoencoder Features is Still There and Can Be Fixed](https://openreview.net/forum?id=soMC0uESuz) | interpretability and explainable AI | sparse autoencoders, mechanistic interpretability, feature alignment |
-| 2026 | [Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants](https://openreview.net/forum?id=gxCOTacltM) | learning on time series and dynamical systems | dynamic time warping, differentiable dynamic programming, perturbed optimization |
-| 2026 | [Unpaired-to-paired data synthesis: Learning to model disease effects via contrastive analysis of neuroimaging-derived features](https://openreview.net/forum?id=iL2QSWKHkK) | applications to neuroscience & cognitive science | neuroimaging, structural MRI, regional brain volumes |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->
