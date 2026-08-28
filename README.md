@@ -6,6 +6,34 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-29 - 20 newly analyzed papers, 0 common Agents added</summary>
+
+| Year | Paper | Topic | Research tags |
+|---:|---|---|---|
+| 2024 | [Co-Learning Empirical Games & World Models](https://openreview.net/forum?id=TyZhiK6fDf) | reinforcement learning | multi-agent learning, empirical game theory, model-based reinforcement learning |
+| 2024 | [Efficient Inverse Multiagent Learning](https://openreview.net/forum?id=JzvIWvC9MG) | reinforcement learning | inverse_game_theory, inverse_multiagent_learning, inverse_reinforcement_learning |
+| 2024 | [State Chrono Representation for Enhancing Generalization in Reinforcement Learning](https://openreview.net/forum?id=oEzY6fRUMH) | reinforcement learning | reinforcement learning, state representation learning, bisimulation metrics |
+| 2024 | [OrthCaps: An Orthogonal CapsNet with Sparse Attention Routing and Pruning](https://openreview.net/forum?id=oKn2eMAdfc) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | capsule networks, orthogonalization, sparse attention routing |
+| 2025 | [Linearly Interpretable Concept Embedding Model for Text Classification](https://openreview.net/forum?id=zp88xOXAfS) | interpretability and explainable AI | interpretable machine learning, concept bottleneck models, concept embedding models |
+| 2025 | [Epistemic Monte Carlo Tree Search](https://openreview.net/forum?id=Tb8RiXOc3N) | reinforcement learning | reinforcement_learning, monte_carlo_tree_search, epistemic_uncertainty |
+| 2025 | [Sparse Covariance Neural Networks](https://openreview.net/forum?id=ZDoaLbOFaP) | learning theory | covariance neural networks, graph sparsification, sparse covariance estimation |
+| 2025 | [GTR: Improving Large 3D Reconstruction Models through Geometry and Texture Refinement](https://openreview.net/forum?id=Oxpkn0YLG1) | generative models | 3D reconstruction, multi-view reconstruction, mesh reconstruction |
+| 2025 | [OmniChat: Enhancing Spoken Dialogue Systems with Scalable Synthetic Data for Diverse Scenarios](https://openreview.net/forum?id=cVgOIjcNoQ) | applications to computer vision, audio, language, and other modalities | spoken_dialogue_systems, synthetic_data, multimodal_language_models |
+| 2025 | [Contrast with Aggregation: A Scalable Framework for Multi-View Representation Learning](https://openreview.net/forum?id=fPYJVMBuEc) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | multi-view representation learning, contrastive learning, missing-view robustness |
+| 2026 | [Who Judges the Judge? LLM Jury-on-Demand: Building Trustworthy LLM Evaluation Systems](https://openreview.net/forum?id=seM2ixNp6W) | generative models | LLM evaluation, LLM-as-judge, LLM juries |
+| 2026 | [EchoVLM: Measurement-Grounded Multimodal Learning for Echocardiography](https://openreview.net/forum?id=DKOIADzbtM) | applications to physical sciences (physics, chemistry, biology, etc.) | echocardiography, vision-language learning, medical multimodal learning |
+| 2026 | [SAGE: A FRAMEWORK FOR SEMANTIC-ALIGNMENT- GUIDED ENGINEERING OF PROMPTS AND FINE- TUNING IN INDUSTRIAL CONTROL TASKS](https://openreview.net/forum?id=MWu9EU6nkM) | alignment, fairness, safety, privacy, and societal considerations | industrial control code generation, large language models, prompt engineering |
+| 2026 | [What Drives Compositional Generalization in Visual Generative Models?](https://openreview.net/forum?id=oSUjUvs999) | generative models | generative_models, compositional_generalization, visual_generation |
+| 2026 | [Graph-driven Autonomous Adaptation for Multi-stream Concept Drift](https://openreview.net/forum?id=1uyGaZNjwA) | learning on time series and dynamical systems | multi-stream concept drift, time-series forecasting, dynamic graph construction |
+| 2026 | [Command-V: Training-Free Representation Finetuning Transfer](https://openreview.net/forum?id=oRYzpI3cmJ) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | model_editing, representation_transfer, activation_steering |
+| 2026 | [FLAME: Reducing Computation in Federated Learning via Sample-Adaptive Multi-Exit Training](https://openreview.net/forum?id=C2ctBrjMpH) | optimization | federated learning, sample-adaptive computation, multi-exit training |
+| 2026 | [Breaking Scale Anchoring: Frequency Representation Learning for Accurate High-Resolution Inference from Low-Resolution Training](https://openreview.net/forum?id=84vy8ZomFn) | applications to physical sciences (physics, chemistry, biology, etc.) | zero-shot super-resolution, spatiotemporal forecasting, frequency representation learning |
+| 2026 | [GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs](https://openreview.net/forum?id=ZdGB7MNQDT) | learning on graphs and other geometries & topologies | LLM routing, multi-agent LLMs, agentic workflow generation |
+| 2026 | [Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](https://openreview.net/forum?id=m4nvqQkm4X) | applications to physical sciences (physics, chemistry, biology, etc.) | molecular optimization, large language models, LLM reasoning |
+
+</details>
+
+<details>
 <summary>2026-08-28 - 19 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -56,34 +84,6 @@
 | 2026 | [Understanding Knowledge Distillation in Post-Training: When It Helps and When It Fails](https://openreview.net/forum?id=DvrZRcoT6p) | generative models | knowledge distillation, LLM post-training, instruction tuning |
 | 2026 | [Bandit Learning for Online Scheduling with Immediate Decision](https://openreview.net/forum?id=d2tMZHTFWv) | learning theory | online scheduling, multi-armed bandits, immediate decisions |
 | 2026 | [Repurposing Synthetic Data for Fine-grained Search Agent Supervision](https://openreview.net/forum?id=CByVWPpb8T) | applications to computer vision, audio, language, and other modalities | search agents, large language models, reinforcement learning |
-
-</details>
-
-<details>
-<summary>2026-08-26 - 20 newly analyzed papers, 0 common Agents added</summary>
-
-| Year | Paper | Topic | Research tags |
-|---:|---|---|---|
-| 2024 | [Nonnegative Matrix Factorization through Canonical Edges](https://openreview.net/forum?id=8JKZZxJAZ3) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | nonnegative matrix factorization, orthogonal NMF, canonical edges |
-| 2024 | [In-context Exploration-Exploitation for Reinforcement Learning](https://openreview.net/forum?id=uIKZSStON3) | reinforcement learning | in-context reinforcement learning, exploration-exploitation, offline reinforcement learning |
-| 2024 | [Video Language Planning](https://openreview.net/forum?id=9pKtcJcMP3) | applications to robotics, autonomy, planning | robotics planning, long-horizon planning, video generation |
-| 2024 | [Symphony: Symmetry-Equivariant Point-Centered Spherical Harmonics for 3D Molecule Generation](https://openreview.net/forum?id=MIEnYtlGyv) | applications to physical sciences (physics, chemistry, biology, etc.) | 3D molecule generation, autoregressive generation, E(3) equivariance |
-| 2025 | [SPikE-SSM: A Sparse, Precise, and Efficient Spiking State Space Model for Long Sequences Learning](https://openreview.net/forum?id=4ILqqOJFkS) | foundation or frontier models, including LLMs | spiking neural networks, state space models, long-sequence learning |
-| 2025 | [Efficient Sparse Single-stage 3D Visual Grounding with Text-guided Pruning](https://openreview.net/forum?id=b39J2X4rjT) | applications to computer vision, audio, language, and other modalities | 3D visual grounding, single-stage architecture, sparse convolution |
-| 2025 | [From Loops to Oops: Fallback Behaviors of Language Models Under Uncertainty](https://openreview.net/forum?id=tFwEsrx1hm) | foundation or frontier models, including LLMs | large language models, epistemic uncertainty, hallucination |
-| 2025 | [PyramidKV: Dynamic KV Cache Compression based on Pyramidal Information Funneling](https://openreview.net/forum?id=jZVNmDiU86) | foundation or frontier models, including LLMs | large language models, efficient generative inference, KV cache compression |
-| 2025 | [Effective Text-to-Image Alignment with Quality Aware Pair Ranking](https://openreview.net/forum?id=YeZNN6Iy6Q) | applications to computer vision, audio, language, and other modalities | text-to-image generation, diffusion models, Direct Preference Optimization |
-| 2025 | [Ultra-Low Accumulation Precision Inference with Block Floating Point Arithmetic](https://openreview.net/forum?id=Dzamphz35c) | infrastructure, software libraries, hardware, systems, etc. | block floating point, quantized inference, accumulator precision |
-| 2026 | [Terrarium: Revisiting the Blackboard for Studying Multi-Agent Attacks](https://openreview.net/forum?id=bknuCt8MI7) | alignment, fairness, safety, privacy, and societal considerations | multi-agent systems, LLM agents, safety evaluation |
-| 2026 | [Latent Planning via Embedding Arithmetic: A Contrastive Approach to Strategic Reasoning](https://openreview.net/forum?id=AeF1MeV62d) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | latent planning, representation learning, supervised contrastive learning |
-| 2026 | [Electromagnetic Inverse Scattering from a Single Transmitter](https://openreview.net/forum?id=G62YUhn02k) | applications to physical sciences (physics, chemistry, biology, etc.) | electromagnetic inverse scattering, inverse problems, sparse transmitter reconstruction |
-| 2026 | [Grounded Human-Attributed Description and Activity Recognition in Videos](https://openreview.net/forum?id=myosXZvY84) | applications to computer vision, audio, language, and other modalities | video understanding, grounded video captioning, human-attributed activity recognition |
-| 2026 | [Dyana: Benchmarking Dynamic Hand Intelligence](https://openreview.net/forum?id=xafFC4h8OO) | datasets and benchmarks | dynamic grasping, robotics benchmark, hand-object interaction |
-| 2026 | [What Makes Looped Transformers Perform Better Than Non-Recursive Ones (Provably)](https://openreview.net/forum?id=7kLRpAH5at) | learning theory | looped transformers, recursive transformers, loss landscape geometry |
-| 2026 | [Seeing Beyond Points: Adaptive Gaussian Primitives for 3D Perception](https://openreview.net/forum?id=GoowzgMiOp) | applications to computer vision, audio, language, and other modalities | 3D perception, point clouds, Gaussian primitives |
-| 2026 | [Hybrid Minority Oversampling via LLM-Generated Seeds and SMOTE Expansion](https://openreview.net/forum?id=y6lohf8S9X) | generative models | imbalanced learning, tabular data, oversampling |
-| 2026 | [On The Geometry and Topology of Representations: the Manifolds of Modular Addition](https://openreview.net/forum?id=2olkCiSELH) | interpretability and explainable AI | mechanistic interpretability, modular addition, representation geometry |
-| 2026 | [Unlocking Zero-shot Potential of Semi-dense Image Matching via Gaussian Splatting](https://openreview.net/forum?id=7mmnP3o1Hw) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | image matching, 3D Gaussian Splatting, zero-shot generalization |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->

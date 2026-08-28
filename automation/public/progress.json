@@ -1,33 +1,33 @@
 {
-  "generated_on": "2026-08-27T18:22:29.218128+00:00",
+  "generated_on": "2026-08-28T18:22:29.184953+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 19,
-  "analyzed_papers": 758,
-  "coverage_percent": 1.9491,
+  "successful_daily_runs": 20,
+  "analyzed_papers": 778,
+  "coverage_percent": 2.0005,
   "by_year": {
-    "2026": 388,
-    "2025": 231,
-    "2024": 139
+    "2026": 398,
+    "2025": 237,
+    "2024": 143
   },
-  "last_daily_run": "2026-08-28",
+  "last_daily_run": "2026-08-29",
   "usage": {
-    "input_tokens": 3321277,
-    "output_tokens": 179827,
-    "total_tokens": 3501104
+    "input_tokens": 3550732,
+    "output_tokens": 189621,
+    "total_tokens": 3740353
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 60
+      "papers": 62
+    },
+    {
+      "tag": "large language models",
+      "papers": 45
     },
     {
       "tag": "diffusion models",
       "papers": 45
-    },
-    {
-      "tag": "large language models",
-      "papers": 43
     },
     {
       "tag": "vision-language models",
@@ -35,7 +35,7 @@
     },
     {
       "tag": "contrastive learning",
-      "papers": 31
+      "papers": 33
     },
     {
       "tag": "representation learning",
@@ -43,7 +43,7 @@
     },
     {
       "tag": "graph neural networks",
-      "papers": 26
+      "papers": 27
     },
     {
       "tag": "self-supervised learning",
@@ -63,7 +63,7 @@
     },
     {
       "tag": "multimodal learning",
-      "papers": 18
+      "papers": 19
     },
     {
       "tag": "vision transformers",
@@ -75,14 +75,14 @@
     },
     {
       "tag": "supervised fine-tuning",
+      "papers": 16
+    },
+    {
+      "tag": "transfer learning",
       "papers": 15
     },
     {
       "tag": "continual learning",
-      "papers": 14
-    },
-    {
-      "tag": "transfer learning",
       "papers": 14
     },
     {
@@ -94,20 +94,20 @@
       "papers": 13
     },
     {
-      "tag": "language models",
+      "tag": "image classification",
       "papers": 13
     }
   ],
   "response_effectiveness": {
-    "unknown": 501,
-    "partial_success": 388,
-    "no_effect": 82,
-    "strong_success": 243
+    "unknown": 510,
+    "partial_success": 399,
+    "no_effect": 84,
+    "strong_success": 255
   },
   "score_actions": {
-    "unknown": 685,
-    "maintained": 272,
-    "increased": 247,
+    "unknown": 701,
+    "maintained": 282,
+    "increased": 255,
     "decreased": 2,
     "promised_increase": 8
   }
