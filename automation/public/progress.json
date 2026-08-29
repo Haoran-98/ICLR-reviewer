@@ -1,29 +1,29 @@
 {
-  "generated_on": "2026-08-28T18:22:29.184953+00:00",
+  "generated_on": "2026-08-29T18:21:25.187864+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 20,
-  "analyzed_papers": 778,
-  "coverage_percent": 2.0005,
+  "successful_daily_runs": 21,
+  "analyzed_papers": 797,
+  "coverage_percent": 2.0494,
   "by_year": {
-    "2026": 398,
-    "2025": 237,
-    "2024": 143
+    "2026": 408,
+    "2025": 243,
+    "2024": 146
   },
-  "last_daily_run": "2026-08-29",
+  "last_daily_run": "2026-08-30",
   "usage": {
-    "input_tokens": 3550732,
-    "output_tokens": 189621,
-    "total_tokens": 3740353
+    "input_tokens": 3700430,
+    "output_tokens": 198859,
+    "total_tokens": 3899289
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 62
+      "papers": 63
     },
     {
       "tag": "large language models",
-      "papers": 45
+      "papers": 47
     },
     {
       "tag": "diffusion models",
@@ -31,23 +31,23 @@
     },
     {
       "tag": "vision-language models",
-      "papers": 41
+      "papers": 42
     },
     {
       "tag": "contrastive learning",
       "papers": 33
     },
     {
+      "tag": "graph neural networks",
+      "papers": 29
+    },
+    {
       "tag": "representation learning",
       "papers": 27
     },
     {
-      "tag": "graph neural networks",
-      "papers": 27
-    },
-    {
       "tag": "self-supervised learning",
-      "papers": 25
+      "papers": 26
     },
     {
       "tag": "transformers",
@@ -58,11 +58,11 @@
       "papers": 21
     },
     {
-      "tag": "interpretability",
-      "papers": 19
+      "tag": "multimodal learning",
+      "papers": 20
     },
     {
-      "tag": "multimodal learning",
+      "tag": "interpretability",
       "papers": 19
     },
     {
@@ -71,7 +71,7 @@
     },
     {
       "tag": "GRPO",
-      "papers": 16
+      "papers": 17
     },
     {
       "tag": "supervised fine-tuning",
@@ -82,32 +82,32 @@
       "papers": 15
     },
     {
+      "tag": "image classification",
+      "papers": 14
+    },
+    {
+      "tag": "language models",
+      "papers": 14
+    },
+    {
       "tag": "continual learning",
       "papers": 14
     },
     {
-      "tag": "knowledge distillation",
+      "tag": "video generation",
       "papers": 14
-    },
-    {
-      "tag": "flow matching",
-      "papers": 13
-    },
-    {
-      "tag": "image classification",
-      "papers": 13
     }
   ],
   "response_effectiveness": {
-    "unknown": 510,
-    "partial_success": 399,
+    "unknown": 525,
+    "partial_success": 404,
     "no_effect": 84,
     "strong_success": 255
   },
   "score_actions": {
-    "unknown": 701,
-    "maintained": 282,
-    "increased": 255,
+    "unknown": 707,
+    "maintained": 287,
+    "increased": 264,
     "decreased": 2,
     "promised_increase": 8
   }

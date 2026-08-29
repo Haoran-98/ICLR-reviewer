@@ -6,6 +6,33 @@
 ## New in the Last 3 Days
 
 <details open>
+<summary>2026-08-30 - 19 newly analyzed papers, 0 common Agents added</summary>
+
+| Year | Paper | Topic | Research tags |
+|---:|---|---|---|
+| 2024 | [Interventional Fairness on Partially Known Causal Graphs: A Constrained Optimization Approach](https://openreview.net/forum?id=SKulT2VX9p) | societal considerations including fairness, safety, privacy | causal fairness, interventional fairness, partial causal graphs |
+| 2024 | [Simple Yet Effective Spatio-Temporal Prompt Learning](https://openreview.net/forum?id=YUNnVFlpjp) | general machine learning (i.e., none of the above) | spatio-temporal prediction, prompt learning, prompt tuning |
+| 2024 | [Quantifying and Defending against the Privacy Risk in Logit-based Federated Learning](https://openreview.net/forum?id=WEoyWdsI9f) | societal considerations including fairness, safety, privacy | federated learning, logit-based federated learning, privacy risk analysis |
+| 2025 | [Directional Gradient Projection for Robust Fine-Tuning of Foundation Models](https://openreview.net/forum?id=goBaGHLAdP) | transfer learning, meta learning, and lifelong learning | robust fine-tuning, foundation models, gradient projection |
+| 2025 | [SaTran: An efficient Transformer exploiting Spatiotemporal Redundancies for Satellite Image Time Series Representation Learning](https://openreview.net/forum?id=YcbE2K3i2E) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | satellite image time series, Earth observation, spatiotemporal representation learning |
+| 2025 | [Discrete Latent Plans via Semantic Skill Abstractions](https://openreview.net/forum?id=L66G39JrM4) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | hierarchical reinforcement learning, language-conditioned imitation learning, discrete latent plans |
+| 2025 | [Reconsidering Faithfulness in Regular, Self-Explainable and Domain Invariant GNNs](https://openreview.net/forum?id=kiOxNsrpQy) | learning on graphs and other geometries & topologies | graph neural networks, explainable AI, faithfulness |
+| 2025 | [Neural Description Logic Reasoning over Incomplete Knowledge Bases](https://openreview.net/forum?id=4qRCiEZGKd) | other topics in machine learning (i.e., none of the above) | description logic, concept learning, knowledge bases |
+| 2025 | [Boosting Camera Motion Control for Video Diffusion Transformers](https://openreview.net/forum?id=rDRCIvTppL) | generative models | video generation, diffusion transformers, camera control |
+| 2026 | [GUI-ReWalk: Massive Data Generation for GUI Agent via Stochastic Exploration and Intent-Aware Reasoning](https://openreview.net/forum?id=FcZqZH0j1b) | datasets and benchmarks | GUI agents, data synthesis, trajectory generation |
+| 2026 | [ETGS: Explicit Thermodynamics Gaussian Splatting for Dynamic Thermal Reconstruction](https://openreview.net/forum?id=P2Nw2LMkjH) | applications to computer vision, audio, language, and other modalities | dynamic thermal reconstruction, 3D Gaussian Splatting, explicit physics modeling |
+| 2026 | [Data Efficacy for Language Model Training](https://openreview.net/forum?id=zuvcCOnm27) | other topics in machine learning (i.e., none of the above) | language-model training, data efficacy, data efficiency |
+| 2026 | [RegionDoc-R1: Reinforcing Semantic Layout-Aware Learning for Document Understanding](https://openreview.net/forum?id=pfHm4YJTzC) | applications to computer vision, audio, language, and other modalities | document understanding, multimodal large language models, reinforcement learning |
+| 2026 | [Tabular Feature Discovery With Reasoning Type Exploration](https://openreview.net/forum?id=oiZhPliETH) | other topics in machine learning (i.e., none of the above) | automated feature engineering, tabular learning, large language models |
+| 2026 | [Bayes Always Wins the Lottery in Monte Carlo](https://openreview.net/forum?id=Ilnbgf1eeS) | probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.) | Bayesian neural networks, neural network pruning, Lottery Ticket Hypothesis |
+| 2026 | [Process Reward Models That Think](https://openreview.net/forum?id=V727xqBYIW) | foundation or frontier models, including LLMs | process reward models, verbalized verification, chain-of-thought |
+| 2026 | [Scalable Constrained Multi-Agent Reinforcement Learning via State Augmentation and Consensus for Separable Dynamics](https://openreview.net/forum?id=CAMU0mOR7p) | reinforcement learning | constrained multi-agent reinforcement learning, distributed reinforcement learning, state augmentation |
+| 2026 | [EUBRL: Epistemic Uncertainty Directed Bayesian Reinforcement Learning](https://openreview.net/forum?id=KASqlcI6Nm) | reinforcement learning | Bayesian reinforcement learning, epistemic uncertainty, exploration-exploitation |
+| 2026 | [One Intervention per Component is Enough: Towards Identifiability in Linear Stochastic Dynamics from Steady State](https://openreview.net/forum?id=vjI9tsebtP) | causal reasoning | causal inference, causal discovery, stochastic differential equations |
+
+</details>
+
+<details>
 <summary>2026-08-29 - 20 newly analyzed papers, 0 common Agents added</summary>
 
 | Year | Paper | Topic | Research tags |
@@ -57,33 +84,6 @@
 | 2026 | [Improved high-dimensional estimation with Langevin dynamics and stochastic weight averaging](https://openreview.net/forum?id=GYXUD3hGTh) | learning theory | learning theory, high-dimensional estimation, Langevin dynamics |
 | 2026 | [Leveraging Visual Embeddings from Instagram for Credit Scoring of Informal Microbusinesses](https://openreview.net/forum?id=5izkRQEo5c) | applications to computer vision, audio, language, and other modalities | alternative credit scoring, financial inclusion, informal microbusinesses |
 | 2026 | [Feature segregation by signed weights in artificial vision systems and biological models](https://openreview.net/forum?id=lnTX3GoeTY) | interpretability and explainable AI | mechanistic interpretability, signed weights, feature segregation |
-
-</details>
-
-<details>
-<summary>2026-08-27 - 19 newly analyzed papers, 0 common Agents added</summary>
-
-| Year | Paper | Topic | Research tags |
-|---:|---|---|---|
-| 2024 | [Improving Robustness and Accuracy with Retrospective Online Adversarial Distillation](https://openreview.net/forum?id=43flsheS4s) | societal considerations including fairness, safety, privacy | adversarial training, adversarial robustness, adversarial distillation |
-| 2024 | [Elephants Never Forget: Testing Language Models for Memorization of Tabular Data](https://openreview.net/forum?id=lwtaEhDx9x) | generative models | large language models, tabular data, data contamination |
-| 2024 | [Missing Data Imputation for Large-Scale Longitudinal Physical Activity Data](https://openreview.net/forum?id=48Abxtv9Mi) | applications to physical sciences (physics, chemistry, biology, etc.) | - |
-| 2025 | [Smooth Probabilistic Interpolation Benefits Generative Modeling for Discrete Graphs](https://openreview.net/forum?id=MhsCDuY4zx) | applications to physical sciences (physics, chemistry, biology, etc.) | graph generation, Bayesian flow networks, molecular graph generation |
-| 2025 | [Event-aided Dense and Continuous Point Tracking](https://openreview.net/forum?id=1GIVx7COef) | applications to computer vision, audio, language, and other modalities | event cameras, dense point tracking, continuous point trajectories |
-| 2025 | [Incorporating Human Preferences into Interpretable Reinforcement Learning with Tree Policies](https://openreview.net/forum?id=sTllbUNLz0) | interpretability and explainable AI | interpretable reinforcement learning, explainable reinforcement learning, preference learning |
-| 2025 | [Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models](https://openreview.net/forum?id=9sOR0nYLtz) | reinforcement learning | reinforcement learning, unsupervised reinforcement learning, behavioral foundation models |
-| 2025 | [Timer-XL: Long-Context Transformers for Unified Time Series Forecasting](https://openreview.net/forum?id=KMCJXjlDDr) | learning on time series and dynamical systems | time series forecasting, long-context modeling, generative transformers |
-| 2025 | [The Wisdom of a Crowd of Brains: A Universal Brain Encoder](https://openreview.net/forum?id=xHGL9XqR8Y) | applications to neuroscience & cognitive science | image-to-fMRI encoding, neuroscience, brain encoding |
-| 2026 | [DiaBlo: Diagonal Blocks Are Sufficient For Finetuning](https://openreview.net/forum?id=cZaI6GmjBm) | foundation or frontier models, including LLMs | parameter-efficient fine-tuning, large language models, block-diagonal updates |
-| 2026 | [DualRPO: All-in-one Visual RL with Internal and External Rewards](https://openreview.net/forum?id=5FSfl8ZPQf) | applications to computer vision, audio, language, and other modalities | vision-language models, multimodal reinforcement learning, unified multi-task training |
-| 2026 | [Distractor Injection Attacks on Large Reasoning Models: Characterization and Defense](https://openreview.net/forum?id=bIJkCBVSgd) | alignment, fairness, safety, privacy, and societal considerations | large reasoning models, prompt injection, reasoning safety |
-| 2026 | [Attacking Logic with Logic: Reasoning Injection Attack to Large Reasoning Models](https://openreview.net/forum?id=rrWWt3LTqo) | alignment, fairness, safety, privacy, and societal considerations | large reasoning models, prompt injection, security |
-| 2026 | [How Should Corruption Be Used in SSL? Empirical Insights for Effective Pretraining](https://openreview.net/forum?id=hf7syLIdQs) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | self-supervised learning, masked image modeling, vision pretraining |
-| 2026 | [MobileGUI-RL: Advancing Mobile GUI Agent through Reinforcement Learning in Online Environment](https://openreview.net/forum?id=LrXGarwVO8) | applications to computer vision, audio, language, and other modalities | mobile GUI agents, vision-language models, online reinforcement learning |
-| 2026 | [Adapting Vision-Language Models for Evaluating World Models](https://openreview.net/forum?id=BXKgPhaOzr) | generative models | world models, vision-language models, rollout evaluation |
-| 2026 | [Understanding Knowledge Distillation in Post-Training: When It Helps and When It Fails](https://openreview.net/forum?id=DvrZRcoT6p) | generative models | knowledge distillation, LLM post-training, instruction tuning |
-| 2026 | [Bandit Learning for Online Scheduling with Immediate Decision](https://openreview.net/forum?id=d2tMZHTFWv) | learning theory | online scheduling, multi-armed bandits, immediate decisions |
-| 2026 | [Repurposing Synthetic Data for Fine-grained Search Agent Supervision](https://openreview.net/forum?id=CByVWPpb8T) | applications to computer vision, audio, language, and other modalities | search agents, large language models, reinforcement learning |
 
 </details>
 <!-- DAILY_ACTIVITY:END -->

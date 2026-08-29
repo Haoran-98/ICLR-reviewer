@@ -1,6 +1,240 @@
 {
-  "generated_on": "2026-08-28T18:22:29.231413+00:00",
+  "generated_on": "2026-08-29T18:21:25.233120+00:00",
   "recent_days": [
+    {
+      "date": "2026-08-30",
+      "papers": [
+        {
+          "openreview_id": "SKulT2VX9p",
+          "year": 2024,
+          "title": "Interventional Fairness on Partially Known Causal Graphs: A Constrained Optimization Approach",
+          "primary_topic": "societal considerations including fairness, safety, privacy",
+          "openreview_url": "https://openreview.net/forum?id=SKulT2VX9p",
+          "research_tags": [
+            "causal fairness",
+            "interventional fairness",
+            "partial causal graphs"
+          ]
+        },
+        {
+          "openreview_id": "YUNnVFlpjp",
+          "year": 2024,
+          "title": "Simple Yet Effective Spatio-Temporal Prompt Learning",
+          "primary_topic": "general machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=YUNnVFlpjp",
+          "research_tags": [
+            "spatio-temporal prediction",
+            "prompt learning",
+            "prompt tuning"
+          ]
+        },
+        {
+          "openreview_id": "WEoyWdsI9f",
+          "year": 2024,
+          "title": "Quantifying and Defending against the Privacy Risk in Logit-based Federated Learning",
+          "primary_topic": "societal considerations including fairness, safety, privacy",
+          "openreview_url": "https://openreview.net/forum?id=WEoyWdsI9f",
+          "research_tags": [
+            "federated learning",
+            "logit-based federated learning",
+            "privacy risk analysis"
+          ]
+        },
+        {
+          "openreview_id": "goBaGHLAdP",
+          "year": 2025,
+          "title": "Directional Gradient Projection for Robust Fine-Tuning of Foundation Models",
+          "primary_topic": "transfer learning, meta learning, and lifelong learning",
+          "openreview_url": "https://openreview.net/forum?id=goBaGHLAdP",
+          "research_tags": [
+            "robust fine-tuning",
+            "foundation models",
+            "gradient projection"
+          ]
+        },
+        {
+          "openreview_id": "YcbE2K3i2E",
+          "year": 2025,
+          "title": "SaTran: An efficient Transformer exploiting Spatiotemporal Redundancies for Satellite Image Time Series Representation Learning",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=YcbE2K3i2E",
+          "research_tags": [
+            "satellite image time series",
+            "Earth observation",
+            "spatiotemporal representation learning"
+          ]
+        },
+        {
+          "openreview_id": "L66G39JrM4",
+          "year": 2025,
+          "title": "Discrete Latent Plans via Semantic Skill Abstractions",
+          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
+          "openreview_url": "https://openreview.net/forum?id=L66G39JrM4",
+          "research_tags": [
+            "hierarchical reinforcement learning",
+            "language-conditioned imitation learning",
+            "discrete latent plans"
+          ]
+        },
+        {
+          "openreview_id": "kiOxNsrpQy",
+          "year": 2025,
+          "title": "Reconsidering Faithfulness in Regular, Self-Explainable and Domain Invariant GNNs",
+          "primary_topic": "learning on graphs and other geometries & topologies",
+          "openreview_url": "https://openreview.net/forum?id=kiOxNsrpQy",
+          "research_tags": [
+            "graph neural networks",
+            "explainable AI",
+            "faithfulness"
+          ]
+        },
+        {
+          "openreview_id": "4qRCiEZGKd",
+          "year": 2025,
+          "title": "Neural Description Logic Reasoning over Incomplete Knowledge Bases",
+          "primary_topic": "other topics in machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=4qRCiEZGKd",
+          "research_tags": [
+            "description logic",
+            "concept learning",
+            "knowledge bases"
+          ]
+        },
+        {
+          "openreview_id": "rDRCIvTppL",
+          "year": 2025,
+          "title": "Boosting Camera Motion Control for Video Diffusion Transformers",
+          "primary_topic": "generative models",
+          "openreview_url": "https://openreview.net/forum?id=rDRCIvTppL",
+          "research_tags": [
+            "video generation",
+            "diffusion transformers",
+            "camera control"
+          ]
+        },
+        {
+          "openreview_id": "FcZqZH0j1b",
+          "year": 2026,
+          "title": "GUI-ReWalk: Massive Data Generation for GUI Agent via Stochastic Exploration and Intent-Aware Reasoning",
+          "primary_topic": "datasets and benchmarks",
+          "openreview_url": "https://openreview.net/forum?id=FcZqZH0j1b",
+          "research_tags": [
+            "GUI agents",
+            "data synthesis",
+            "trajectory generation"
+          ]
+        },
+        {
+          "openreview_id": "P2Nw2LMkjH",
+          "year": 2026,
+          "title": "ETGS: Explicit Thermodynamics Gaussian Splatting for Dynamic Thermal Reconstruction",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=P2Nw2LMkjH",
+          "research_tags": [
+            "dynamic thermal reconstruction",
+            "3D Gaussian Splatting",
+            "explicit physics modeling"
+          ]
+        },
+        {
+          "openreview_id": "zuvcCOnm27",
+          "year": 2026,
+          "title": "Data Efficacy for Language Model Training",
+          "primary_topic": "other topics in machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=zuvcCOnm27",
+          "research_tags": [
+            "language-model training",
+            "data efficacy",
+            "data efficiency"
+          ]
+        },
+        {
+          "openreview_id": "pfHm4YJTzC",
+          "year": 2026,
+          "title": "RegionDoc-R1: Reinforcing Semantic Layout-Aware Learning for Document Understanding",
+          "primary_topic": "applications to computer vision, audio, language, and other modalities",
+          "openreview_url": "https://openreview.net/forum?id=pfHm4YJTzC",
+          "research_tags": [
+            "document understanding",
+            "multimodal large language models",
+            "reinforcement learning"
+          ]
+        },
+        {
+          "openreview_id": "oiZhPliETH",
+          "year": 2026,
+          "title": "Tabular Feature Discovery With Reasoning Type Exploration",
+          "primary_topic": "other topics in machine learning (i.e., none of the above)",
+          "openreview_url": "https://openreview.net/forum?id=oiZhPliETH",
+          "research_tags": [
+            "automated feature engineering",
+            "tabular learning",
+            "large language models"
+          ]
+        },
+        {
+          "openreview_id": "Ilnbgf1eeS",
+          "year": 2026,
+          "title": "Bayes Always Wins the Lottery in Monte Carlo",
+          "primary_topic": "probabilistic methods (Bayesian methods, variational inference, sampling, UQ, etc.)",
+          "openreview_url": "https://openreview.net/forum?id=Ilnbgf1eeS",
+          "research_tags": [
+            "Bayesian neural networks",
+            "neural network pruning",
+            "Lottery Ticket Hypothesis"
+          ]
+        },
+        {
+          "openreview_id": "V727xqBYIW",
+          "year": 2026,
+          "title": "Process Reward Models That Think",
+          "primary_topic": "foundation or frontier models, including LLMs",
+          "openreview_url": "https://openreview.net/forum?id=V727xqBYIW",
+          "research_tags": [
+            "process reward models",
+            "verbalized verification",
+            "chain-of-thought"
+          ]
+        },
+        {
+          "openreview_id": "CAMU0mOR7p",
+          "year": 2026,
+          "title": "Scalable Constrained Multi-Agent Reinforcement Learning via State Augmentation and Consensus for Separable Dynamics",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=CAMU0mOR7p",
+          "research_tags": [
+            "constrained multi-agent reinforcement learning",
+            "distributed reinforcement learning",
+            "state augmentation"
+          ]
+        },
+        {
+          "openreview_id": "KASqlcI6Nm",
+          "year": 2026,
+          "title": "EUBRL: Epistemic Uncertainty Directed Bayesian Reinforcement Learning",
+          "primary_topic": "reinforcement learning",
+          "openreview_url": "https://openreview.net/forum?id=KASqlcI6Nm",
+          "research_tags": [
+            "Bayesian reinforcement learning",
+            "epistemic uncertainty",
+            "exploration-exploitation"
+          ]
+        },
+        {
+          "openreview_id": "vjI9tsebtP",
+          "year": 2026,
+          "title": "One Intervention per Component is Enough: Towards Identifiability in Linear Stochastic Dynamics from Steady State",
+          "primary_topic": "causal reasoning",
+          "openreview_url": "https://openreview.net/forum?id=vjI9tsebtP",
+          "research_tags": [
+            "causal inference",
+            "causal discovery",
+            "stochastic differential equations"
+          ]
+        }
+      ],
+      "agents": []
+    },
     {
       "date": "2026-08-29",
       "papers": [
@@ -476,236 +710,6 @@
             "mechanistic interpretability",
             "signed weights",
             "feature segregation"
-          ]
-        }
-      ],
-      "agents": []
-    },
-    {
-      "date": "2026-08-27",
-      "papers": [
-        {
-          "openreview_id": "43flsheS4s",
-          "year": 2024,
-          "title": "Improving Robustness and Accuracy with Retrospective Online Adversarial Distillation",
-          "primary_topic": "societal considerations including fairness, safety, privacy",
-          "openreview_url": "https://openreview.net/forum?id=43flsheS4s",
-          "research_tags": [
-            "adversarial training",
-            "adversarial robustness",
-            "adversarial distillation"
-          ]
-        },
-        {
-          "openreview_id": "lwtaEhDx9x",
-          "year": 2024,
-          "title": "Elephants Never Forget: Testing Language Models for Memorization of Tabular Data",
-          "primary_topic": "generative models",
-          "openreview_url": "https://openreview.net/forum?id=lwtaEhDx9x",
-          "research_tags": [
-            "large language models",
-            "tabular data",
-            "data contamination"
-          ]
-        },
-        {
-          "openreview_id": "48Abxtv9Mi",
-          "year": 2024,
-          "title": "Missing Data Imputation for Large-Scale Longitudinal Physical Activity Data",
-          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
-          "openreview_url": "https://openreview.net/forum?id=48Abxtv9Mi",
-          "research_tags": []
-        },
-        {
-          "openreview_id": "MhsCDuY4zx",
-          "year": 2025,
-          "title": "Smooth Probabilistic Interpolation Benefits Generative Modeling for Discrete Graphs",
-          "primary_topic": "applications to physical sciences (physics, chemistry, biology, etc.)",
-          "openreview_url": "https://openreview.net/forum?id=MhsCDuY4zx",
-          "research_tags": [
-            "graph generation",
-            "Bayesian flow networks",
-            "molecular graph generation"
-          ]
-        },
-        {
-          "openreview_id": "1GIVx7COef",
-          "year": 2025,
-          "title": "Event-aided Dense and Continuous Point Tracking",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=1GIVx7COef",
-          "research_tags": [
-            "event cameras",
-            "dense point tracking",
-            "continuous point trajectories"
-          ]
-        },
-        {
-          "openreview_id": "sTllbUNLz0",
-          "year": 2025,
-          "title": "Incorporating Human Preferences into Interpretable Reinforcement Learning with Tree Policies",
-          "primary_topic": "interpretability and explainable AI",
-          "openreview_url": "https://openreview.net/forum?id=sTllbUNLz0",
-          "research_tags": [
-            "interpretable reinforcement learning",
-            "explainable reinforcement learning",
-            "preference learning"
-          ]
-        },
-        {
-          "openreview_id": "9sOR0nYLtz",
-          "year": 2025,
-          "title": "Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models",
-          "primary_topic": "reinforcement learning",
-          "openreview_url": "https://openreview.net/forum?id=9sOR0nYLtz",
-          "research_tags": [
-            "reinforcement learning",
-            "unsupervised reinforcement learning",
-            "behavioral foundation models"
-          ]
-        },
-        {
-          "openreview_id": "KMCJXjlDDr",
-          "year": 2025,
-          "title": "Timer-XL: Long-Context Transformers for Unified Time Series Forecasting",
-          "primary_topic": "learning on time series and dynamical systems",
-          "openreview_url": "https://openreview.net/forum?id=KMCJXjlDDr",
-          "research_tags": [
-            "time series forecasting",
-            "long-context modeling",
-            "generative transformers"
-          ]
-        },
-        {
-          "openreview_id": "xHGL9XqR8Y",
-          "year": 2025,
-          "title": "The Wisdom of a Crowd of Brains: A Universal Brain Encoder",
-          "primary_topic": "applications to neuroscience & cognitive science",
-          "openreview_url": "https://openreview.net/forum?id=xHGL9XqR8Y",
-          "research_tags": [
-            "image-to-fMRI encoding",
-            "neuroscience",
-            "brain encoding"
-          ]
-        },
-        {
-          "openreview_id": "cZaI6GmjBm",
-          "year": 2026,
-          "title": "DiaBlo: Diagonal Blocks Are Sufficient For Finetuning",
-          "primary_topic": "foundation or frontier models, including LLMs",
-          "openreview_url": "https://openreview.net/forum?id=cZaI6GmjBm",
-          "research_tags": [
-            "parameter-efficient fine-tuning",
-            "large language models",
-            "block-diagonal updates"
-          ]
-        },
-        {
-          "openreview_id": "5FSfl8ZPQf",
-          "year": 2026,
-          "title": "DualRPO: All-in-one Visual RL with Internal and External Rewards",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=5FSfl8ZPQf",
-          "research_tags": [
-            "vision-language models",
-            "multimodal reinforcement learning",
-            "unified multi-task training"
-          ]
-        },
-        {
-          "openreview_id": "bIJkCBVSgd",
-          "year": 2026,
-          "title": "Distractor Injection Attacks on Large Reasoning Models: Characterization and Defense",
-          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
-          "openreview_url": "https://openreview.net/forum?id=bIJkCBVSgd",
-          "research_tags": [
-            "large reasoning models",
-            "prompt injection",
-            "reasoning safety"
-          ]
-        },
-        {
-          "openreview_id": "rrWWt3LTqo",
-          "year": 2026,
-          "title": "Attacking Logic with Logic: Reasoning Injection Attack to Large Reasoning Models",
-          "primary_topic": "alignment, fairness, safety, privacy, and societal considerations",
-          "openreview_url": "https://openreview.net/forum?id=rrWWt3LTqo",
-          "research_tags": [
-            "large reasoning models",
-            "prompt injection",
-            "security"
-          ]
-        },
-        {
-          "openreview_id": "hf7syLIdQs",
-          "year": 2026,
-          "title": "How Should Corruption Be Used in SSL? Empirical Insights for Effective Pretraining",
-          "primary_topic": "unsupervised, self-supervised, semi-supervised, and supervised representation learning",
-          "openreview_url": "https://openreview.net/forum?id=hf7syLIdQs",
-          "research_tags": [
-            "self-supervised learning",
-            "masked image modeling",
-            "vision pretraining"
-          ]
-        },
-        {
-          "openreview_id": "LrXGarwVO8",
-          "year": 2026,
-          "title": "MobileGUI-RL: Advancing Mobile GUI Agent through Reinforcement Learning in Online Environment",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=LrXGarwVO8",
-          "research_tags": [
-            "mobile GUI agents",
-            "vision-language models",
-            "online reinforcement learning"
-          ]
-        },
-        {
-          "openreview_id": "BXKgPhaOzr",
-          "year": 2026,
-          "title": "Adapting Vision-Language Models for Evaluating World Models",
-          "primary_topic": "generative models",
-          "openreview_url": "https://openreview.net/forum?id=BXKgPhaOzr",
-          "research_tags": [
-            "world models",
-            "vision-language models",
-            "rollout evaluation"
-          ]
-        },
-        {
-          "openreview_id": "DvrZRcoT6p",
-          "year": 2026,
-          "title": "Understanding Knowledge Distillation in Post-Training: When It Helps and When It Fails",
-          "primary_topic": "generative models",
-          "openreview_url": "https://openreview.net/forum?id=DvrZRcoT6p",
-          "research_tags": [
-            "knowledge distillation",
-            "LLM post-training",
-            "instruction tuning"
-          ]
-        },
-        {
-          "openreview_id": "d2tMZHTFWv",
-          "year": 2026,
-          "title": "Bandit Learning for Online Scheduling with Immediate Decision",
-          "primary_topic": "learning theory",
-          "openreview_url": "https://openreview.net/forum?id=d2tMZHTFWv",
-          "research_tags": [
-            "online scheduling",
-            "multi-armed bandits",
-            "immediate decisions"
-          ]
-        },
-        {
-          "openreview_id": "CByVWPpb8T",
-          "year": 2026,
-          "title": "Repurposing Synthetic Data for Fine-grained Search Agent Supervision",
-          "primary_topic": "applications to computer vision, audio, language, and other modalities",
-          "openreview_url": "https://openreview.net/forum?id=CByVWPpb8T",
-          "research_tags": [
-            "search agents",
-            "large language models",
-            "reinforcement learning"
           ]
         }
       ],
