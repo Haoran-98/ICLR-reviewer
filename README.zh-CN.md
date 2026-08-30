@@ -6,6 +6,34 @@
 ## 最近 3 天新增
 
 <details open>
+<summary>2026-08-31 - 新分析 20 篇论文，新增 0 个通用 Agent</summary>
+
+| 年份 | 论文 | 主题 | 研究标签 |
+|---:|---|---|---|
+| 2024 | [Online Feature Updates Improve Online (Generalized) Label Shift Adaptation](https://openreview.net/forum?id=sFQe52N40m) | general machine learning (i.e., none of the above) | online learning, label shift, generalized label shift |
+| 2024 | [Exploring the Promise and Limits of Real-Time Recurrent Learning](https://openreview.net/forum?id=V2cBKtdC3a) | general machine learning (i.e., none of the above) | recurrent neural networks, real-time recurrent learning, online learning |
+| 2024 | [Adaptive Hierarchical Certification for Semantic Segmentation using Randomized Smoothing](https://openreview.net/forum?id=1armpjgh8L) | societal considerations including fairness, safety, privacy | semantic segmentation, certified robustness, randomized smoothing |
+| 2024 | [Bounding Box Stability against Feature Dropout Reflects Detector Generalization across Environments](https://openreview.net/forum?id=lmM4Ecm4HJ) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | object detection, domain generalization, label-free evaluation |
+| 2025 | [No Need to Talk: Asynchronous Mixture of Language Models](https://openreview.net/forum?id=pHOH8FVrTp) | foundation or frontier models, including LLMs | language models, mixture of experts, asynchronous training |
+| 2025 | [MIRAI: Evaluating LLM Agents for International Event Forecasting](https://openreview.net/forum?id=gzzX4ZeErx) | datasets and benchmarks | LLM agents, temporal forecasting, international event forecasting |
+| 2025 | [MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training](https://openreview.net/forum?id=glWOsse3TL) | foundation or frontier models, including LLMs | large-batch training, LLM optimization, optimizer design |
+| 2025 | [RotRNN: Modelling Long Sequences with Rotations](https://openreview.net/forum?id=z6qmomJW91) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | sequence modeling, linear recurrent neural networks, state space models |
+| 2025 | [Auditing Data Controller Compliance with Data Withdrawal](https://openreview.net/forum?id=85X9awoVtv) | alignment, fairness, safety, privacy, and societal considerations | machine unlearning, data deletion, privacy auditing |
+| 2025 | [Retraction-free optimization over the Stiefel manifold with application to the LoRA fine-tuning](https://openreview.net/forum?id=c2OtbtZXFC) | optimization | Stiefel manifold, manifold optimization, retraction-free optimization |
+| 2026 | [High-Fidelity Pruning for Large Language Models](https://openreview.net/forum?id=Rip3EJc4nx) | other topics in machine learning (i.e., none of the above) | LLM pruning, structured pruning, MLP neuron pruning |
+| 2026 | [Immersive Multimodal Translation: A Proxy Task for Cross-modal and Objective Evaluation of Unified Models](https://openreview.net/forum?id=h7fDxPEvKG) | applications to computer vision, audio, language, and other modalities | multimodal translation, unified multimodal models, image understanding |
+| 2026 | [Distractor-free Generalizable 3D Gaussian Splatting](https://openreview.net/forum?id=G33Iemmj3Z) | applications to computer vision, audio, language, and other modalities | 3D Gaussian Splatting, generalizable reconstruction, distractor removal |
+| 2026 | [Pyramid Patchification Flow for Visual Generation](https://openreview.net/forum?id=hRfJjmsibX) | generative models | diffusion transformers, flow matching, visual generation |
+| 2026 | [T-TAMER: Provably Taming Trade-offs in ML Serving](https://openreview.net/forum?id=JFY9MZtWTu) | optimization | ML serving, early exit, cascaded inference |
+| 2026 | [Geo-Invariant Scoring Lead with Domain-Adversarial Transformers](https://openreview.net/forum?id=JbyaS5zhcB) | alignment, fairness, safety, privacy, and societal considerations | B2B lead scoring, geographic fairness, domain adaptation |
+| 2026 | [Enzyme-Unified: Learning Holistic Representations of Enzyme Function with a Hybrid Interaction Model](https://openreview.net/forum?id=oTnFATrtCD) | applications to physical sciences (physics, chemistry, biology, etc.) | enzyme function prediction, enzyme property regression, protein language models |
+| 2026 | [On the Collapse Errors Induced by the Deterministic Sampler for Diffusion Models](https://openreview.net/forum?id=iSO1WFjSKh) | generative models | diffusion models, deterministic samplers, ODE sampling |
+| 2026 | [RAIN-Merging: A Gradient-Free Method to Enhance Instruction Following in Large Reasoning Models with Preserved Thinking Format](https://openreview.net/forum?id=PO2iULmu5e) | foundation or frontier models, including LLMs | large reasoning models, instruction following, model merging |
+| 2026 | [ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration](https://openreview.net/forum?id=6vS1lNjPTa) | foundation or frontier models, including LLMs | LLM agents, tool orchestration, model routing |
+
+</details>
+
+<details>
 <summary>2026-08-30 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
 
 | 年份 | 论文 | 主题 | 研究标签 |
@@ -59,33 +87,6 @@
 | 2026 | [Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](https://openreview.net/forum?id=m4nvqQkm4X) | applications to physical sciences (physics, chemistry, biology, etc.) | molecular optimization, large language models, LLM reasoning |
 
 </details>
-
-<details>
-<summary>2026-08-28 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
-
-| 年份 | 论文 | 主题 | 研究标签 |
-|---:|---|---|---|
-| 2024 | [Exploring Modality Collaboration with Modality-Agnostic Transformers in Multi-Modal Federated Learning](https://openreview.net/forum?id=FBDtqWXfuq) | societal considerations including fairness, safety, privacy | federated learning, multimodal learning, modality collaboration |
-| 2024 | [Neural Translation of Input Specifications into Formal Grammars for Test Case Generation](https://openreview.net/forum?id=wC6FQOEfG6) | generative models | automated test-case generation, formal grammars, context-free grammar |
-| 2024 | [Generating Robot Policy Code for High-Precision and Contact-Rich Manipulation Tasks](https://openreview.net/forum?id=WtHKqtHVXo) | applications to robotics, autonomy, planning | robot manipulation, contact-rich manipulation, LLM code generation |
-| 2025 | [Regressing the Relative Future: Efficient Policy Optimization for Multi-turn RLHF](https://openreview.net/forum?id=cVyELMpMRS) | reinforcement learning | reinforcement learning, RLHF, multi-turn dialogue |
-| 2025 | [Dynamic Loss-Based Sample Reweighting for Improved Large Language Model Pretraining](https://openreview.net/forum?id=gU4ZgQNsOC) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | LLM pretraining, dynamic sample reweighting, instance-level weighting |
-| 2025 | [Robust Feature Learning for Multi-Index Models in High Dimensions](https://openreview.net/forum?id=aKkDY1Wca0) | learning theory | learning theory, feature learning, multi-index models |
-| 2025 | [3DMolFormer: A Dual-channel Framework for Structure-based Drug Discovery](https://openreview.net/forum?id=RgE1qiO2ek) | applications to physical sciences (physics, chemistry, biology, etc.) | structure-based drug discovery, protein-ligand docking, 3D molecular generation |
-| 2025 | [Adaptive Graduated Non-Convexity for Point Cloud Registration](https://openreview.net/forum?id=cIKQp84vqN) | optimization | point cloud registration, robust optimization, graduated non-convexity |
-| 2025 | [Differentiable Reasoning about Knowledge Graphs with Reshuffled Embeddings](https://openreview.net/forum?id=PQ6jzz82Nd) | neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.) | knowledge graph embeddings, differentiable reasoning, rule learning |
-| 2026 | [Bird's-eye-view Informed Reasoning Driver](https://openreview.net/forum?id=TuU95FWkyH) | applications to robotics, autonomy, planning | autonomous driving, motion planning, vision-language models |
-| 2026 | [More Than Meets the Eye? Uncovering the Reasoning-Planning Disconnect in Training Vision-Language Driving Models](https://openreview.net/forum?id=r8e7hBhWSG) | applications to robotics, autonomy, planning | vision-language models, autonomous driving, trajectory planning |
-| 2026 | [A dimensional R2 regression metric](https://openreview.net/forum?id=iD6ZD5wE1n) | interpretability and explainable AI | regression metrics, R-squared, multidimensional evaluation |
-| 2026 | [Dual Randomized Smoothing: Beyond Global Noise Variance](https://openreview.net/forum?id=syvfsHSqm2) | alignment, fairness, safety, privacy, and societal considerations | randomized smoothing, certified robustness, input-dependent variance |
-| 2026 | [UserRL: Training Interactive User-Centric Agent via Reinforcement Learning](https://openreview.net/forum?id=kjCzhKVzEJ) | applications to computer vision, audio, language, and other modalities | LLM agents, user-centric interaction, reinforcement learning |
-| 2026 | [Make it NoisEasier: Boosting Text-to-Video Generation with Direct Noise Optimization](https://openreview.net/forum?id=hSUlL8K1Ec) | generative models | text-to-video generation, diffusion models, test-time optimization |
-| 2026 | [Disentangle and Align: Structured Contrastive Learning with Semantic–Domain Separation](https://openreview.net/forum?id=f6DsglOKIq) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | self-supervised learning, domain generalization, contrastive learning |
-| 2026 | [Improved high-dimensional estimation with Langevin dynamics and stochastic weight averaging](https://openreview.net/forum?id=GYXUD3hGTh) | learning theory | learning theory, high-dimensional estimation, Langevin dynamics |
-| 2026 | [Leveraging Visual Embeddings from Instagram for Credit Scoring of Informal Microbusinesses](https://openreview.net/forum?id=5izkRQEo5c) | applications to computer vision, audio, language, and other modalities | alternative credit scoring, financial inclusion, informal microbusinesses |
-| 2026 | [Feature segregation by signed weights in artificial vision systems and biological models](https://openreview.net/forum?id=lnTX3GoeTY) | interpretability and explainable AI | mechanistic interpretability, signed weights, feature segregation |
-
-</details>
 <!-- DAILY_ACTIVITY:END -->
 
 ---
@@ -95,7 +96,7 @@
 
 | 周期 | 新分析论文 | 年份分布 | 高频研究标签 |
 |---|---:|---|---|
-| 2026-08-17 - 2026-08-23 | 97 | 2024: 17, 2025: 30, 2026: 50 | vision-language models (6), large language models (4), reinforcement learning (4), multimodal learning (4), diffusion models (3), dynamical systems (2), mechanistic interpretability (2), test-time scaling (2), autonomous driving (2), tabular data synthesis (2) |
+| 2026-08-24 - 2026-08-30 | 136 | 2024: 24, 2025: 42, 2026: 70 | large language models (12), reinforcement learning (8), vision-language models (7), federated learning (4), 3D Gaussian Splatting (3), multimodal large language models (3), LLM reasoning (3), self-supervised learning (3), autonomous driving (3), video generation (3) |
 <!-- WEEKLY_ACTIVITY:END -->
 
 ---

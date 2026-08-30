@@ -1,33 +1,33 @@
 {
-  "generated_on": "2026-08-29T19:15:04.793356+00:00",
+  "generated_on": "2026-08-30T18:20:00.083699+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 21,
-  "analyzed_papers": 797,
-  "coverage_percent": 2.0494,
+  "successful_daily_runs": 22,
+  "analyzed_papers": 817,
+  "coverage_percent": 2.1008,
   "by_year": {
-    "2026": 408,
-    "2025": 243,
-    "2024": 146
+    "2026": 418,
+    "2025": 249,
+    "2024": 150
   },
-  "last_daily_run": "2026-08-30",
+  "last_daily_run": "2026-08-31",
   "usage": {
-    "input_tokens": 3700430,
-    "output_tokens": 198859,
-    "total_tokens": 3899289
+    "input_tokens": 3891467,
+    "output_tokens": 208954,
+    "total_tokens": 4100421
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 63
+      "papers": 65
     },
     {
       "tag": "large language models",
-      "papers": 47
+      "papers": 48
     },
     {
       "tag": "diffusion models",
-      "papers": 45
+      "papers": 46
     },
     {
       "tag": "vision-language models",
@@ -47,15 +47,15 @@
     },
     {
       "tag": "self-supervised learning",
-      "papers": 26
+      "papers": 27
     },
     {
       "tag": "transformers",
-      "papers": 22
+      "papers": 23
     },
     {
       "tag": "adversarial robustness",
-      "papers": 21
+      "papers": 22
     },
     {
       "tag": "multimodal learning",
@@ -74,40 +74,40 @@
       "papers": 17
     },
     {
+      "tag": "transfer learning",
+      "papers": 16
+    },
+    {
       "tag": "supervised fine-tuning",
       "papers": 16
     },
     {
-      "tag": "transfer learning",
+      "tag": "language models",
       "papers": 15
+    },
+    {
+      "tag": "flow matching",
+      "papers": 14
     },
     {
       "tag": "image classification",
       "papers": 14
     },
     {
-      "tag": "language models",
-      "papers": 14
-    },
-    {
-      "tag": "continual learning",
-      "papers": 14
-    },
-    {
-      "tag": "video generation",
+      "tag": "LLM agents",
       "papers": 14
     }
   ],
   "response_effectiveness": {
-    "unknown": 525,
-    "partial_success": 404,
-    "no_effect": 84,
-    "strong_success": 255
+    "unknown": 541,
+    "partial_success": 415,
+    "no_effect": 86,
+    "strong_success": 261
   },
   "score_actions": {
-    "unknown": 707,
-    "maintained": 287,
-    "increased": 264,
+    "unknown": 726,
+    "maintained": 297,
+    "increased": 270,
     "decreased": 2,
     "promised_increase": 8
   }
