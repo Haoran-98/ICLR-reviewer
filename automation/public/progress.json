@@ -1,45 +1,45 @@
 {
-  "generated_on": "2026-08-30T18:20:00.083699+00:00",
+  "generated_on": "2026-09-08T18:21:19.183425+00:00",
   "daily_rate_percent": 0.05,
   "corpus_papers": 38890,
-  "successful_daily_runs": 22,
-  "analyzed_papers": 817,
-  "coverage_percent": 2.1008,
+  "successful_daily_runs": 23,
+  "analyzed_papers": 836,
+  "coverage_percent": 2.1497,
   "by_year": {
-    "2026": 418,
-    "2025": 249,
-    "2024": 150
+    "2026": 428,
+    "2025": 255,
+    "2024": 153
   },
-  "last_daily_run": "2026-08-31",
+  "last_daily_run": "2026-09-09",
   "usage": {
-    "input_tokens": 3891467,
-    "output_tokens": 208954,
-    "total_tokens": 4100421
+    "input_tokens": 4085896,
+    "output_tokens": 218346,
+    "total_tokens": 4304242
   },
   "top_research_tags": [
     {
       "tag": "reinforcement learning",
-      "papers": 65
+      "papers": 66
     },
     {
       "tag": "large language models",
-      "papers": 48
+      "papers": 51
     },
     {
       "tag": "diffusion models",
-      "papers": 46
+      "papers": 49
     },
     {
       "tag": "vision-language models",
-      "papers": 42
+      "papers": 43
     },
     {
       "tag": "contrastive learning",
-      "papers": 33
+      "papers": 34
     },
     {
       "tag": "graph neural networks",
-      "papers": 29
+      "papers": 30
     },
     {
       "tag": "representation learning",
@@ -51,7 +51,7 @@
     },
     {
       "tag": "transformers",
-      "papers": 23
+      "papers": 24
     },
     {
       "tag": "adversarial robustness",
@@ -59,11 +59,15 @@
     },
     {
       "tag": "multimodal learning",
-      "papers": 20
+      "papers": 21
     },
     {
       "tag": "interpretability",
-      "papers": 19
+      "papers": 20
+    },
+    {
+      "tag": "language models",
+      "papers": 17
     },
     {
       "tag": "vision transformers",
@@ -82,32 +86,28 @@
       "papers": 16
     },
     {
-      "tag": "language models",
+      "tag": "parameter-efficient fine-tuning",
       "papers": 15
     },
     {
-      "tag": "flow matching",
-      "papers": 14
+      "tag": "continual learning",
+      "papers": 15
     },
     {
-      "tag": "image classification",
-      "papers": 14
-    },
-    {
-      "tag": "LLM agents",
+      "tag": "federated learning",
       "papers": 14
     }
   ],
   "response_effectiveness": {
-    "unknown": 541,
-    "partial_success": 415,
+    "unknown": 548,
+    "partial_success": 421,
     "no_effect": 86,
-    "strong_success": 261
+    "strong_success": 272
   },
   "score_actions": {
-    "unknown": 726,
-    "maintained": 297,
-    "increased": 270,
+    "unknown": 736,
+    "maintained": 303,
+    "increased": 278,
     "decreased": 2,
     "promised_increase": 8
   }
