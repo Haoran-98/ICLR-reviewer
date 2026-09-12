@@ -6,41 +6,21 @@
 ## 最近 3 天新增
 
 <details open>
-<summary>2026-09-09 - 新分析 19 篇论文，新增 0 个通用 Agent</summary>
-
-| 年份 | 论文 | 主题 | 研究标签 |
-|---:|---|---|---|
-| 2024 | [Vision-Language Integration in Multimodal Video Transformers (Partially) Aligns with the Brain](https://openreview.net/forum?id=LWqeF78c1q) | applications to neuroscience & cognitive science | multimodal learning, vision-language models, video transformers |
-| 2024 | [Alignment-Enhancing Parallel Code Generation for Semi-Supervised Code Translation](https://openreview.net/forum?id=XK7kyCVjqr) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | code translation, semi-supervised learning, synthetic parallel data |
-| 2024 | [Learning Forward Compatible Representation in Class Incremental Learning by Increasing Effective Rank](https://openreview.net/forum?id=EvszuxrPTb) | transfer learning, meta learning, and lifelong learning | class-incremental learning, continual learning, forward compatibility |
-| 2025 | [Improved Noise Schedule for Diffusion Training](https://openreview.net/forum?id=j3U6CJLhqw) | generative models | diffusion models, noise schedules, log SNR |
-| 2025 | [DualTime: A Dual-Adapter Language Model for Time Series Multimodal Representation Learning](https://openreview.net/forum?id=oVCVCo3laS) | learning on time series and dynamical systems | multimodal representation learning, time series, clinical text |
-| 2025 | [TokenFormer: Rethinking Transformer Scaling with Tokenized Model Parameters](https://openreview.net/forum?id=oQ4igHyh3N) | foundation or frontier models, including LLMs | foundation models, large language models, Transformer architecture |
-| 2025 | [RegMix: Data Mixture as Regression for Language Model Pre-training](https://openreview.net/forum?id=5BjQOUXq7i) | foundation or frontier models, including LLMs | language model pre-training, data mixture optimization, regression modeling |
-| 2025 | [DreamMakeup: Face Makeup Customization using Latent Diffusion Models](https://openreview.net/forum?id=WUibctXLT7) | generative models | facial makeup customization, image editing, latent diffusion models |
-| 2025 | [SimXRD-4M: Big Simulated X-ray Diffraction Data and Crystal Symmetry Classification Benchmark](https://openreview.net/forum?id=mkuB677eMM) | datasets and benchmarks | powder X-ray diffraction, crystallographic informatics, simulated dataset |
-| 2026 | [GRAFTa: A Graph Attentional Few-Shot Audio Tagging Network](https://openreview.net/forum?id=QWYNKkg8mN) | transfer learning, meta learning, and lifelong learning | few-shot learning, multi-label classification, audio tagging |
-| 2026 | [Improving MoE Performance and Efficiency with Plug-and-Play Intra-Layer Specialization and Cross-Layer Coupling Losses](https://openreview.net/forum?id=nY91ZOfB5M) | foundation or frontier models, including LLMs | Mixture-of-Experts, expert specialization, routing stability |
-| 2026 | [Rethinking Preference Alignment for Diffusion Models with Classifier-Free Guidance](https://openreview.net/forum?id=l9dRkT8u1I) | generative models | diffusion models, preference alignment, classifier-free guidance |
-| 2026 | [Scaling up Multi-Turn Off-Policy RL and Multi-Agent Tree Search for LLM Step-Provers](https://openreview.net/forum?id=TfwePIKzXJ) | neurosymbolic & hybrid AI systems (physics-informed, logic & formal reasoning, etc.) | formal theorem proving, large language models, reinforcement learning |
-| 2026 | [Learning Convolutional Representations via Generalized Stein’s Method: A Training-Free Approach](https://openreview.net/forum?id=SF8NYACPfb) | unsupervised, self-supervised, semi-supervised, and supervised representation learning | training-free representation learning, convolutional neural networks, Stein's method |
-| 2026 | [We Generate What You Need: Efficient Data Supplement via Model Prediction Discrepancy for Heterogeneous Federated Learning](https://openreview.net/forum?id=6DdkSELUh0) | other topics in machine learning (i.e., none of the above) | federated learning, data heterogeneity, global class imbalance |
-| 2026 | [Bounds of Chain-of-Thought Robustness: Reasoning Steps, Embed Norms, and Beyond](https://openreview.net/forum?id=cusZbViSLd) | applications to computer vision, audio, language, and other modalities | chain-of-thought robustness, prompt perturbation, Lipschitz analysis |
-| 2026 | [Token-Complexity based Routing Technique within Mixture of Experts Architecture for Large Language Model](https://openreview.net/forum?id=miyzT0uhhF) | generative models | mixture of experts, token-level routing, token complexity |
-| 2026 | [SIG-Chat: Spatial Intent-Guided Conversational Gesture Generation Involving How, When and Where](https://openreview.net/forum?id=1XYG3pVCWf) | generative models | conversational gesture generation, spatial intent, co-speech gestures |
-| 2026 | [Exponential Low-Rank Adapters](https://openreview.net/forum?id=JVyPNQCT8E) | foundation or frontier models, including LLMs | parameter-efficient fine-tuning, LoRA, matrix exponential |
-
-</details>
-
-<details>
-<summary>2026-09-08 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
+<summary>2026-09-13 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
 
 当天没有公开新增论文。
 
 </details>
 
 <details>
-<summary>2026-09-07 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
+<summary>2026-09-12 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
+
+当天没有公开新增论文。
+
+</details>
+
+<details>
+<summary>2026-09-11 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
 
 当天没有公开新增论文。
 
