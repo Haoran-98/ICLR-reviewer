@@ -6,21 +6,21 @@
 ## 最近 3 天新增
 
 <details open>
-<summary>2026-09-13 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
+<summary>2026-09-20 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
 
 当天没有公开新增论文。
 
 </details>
 
 <details>
-<summary>2026-09-12 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
+<summary>2026-09-19 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
 
 当天没有公开新增论文。
 
 </details>
 
 <details>
-<summary>2026-09-11 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
+<summary>2026-09-18 - 新分析 0 篇论文，新增 0 个通用 Agent</summary>
 
 当天没有公开新增论文。
 
@@ -34,7 +34,7 @@
 
 | 周期 | 新分析论文 | 年份分布 | 高频研究标签 |
 |---|---:|---|---|
-| 2026-08-31 - 2026-09-06 | 20 | 2024: 4, 2025: 6, 2026: 10 | online learning (2), LLM agents (2), label shift (1), generalized label shift (1), recurrent neural networks (1), real-time recurrent learning (1), semantic segmentation (1), certified robustness (1), randomized smoothing (1), object detection (1) |
+| 2026-09-07 - 2026-09-13 | 19 | 2024: 3, 2025: 6, 2026: 10 | diffusion models (2), large language models (2), multimodal learning (1), vision-language models (1), video transformers (1), code translation (1), semi-supervised learning (1), synthetic parallel data (1), class-incremental learning (1), continual learning (1) |
 <!-- WEEKLY_ACTIVITY:END -->
 
 ---

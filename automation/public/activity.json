@@ -1,70 +1,70 @@
 {
-  "generated_on": "2026-09-12T19:15:06.684728+00:00",
+  "generated_on": "2026-09-19T19:15:06.582354+00:00",
   "recent_days": [
     {
-      "date": "2026-09-13",
+      "date": "2026-09-20",
       "papers": [],
       "agents": []
     },
     {
-      "date": "2026-09-12",
+      "date": "2026-09-19",
       "papers": [],
       "agents": []
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-18",
       "papers": [],
       "agents": []
     }
   ],
   "previous_week": {
-    "start": "2026-08-31",
-    "end": "2026-09-06",
-    "paper_count": 20,
+    "start": "2026-09-07",
+    "end": "2026-09-13",
+    "paper_count": 19,
     "by_year": {
-      "2024": 4,
+      "2024": 3,
       "2025": 6,
       "2026": 10
     },
     "top_research_tags": [
       {
-        "tag": "online learning",
+        "tag": "diffusion models",
         "papers": 2
       },
       {
-        "tag": "LLM agents",
+        "tag": "large language models",
         "papers": 2
       },
       {
-        "tag": "label shift",
+        "tag": "multimodal learning",
         "papers": 1
       },
       {
-        "tag": "generalized label shift",
+        "tag": "vision-language models",
         "papers": 1
       },
       {
-        "tag": "recurrent neural networks",
+        "tag": "video transformers",
         "papers": 1
       },
       {
-        "tag": "real-time recurrent learning",
+        "tag": "code translation",
         "papers": 1
       },
       {
-        "tag": "semantic segmentation",
+        "tag": "semi-supervised learning",
         "papers": 1
       },
       {
-        "tag": "certified robustness",
+        "tag": "synthetic parallel data",
         "papers": 1
       },
       {
-        "tag": "randomized smoothing",
+        "tag": "class-incremental learning",
         "papers": 1
       },
       {
-        "tag": "object detection",
+        "tag": "continual learning",
         "papers": 1
       }
     ],

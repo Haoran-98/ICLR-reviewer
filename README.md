@@ -6,21 +6,21 @@
 ## New in the Last 3 Days
 
 <details open>
-<summary>2026-09-13 - 0 newly analyzed papers, 0 common Agents added</summary>
+<summary>2026-09-20 - 0 newly analyzed papers, 0 common Agents added</summary>
 
 No public paper additions on this day.
 
 </details>
 
 <details>
-<summary>2026-09-12 - 0 newly analyzed papers, 0 common Agents added</summary>
+<summary>2026-09-19 - 0 newly analyzed papers, 0 common Agents added</summary>
 
 No public paper additions on this day.
 
 </details>
 
 <details>
-<summary>2026-09-11 - 0 newly analyzed papers, 0 common Agents added</summary>
+<summary>2026-09-18 - 0 newly analyzed papers, 0 common Agents added</summary>
 
 No public paper additions on this day.
 
@@ -34,7 +34,7 @@ No public paper additions on this day.
 
 | Period | Newly analyzed papers | Year distribution | Top research tags |
 |---|---:|---|---|
-| 2026-08-31 - 2026-09-06 | 20 | 2024: 4, 2025: 6, 2026: 10 | online learning (2), LLM agents (2), label shift (1), generalized label shift (1), recurrent neural networks (1), real-time recurrent learning (1), semantic segmentation (1), certified robustness (1), randomized smoothing (1), object detection (1) |
+| 2026-09-07 - 2026-09-13 | 19 | 2024: 3, 2025: 6, 2026: 10 | diffusion models (2), large language models (2), multimodal learning (1), vision-language models (1), video transformers (1), code translation (1), semi-supervised learning (1), synthetic parallel data (1), class-incremental learning (1), continual learning (1) |
 <!-- WEEKLY_ACTIVITY:END -->
 
 ---
