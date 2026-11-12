@@ -1,0 +1,15 @@
+{
+  "audit_date": "2026-11-12",
+  "verified_remote": "Haoran-98/ICLR-reviewer",
+  "verified_branch": "main",
+  "verified_commit": "eb4d257ee343843ba119a8e07494cef51f529c58",
+  "scope": "Reachable Git objects from the freshly fetched remote branch, including commit messages and decompressed gzip content. Compared against configured model endpoint, host and API key literals.",
+  "objects_scanned": 861,
+  "object_types": {
+    "commit": 42,
+    "tree": 204,
+    "blob": 615
+  },
+  "matched_objects": 0,
+  "matches": []
+}
