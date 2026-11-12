@@ -121,7 +121,7 @@ More to come…
 
 ## 6. Local Deployment
 
-**Linux + Python 3.11+ + Node 20.19+ or 22.12+.** The installer downloads and verifies the [versioned demo packages](docs/DEMO_ASSETS.md). The demo map, historical replays, and uploaded-manuscript reviews run without PostgreSQL, GPU models, R, or the original research directories.
+On Linux with Python 3.11+ and Node 20.19+ or 22.12+, run the commands below to install the project, set your administrator password, and start the website. Then open **http://127.0.0.1:5174/** and log in. See **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** for all deployment details.
 
 ```bash
 git clone --single-branch --branch main https://github.com/Haoran-98/ICLR-reviewer.git
@@ -130,18 +130,6 @@ cd ICLR-reviewer
 .venv/bin/python scripts/init_web_account.py --username root
 ./scripts/run_website.sh
 ```
-
-Open **http://127.0.0.1:5174/** and log in with the password you just set. The account command prompts twice and stores a local password hash. Ubuntu/Debian users install `python3-venv` before running the installer; PDF/DOC extraction additionally uses `poppler-utils` and `libreoffice-writer`.
-
-1. Explore the map and the Domain Skill Library, including its five historical replays.
-2. On Manuscript Review, click the example button to replay the completed MLRA Review and inspect concern evidence.
-3. Select the packaged MLRA paper or upload a full manuscript, enter your **Base URL / API Key / model ID / protocol**, and start a new review. Other map papers require an uploaded full manuscript or your own database.
-
-`ICLR_DATA_DIR` changes the data location; `ICLR_RELEASE_DIR`, `ICLR_CASES_DIR`, and `ICLR_REVIEW_RUNS` override individual paths. Set the same variables during installation and startup. Imported cases stay read-only, while new tasks keep their state and support retry. See [the clean-deployment verification record](docs/DEPLOYMENT_VERIFICATION.md) for tested coverage.
-
-For LAN access, create a certificate with `python3 web/setup_lan.py --ip <SERVER_IP>`, build the website, and run `npm --prefix web run lan`. Port 5173 redirects to HTTPS on 8443; clients trust the local CA. On an existing server, `./scripts/start_website.sh` and `./scripts/stop_website.sh` control its installed systemd unit.
-
-See **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** for prerequisites, offline downloads, path configuration, account initialization, optional database/R setup, and troubleshooting.
 
 ## 7. Repository Layout
 

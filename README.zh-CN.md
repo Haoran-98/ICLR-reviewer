@@ -122,7 +122,7 @@ flowchart LR
 
 ## 6. 本地部署与运行
 
-**环境：Linux、Python 3.11+、Node 20.19+ 或 22.12+。** 安装器会下载并校验[版本化演示包](docs/DEMO_ASSETS.md)。地图、历史回放及上传新稿审查使用随包资产即可运行；完整语料导出另需数据库与研究资产。
+在 Linux、Python 3.11+、Node 20.19+ 或 22.12+ 环境中，执行以下命令安装项目、按提示设置管理员密码并启动网站，然后访问 **http://127.0.0.1:5174/** 登录。其他部署详情见 **[DEPLOYMENT.md](docs/DEPLOYMENT.md)**。
 
 ```bash
 git clone --single-branch --branch main https://github.com/Haoran-98/ICLR-reviewer.git
@@ -131,18 +131,6 @@ cd ICLR-reviewer
 .venv/bin/python scripts/init_web_account.py --username root
 ./scripts/run_website.sh
 ```
-
-浏览器访问 **http://127.0.0.1:5174/**，使用刚设置的账号密码登录。账号命令两次提示输入密码，在本机保存密码哈希。Ubuntu/Debian 先安装 `python3-venv`；PDF/DOC 提取另需 `poppler-utils` 与 `libreoffice-writer`。
-
-1. 浏览论文地图和领域 Skill 库，回放库中的 5 篇历史试审。
-2. 在单篇审稿页加载案例，查看 MLRA 已完成的 Review，点击 concern 定位证据。
-3. 选择随包 MLRA 稿件或上传完整新稿，填写 **Base URL / API Key / 模型 ID / 协议**，创建新审稿任务。地图中其他论文需上传全文，或接入自己的数据库。
-
-`ICLR_DATA_DIR` 统一设置数据根目录；`ICLR_RELEASE_DIR`、`ICLR_CASES_DIR`、`ICLR_REVIEW_RUNS` 可分别覆盖路径。安装和启动使用同一组环境变量。导入案例只读回放；新任务保存状态，失败后可重试。[干净环境验证记录](docs/DEPLOYMENT_VERIFICATION.md)列明已测范围。
-
-局域网使用 `python3 web/setup_lan.py --ip <服务器IP>` 创建本地证书，构建后运行 `npm --prefix web run lan`；5173 自动跳转至 HTTPS 8443，客户端信任本地 CA。已有服务器的 `./scripts/start_website.sh` / `./scripts/stop_website.sh` 用于控制已安装的 systemd 单元。
-
-依赖、离线下载、路径配置、账号初始化、可选数据库与 R、常见问题见 **[DEPLOYMENT.md](docs/DEPLOYMENT.md)**。
 
 ## 7. 仓库结构
 
