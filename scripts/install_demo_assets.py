@@ -88,6 +88,7 @@ def install(manifest_path, data, assets_dir=None):
             print(package['name'] + ': installed and verified', flush=True)
     generated = paths.REPO/'web/public/generated'
     desired = data/'website/generated'
+    generated.parent.mkdir(parents=True, exist_ok=True)
     if not generated.exists() and not generated.is_symlink():
         generated.symlink_to(desired, target_is_directory=True)
     elif generated.resolve() != desired.resolve():
