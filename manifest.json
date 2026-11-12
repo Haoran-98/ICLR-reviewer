@@ -1,0 +1,50 @@
+{
+  "version": "demo-2026-11-12-v1",
+  "base_url": "https://raw.githubusercontent.com/Haoran-98/ICLR-reviewer/demo-2026-11-12-v1",
+  "packages": [
+    {
+      "name": "website",
+      "file": "website.tar.gz",
+      "bytes": 71053120,
+      "sha256": "e7eb87bf144dd88c6dd5372faeb52abf7bbd69aafa7fa0a3bcbccf84b9bd939b",
+      "parts": [
+        {
+          "file": "website.tar.gz.part00",
+          "bytes": 41943040,
+          "sha256": "b0a864397726b4fb769f3601abaf58182cc0f6a18317176a4d9b9db38c895fe1"
+        },
+        {
+          "file": "website.tar.gz.part01",
+          "bytes": 29110080,
+          "sha256": "96910ead38ac40468407a831922d1bd21e852608b90f652411bcc8f179a73ebd"
+        }
+      ]
+    },
+    {
+      "name": "rules",
+      "file": "rules.tar.gz",
+      "bytes": 27350139,
+      "sha256": "e182c515e74d0b26ae6a8ffc8926108f829f21f9deeb8f54609b36f747447e15",
+      "parts": [
+        {
+          "file": "rules.tar.gz.part00",
+          "bytes": 27350139,
+          "sha256": "e182c515e74d0b26ae6a8ffc8926108f829f21f9deeb8f54609b36f747447e15"
+        }
+      ]
+    },
+    {
+      "name": "cases",
+      "file": "cases.tar.gz",
+      "bytes": 89858,
+      "sha256": "8d87f5c85f2efac5574cb30c95772abb583ec9c05de9947389fa7a73c780c6db",
+      "parts": [
+        {
+          "file": "cases.tar.gz.part00",
+          "bytes": 89858,
+          "sha256": "8d87f5c85f2efac5574cb30c95772abb583ec9c05de9947389fa7a73c780c6db"
+        }
+      ]
+    }
+  ]
+}
