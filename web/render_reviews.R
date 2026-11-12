@@ -68,9 +68,9 @@ p <- ggplot(observed, aes(x = value, y = y, fill = status,
        caption = paste(
          "左列越靠右，论文均分越高；右列越靠右，同篇论文的审稿分歧越大。",
          "例如：[5、5、5、5]与[1、5、6、8]均分均为5，但标准差分别为0和约2.94。",
-         "每组40点概括全部有效论文，每点约代表2.5%（1,000篇约25篇/点），不是只选40篇。",
+         "每组40点概括全部有效论文，每点约代表2.5%（1,000篇约25篇/点）。",
          "黑点＝中位数；粗线＝中间50%的论文范围；细线＝中间90%的论文范围。",
-         "全部决定含录用、拒稿、撤稿等；各年分别阅读。区间描述论文差异，不是置信区间。",
+         "全部决定含录用、拒稿、撤稿等；各年分别阅读。区间描述样本中论文指标的分布。",
          sep = "\n")) +
   theme_minimal(base_size = 11, base_family = font_family) +
   theme(legend.position = "none", panel.grid.minor = element_blank(), panel.grid.major.y = element_blank(),

@@ -6,8 +6,8 @@ flight. It combines RbtAct-style author-action annotation, DRPG-style
 evidence-constrained response planning, and structural score context plus
 the 44 exchange-feature labels from the score-trajectory study.
 
-It uses prompting directly. It does not train a planner, fit a score model,
-calibrate probabilities, or run comparison arms.
+It uses prompting to annotate actions, plan evidence-constrained responses,
+and inspect observed discussion transitions.
 
 ## Run
 
@@ -58,9 +58,8 @@ the explicitly marked final messages are parsed as the result JSON.
    as real historical events.
 
 Each concern separates author action, evidence support, and the focal
-reviewer's expressed judgment. Silence remains `unknown`. A manuscript
-snapshot supporting an author statement does not prove that the revision
-existed during rebuttal. Missing independent before/after score pairs remain
+reviewer's expressed judgment. Silence remains `unknown`. Verify the snapshot date separately when attributing a revision
+to the rebuttal period. Missing independent before/after score pairs remain
 `unknown`, even when a single final rating snapshot exists.
 
 ## Validation and artifacts
@@ -106,8 +105,8 @@ sorted view follows snapshot availability; no state labels are re-inferred.
 
 `feature_codebook.json` retains the 44 source labels and their source polarity,
 and adds prefix-aware `present / not_observed / unknown` coding. Source
-polarity is not a response-quality ranking or a causal reward. The original
-classifier, learned parameters, and published performance are not reproduced.
+polarity retains the original feature-label meaning. Response quality and
+causal effects require separate evaluation.
 
 ## Sources
 

@@ -11,7 +11,7 @@
 
 ## 1. 核心结论
 
-`semantic.paper_profile.profile` 的主体不是规则从原文复制出来的，而是模型根据论文证据
+`semantic.paper_profile.profile` 由模型根据论文证据
 生成的结构化 JSON：
 
 - `evidence[].quote` 目标是原文短引文，之后由 Python 在完整 Markdown 中定位；
@@ -23,7 +23,7 @@
 
 ## 1.1 生产路线的选择依据
 
-S3 并非直接采用某篇论文的方法。S2 在相同 50 篇论文上比较了项目内实现的 one-shot、
+S3 采用项目内比较选定的抽取策略。S2 在相同 50 篇论文上比较了项目内实现的 one-shot、
 section-grounded hierarchical 和 DocETL-style 三条路线：
 
 | 方法 | 综合分 | 胜出 | Token/篇 | 秒/篇 | S3 角色 |
@@ -38,8 +38,7 @@ one-shot 与 hierarchical 的 paired 95% bootstrap CI 为 `[-0.1833, 0.1833]`，
 质量更低且成本更高，不进入生产。
 
 方法实现、完整 Prompt、六维评分、分组稳健性和局限见
-[`S2_understanding_benchmark.md`](S2_understanding_benchmark.md)。该结果只支持当前模型、
-schema、Prompt 和样本下的工程选择，不能表述为对某个外部方法的普遍优劣结论。
+[`S2_understanding_benchmark.md`](S2_understanding_benchmark.md)。评价范围为当前模型、schema、Prompt 和样本配置。
 
 ## 2. 原始输入
 
@@ -98,7 +97,7 @@ one-shot/audit 的最终 evidence pack 再按分组限制：
 | conclusion | 10,000 |
 
 因此“one-shot 全文”准确含义是“一次读取确定性筛选和截断后的跨章节 evidence pack”，
-不是把完整原始 Markdown 无截断地发送给模型。
+模型接收按上述规则构建的证据包。
 
 ## 4. 模型和 API 参数
 
@@ -144,13 +143,13 @@ one-shot/audit 的最终 evidence pack 再按分组限制：
 | `research_problem` | 模型抽取+改写 | 从引言/摘要识别待解决问题并改写为统一陈述 | statement 配 quote，但未标 author/inferred |
 | `motivation` | 模型归纳 | 从重要性、应用需求和现有困难中综合动机 | 配 quote；允许空 |
 | `prior_work_gap` | 模型跨段推断 | 对 related work 和作者定位做差距归纳 | 配 quote；不独立验证相关工作真实性 |
-| `key_insight` | 模型推断 | 将方法区别压缩为核心概念性步骤 | 配 quote；不是原文原样字段 |
+| `key_insight` | 模型推断 | 将方法区别压缩为核心概念性步骤 | 配 quote，保留模型概括来源 |
 | `contributions[]` | 模型抽取+去重 | 识别作者贡献列表或从方法/结果综合贡献 | 每项可配 quote，但空 evidence 仍可能通过 v1 |
 | `method.overview` | 模型综合 | 把方法章节压缩成整体描述 | 无字段级 evidence |
 | `method.components[]` | 模型抽取 | 识别模块、数据处理、训练目标和输出 | 无逐项 evidence |
 | `method.mechanism_chain[]` | 模型因果式重排 | 将方法描述重写为顺序执行链 | 无逐项 evidence，可能包含解释性推断 |
 | `method.assumptions[]` | 模型抽取或推断 | 识别显式假设，也可能推导隐含前提 | 无 source/evidence 标签，风险较高 |
-| `claims[]` | 模型抽取+判断 | 识别论文关键 claim，并根据论文内部证据分配 support level | quote 可定位；support level 是模型判断，不是独立复现 |
+| `claims[]` | 模型抽取+判断 | 识别论文关键 claim，并根据论文内部证据分配 support level | quote 可定位；support level 记录模型对论文内部证据的判断 |
 | `experiments.datasets[]` | 模型抽取 | 从实验章节列数据集 | 无逐项 evidence |
 | `experiments.baselines[]` | 模型抽取 | 从对比实验识别基线 | 无逐项 evidence |
 | `experiments.metrics[]` | 模型抽取 | 从实验设计识别指标 | 无逐项 evidence |
@@ -159,7 +158,7 @@ one-shot/audit 的最终 evidence pack 再按分组限制：
 | `limitations[]` | 模型抽取或审稿式推断 | 作者明确说明则 `author`；模型从边界条件推导则 `inferred` | v1 唯一明确保存推断来源的字段 |
 | `review_risks[]` | 模型审稿推断 | 从未覆盖条件、比较公平性、统计、外部有效性等生成风险 | severity 为模型判断；evidence 应回指论文 |
 | `research_type[]` | 模型多标签分类 | 在七个固定类型中选择多个 | Python 做 alias 归一化和非法值过滤 |
-| 顶层 `confidence` | Python 派生 | 递归收集模型生成的所有 `confidence` 并取平均 | 是模型自评均值，不是校准后的质量概率 |
+| 顶层 `confidence` | Python 派生 | 递归收集模型生成的所有 `confidence` 并取平均 | 记录模型自评均值；质量概率待校准 |
 | `provenance` | Python 确定性生成 | 记录模型、方法、hash、token、evidence 定位、Gate 等 | 可审计 |
 
 `support_level`、`severity` 和 `confidence` 没有单独的数值 rubric；它们由模型根据 prompt
@@ -234,7 +233,7 @@ Return only valid JSON for the requested schema. Repair this response:
 {raw_model_response}
 ```
 
-Repair 只修复可解析性，没有再次附上论文证据，因此不应被视为新的事实核验步骤。
+Repair 修复输出的可解析性；事实核验由后续证据审计完成。
 
 ## 10. 确定性后处理
 
@@ -291,8 +290,7 @@ key_evidence_rate = 至少有一个 quote 成功定位的已引用 item / 有非
 - item-level evidence rate < 0.6；
 - research_problem、key_insight 或任一 contribution 没有 evidence。
 
-one-shot 和 fallback 均通过 schema 时，选择 `key_evidence_rate` 更高者，而不是无条件选择
-fallback。
+one-shot 和 fallback 均通过 schema 时，选择 `key_evidence_rate` 更高者。
 
 最终 `needs_review=true` 仅在：
 
@@ -328,8 +326,8 @@ upsert 只有在同一 version 的 `input_hash` 变化时才更新；相同输�
 - 把无 evidence item 纳入分母后约 90.2%；
 - 约 7.9% profile 至少有一个核心 item 无 evidence；
 - 顶层平均 confidence 约 0.965，但与 evidence rate 的相关系数约 -0.029；
-- 因此 confidence 不能作为 profile 可信度或正确率；
-- exact/fuzzy 只证明 quote 可定位，不证明 quote 在语义上支持 statement；
+- confidence 按模型自评分记录，校准需独立质量标注；
+- exact/fuzzy 检查 quote 的原文位置，语义支持需单独判定；
 - method、datasets、baselines、metrics、assumptions 等缺少逐项 evidence；
 - 175 篇 metadata-only 论文尚未进入当前质量分布；
 - API 超时、429、断连等失败需要重试，不应与内容质量失败混为一类。

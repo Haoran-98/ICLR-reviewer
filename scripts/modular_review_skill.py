@@ -566,7 +566,7 @@ def rule_markdown(rule):
         '问题成立：'+rule['issue_when'],'消除疑虑：'+rule['cleared_when'],
         '影响：'+rule['significance'],'例外：'+'；'.join(rule['exceptions']),
         '来源候选：'+', '.join(rule['candidate_ids']),
-        '状态：'+rule['status']+'（来源配对支持不等于科学验证）',''])
+        '状态：'+rule['status']+'（来源配对状态，科学质量待独立评测）',''])
 
 
 def export_skills(root,state):
@@ -732,8 +732,8 @@ def report(args,manifest):
         f'- 模型 {MODEL} / medium；HTTP 尝试 {len(records)}；并发峰值 {peak}。',
         f'- 已返回用量：输入 {usage["input_tokens"]:,}；输出 {usage["output_tokens"]:,}（其中思考 {usage["reasoning_tokens"]:,}，不重复相加）。',
         f'- 无用量返回的结束尝试 {unknown}，其费用未知。','',
-        '未训练、无对照；来源支持不等于科学正确。历史稿件版本日期未核实，初审采用最早已观测且满足时间条件的快照。',
-        '本轮仅部分文本取证；缺失片段不能证明全文缺失。五篇 Review 为待检查草稿，未证明质量提升。','',
+        '本轮使用提示词提炼，初审采用最早已观测且满足时间条件的快照；历史稿件版本日期标为未核实，科学质量待独立评测。',
+        '本轮按部分文本取证，访问缺口保留为 unknown。五篇 Review 保存为待检查草稿。','',
         '[规则库](rule_library.json) · [模块索引](registry.json) · [增量记录](updates.json) · [输入清单](manifest.json)','',
         '## 试审论文','', '| Paper ID | 领域 | 结果 |','|---|---|---|']
     for pid in manifest['target_ids']:

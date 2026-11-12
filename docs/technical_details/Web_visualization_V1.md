@@ -8,7 +8,7 @@
 
 ## 1. 服务入口与技术栈
 
-仓库清点未发现现有 Web API、前端 `package.json`、前端源码或部署配置。`automation/public/` 是自动化生成的数据产物目录，不是 Web 应用。
+仓库清点未发现现有 Web API、前端 `package.json`、前端源码或部署配置。`automation/public/` 保存自动化生成的数据产物。
 
 本阶段新增 `web/` 作为独立的最小 Web 工程：
 
@@ -34,18 +34,18 @@ V1 通过 `/generated/sample.json` 和 `/generated/reviews.svg` 接入静态样�
 | 合计 | 38,890 | 164,810 | 149,316 | 150,635 | 默认分年展示 |
 
 - 现有 38,890 篇论文均有题目、摘要、关键词和显式主题；共有 27 个显式主题。
-- 共 164,821 条审稿版本；先按 `review_id` 去重后，有评分的审稿是 149,316 条，而不是包含历史版本的 149,327 条。
+- 共 164,821 条审稿版本；按 `review_id` 去重后，有评分的审稿为 149,316 条；去重前包含历史版本共 149,327 条。
 - 共 431,990 条讨论事件、38,890 条决定；当前论文均有决定记录。
 - `semantic.embedding` 与 `semantic.paper_taxonomy_assignment` 仍为空。V1 不生成语义向量。
-- 原始 edit envelope 有 120,183 条，其中 22,568 条含 `note.content`；当前规范化审稿表只有 4 条审稿具有多个版本。原始 edit 数量不等于已核验、可直接用于分析的完整轨迹数量。
+- 原始 edit envelope 有 120,183 条，其中 22,568 条含 `note.content`；当前规范化审稿表只有 4 条审稿具有多个版本。可重放轨迹覆盖率需按规范化版本内容统计。
 
 固定版本规则：
 
-1. 论文文本取 `version_no DESC, paper_version_id DESC` 的首条；当前论文文本均仅有 `version_no=1`。这是当前观测文本，不宣称为最初投稿版本。
+1. 论文文本取 `version_no DESC, paper_version_id DESC` 的首条；当前论文文本均仅有 `version_no=1`。文本版本状态按当前快照记录。
 2. 审稿取 `revision_no DESC, review_revision_id DESC` 的首条，每条 `review_id` 只计一次。当前首选版本均为非历史 edit 的观测快照。`revision_no` 是系统版本序号，不直接当作作者提交时间。
 3. 决定取 `created_at DESC NULLS LAST, decision_id DESC` 的首条。
 4. `latest_observed` 表示最新已采集版本，不承诺等于初审或官方最终截止时刻。按时间截断与初审/最终配对属于后续轨迹验证。
-5. rating 保留原始数值与原始标签，不跨年线性归一化或直接混合比较。confidence 是审稿人自报置信程度，不是统计置信区间。
+5. rating 保留原始数值与原始标签，不跨年线性归一化或直接混合比较。confidence 记录审稿人自报置信程度。
 
 年度指南已核对：[2024](https://iclr.cc/Conferences/2024/ReviewerGuide)、[2025](https://iclr.cc/Conferences/2025/ReviewerGuide)、[2026](https://iclr.cc/Conferences/2026/ReviewerGuide)。这些页面说明审稿流程，但本次未取得完整年度数值选项标签；公开 invitation 请求返回 403。因此上表严格表述为数据库观测取值，不额外推断各分值的官方文字含义。这不影响分年原值分布，跨年阈值比较须在 V4 前补齐官方量表映射。
 
@@ -60,7 +60,7 @@ PostgreSQL bigint 标识在 JSON 中统一序列化为字符串，避免 JavaScr
 | `year` | integer | `core.venue.year` |
 | `paper_version_id` | string/null | 按固定规则选出的 `core.paper_version` |
 | `title`、`abstract` | string/null | 所选文本版本；空文本保留为缺失 |
-| `keywords` | string[]/null | 原始关键词，不等于模型分类标签 |
+| `keywords` | string[]/null | 作者提供的原始关键词 |
 | `content_hash` | string/null | 所选文本内容哈希 |
 | `openreview_url` | string/null | 来源链接；页面按 `forum_id` 构造官方域名链接 |
 | `decision_raw` | string/null | 所选 `core.decision.decision_category` |
@@ -133,7 +133,7 @@ PostgreSQL bigint 标识在 JSON 中统一序列化为字符串，避免 JavaScr
 HINTs 核验事实：
 
 - README 明确关联论文 [HINTs, DOI:10.1109/TVCG.2024.3459961](https://doi.org/10.1109/TVCG.2024.3459961)。
-- 前端是 Svelte 4 + D3 7 + Vite 4，后端是 Flask；不是独立 npm 可视化组件。
+- 前端是 Svelte 4 + D3 7 + Vite 4，后端是 Flask。
 - `HyperMap.svelte` 接收 `article_graph`、`entity_graph`、Gosper 布局及多个颜色/状态对象；会派发 `article-label-clicked`、`entity-label-clicked` 等事件，具备选择联动的机制。
 - 当前应用还依赖分层聚类、预处理数据及多条后端路由；服务启动时读取 OpenAI key。接入纯关系探索无需照搬这套应用与聊天功能。
 - 本次根目录 `LICENSE`、`LICENSE.md`、`LICENSE.txt` 均返回 404，所查 package.json 未声明许可证。尚未确认完整授权范围、最近维护时间或固定发布版本；不能把可浏览源码直接视为明确的复用授权。

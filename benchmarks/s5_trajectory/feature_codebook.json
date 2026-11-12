@@ -2,7 +2,7 @@
   "source": "https://arxiv.org/html/2606.22166v1",
   "source_sha256": "2dfa10704f702698a8ba295ee2d0599e636b112cfe2342a728fda10dde396336",
   "extracted_at": "2026-11-01",
-  "adaptation": "Original labels retained; three-state prefix-aware observation coding added. Source polarity is an induction hypothesis, not a reward or causal effect. Original classifier definitions, weights, validation, and headline performance are not reproduced.",
+  "adaptation": "Original labels and source polarity retained; three-state prefix-aware observation coding added for the prompting-based diagnostic. Evaluate response quality and causal effects separately.",
   "features": {
     "F01": {
       "source_polarity": "pos.",

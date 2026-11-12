@@ -146,17 +146,17 @@ def report(papers, results, nodes):
     write(ROOT / 'metrics.json', metrics)
     lines = ['# ACM 官方词表约束：5 篇论文实际试跑', '',
         f'完成时间：{now()}；模型：gpt-6-luna；reasoning.effort=medium；最大并发 3。', '',
-        '这是作者领域引导的固定词表分类，不是原版 TaxoAdapt 的开放式分类树生成。',
+        '本轮采用作者领域引导的固定词表分类。',
         '内容证据仅取标题和摘要；原始领域参与引导；原始关键词不发送给分类模型，分类完成后原样附加。',
         '先将作者领域映射为 ACM 锚点，再细化主路径；其他有证据的方面允许另选 ACM 路径。',
-        '作者领域不是 ACM 官方根节点，两套体系不强行拼成同一棵树；ACM 保留完整路径，不补造第三级。', '',
+        '作者领域与 ACM 路径分别记录，ACM 保留原始层级与完整路径。', '',
         f'词表共 {len(nodes)} 个可选概念（排除原始表的专有名词分支）。来源为两个字节一致的公开镜像；'
         'ACM 官网返回 403，未能做官网实时字节核验。详见 taxonomy.json 中的来源及 SHA-256。', '',
         f'本次耗时 {(time.monotonic()-api.PROGRESS.started)/60:.2f} 分钟；成功请求 {p["successful_requests"]}；'
         f'失败尝试 {p["failed_attempts"]}；输入 {p["input_tokens"]:,}、输出 {p["output_tokens"]:,}、'
         f'其中思考 {p["reasoning_tokens"]:,} token（已返回用量，包含失败尝试）。', '',
         f'深度分布（含根节点）：{dict(depths)}；逐层不同节点数：{breadth}。',
-        '这 5 篇为上一轮的诊断案例，不是随机样本。已输入作者领域，因此不计算一级标签准确率。', '']
+        '这 5 篇沿用上一轮诊断案例，作者领域作为输入条件，评价聚焦后续层级。', '']
     for paper, r in zip(papers, results):
         lines += [f'## {paper["paper_id"]} · {paper["title"]}', '',
             f'年份：{paper["year"]}；[原文](https://openreview.net/forum?id={paper["forum_id"]})', '',

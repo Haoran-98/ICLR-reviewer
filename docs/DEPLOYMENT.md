@@ -72,7 +72,7 @@ PY
 
 ### 路径与依赖
 
-当前开发机使用以下默认路径，这些是部署布局，不是 Git 内容：
+当前开发机的数据资产使用以下路径，部署时按本机布局调整：
 
 | 资产 | 默认位置/配置 |
 |---|---|
@@ -126,7 +126,7 @@ python3 web/validate_s4.py
 python3 web/validate_topics.py
 ```
 
-这三个 `ICLR_*_PATH/ROOT` 变量是此段 shell 示例传给 CLI 的变量，并非所有 Web 后端都会读取的统一配置。导出器读取封存文件、来源哈希和数据库，不调用 LLM。首次生成投影会执行 PCA/t-SNE，可能较慢。重跑实体提取和规则提炼会调用模型，与导出是不同任务，不要为启动展示站默认重跑。
+这三个 `ICLR_*_PATH/ROOT` 变量用于本段 shell 示例的 CLI 参数传递。Web 后端使用各自列明的配置项。导出器读取封存文件、来源哈希和数据库，不调用 LLM。首次生成投影会执行 PCA/t-SNE，可能较慢。重跑实体提取和规则提炼会调用模型，与导出是不同任务，不要为启动展示站默认重跑。
 
 ### R/ggdist 静态图
 
@@ -182,7 +182,7 @@ npm --prefix web run build
 npm --prefix web run lan
 ```
 
-将示例 IP 换为可达的本机地址。入口 `http://服务器IP:5173/` 跳转至 `https://服务器IP:8443/`；不要使用 `http://服务器IP:8443/`。客户端信任 `web/public/iclr-lan-ca.crt` 后访问；证书私钥保留在本机忽略目录。当前实现固定 5173/8443，需确保端口空闲且网络可达。preview 仍依赖 Node 与 Python 同源代理，不是纯静态文件托管。
+将示例 IP 换为可达的本机地址。入口 `http://服务器IP:5173/` 跳转至 `https://服务器IP:8443/`；不要使用 `http://服务器IP:8443/`。客户端信任 `web/public/iclr-lan-ca.crt` 后访问；证书私钥保留在本机忽略目录。当前实现固定 5173/8443，需确保端口空闲且网络可达。preview 通过 Node 与 Python 同源代理提供服务。
 
 ### 当前开发机已有服务
 
@@ -195,7 +195,7 @@ systemctl --user status iclr-web-lan.service
 journalctl --user -u iclr-web-lan.service -n 50
 ```
 
-当前开发机入口为 `http://172.24.246.231:5173/`，仅在可路由的网络中可达。这些脚本调用已有用户级服务，不是新机器服务安装器。修改网页后先构建，再重启服务；确保该单元的环境使用正确 Python 和资产路径。
+当前开发机入口为 `http://172.24.246.231:5173/`，仅在可路由的网络中可达。这些脚本用于启停已有的用户级服务；新机器先按前文安装。修改网页后先构建，再重启服务；确保该单元的环境使用正确 Python 和资产路径。
 
 ## 7. 运行检查
 
@@ -232,7 +232,7 @@ npx playwright install chromium
 | 现象 | 检查 |
 |---|---|
 | 启动时找不到登录配置 | 先完成第 3 节；不能用删除认证插件绕过配置 |
-| 地图、Skill 索引 404 | `web/public/generated/` 不是 Git 内容，按第 4 节恢复完整快照 |
+| 地图、Skill 索引 404 | 按第 4 节准备 `web/public/generated/` 数据快照 |
 | 新任务找不到规则或来源 | 检查冻结库、`PROVENANCE.json` 依赖及开发机默认路径；仅复制规则 JSON 不够 |
 | API 无法启动 | 检查 `ICLR_PYTHON`、Python 依赖、任务目录写权限、同目录是否已存在协调器 |
 | DOC/PDF 提取失败 | 检查 LibreOffice/`pdftotext`、文件实际格式、加密/扫描件、15 MiB 限制 |

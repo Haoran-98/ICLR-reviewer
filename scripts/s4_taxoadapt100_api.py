@@ -123,7 +123,7 @@ class Progress:
                 f'- 新成功请求：{data["successful_requests"]}；缓存命中：{data["cached_requests"]}；失败尝试：{data["failed_attempts"]}',
                 f'- 已返回用量（包含已返回用量的失败尝试）：输入 {data["input_tokens"]:,} token（其中缓存 {data["cached_input_tokens"]:,}）；'
                 f'输出 {data["output_tokens"]:,} token（其中思考 {data["reasoning_tokens"]:,}）', '',
-                '预计时间仅涵盖当前批次；递归会增加后续批次。成功请求数不是已完成论文数。', '',
+                '预计时间仅涵盖当前批次；递归会增加后续批次。成功请求数与已完成论文数分别记录。', '',
                 f'[运行日志]({self.root}/runtime/run.log) · [机器可读进度]({self.root}/progress.json) · '
                 f'[实验协议]({self.root}/PROTOCOL.md) · [最终报告（完成后）]({self.root}/REPORT.md)']
             if data.get('error'):

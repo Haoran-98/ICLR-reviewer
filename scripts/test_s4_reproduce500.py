@@ -1,5 +1,7 @@
-"""Small invariant checks; no model quality is inferred from these checks."""
+"""Offline checks for request configuration, resource bounds and evaluation isolation."""
+import os
 import sys
+from unittest.mock import Mock, patch
 from threading import Condition, Event, Thread
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -10,6 +12,20 @@ from s4_reproduce500_methods import (node, graph_stats, membership_features,
 
 
 def main():
+    with patch.dict(os.environ, {}, clear=True), patch('s4_reproduce500.requests.get') as get:
+        try:
+            Qwen()
+        except ValueError as error:
+            assert 'S4_REPRO_QWEN_URL' in str(error)
+        else:
+            raise AssertionError('Missing model address was accepted')
+        get.assert_not_called()
+    props = dict(default_generation_settings=dict(n_ctx=CONTEXT),
+                 model_path=str(MODEL_PATH), total_slots=4)
+    with patch.dict(os.environ, {'S4_REPRO_QWEN_URL': 'http://local-model.invalid/'}), \
+         patch('s4_reproduce500.requests.get', return_value=Mock(json=lambda: props)) as get:
+        assert Qwen().url == 'http://local-model.invalid'
+        get.assert_called_once_with('http://local-model.invalid/props', timeout=30)
     payload = generation_payload('Return a topic as JSON.', 192)
     assert payload['model'] == MODEL and 'qwen38' in MODEL
     assert MODEL_PATH.name.endswith('UD-Q3_K_XL.gguf')

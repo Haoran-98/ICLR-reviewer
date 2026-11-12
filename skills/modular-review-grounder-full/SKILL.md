@@ -26,18 +26,18 @@ one paper's technical vocabulary into a universal checklist.
 Useful lenses, only when supported by source observations, include claim scope,
 transfer of guarantees between stages, correctness of definitions/inference,
 evidence design, robustness boundaries, comparative attribution, and feasibility.
-Preserve concrete scientific scope within each lens. A theoretical paper does not
-automatically require experiments; an absent appendix in the input does not imply
-an absent proof in the paper. Mentioning an assumption or acknowledging a limitation
-does not by itself clear a concern. Verify definitions and quantified conditions
-before alleging contradictions. Separate access gaps, clarification requests,
+Preserve concrete scientific scope within each lens. Match evidence requirements
+to the contribution: inspect proofs for theoretical claims and experiments for
+empirical claims. Record an unavailable appendix as an access gap. Clear a concern
+using evidence that addresses its failure mechanism. Verify definitions and
+quantified conditions before alleging contradictions. Separate access gaps, clarification requests,
 testable hypotheses, and supported defects.
 
 Split independent technical objects or failure mechanisms into atoms. Preserve
 the context linking a follow-up question to its parent concern. Account for every
 input review unit: extracted atoms, no concern, or an explicit unresolved reason.
 When evidence packs are partial, missing evidence stays unknown. Retain all
-original text; split requests rather than silently discarding review units.
+original text and split requests to account for every review unit.
 
 ## Curate and compose
 
@@ -45,7 +45,7 @@ Use general, domain, method, task, and specialty levels. Equivalent rules share
 the technical object, failure mechanism, and compatible clearing conditions;
 matching broad topics alone is insufficient. Keep useful single-source rules as
 candidates. Source-supported rules require two independent paired manuscripts;
-general rules additionally require two areas. Provenance is not scientific truth.
+general rules additionally require two areas. Record provenance and scientific adjudication as separate statuses.
 
 Apply localized AutoManual/ACE-style additions, refinements, merges, splits, or
 deprecations. Keep stable IDs, before/after versions, evidence, and a durable
@@ -61,5 +61,5 @@ Freeze the library before evaluation; evaluation reviews must never enter the
 review input or directly modify the library. Papers used here become development
 sources, including any papers that were held out in earlier pilots.
 
-This adapts AutoManual case induction, ACE local updates, and ReviewGrounder
-evidence grounding; it does not reproduce their complete systems.
+This combines AutoManual-style case induction, ACE-style local updates, and
+ReviewGrounder-style evidence grounding in the project runner.

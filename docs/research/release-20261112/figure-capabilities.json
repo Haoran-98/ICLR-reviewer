@@ -1,0 +1,107 @@
+{
+  "audit_date": "2026-11-12",
+  "library_version": "llm-area-v1",
+  "rule_library_sha256": "a7f4f98f2389fe3bf1d7adea29779757cfbbdd4af13a643ab3bc5f4a24c2654d",
+  "scope": "Six manually inspected examples of figure-related checks; source records copied verbatim from the frozen library.",
+  "rules": [
+    {
+      "rule_id": "R1176",
+      "title": "图中比较对象、误差量与结构映射的核对",
+      "status": "source_supported",
+      "source_paper_ids": [
+        15619,
+        16405
+      ],
+      "applies_when": "论文用图比较不同模型、函数类或训练条件下的损失或误差，或以图同时展示数学结构及其上定义的概率量、算法量时。",
+      "steps": [
+        "核对图例、坐标、分面、图注与正文是否明确说明每条曲线或图中元素的比较对象、条件及误差/概率量定义。",
+        "按同一任务与评估设定核对所比较的损失、测试误差或量是否与基准模型对应，并确认结构图元素与正文定义的映射如何影响计算。"
+      ]
+    },
+    {
+      "rule_id": "R0863",
+      "title": "实验图的不确定性呈现",
+      "status": "source_supported",
+      "source_paper_ids": [
+        15717,
+        15926
+      ],
+      "applies_when": "实验图中的结果来自可能受随机性影响的重复实验、抽样或多次运行。",
+      "steps": [
+        "核对图或图注是否说明重复次数及变异来源。",
+        "确认误差或不确定性展示方式与实验设计相符。"
+      ]
+    },
+    {
+      "rule_id": "R5059",
+      "title": "统计标记、重复单位与不确定性定义",
+      "status": "source_supported",
+      "source_paper_ids": [
+        31421,
+        31814
+      ],
+      "applies_when": "定量结果以误差条、区间或重复试验的统计摘要报告时。",
+      "steps": [
+        "说明不确定性度量的含义、计算方式及其对应的重复或样本单位。",
+        "报告重复次数，并核对图表标记与方法说明是否一致。",
+        "判断所报告的信息是否足以解释数值波动；确定性结果或不适用时说明依据。"
+      ]
+    },
+    {
+      "rule_id": "R2715",
+      "title": "流程概览图与核心结果的证据可访问性",
+      "status": "source_supported",
+      "source_paper_ids": [
+        30799,
+        32863
+      ],
+      "applies_when": "方法依赖多步骤或模块流程，且核心经验结果支撑主要主张时。",
+      "steps": [
+        "核对流程图是否呈现输入、关键变换与输出，足以对应正文步骤与模块关系。",
+        "定位核心结果及其评价条件，核对是否可在正文或明确索引的补充材料中查得。"
+      ]
+    },
+    {
+      "rule_id": "R0315",
+      "title": "训练曲线异常与图示优势的归因核验",
+      "status": "source_supported",
+      "source_paper_ids": [
+        31967,
+        32328,
+        32807
+      ],
+      "applies_when": "论文以训练曲线或汇总图支持方法优势、训练稳定性或对曲线退化来源的解释。",
+      "steps": [
+        "核对曲线所示指标、比较设置、训练阶段及可持续的时域，区分训练故障与方法效应。",
+        "检查图示是否足以辨认所称差异，并用重复运行或诊断证据支撑退化或不稳定归因。",
+        "证据不足时删除或收窄优势与稳定性归因。"
+      ]
+    },
+    {
+      "rule_id": "R0145",
+      "title": "表示能力主张的操作化与可视化证据核验",
+      "status": "source_supported",
+      "source_paper_ids": [
+        15273,
+        15949,
+        31040,
+        31356,
+        31822,
+        31918,
+        32005,
+        32687
+      ],
+      "applies_when": "论文以表示、聚类或潜在空间编辑的可视化支持结构、语义、可迁移性或编辑效果主张时。",
+      "steps": [
+        "将主张对应到可检验定义或指标，区分可视化观察与迁移或结构验证。",
+        "核对投影、样本选择及图示方向是否足以支持所述解释；必要时检查定量或稳健性证据。",
+        "使结论与实际分析相称，或明确限定为探索性观察。"
+      ]
+    }
+  ],
+  "runtime": {
+    "manuscript_input": "extracted text",
+    "figure_images_passed_to_review_model": false,
+    "visual_issues_require_verification": true
+  }
+}

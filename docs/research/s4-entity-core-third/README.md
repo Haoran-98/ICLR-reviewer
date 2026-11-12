@@ -4,7 +4,7 @@
 
 2026-10-30 冻结全量 38,890 篇，取三分之一向上取整 **12,964 篇**。按年份 × 统一一级领域分层，
 每层按约三分之一分配名额，总数用最大余数法对齐。各层名额足够容纳此前 500 篇，因此全部保留这些种子，再固定随机种子补足。
-这是保留既有种子的分层样本，并非全部论文具有相同纳入概率的简单随机样本。
+该分层样本保留既有种子，纳入概率随分层和种子条件变化。
 
 | 年份 | 篇数 |
 |---|---:|
@@ -23,7 +23,7 @@
 
 摘要与核心内容各保存 BGE-M3、Qwen3-Embedding-0.6B 一份向量，共 **51,856 条 1024 维向量**。
 GPU 优先使用 4060 Ti，float32、原生 pooling、不加 query instruction；完整输入逐条检查长度，防止静默截断。
-未新增候选词条 embedding 视图。原文定位有效率不代表语义准确率或检索收益。
+未新增候选词条 embedding 视图。原文定位有效率衡量出处可追溯性，语义准确性和检索收益需独立评测。
 
 - [实时报告及阶段 ETA](/data_big/iclr-s4/experiments/entity_core_third_gpt6luna_medium_dual_v1/REPORT.md)
 - [进度页](/data_big/iclr-s4/experiments/entity_core_third_gpt6luna_medium_dual_v1/PROGRESS.md)

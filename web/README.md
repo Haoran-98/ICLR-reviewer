@@ -28,7 +28,7 @@
 
 上方交互SVG随领域、主题及弦带选择更新，组合阶梯分布主体、最多40个分位点、中位数及中央50%/90%区间；小于等于40篇的组显示逐篇观测。高分歧列表显示原始评分及评分数，并可定位论文和原文证据。下方全样本图实际调用R/ggdist的 `stat_slab`、`stat_dots`、`stat_pointinterval`，按年展示全部决定、录用、拒稿三组；全部决定与后两组存在成员重叠。
 
-区间描述观测论文的差异，不是置信区间；不跨年混合量表，缺失评分不补零，分歧需结合审稿人数阅读。R输出SVG、PNG及论文级统计CSV，前端与R的均值、标准差、极差逐篇一致。设计与报告修改说明见 [ggdist迭代记录](../docs/technical_details/Web_ggdist_upgrade_2026-11-11.md)。
+区间描述观测论文的经验分布；不跨年混合量表，缺失评分不补零，分歧需结合审稿人数阅读。R输出SVG、PNG及论文级统计CSV，前端与R的均值、标准差、极差逐篇一致。设计与报告修改说明见 [ggdist迭代记录](../docs/technical_details/Web_ggdist_upgrade_2026-11-11.md)。
 
 验证：`node web/review-distributions-check.mjs`；在 `web/` 运行 `node review-distributions-smoke.mjs` 检查真实浏览器筛选与论文回查。设置 `ICLR_GGDIST_FULL_SMOKE=1` 同时执行原地图、弦图和证据回查回归。浏览器检查采用临时登录配置，不修改网站管理员凭据，也不调用模型。
 
@@ -138,7 +138,7 @@ systemctl --user stop iclr-web-lan.service
 
 当前数据核对命令：`PYTHONPYCACHEPREFIX=/tmp/iclr-map-pycache python3 web/validate_s4.py`（仓库根目录）。浏览器验证包含 S4 标签/弦带→录用和评分→地图→原文证据。
 
-同义词规则与地图标注可单独刷新：`PYTHONPYCACHEPREFIX=/tmp/iclr-map-pycache OPENBLAS_NUM_THREADS=4 OMP_NUM_THREADS=4 python3 web/derive_topics.py`，随后运行 `python3 web/validate_topics.py` 和生产构建。完整导出已自动包含此步骤。地图的 30 个局部区域用于说明二维邻域内容，不代表正式学科父子分类。
+同义词规则与地图标注可单独刷新：`PYTHONPYCACHEPREFIX=/tmp/iclr-map-pycache OPENBLAS_NUM_THREADS=4 OMP_NUM_THREADS=4 python3 web/derive_topics.py`，随后运行 `python3 web/validate_topics.py` 和生产构建。完整导出已自动包含此步骤。地图的 30 个局部区域用于说明二维邻域内容；正式学科层次按分类协议单独构建。
 
 弦图标签采用左右分列、换行避让和引导线；窄屏可在图内横向滚动。地图“领域过渡”默认启用，可选细/中/宽并随筛选更新；颜色混合表示邻域论文的投稿领域构成，切换年份着色后自动隐藏。独立渐变逻辑验证：`node web/visual-checks.mjs`；现有 `npm run smoke` 同时检查实际渐变像素和 16/24/32 节点的文字碰撞。
 

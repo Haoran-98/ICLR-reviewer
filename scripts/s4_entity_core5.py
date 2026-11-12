@@ -178,7 +178,7 @@ def embeddings(results):
     write(ROOT/'embeddings/metadata.json',dict(model='BAAI/bge-m3',local_snapshot=str(BGE),revision=BGE.name,
         paper_ids=[r['paper_id'] for r in results],views=['abstract','core'],shape=list(vectors.shape),versions=versions,
         cross_view_cosine_per_paper=[float(x) for x in np.sum(vectors[:5]*vectors[5:],axis=1)],
-        warning='Cross-view similarity is descriptive and does not measure extraction or matching quality.'))
+        warning='Cross-view similarity describes representation alignment; evaluate extraction and matching quality separately.'))
     api.PROGRESS.data.update(batch_completed=10)
 
 
@@ -197,7 +197,7 @@ def report(results):
         '标题用于实体与核心内容提取；第一套向量严格使用摘要原文。', '',
         f'API 成功请求 {p["successful_requests"]}；失败尝试 {p["failed_attempts"]}；输入 {p["input_tokens"]:,}、'
         f'输出 {p["output_tokens"]:,}、其中思考 {p["reasoning_tokens"]:,} token。',
-        f'候选类型分布：{dict(counts)}。候选不是确认标签；本次不计算无细粒度真值支持的语义准确率或匹配收益。', '']
+        f'候选类型分布：{dict(counts)}。候选保留模型提取状态，语义准确性和匹配收益需细粒度真值评测。', '']
     for r in results:
         lines += [f'## {r["paper_id"]} · {r["title"]}', '',f'年份：{r["year"]}', '',
             '**作者原始领域**：'+r['original_labels']['primary_area'], '',

@@ -1,8 +1,8 @@
 # Unified ICLR Database
 
 This directory builds the PostgreSQL 16 + pgvector data layer for the ICLR
-2024-2026 main-track corpus. It does not run paper understanding, taxonomy
-discovery, or reviewer-twin extraction.
+2024-2026 main-track corpus, including source records, full-text indexes,
+version history, and artifact provenance.
 
 ## Storage
 
@@ -35,9 +35,9 @@ ingest and rejects any business-table count change as an idempotency failure.
 
 ## Text-first full-text index
 
-The initial full-text pass reads existing Markdown and stores only lightweight
-retrieval metadata. It does not run Docling, MinerU, a vision model, or an LLM,
-and it does not copy the complete Markdown body into PostgreSQL.
+The initial full-text pass reads existing Markdown and stores lightweight
+retrieval metadata in PostgreSQL. Complete text stays in the object store.
+Deep parsing can be requested separately for selected objects.
 
 Run it after migration and core ingestion:
 
@@ -62,7 +62,7 @@ The index is stored in two PostgreSQL tables:
 
 The original Markdown remains in the content-addressed object store and is
 reached through `core.artifact -> raw.artifact`. PostgreSQL stores the map and
-provenance, not a second full-text copy.
+provenance.
 
 Inspect coverage:
 

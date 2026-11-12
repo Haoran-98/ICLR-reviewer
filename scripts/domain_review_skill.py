@@ -282,13 +282,13 @@ def run(args):
     lines=['---','name: '+snapshot['skill_name'],
         'description: Review diffusion-model manuscripts with evidence-grounded criteria distilled from historical reviews. Apply only when the S4 route and diffusion scope are supported.','---','',
         '# Diffusion Reviewer','',skill['scope'],'',
-        'Apply checks conditionally. Historical concerns are not findings about the new paper. Use only new manuscript evidence for new judgments.','',
-        'For each major concern record observation, manuscript passage IDs, consequence, requested clarification, and uncertainty. Missing retrieved evidence does not prove absence from the paper.','']
+        'Apply checks conditionally and ground each new judgment in the target manuscript.','',
+        'For each major concern record observation, manuscript passage IDs, consequence, requested clarification, and uncertainty. Record unavailable passages as access gaps and verify the full paper before claiming absence.','']
     for c in skill['checks']:
         lines += ['## '+c['check_id'],'','适用：'+c['applies_when'],'检查：'+c['inspect'],'证据：'+c['evidence_needed'],
             '严重性：'+c['severity_condition'],'暂不判断：'+c['abstain_when'],
             '历史来源：'+', '.join(c['review_passage_ids']+c['paper_passage_ids']),'']
-    lines+=['## Provenance','','Three distinct development papers; no target-paper reviews or author responses. These are model-distilled reviewing practices, not human-adjudicated rules. See [experience.json](experience.json) and [source_cases.json](source_cases.json).','']
+    lines+=['## Provenance','','Three distinct development papers provide paired sources. The model-distilled checks await human adjudication; target reviews and author responses are excluded. See [experience.json](experience.json) and [source_cases.json](source_cases.json).','']
     skilltext='\n'.join(lines);assert tokens(skilltext)<=2500
     (skilldir/'SKILL.md').write_text(skilltext);write(skilldir/'experience.json',skill)
     write(skilldir/'source_cases.json',dict(history=snapshot['history'],metadata={str(pid):snapshot['metadata'][str(pid)] for pid in snapshot['source_paper_ids']},
@@ -303,7 +303,7 @@ def run(args):
     refs=set(e for item in review['strengths']+review['concerns'] for e in item['evidence_ids'])
     verified=[passages[e] for e in sorted(refs)]
     write(args.root/'verified_evidence.json',dict(paper_id=snapshot['target']['paper_id'],passages=verified,
-        check='Exact passage character offsets checked against hashed manuscript; this does not establish semantic correctness.'))
+        check='Exact passage character offsets checked against hashed manuscript; semantic support requires separate adjudication.'))
     out=['# '+snapshot['target']['title'],'',review['summary'],'','## 优点','']+['- '+s['point']+' ['+', '.join(s['evidence_ids'])+']' for s in review['strengths']]
     out+=['','## 主要意见','']
     for i,c in enumerate(review['concerns'],1):

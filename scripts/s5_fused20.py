@@ -652,7 +652,7 @@ def report(root, model=None, state='running'):
         '- 先冻结作者首轮回复后的前缀，再单独回放真实后续讨论；生成草稿不作为历史事实。',
         '- 正文快照的历史时间未核实，仅在事后核查和规划中检索，不进入前缀输入。',
         '- 历史数值改分缺乏独立时间配对，全部保持 unknown；前缀评分判断未经校准。',
-        '- 为保证前缀时间可核验，选择未在后续修改 Review 的线程；样本不代表整体改分分布。','',
+        '- 为核验前缀时间，选取后续未修改 Review 的线程，统计范围为所选开发样本。','',
         '## 运行汇总','',f'- 原子 concern：{sum(counts.values())}；状态分布：{dict(counts)}。',
         f'- 成功请求：{successful}；返回用量：{dict(usage)}。',
         f'- 接收的阶段结果：{len(stage_records)}；其中不新增推理的约束恢复：{recovered}；不可执行策略暂缓：{abstentions}。',

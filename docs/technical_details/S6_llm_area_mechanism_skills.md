@@ -32,7 +32,7 @@ python3 scripts/llm_area_review_skills.py report
 
 本机系统 Python 字节码缓存曾损坏，后台服务采用任务专用 `-X pycache_prefix=.../runtime/pycache`，
 避免修改系统文件。运行状态见 `PROGRESS.md`，范围检查见 `SCOPE_AUDIT.json`。
-科学质量尚未验证；完整主文要求适用于之后的实际审稿，来源提炼仍使用已记录覆盖的定向正文证据。
+来源提炼使用已记录覆盖的定向正文证据，实际审稿要求完整主文；科学质量通过后续独立评测验证。
 
 2026-11-06 用户追加启用 DeepSeek 弱模型，最多 50 并发，同时保留 OpenAI 最多 3 并发。
 新入口 `scripts/parallel_llm_area_review_skills.py` 复用已完成的 1,318 个抽取任务、
@@ -90,7 +90,7 @@ OpenAI 沿用 `gpt-6-luna / medium`；DeepSeek 从 auth 读取 `deepseek-v4-flas
 仅处理原版 6,161 条 unresolved 和 377 条 needs_evidence；原版冻结产物不改动。
 沿用 OpenAI gpt-6-luna / medium / 3 并发和本地 Qwen / 3 并发，DeepSeek 保持暂停。
 从五类原因各取 20 条组成 100 条流程诊断，通过预算、引用和来源审计并恢复有效规则覆盖后，
-自动继续其他目标。两模型分担不同候选；第二次有效访问切换通道，并非对照实验。
+自动继续其他目标。两模型分担不同候选，第二次有效访问切换通道以恢复整理。
 
 恢复程序复用冻结的生成、校验、事务提交和导出器，每批最多两条同机制 focus，
 仅检索同机制规则及邻居，并提供此前操作的具体校验错误。补充证据来自原稿全篇检索的

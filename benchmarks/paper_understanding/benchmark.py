@@ -631,7 +631,7 @@ def report_command(_args: argparse.Namespace) -> None:
         "",
         "Use one-shot structured extraction as the default path. It ties the hierarchical method on aggregate judged quality, wins 22 versus 21 papers, and uses about 29% of its extraction tokens. Escalate to the hierarchical path when evidence checks fail, required fields are missing, claims conflict, or a review request needs unusually strict traceability. Do not use the DocETL-style planner in the production path for this corpus.",
         "",
-        "The strong judge receives anonymized, deterministically shuffled candidates. Quote match is a mechanical exact-match audit after whitespace normalization; it does not prove that a quote supports the associated claim. The model judge is evidence, not human ground truth.",
+        "The strong judge receives anonymized, deterministically shuffled candidates. Quote matching checks source location after whitespace normalization. Semantic support and model-judge calibration require independent human adjudication.",
     ]
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps({"summary": str(SUMMARY), "report": str(REPORT), "judged": len(judgments)}))

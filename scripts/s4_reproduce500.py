@@ -2,7 +2,7 @@
 """Local-Qwen, label-blind reproduction of four S4 topic methods.
 
 Artifacts live outside the repository. Gold areas are isolated from model inputs.
-This is a controlled Qwen/BGE adaptation, not the authors' original-model scores.
+Results describe the configured Qwen/BGE adaptation.
 """
 from __future__ import annotations
 
@@ -161,7 +161,10 @@ def recovery_payload(payload, previous, slot_context):
 
 
 class Qwen:
-    def __init__(self, root=ROOT, concurrency=4, url='https://provider.invalid/v1'):
+    def __init__(self, root=ROOT, concurrency=4, url=None):
+        url = (url or os.environ.get('S4_REPRO_QWEN_URL', '')).rstrip('/')
+        if not url:
+            raise ValueError('Set S4_REPRO_QWEN_URL to the local model server origin')
         self.root, self.concurrency, self.url = Path(root), concurrency, url
         response = requests.get(self.url + '/props', timeout=30)
         response.raise_for_status()

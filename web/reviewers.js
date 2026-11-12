@@ -116,8 +116,8 @@ async function match() {
   $('match-pipeline').replaceChildren(
     stage('1 · 输入稿件', [title || '未填写标题', `${fmt(text.length)} 字符 · 浏览器本地处理`]),
     stage('2 · 领域与线索', [declared, hits.length ? `命中：${hits.slice(0, 8).join('、')}` : '未找到完整 scope 短语']),
-    stage('3 · 推荐专家', [`${chosen.length} 个模块`, '按 scope 短语、词面 IDF 排序；不是置信概率']),
-    stage('4 · 检查关注点', [`${checks.length} 条待检查项`, '尚未核实适用性，未生成新稿 concern']),
+    stage('3 · 推荐专家', [`${chosen.length} 个模块`, '按 scope 短语和词面 IDF 排序']),
+    stage('4 · 检查关注点', [`${checks.length} 条待检查项`, '正式审稿时逐条判断适用性']),
     stage('5 · 审稿状态', ['未执行审稿', '实际 concern 与裁决请查看已有记录回放']));
   $('match-status').textContent = area === 'other' ? '当前版本仅覆盖 LLM 领域，不自动套用到其他领域。' : chosen.length ? `匹配预览完成：${chosen.length} 个模块，${checks.length} 条待检查项。` : '没有足够的词面依据推荐专家；可补充方法与任务描述。';
   $('match-results').replaceChildren();
@@ -138,7 +138,7 @@ async function replay(pid) {
   const review = item.review, d = $('replay-detail');
   d.append(el('h2', item.title), el('p', `${item.year} · ${AREAS[item.area] ?? item.area} · 论文 ${item.paper_id}`),
     el('p', `历史规则库：${item.version} / ${item.library_hash.slice(0, 16)}…`, 'muted'),
-    el('p', '该次为单次模型调用组合执行规则；模块不代表多个独立 Agent。原始结果中的 concern 保持原样。', 'notice'));
+    el('p', '本次以一次模型调用组合执行所选规则，以下展示该版本的原始 concern。', 'notice'));
   fields(d, [['审阅材料', `部分正文：${fmt(item.coverage.supplied_manuscript_chars)} / ${fmt(item.coverage.manuscript_chars)} 字符；图表及外部文献未核验`], ['论文概述', review.summary], ['当次评分与置信度', `${review.rating}；置信度 ${review.confidence}/5`], ['原记录局限', review.limitations]]);
   const pipeline = el('div', null, 'pipeline');
   const moduleIds = [...new Set(item.composition.selection.map(x => x.module_id))];
@@ -160,7 +160,7 @@ async function replay(pid) {
   table.append(body); const scroll = el('div', null, 'table-scroll'); scroll.append(table); d.append(scroll);
   const loadedRules = el('details'); loadedRules.append(el('summary', '展开当次加载的完整规则（历史版本）'));
   loadedRules.append(...item.composition.rule_ids.map(rid => renderRule(item.rules[rid]))); d.append(loadedRules);
-  if (!review.concerns.length) d.append(el('p', '此运行未提出 concern。加载检查项不等于发现问题。', 'notice'));
+  if (!review.concerns.length) d.append(el('p', '本次审稿未提出 concern。可展开查看已执行的检查项。', 'notice'));
   for (const [i, c] of review.concerns.entries()) {
     const box = el('article', null, 'rule'); box.dataset.concernId = String(i + 1);
     box.append(el('h3', `C${i + 1} · ${c.check_id} · ${item.rules[c.check_id].title}`), el('p', `${label(c.severity)} / ${label(c.certainty)}`));
@@ -188,7 +188,7 @@ async function init() {
   $('prev').onclick = () => { page--; renderList(); }; $('next').onclick = () => { page++; renderList(); };
   $('run-match').onclick = () => match().catch(fail);
   $('match-example').onclick = async () => {
-    try { const item = await json('replay-32064.json'); $('paper-title').value = item.title; $('paper-text').value = item.abstract; $('paper-area').value = 'llm'; $('match-status').textContent = '已载入历史论文摘要，仅用于匹配交互展示；不充当新库未见稿件。'; } catch (e) { fail(e); }
+    try { const item = await json('replay-32064.json'); $('paper-title').value = item.title; $('paper-text').value = item.abstract; $('paper-area').value = 'llm'; $('match-status').textContent = '已载入历史论文摘要，可预览其与当前 Skill 库的匹配结果。'; } catch (e) { fail(e); }
   };
   $('clear-match').onclick = () => { matchSerial++; $('paper-title').value = ''; $('paper-text').value = ''; $('paper-file').value = ''; $('paper-area').value = 'unknown'; $('match-pipeline').replaceChildren(); $('match-results').replaceChildren(); $('match-status').textContent = '已清除当前稿件。'; };
   $('paper-file').onchange = async () => {

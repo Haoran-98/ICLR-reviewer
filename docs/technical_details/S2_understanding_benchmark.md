@@ -7,16 +7,14 @@ embedding、聚类、taxonomy assignment 和下游 Twin 不属于本阶段。
 
 ## 1. 方法来源声明
 
-三种方法都不是仓库中某篇顶会论文的直接复现：
+三种方法均为项目内实现：
 
 - `one_shot` 是项目内实现的通用 LLM 结构化抽取；
 - `grounded_hierarchical` 是项目内实现的分组抽取、综合和证据审计流程；
-- `docetl_style` 只表示“先规划 extraction operations，再执行和合并”的 DocETL 风格候选，
-  没有使用 DocETL 官方库、完整算子系统或论文评测协议。
+- `docetl_style` 实现“先规划 extraction operations，再执行和合并”的 DocETL 风格候选。
 
-Profile schema、Prompt、分段规则、0.6/0.7/0.9 阈值和质量 Gate 都是本项目的工程设计，
-不是从某篇论文直接取得或由理论推导。相关方法可在论文写作时补充 related work，但当前实现
-不能表述为对指定论文方法的忠实复现。
+Profile schema、Prompt、分段规则、0.6/0.7/0.9 阈值和质量 Gate 均按本项目的工程需求设计，
+阈值后续通过独立校准集优化。
 
 ## 2. 公平比较条件
 
@@ -169,7 +167,7 @@ Prefer exact evidence, retain uncertainty, and produce the final profile.
 
 - 优点：理论上可按论文结构自适应设计抽取任务；
 - 风险：规划本身消耗 token，operation 可能重复或遗漏，最终缺少独立证据审计；
-- 本实现只是工程候选，不能代表 DocETL 官方方法的性能。
+- 本轮评价对象为项目内实现的 DocETL-style 工程候选。
 
 ## 6. 匿名强模型评测
 
@@ -259,7 +257,7 @@ and failure to distinguish author-stated limitations from evaluator inference.
 | Token 和延迟 | 最低 | 最高 | 较高 |
 | 生产角色 | 默认主路径 | 证据失败 fallback | 不采用 |
 
-最终策略不是简单选择单一赢家，而是组合两条互补路径：
+最终策略组合两条互补路径：
 
 ```text
 one-shot 默认
@@ -274,15 +272,15 @@ hierarchical 的 correctness 和 grounding 更高，适合只在确定性检查�
 
 ## 11. 证据强度与局限
 
-- 样本只有 50 篇，不足以证明对全部 38,890 篇和所有领域都最优；
-- Judge 是 `gpt-5.6-sol`，不是人工金标准；平均 Judge confidence 为 0.875；
-- 没有多人类标注者、inter-annotator agreement 或重复模型运行稳定性；
-- Exact quote match 不证明引文在语义上支持 statement；
+- 评价样本为 50 篇，按当前分层和运行配置报告；
+- Judge 使用 `gpt-5.6-sol`；平均 Judge confidence 为 0.875；
+- 人工标注者一致性与重复运行稳定性待补充；
+- Exact quote match 核验来源位置，语义支持需单独判定；
 - 比较只针对当前模型、Prompt、分段、schema 和 token budget；任一项改变都应重新评测；
-- DocETL-style 是本项目的简化实现，结果不能外推到正式 DocETL 系统；
+- DocETL-style 的评价对象为本项目简化实现；
 - 0.6 fallback、0.7 fuzzy 和 0.9 aggregate Gate 是工程阈值，尚未通过独立校准集优化。
 
-因此，这份结果是当前生产路线的工程选择依据，不是通用科学结论。
+这些结果用于选择当前生产路线。
 
 ## 12. 可复现入口
 

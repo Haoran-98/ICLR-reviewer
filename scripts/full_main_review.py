@@ -299,7 +299,7 @@ def report(root):
     (root/'REVIEW.md').write_text('\n'.join(lines))
     aligned={a['human_atom_id']:a for a in comparison['alignments']}
     lines=['# 原子 concern 对照','',
-           '真实初审在模型审稿冻结后用于对比。以下是模型的语义对齐，不是独立专家裁决；同一技术问题可能由不同审稿人重复提出，未跨审稿人去重。','',
+           '真实初审在模型审稿冻结后用于对比。以下展示模型语义对齐，按审稿人保留技术问题条目；独立专家裁决与跨审稿人去重待完成。','',
            '| 人类原子项 | 类型 | concern | 模型项 | 对应关系 | 当前稿状态 |','|---|---|---|---|---|---|']
     for h in humans:
         a=aligned[h['atom_id']]

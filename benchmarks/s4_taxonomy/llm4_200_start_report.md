@@ -1,7 +1,7 @@
 # S4 v4：200 篇实验启动记录
 
 观测时间：2026-10-16 16:28:56（北京时间）。版本：`taxonomy_llm4_200_v1`。
-这是启动快照，不是最终质量报告。最新状态以外部产物目录中的运行日志为准。
+本报告记录启动时点的配置和运行状态。最新状态以外部产物目录中的运行日志为准。
 
 ## 当前状态
 
@@ -38,14 +38,14 @@ Kimi 第 4 篇已开始。四路 pilot 都完成后才继续同批的余下 190 
 验证 200 份新 raw snapshot 后，按用户授权删除三个旧 smoke 根目录和两份旧报告，
 删除旧实验版本及其 370 条 assignment、200 条 embedding。
 原始论文、S3、模型和环境保留，官方领域 assignment 仍为 38,890 条。
-旧实验输出未保留恢复副本；保留的原200 ID与原始输入是新版可复现输入，不是旧结果备份。
+旧实验输出未保留恢复副本；原200 ID与原始输入用于复现新版实验。
 
 ## 后续自动流程
 
 完成四模型生成后，继续 canonical 对齐、同义/层级验证、四模型显式交叉投票、
 DS/static/conditional Crowd Layer、5 folds × 5 seeds、四组 embedding 消融，
 再修复、父链闭包、实验落库和报告。related-work 输入消融会对同批200篇重新生成。
-无细粒度 gold，后验不宣称校准概率；当前不作生产冻结或质量通过声明。
+细粒度 gold 待补充，后验按开发指标记录；概率校准、生产冻结与质量验收另行开展。
 
 产物根目录：`/data_big/iclr-s4/experiments/taxonomy_llm4_200_v1`。
 主要文件：`run.log`、`fusion.log`、`execution.json`、`postprocess_execution.json`、

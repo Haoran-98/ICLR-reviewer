@@ -4,7 +4,7 @@
 
 最新通道调整：用户要求后续不再使用DeepSeek，统一改用auth的OpenAI弱模型（`gpt-6-luna`，并发4）。已完成的DeepSeek数据保留为历史对照。末段HTTP402余额不足的679项仲裁中，678项由OpenAI有效补齐，1项达到累计6次上限记为unknown；现有标签只从缓存重新整理。新任务默认OpenAI，原始论文树不变。
 
-使用物理GPU 0的RTX 4060 Ti 16GB，在独立`runtime-dkta`环境完成同一200篇标题摘要上的Qwen3.5-9B NF4完整注意力抽取与KP20k One2Many BART推理，另生成RRF组合。两个新增方法均已各产出200份真实关键词，不是仅有代码骨架。DeepSeek同输入的关键词+自由三级路径也已完成200篇。
+使用物理GPU 0的RTX 4060 Ti 16GB，在独立`runtime-dkta`环境完成同一200篇标题摘要上的Qwen3.5-9B NF4完整注意力抽取与KP20k One2Many BART推理，另生成RRF组合。两个新增方法均已各产出200份真实关键词。DeepSeek同输入的关键词+自由三级路径也已完成200篇。
 
 已核对并导入ACM CCS 2012两个公开镜像，记录官方端点403和文件hash；三层投影为14/88/2,199节点、135个多父节点和2,352条路径。此批固定未扩充的体系，BGE-M3索引后统一对齐四种关键词来源；命中L3后恢复完整多父祖先路径，不改原始LLM论文树。Qwen路线是Attention-Seeker思路适配，不冒称原论文复现。
 
@@ -38,13 +38,13 @@ API立即执行，读取auth并发；当前只调用OpenAI弱模型gpt-6-luna，
 
 每篇论文独立一棵树，论文题目为第0层根节点，下接原始 L1 → L2 → L3。来源用节点属性标记，不增加来源层；同名节点仍分别保留，不做 lexical/semantic 合并、重新命名、父节点调整或重新生成。仅沿同篇、同模型、相邻层的原始 parent_id 建树；结构不合法的 candidate 直接报错，不猜测父节点。
 
-主树包含生成阶段 status=candidate 的全部节点；原来已标记 pruned 的输出和 pruned_branches 另存于逐篇 JSON 的 generation_pruned，保留原始内容与原因。此步骤不重新进行质量筛选，不宣称树已经通过语义或质量验收。
+主树包含生成阶段 status=candidate 的全部节点；原来已标记 pruned 的输出和 pruned_branches 另存于逐篇 JSON 的 generation_pruned，保留原始内容与原因。此步骤保留候选生成状态，语义与质量验收另行开展。
 
 当前不启动旧 Crowd Layer 融合、同义合并、层级语义验证或修复流水线；旧失败批次不阻塞原始树展示。本轮指令仅要求导出，不启动新的训练或推理请求。
 
 实现：`scripts/s4_export_paper_trees.py`。输出目录：`/data_big/iclr-s4/experiments/taxonomy_llm3_paper_trees_200_v1`；包含 `trees.md`（全部200篇树）、`index.md`、`papers/<paper_id>.json`（完整定义/证据/来源/原始排除记录）、`manifest.json`（数量与输入SHA256）。
 
-已完成导出并逐篇核对原始字段、父子路径及来源文件SHA256：200棵论文树，L1共1,751条、L2共4,110条、L3共8,903条，合计14,764条候选标签出现次数（不是去重后的领域数量）；696条生成时已标记pruned的节点另存，原始内容未改写。
+已完成导出并逐篇核对原始字段、父子路径及来源文件SHA256：200棵论文树，L1共1,751条、L2共4,110条、L3共8,903条，合计14,764条候选标签出现次数（按出现计数）；696条生成时已标记pruned的节点另存，原始内容未改写。
 
 ```bash
 /data_big/iclr-s4/runtime/bin/python scripts/s4_export_paper_trees.py
@@ -136,7 +136,7 @@ K2.6 不支持新 Cache Write/TTL 配置，不添加 prompt_cache_options 或 ca
 OpenAI 论文3374的旧任务6次均为网关429，用户明确批准新增一轮修复；新 job 记录 repair_round 和 previous_job_id，旧6次尝试保留，新轮仍最多初次+5次重试。
 四路200篇于2026-10-17 12:17:46全部补齐。接下来运行标签向量、同义对齐、显式交叉票、父子包含验证、DS/Crowd Layer及消融、四种修复分支和实验报告。
 Kimi 在同义对齐、交叉票、层级验证及 related-work 消融中继续走 Batch；结果按 job_id 回填并共享原预算，无实时推理回退。分析批次状态见 analysis_batch_progress.json 和 batch/analysis_active.json。
-分析启动后获得18,741个原始候选、18,235个词形归一候选，标签向量已生成，筛出1,287组同义候选对；这些数量均不是最终领域节点数。
+分析启动后获得18,741个原始候选、18,235个词形归一候选，标签向量已生成，筛出1,287组同义候选对；这些数量分别统计候选词与同义候选对。
 对齐中发现模型会抄错长ID：仅接收与输入ID精确匹配的票，未知ID票保留在 rejected_votes；缺失ID补为明确标记的程序弃权，绝不猜测对应标签或当作负票。有效ID重复、非法票值、全部ID无效、截断或非法JSON仍拒绝。
 生成和分析投票的输出上限统一为12,288 tokens，解决32项投票在4,096上限下截断；逻辑job_id与累计尝试预算不变，已耗尽任务仅允许本地重校验旧完整响应。
 因此当前 Kimi 通道包含两种模型配置，报告须披露，不能称为全200篇均由同一个固定 Kimi 模型生成。
@@ -183,7 +183,7 @@ related work 只提供语境和边界，不能单独证明本文贡献。
 quote 存在不自动证明语义支持。未知引用、相关研究独证等保留为 pruned。
 
 参考 TaxoAdapt 的 title/abstract 与父路径上下文、TopicGPT 的生成—去重—证据指派。
-这是项目适配，不宣称完整复现，不移植论文特定相似度阈值作为通用常数。
+这是项目适配，相似度阈值按本项目开发集选择并记录。
 
 ## 3. 对齐与双头融合
 
@@ -194,7 +194,7 @@ quote 存在不自动证明语义支持。未知引用、相关研究独证等�
 
 自由生成之后，单独展示 23 个类别选项而隐藏真实答案，收集四路粗分类票。
 官方 23 类头使用原始官方标签监督；自由层级头学习多标签潜真值，两头不把官方目录复制进自由树。
-作者关键词只作自报正向监督，未列关键词不是负例。关键词重合不是独立准确率证据。
+作者关键词作为自报正向监督，未列关键词保持未标注；关键词重合度作为代理一致性指标。
 
 基线：多数票、经典 Dawid–Skene EM、静态 Crowd Layer、条件 Crowd Layer。
 静态模型学习模型特异混淆矩阵，条件模型按内容/任务调节可靠性（本项目扩展）。
@@ -208,7 +208,7 @@ quote 存在不自动证明语义支持。未知引用、相关研究独证等�
 Embedding 只提出 merge/rename/reparent/prune/keep_separate；结合原文、交叉票、后验决定操作。
 包含关系须验证，余弦相似不直接产生 parent_of。保留修复前后、反对票与证据。
 修复后重新聚合表示与成员，重新指派，校验 DAG、版本一致、child⇒parent。
-初始活跃节点筛选为至少 2 篇、2 模型支持、后验≥.9；仅为开发门槛，不等于 precision=.9。
+初始活跃节点筛选为至少 2 篇、2 模型支持、后验≥.9；作为开发筛选门槛，precision 通过人工 gold 另行评测。
 稀疏或争议节点保留 candidate。
 
 边类型：parent_of、overlaps_with、method_used_in、application_of、shares_evidence_pattern_with。
@@ -231,7 +231,7 @@ related-work 消融必须重新生成对应输入，不能从已看过原文的�
 记录真实时延、tokens、峰值显存和 HTTP/解析/证据失败，不把模型自报信心当正确率。
 
 测试涵盖章节缺失/字符位置、父路径、证据、abstention mask、跨重启预算、自拷贝防护、gold 隔离、合成可靠性、DAG、DB 幂等和四种消融。
-普通 conformal 不是概率校准，本版不把 conformal p-value 当正确率。
+conformal p-value 用于相容性判断，正确率与概率校准另行评价。
 
 ## 5. 执行、持久化与清理
 
@@ -255,4 +255,6 @@ related-work 消融必须重新生成对应输入，不能从已看过原文的�
 - Dawid–Skene (1979): https://doi.org/10.2307/2346806
 - CoNAL (AAAI 2021): https://doi.org/10.1609/aaai.v35i7.16730 （相关工作，非完整复现）
 
-OpenAlex/CSO 后续仅作外部对照，不是自由树锚点或细粒度 gold。
+OpenAlex/CSO 后续作为外部对照；自由树构建与细粒度 gold 使用各自独立协议。
+
+本地 Qwen 启动检查从 `auth` 的 `qwen_base_url` 或环境变量 `QWEN_BASE_URL` 读取兼容接口地址；本机启动命令绑定回环主机的 8080 端口，配置须指向该服务。

@@ -428,7 +428,7 @@ def report(args):
                                     'concurrency_from_auth': s4.credentials(args.auth)['openai']['concurrency']}
     s4.write(args.root / 'comparison.json', result)
     lines = ['# DKTA 与 LLM：200篇开发集对比\n',
-        '关键词指标为作者关键词精确匹配代理；OpenAI弱模型盲评为代理评价，均不是细粒度领域金标准。',
+        '关键词指标衡量作者关键词的精确匹配，OpenAI弱模型匿名评价用于开发诊断；细粒度领域准确性需人工金标准。',
         '四个关键词方法使用同一标题摘要、相同ACM对齐；LLM另报自由生成路径，隔离体系与抽取算法的影响。',
         '历史三模型另使用六板块，且只抽前5条原始L3路径，不作同输入主结论。',
         'ACM原始公开镜像经两个镜像同blob核对，投影为三层，未做LLM扩充。多父闭包优先于Top-N。\n',
@@ -456,7 +456,7 @@ def report(args):
     for method, delta in result['paired_keyword_F1_deltas_vs_bart'].items():
         if method != 'bart_one2many':
             lines.append(f'- {method} 相对 BART 的逐篇配对F1差：{delta["mean"]:+.4f}，95% bootstrap区间 [{delta["ci95"][0]:+.4f}, {delta["ci95"][1]:+.4f}]。')
-    lines.extend(['\nQwen路线是混合注意力Qwen3.5的适配实现；注意力高不等于科研关键词显著，URL、代码声明及标题边界词可能排名靠前。',
+    lines.extend(['\nQwen路线是混合注意力Qwen3.5的适配实现；注意力分数用于候选排序，URL、代码声明及标题边界词可能排名靠前，需据科学对象核查其相关性。',
                   'RRF只融合排名，不能自动消除上述噪声；是否优于BART以本次真实比较为准。',
                   'ACM CCS 2012未在此批扩充，宽泛概念与现代ML术语存在覆盖及粒度差异；自由LLM标签与ACM路径差距同时受抽取和词表限制影响。',
                   'llm_deepseek_aligned用于控制词表影响：它与BART/Qwen共用同一索引、阈值和仲裁模型。',

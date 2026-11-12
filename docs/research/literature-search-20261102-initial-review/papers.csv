@@ -1,7 +1,7 @@
 title,year,venue,source_url,type,relevance,verification_depth
 "ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, Tool-Integrated Agents",2026,ACL 2026 main,https://aclanthology.org/2026.acl-long.1477/,method + benchmark,论文官方评分维度与证据支撑；生成阶段不输入目标论文的人类 review 或由其构造的个性化评分量表。,全文方法与实验设置；表格局部核读
-PaperAudit-Bench: Benchmarking Error Detection in Research Papers for Critical Automated Peer Review,2026,EMNLP 2026 main,https://aclanthology.org/2026.emnlp-main.474/,method + benchmark,先记录论文内的可定位错误证据，再形成审稿意见；合成错误数据不等于真实投稿错误分布。,全文方法与实验设置局部核读
-ReGround: Grounding Reviewer Comments in Multimodal Evidence,2026,EMNLP 2026 main,https://aclanthology.org/2026.emnlp-main.54/,pure benchmark,审稿评论到原始匿名稿多模态证据的检索数据；不是完整审稿生成器。,官方摘要与出版元数据
+PaperAudit-Bench: Benchmarking Error Detection in Research Papers for Critical Automated Peer Review,2026,EMNLP 2026 main,https://aclanthology.org/2026.emnlp-main.474/,method + benchmark,先记录论文内可定位的错误证据，再形成审稿意见；错误分布按合成数据协议解释。,全文方法与实验设置局部核读
+ReGround: Grounding Reviewer Comments in Multimodal Evidence,2026,EMNLP 2026 main,https://aclanthology.org/2026.emnlp-main.54/,pure benchmark,审稿评论到原始匿名稿的多模态证据检索数据。,官方摘要与出版元数据
 DeepReview: Improving LLM-based Paper Review with Human-like Deep Thinking Process,2025,ACL 2025 main,https://aclanthology.org/2025.acl-long.1420/,method + benchmark,结构分析、文献检索、证据论证，含 DeepReview-13K 和 DeepReviewer-14B；不把训练后的结果转述为提示词效果。,官方摘要与出版元数据
 TreeReview: A Dynamic Tree of Questions Framework for Deep and Efficient LLM-based Scientific Peer Review,2025,EMNLP 2025 main,https://aclanthology.org/2025.emnlp-main.790/,method + benchmark,问题树、自顶向下分解与自底向上汇总；表 5 约 458968 token/篇，当前只借鉴按问题取证。,全文方法、成本表 5、局限核读
 "The Good, the Bad and the Constructive: Automatically Measuring Peer Review’s Utility for Authors",2025,EMNLP 2025 main,https://aclanthology.org/2025.emnlp-main.1476/,method + benchmark,评价 Actionability、Grounding & Specificity、Verifiability、Helpfulness；用于意见质量评估。,官方摘要与出版元数据

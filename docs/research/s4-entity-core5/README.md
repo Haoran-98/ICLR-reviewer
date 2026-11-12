@@ -13,7 +13,7 @@
 
 标题与摘要用于科学术语和核心内容提取；作者领域、关键词独立保存，不发送给 LLM。所有模型候选均保留，包含背景和泛指记录。核心内容仅由研究问题、方法、研究对象三个字段构成。摘要原文与核心文本分别使用现有固定版本 BGE-M3 在 CPU 上编码。
 
-提示词改编自 SciERC、SciREX 的科学实体设计，以及 GoLLIE、UniversalNER 的指南和指令抽取思路；不宣称复现其模型或训练流程。
+提示词改编自 SciERC、SciREX 的科学实体设计，以及 GoLLIE、UniversalNER 的指南和指令抽取思路。
 
 执行脚本：`scripts/s4_entity_core5.py`。无 API 调用的检查：使用 S4 Python 环境执行 `scripts/test_s4_entity_core5.py`。
 

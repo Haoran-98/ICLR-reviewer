@@ -215,7 +215,7 @@ def report(root,rows,progress):
         '标题和摘要用于实体候选及研究问题／方法／研究对象提取；作者领域与关键词独立保留，不输入 LLM。',
         f'原始摘要与三字段核心内容各使用 BGE-M3、Qwen3-Embedding-0.6B 保存一份向量，共 {4*len(rows):,} 条。',
         '提取模型 gpt-6-luna / medium，API 并发上限 3；两个嵌入模型优先使用 4060 Ti，设备逐视图记录。', '',
-        f'论文 {len(rows)}；候选 {count:,}，可定位原文 {valid:,}。这不是语义准确率或召回率。', '',
+        f'论文 {len(rows)}；候选 {count:,}，可定位原文 {valid:,}。该数字统计原文定位结果。', '',
         '[实验协议](PROTOCOL.md) · [文献依据](LITERATURE.md) · [进度](PROGRESS.md) · [完整结果](results.json) · [向量](embeddings/metadata.json)', '',
         '| 论文 ID | 标题 | 候选数 | 原文有效数 | 逐篇数据 |','|---|---|---:|---:|---|']
     for r in rows:

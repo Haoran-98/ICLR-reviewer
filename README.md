@@ -8,7 +8,7 @@ ICLR Reviewer 是面向 ICLR 主会论文的研究与展示系统：用可视化
 
 > 更新：2026-11-12。网站与单篇真实运行闭环已完成；审稿准确性、质量提升及正式留出集评测仍待完成。GitHub 提供源码、公开题录、实验汇总和真实截图；完整论文数据库、冻结规则及运行快照须单独准备。
 
-[部署说明](docs/DEPLOYMENT.md) · [方法与论文来源](docs/METHODS.md) · [进度与后续工作](docs/STATUS.md) · [上传内容清单](docs/REPOSITORY_MANIFEST.md) · [技术记录](docs/technical_details/README.md)
+[部署说明](docs/DEPLOYMENT.md) · [方法与论文来源](docs/METHODS.md) · [进度与后续工作](docs/STATUS.md) · [上传内容清单](docs/REPOSITORY_MANIFEST.md) · [技术记录](docs/technical_details/README.md) · [论文图审查能力](docs/FIGURE_REVIEW.md)
 
 ## 1. 展示故事线
 
@@ -51,7 +51,7 @@ flowchart LR
 
 ### 单篇审稿 `/review.html`
 
-从地图带入论文，或上传 DOC、DOCX、DOCS、PDF、Markdown、TXT、LaTeX。检查提取的完整稿件后，填写自己的接口配置后开始审稿。页面分别展示领域与 Skill、Review 与优先级、论文依据；任务状态和失败记录保留，可重试。
+从地图带入论文，或上传 DOC、DOCX、DOCS、PDF、Markdown、TXT、LaTeX。检查提取的完整稿件，填写自己的接口配置后开始审稿。页面分别展示领域与 Skill、Review 与优先级、论文依据；任务状态和失败记录保留，可重试。
 
 ![按稿组合 Skill 与加载理由](docs/images/screenshots/05-skill-composition.png)
 
@@ -61,7 +61,7 @@ flowchart LR
 
 ![concern 原文证据定位](docs/images/screenshots/07-concern-evidence.png)
 
-以上为 2026-11-12 从实际网站代码和既有真实案例采集的截图，地图使用 Canvas 兼容渲染；截图过程未触发模型调用。案例沿用其历史弱模型与规则版本，不代表新任务默认模型。
+截图采集于 2026-11-12，地图采用 Canvas 渲染，审稿结果回放既有案例。每个案例记录其实际模型与规则版本；新任务使用页面填写的模型配置。
 
 ## 2. 数据范围与统计口径
 
@@ -70,32 +70,32 @@ flowchart LR
 | 数据范围 | 当前数量 | 含义 |
 |---|---:|---|
 | ICLR 2024–2026 主会公开题录 | 38,890 篇 | 2024：7,404；2025：11,672；2026：19,814；`raw/` 提供标题摘要索引 |
-| 数据库审稿记录 | 164,810 条 | Review 实体数；164,821 行版本记录另计，不能视为完整初始/最终评分配对 |
+| 数据库审稿记录 | 164,810 条 | Review 实体数；164,821 行版本记录另计，初始/最终评分配对需按时间核查 |
 | 可用正文索引 | 38,715 篇 | 另有 175 篇缺失；正文在外部对象存储中，数据库保存索引及出处 |
-| 论文理解画像 | 38,807 篇 | `paper_understanding_v1`，结构化研究问题、方法、证据等；完成入库不等于人工质量验收 |
+| 论文理解画像 | 38,807 篇 | `paper_understanding_v1`，结构化研究问题、方法和证据；人工质量验收待完成 |
 | 网站封存样本 | 12,964 篇 / 54,900 条审稿 | 从主会题录按年份与领域分层取约三分之一，保留原 500 篇种子 |
 | 网站可用论文级评分 | 均分 12,738 篇 / 分歧 12,725 篇 | 均分至少 1 条有效评分，标准差/极差至少 2 条 |
 | 冻结领域库 | 7,795 个模块 / 9,175 条有效规则 | 1,851 条来源支持、7,324 条候选；当前为 LLM 领域 |
 
-**中稿率 = 当前筛选集合中录用论文数 ÷ 当前筛选集合的总投稿量。** 撤稿、直接拒稿与未知状态也进入分母；界面同时展示各类数量。网站统计属于所展示样本，不能直接代替会议官方全体录用率。
+**中稿率 = 当前筛选集合中录用论文数 ÷ 当前筛选集合的总投稿量。** 撤稿、直接拒稿与未知状态也进入分母；界面同时展示各类数量。网站统计范围为当前展示样本。
 
-均分和分歧按论文等权，篇内标准差使用分母 `n−1`，缺失评分不补零。评分分年份展示；中央 50%/90% 区间表示观测分布范围，不是置信区间。全部决定组与录用/拒稿组存在重叠。
+均分和分歧按论文等权，篇内标准差使用分母 `n−1`，缺失评分不补零。评分分年份展示；中央 50%/90% 区间表示观测分布范围。全部决定组与录用/拒稿组存在重叠。
 
 ## 3. 各部分如何实现
 
 | 部分 | 当前方法 | 论文/方法关系 | 主要入口 |
 |---|---|---|---|
-| 数据与正文 | PostgreSQL 16 + pgvector；原始、业务、语义、孪生、运维五层；内容寻址、文本优先索引、审稿版本回填 | 工程数据管理；不把普通 SQL 操作包装成论文算法 | [database](database/README.md) |
+| 数据与正文 | PostgreSQL 16 + pgvector；原始、业务、语义、孪生、运维五层；内容寻址、文本优先索引、审稿版本回填 | 工程数据管理与来源追踪 | [database](database/README.md) |
 | 解析器比较 | Existing Markdown、Docling、MinerU standard 的 40 篇同稿比较及 8 个困难页视觉冲突审计 | 直接使用解析工具作开发比较；三路融合是后续建议，未全量替换当前正文 | [解析报告](benchmarks/parser_comparison/standard_40_report.md) |
-| 论文理解 | One-shot 结构化提取优先，证据缺失等情况升级为分节层次提取；引用核验与断点恢复 | 自研三路径比较；DocETL-style 为思想改写，不是原系统复现 | [50 篇比较](benchmarks/paper_understanding/50_paper_report.md)、[流水线](scripts/paper_understanding_pipeline.py) |
+| 论文理解 | One-shot 结构化提取优先，证据缺失等情况升级为分节层次提取；引用核验与断点恢复 | 自研三路径比较；DocETL-style 采用计划、分解与汇总思路 | [50 篇比较](benchmarks/paper_understanding/50_paper_report.md)、[流水线](scripts/paper_understanding_pipeline.py) |
 | 实体与领域表示 | 标题摘要抽取实体候选、核心问题/方法/对象；保留原文位置及无效候选；BGE-M3 与 Qwen 双模型、摘要/核心双视图向量 | TaxoAdapt、TopicGPT 用于早期分类方案比较；当前封存展示采用实体与核心内容方案 | [实体样本说明](docs/research/s4-entity-core-third/README.md)、[代码](scripts/s4_entity_core_third.py) |
 | 可视化 | 核心 BGE-M3 向量 → PCA(50) → t-SNE(2)；Atlas/WebGPU 与 Canvas；核密度领域边界；独立论文共现弦图；R/ggdist 分布 | 直接使用 Embedding Atlas 与 ggdist；HINTs 提供“总览—文档—证据”交互启发 | [Web](web/README.md)、[导出](web/export_s4.py) |
-| 历史交流诊断 | 20 篇开发案例，先按时间截断提取 concern/作者动作，再回放后续消息；未观察到回应保留 unknown | 借鉴 RbtAct 动作分析及证据约束响应规划，未训练或复现原论文模型 | [诊断协议](benchmarks/s5_trajectory/README.md)、[代码](scripts/s5_fused20.py) |
+| 历史交流诊断 | 20 篇开发案例，先按时间截断提取 concern/作者动作，再回放后续消息；未观察到回应保留 unknown | 借鉴 RbtAct 动作分析及证据约束响应规划，使用提示词实现 | [诊断协议](benchmarks/s5_trajectory/README.md)、[代码](scripts/s5_fused20.py) |
 | 领域 Skill 提炼 | 原子观察 → 规则合并/修订 → 机制/对象分模块 → 有界恢复 → 来源与文件哈希审计 → 冻结 | 借鉴 AutoManual 的手册构建、ACE 的增量规则维护、ReviewGrounder 的证据约束 | [冻结记录](docs/technical_details/S6_llm_area_library_release.md)、[冻结器](scripts/freeze_llm_area_library.py) |
 | 按新稿组合 | 完整稿件识别领域/方法/任务/对象；字符 TF-IDF 召回 24 条；模型逐条判断；最多 10 条、4,000 代理 token | 本项目实现的限预算选择流程；默认仅用来源支持规则 | [组合协议](docs/technical_details/S6_manuscript_skill_composition.md)、[代码](scripts/compose_manuscript_skills.py) |
-| 单篇审稿 Web | 一次组合审查；输出缺陷/待核实问题/建议，绑定原文证据；任务串行与失败恢复 | 采用 rubric 与正文 grounding 思路；当前没有运行多审稿人及 AC 汇总 | [审稿代码](scripts/review_composed_manuscript.py)、[Web 接入](docs/technical_details/Web_single_paper_review.md) |
+| 单篇审稿 Web | 一次组合审查；输出缺陷/待核实问题/建议，绑定原文证据；任务串行与失败恢复 | 采用 rubric 与正文 grounding 思路，执行单次组合审查 | [审稿代码](scripts/review_composed_manuscript.py)、[Web 接入](docs/technical_details/Web_single_paper_review.md) |
 
-完整论文题名、正式出处、采用程度、实验结果及限制见 **[方法与论文来源](docs/METHODS.md)**。来源支持指至少两个独立配对论文提供来源，不等于规则已被人工判定正确；逐字引文通过也不等于引文足以支持科学判断。
+论文题名、正式出处、采用程度与实验结果见 **[方法与论文来源](docs/METHODS.md)**；规则的人工质量评测列于后续计划。
 
 ## 4. 当前完成进度
 
@@ -105,7 +105,7 @@ flowchart LR
 - **新稿组合与审稿：** MLRA 已完成真实组合和 Review，3 条规则、1,605 代理 token；支持加载理由、历史来源和 concern 原文定位。单篇案例属于工程验证。
 - **网站：** 三个主题页、统一登录、Word/PDF 提取、持久化任务、重试、HTTPS 局域网访问已接入。
 
-网站审稿接口由使用者自行填写：**Base URL、API Key、准确模型 ID**，选择 **Chat Completions** 或 **Responses**。输入框默认留空，没有预置地址、密钥或自动读取服务器账号的入口。
+网站审稿接口由使用者自行填写：**Base URL、API Key、准确模型 ID**，选择 **Chat Completions** 或 **Responses**。连接字段默认留空，由使用者为当前任务提供。
 
 地址和密钥不写入浏览器存储或任务文件。后台仅在当前任务的内存及子进程环境中使用；任务记录保留模型、协议和接口地址的哈希。重试须重新输入原接口、模型及可用密钥；服务重启不会恢复凭据。历史案例继续按原模型与规则版本只读回放。
 
@@ -120,11 +120,11 @@ flowchart LR
 | 5 | 扩大领域与正式层次分类 | 冻结父子关系、适用范围、未知类与人工标注评价；保留实验比较结果 |
 | 6 | 多审稿人、AC 与在线 rebuttal | 先明确增量价值、成本和评测，再接入独立意见、分歧汇总及作者响应流程 |
 
-按当前演示选择，先做**单次组合审查**。3–5 篇新稿的集中验收没有作为本轮 Web 集成前置条件；多稿同时运行也未作为规则有效性的验证方式。详细证据、局限和验收条件见 [STATUS](docs/STATUS.md)。
+当前演示采用**单次组合审查**。新稿质量评测按独立研究任务推进，验收条件见 [STATUS](docs/STATUS.md)。
 
 ## 6. 本地部署与运行
 
-**先区分源码环境和完整数据环境。** 新 clone 不含 522 MiB 网站快照、完整稿件、PostgreSQL 实例及冻结来源包；仅安装依赖不会自动生成当前网站的全部数据。已有资产可恢复使用，也可按 [部署说明](docs/DEPLOYMENT.md) 从自己的研究资产重新导出。
+**本地部署需要源码与数据资产。** 克隆并安装依赖后，准备 522 MiB 网站快照、完整稿件、PostgreSQL 实例及冻结来源包。可恢复已有资产，或按 [部署说明](docs/DEPLOYMENT.md) 从自己的研究资产导出。
 
 ```bash
 git clone https://github.com/Haoran-98/ICLR-reviewer.git
@@ -155,7 +155,7 @@ database/               数据库模式、迁移、建库、导入与版本回�
 scripts/                画像、领域实体、Skill 提炼/冻结/组合、审稿及测试
 benchmarks/             方法比较代码、开发实验协议和汇总
 skills/                 通用审稿及证据约束/模块提炼协议
-agents/                 历史多角色设计；不是当前 Web 运行编排
+agents/                 历史多角色设计与配置
 raw/                    公开标题摘要与领域题录
 docs/                   方法、进度、部署、研究记录和网站截图
 automation/, twin_smoke/ 历史定时汇总与小样本工具

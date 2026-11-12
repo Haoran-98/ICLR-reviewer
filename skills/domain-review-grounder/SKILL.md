@@ -8,7 +8,7 @@ description: Distill reusable domain review criteria from paired historical pape
 Use S4 labels to route a manuscript to a compact domain skill. Historical reviews
 teach inspection criteria; the new manuscript supplies all evidence for its review.
 This adapts ReviewGrounder's rubric and grounding mechanisms to a single review
-call. It does not reproduce its trained drafter or multi-agent system.
+call.
 
 ## Historical skill
 
@@ -17,8 +17,8 @@ call. It does not reproduce its trained drafter or multi-agent system.
 - Distill conditional checks: applicability, what to inspect, evidence needed,
   when a problem is consequential, and when to abstain.
 - A reusable check needs review examples from at least two different papers and
-  paired manuscript passages. Source count is a provenance requirement, not proof
-  of scientific correctness or expert consensus.
+  paired manuscript passages. Record source support as provenance; assess
+  scientific correctness through independent adjudication.
 - Keep the target paper and its versions out of the historical sources. Anonymous
   reviewer aliases do not identify the same person across papers.
 
@@ -45,7 +45,7 @@ responses are excluded from generation. Do not enter rebuttal or score-change mo
 Use [domain_review_skill.py](../../scripts/domain_review_skill.py) to prepare the
 read-only development snapshot, distill once, and review once. The runner saves
 input hashes, S4 route evidence, source passages, raw responses, usage, and checks.
-It reuses matching completed calls and does not automatically retry failed calls.
+It reuses matching completed calls; failed calls remain recorded for explicit recovery.
 Data-derived domain skills stay in the selected external run directory.
 
 Source: [ReviewGrounder, ACL 2026](https://aclanthology.org/2026.acl-long.1477/).

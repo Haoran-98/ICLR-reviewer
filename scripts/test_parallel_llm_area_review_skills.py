@@ -127,13 +127,13 @@ def main():
         root = Path(folder)
         config = dict(model='qwen-flash-iq3', concurrency=1, context_limit=262144,
                       read_timeout_seconds=900, accepted_response_models=['qwen-flash-iq3'])
-        client = p.ChatClient(root, dict(base_url='http://127.0.0.1:18091/v1', key='local'), config, 'local')
+        client = p.ChatClient(root, dict(base_url='http://local-model.invalid/v1', key='local'), config, 'local')
         release.clear(); reached.clear(); local_calls = 0
         class LocalResponse(Response):
             def json(self): return dict(super().json(), model='qwen-flash-iq3')
         def local_post(url, **kwargs):
             nonlocal local_calls
-            assert url == 'https://provider.invalid/v1'
+            assert url == 'http://local-model.invalid/v1/chat/completions'
             assert kwargs['json']['model'] == 'qwen-flash-iq3'
             assert kwargs['json']['chat_template_kwargs'] == dict(enable_thinking=False)
             assert 'thinking' not in kwargs['json'] and kwargs['timeout'] == (20, 900)

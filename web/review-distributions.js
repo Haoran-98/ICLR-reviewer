@@ -105,7 +105,7 @@ export function renderPaperDistributions(host, papers, years, population, disagr
       for (const [a, b, thickness] of [[s.q05, s.q95, 2.5], [s.q25, s.q75, 7]])
         group.append(svg('line', { x1: x(a), x2: x(b), y1: iy, y2: iy, stroke: color, 'stroke-width': thickness, 'stroke-linecap': 'round', class: 'score-interval' }));
       const median = svg('circle', { cx: x(s.median), cy: iy, r: 4.2, fill: '#14243a', stroke: 'white', 'stroke-width': 1, class: 'score-median' });
-      median.append(svg('title', {}, `中位数 ${s.median.toFixed(3)}\n中央50% [${s.q25.toFixed(3)}, ${s.q75.toFixed(3)}]\n中央90% [${s.q05.toFixed(3)}, ${s.q95.toFixed(3)}]\n经验分位区间，不是置信区间`)); group.append(median);
+      median.append(svg('title', {}, `中位数 ${s.median.toFixed(3)}\n中央50% [${s.q25.toFixed(3)}, ${s.q75.toFixed(3)}]\n中央90% [${s.q05.toFixed(3)}, ${s.q95.toFixed(3)}]\n论文指标的经验分位区间`)); group.append(median);
       group.append(svg('text', { x: right, y: baseline + 81, 'text-anchor': 'end', 'font-size': 11, fill: '#526078' }, `中位 ${s.median.toFixed(2)} · 50% [${s.q25.toFixed(2)}, ${s.q75.toFixed(2)}] · 90% [${s.q05.toFixed(2)}, ${s.q95.toFixed(2)}]`));
       root.append(group);
     }

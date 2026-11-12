@@ -685,9 +685,13 @@ def generate(args,papers):
 
 
 def start_local(args):
+    base_url = credentials(args.auth)['qwen']['base_url']
+    if not base_url:
+        raise ValueError('Configure qwen_base_url in auth or QWEN_BASE_URL in the environment')
+    local_url = base_url.removesuffix('/v1')
     try:
-        if requests.get('https://provider.invalid/v1',timeout=3).status_code==200:
-            models=requests.get('https://provider.invalid/v1',timeout=3).json()
+        if requests.get(local_url+'/health',timeout=3).status_code==200:
+            models=requests.get(base_url+'/models',timeout=3).json()
             if any(m['id']=='qwen3.5-9b-q8' for m in models.get('data',[])):
                 return
             raise RuntimeError('Port 8080 belongs to another model')
@@ -707,7 +711,7 @@ def start_local(args):
     write(args.root/'local_server.json',{'unit':'s4-qwen35-9b-q8','command':command,'started_at':now()})
     for _ in range(180):
         try:
-            if requests.get('https://provider.invalid/v1',timeout=3).status_code==200:
+            if requests.get(local_url+'/health',timeout=3).status_code==200:
                 return
         except requests.RequestException:
             pass

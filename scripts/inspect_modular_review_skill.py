@@ -13,7 +13,7 @@ def render(root):
     s.write(root/'AUDIT.json',checked)
     manifest=s.read(root/'manifest.json');library=s.read(root/'rule_library.json')
     cases=['# 100 篇历史论文：逐篇凝练结果','',
-           '以下状态是模型对历史意见及部分正文的解释，不代表人工核实。原文与字符位置在各篇冻结输入中。','']
+           '以下状态由模型依据历史意见与部分正文生成，原文与字符位置保存在各篇冻结输入中，人工判定待完成。','']
     areas=defaultdict(Counter);hist=Counter();coverage=[]
     for pid in manifest['source_ids']:
         source=s.read(root/f'inputs/{pid}.json');extracted=s.read(root/f'cases/{pid}.json')
@@ -52,7 +52,7 @@ def render(root):
         application.update(a['disposition'] for a in review['rules_applied'])
     (root/'MODULES.md').write_text('\n'.join(lines)+'\n')
     changes=['# 规则增量更新记录','',
-             '以下是对试运行候选库应用的局部变更，不是已发布的专家规则。原始操作、旧／新内容及版本哈希完整保留。','']
+             '以下记录试运行候选库的局部变更，保留原始操作、旧／新内容及版本哈希。','']
     types=Counter()
     for batch in s.read(root/'updates.json'):
         changes += [f'## 批次 {batch["batch"]}','',
@@ -94,7 +94,7 @@ def render(root):
           f'本地恢复 {summary["recovered_without_inference"]} 个结果：来源引用数量放宽与目标唯一引用缩写规范化分别记录。完整保留原始响应，无额外推理。',
           f'历史意见解释状态（模型标注，非准确率）：{dict(hist)}。',
           f'试审规则适用性（模型标注）：{dict(application)}。',
-          f'来源稿证据包平均正文字符覆盖约 {100*sum(coverage)/len(coverage):.1f}%；这是覆盖量，不是证据质量。','',
+          f'来源稿证据包平均正文字符覆盖约 {100*sum(coverage)/len(coverage):.1f}%；该比例衡量输入文本覆盖。','',
           '| 领域 | 论文 | 原子意见 | 候选检查 |','|---|---:|---:|---:|']
     for area in s.AREAS:
         c=areas[area];more.append(f'| {area} | {c["papers"]} | {c["atomic_cases"]} | {c["candidate_checks"]} |')

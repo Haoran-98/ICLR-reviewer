@@ -6,8 +6,8 @@ description: Distill historical paper and initial-review pairs into reusable mod
 # Modular Review Grounder
 
 Use [the runner](../../scripts/modular_review_skill.py) for the 100-source/five-target pilot.
-Keep the sealed S4 data read-only. S4 core entities provide retrieval facets, not a
-validated fine-grained taxonomy. Models remain frozen.
+Keep the sealed S4 data read-only. Use S4 core entities as retrieval facets.
+Models remain frozen.
 
 Pair atomic historical observations with manuscript passages. Distill applicability,
 inspection steps, issue conditions, clearing conditions, consequences and exceptions.
@@ -16,7 +16,7 @@ retrieved evidence remains unknown. Do not reconstruct imaginary reasoning trace
 
 Keep general, domain, method, task and specialty modules composable. A rule needs
 paired evidence from two independent manuscripts to be source-supported; a general
-rule also needs two source areas. This threshold does not establish scientific truth.
+rule also needs two source areas. Scientific validity requires independent adjudication.
 Single-paper observations remain cases or candidate checks.
 
 Curate local deltas with stable rule IDs. Record the previous and next contents,
@@ -35,5 +35,5 @@ Adapted mechanisms:
 - [ACE, ICLR 2026](https://openreview.net/forum?id=eC4ygDs02R): localized itemized deltas and deduplication.
 - [ReviewGrounder, ACL 2026](https://aclanthology.org/2026.acl-long.1477/): rubric-guided evidence grounding.
 
-This is a bounded adaptation, not a reproduction of their complete agent systems.
+The implementation combines these mechanisms in a bounded extraction, curation and review workflow.
 Stop after 100 extractions, ten curation batches and five trial reviews for inspection.

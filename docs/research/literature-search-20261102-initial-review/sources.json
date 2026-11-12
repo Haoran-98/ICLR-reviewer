@@ -52,7 +52,7 @@
       "abstract": "Large language models (LLMs) can generate fluent peer reviews but often miss sparse, subtle, and document-level scientific errors. We introduce PaperAudit-Bench, a benchmark for evaluating paper-level error detection and error-aware automated review. It comprises two components: (1) PaperAudit-Dataset, 220 high-quality AI/ML papers containing more than 2,200 controlled synthetic errors across eight categories; and (2) PaperAudit-Review, an evidence-aware framework that links structured error detection to review generation. Experiments across models, error categories, paper sections, and analysis depths show that sparse long-context auditing remains challenging for current LLMs. Conditioning review generation on explicit, manuscript-grounded error evidence produces more conservative and discriminative assessments that align more closely with human judgments than representative automated-review baselines. The dataset also supports post-training compact detectors through SFT and RL; Qwen3-14B achieves 55.8% F1 at Detection@1 under a fixed held-out protocol. A PubPeer transfer study and deployment in ScienceOne, a scientific foundation-model platform led by the Chinese Academy of Sciences, further illustrate practical applicability.Code and Dataset Page: https://github.com/TU2021/PaperAuditScienceOne Manuscript Review: https://www.scienceone.cn/lit/#/assistant",
       "metadata_sha256": "3eda4b975d5e48512aa51be4c4a487491dbf4ad80f73fe2b73e4f63cbb479330",
       "read_depth": "全文方法与实验设置局部核读",
-      "relevance": "先记录论文内的可定位错误证据，再形成审稿意见；合成错误数据不等于真实投稿错误分布。",
+      "relevance": "先记录论文内可定位的错误证据，再形成审稿意见；错误分布按合成数据协议解释。",
       "pdf_sha256": "52fdcac7ca249040a9085b662e4a679b48bb894ce6ab0a88ede923e0a55a1aca"
     },
     {
@@ -72,7 +72,7 @@
       "abstract": "Reviewer comments naturally relate to specific parts of the reviewed paper, yet grounding these comments to the underlying evidence is difficult due to long multimodal documents. Existing benchmarks do not capture this setting and largely focus on explicit, information-seeking queries. We introduce ReGround, a large-scale dataset for reviewer comment grounding that links 10,267 reviewer comments to 16,274 evidence in the original anonymous submission of 3,656 papers. We build on a simple observation: author rebuttals often include explicit references to content of the submission used to address reviewer comments, providing a high-precision annotation source. We cast grounding as a retrieval task and evaluate a wide range of retrieval methods. Results show that retrieval over the entire paper content performs poorly, evidence-type inference is a major bottleneck, and multimodal evidence provides complementary signals that text alone misses. Our dataset exposes grounding reviewer comments as a difficult and practically important problem for scientific document understanding.",
       "metadata_sha256": "c086537ea9c11c6c4405cc7b1a9bee0f43df352fa11bd2dfea51bd3d05bb7fb0",
       "read_depth": "官方摘要与出版元数据",
-      "relevance": "审稿评论到原始匿名稿多模态证据的检索数据；不是完整审稿生成器。"
+      "relevance": "审稿评论到原始匿名稿的多模态证据检索数据。"
     },
     {
       "id": "2025.acl-long.1420",

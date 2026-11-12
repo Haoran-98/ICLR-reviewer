@@ -139,7 +139,7 @@ def report(papers, results, nodes):
         f'词表：{len(nodes)} 个节点、12 个知识单元。输入 {progress["input_tokens"]:,}、输出 {progress["output_tokens"]:,}、'
         f'其中思考 {progress["reasoning_tokens"]:,} token；成功请求 {progress["successful_requests"]}，失败尝试 {progress["failed_attempts"]}。',
         f'路径深度分布（含 AI 根）：{dict(depths)}；各层不同来源节点数：{breadth}。',
-        '这 5 篇是上一轮的诊断样本，覆盖 2024—2026 年。作者领域已作为输入，不计算一级准确率；结构与原文引用校验通过并不等于语义正确。', '']
+        '这 5 篇是上一轮的诊断样本，覆盖 2024—2026 年。作者领域作为输入条件；结构、原文引用与语义准确性分别验收。', '']
     for paper, r in zip(papers, results):
         lines += [f'## {r["paper_id"]} · {r["title"]}', '',
             f'年份 {r["year"]}；[论文](https://openreview.net/forum?id={paper["forum_id"]})', '',

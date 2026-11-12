@@ -130,7 +130,7 @@ is added. Batch cache_usage summaries preserve missing-vs-zero usage coverage an
 cache reads/hit ratios from responses, not assumed savings. Scheduling may limit prefix reuse.
 Parser v2 handles the observed Batch status_code=0 sentinel only with an error-free completion
 body that passes finish-reason, JSON, schema-field and original-evidence validation. It preserves
-the raw status rather than fabricating HTTP200. Previously imported batches are revalidated from
+the original HTTP status. Previously imported batches are revalidated from
 downloaded local files, retaining original attempt decisions in a before_batch_response_v2 audit.
 This does not send inference requests or reset attempt budgets. Malformed JSON remains retryable;
 new K2.6 requests use response_format=json_object, while semantic/evidence checks remain mandatory.
@@ -142,7 +142,7 @@ attempts are retained and the new round retains the same initial-plus-five-retri
 Fusion Kimi calls (alignment, cross-label and containment votes) also use Batch, as does Kimi
 generation in the real no-related-work ablation. analysis_batch_progress.json and
 batch/analysis_active.json record the active analysis batch; other providers follow auth concurrency.
-Pruning failures are semantic outcomes, not a reason to repeat unchanged inference six times.
+Record pruning failures as semantic outcomes and route them to the audit ledger.
 
 Embedding uses the pinned BGE-M3 revision, six masks and 512-token chunks with 64 overlap.
 The Qwen server starts after embedding releases physical GPU 1 (V100). S3 remains untouched.
@@ -172,7 +172,7 @@ Stopping the local worker does not cancel a remote batch: explicitly cancel the 
 before pausing, retain its completed results, then stop further dependent submissions.
 Logs are batch.log and fusion.log in the artifact directory. execution.json tracks generation;
 postprocess_execution.json tracks postprocessing. pilot_summary.json is written only after
-all four models finish the pilot. generation_complete.json does not mean quality acceptance.
+all four models finish the pilot. generation_complete.json records generation status; quality acceptance follows the separate pilot audit.
 
 Checks (database checks create and remove only a uniquely named temporary test database):
 

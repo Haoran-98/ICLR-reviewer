@@ -165,7 +165,7 @@ def main(root):
         '运行脚本、依赖版本、文献快照及模型校验值均保存。已有结果复用单独记录；新调用用量不含复用记录。\n\n'+
         '初始提取脚本和配置保存在 runtime/scripts 与 runtime/extraction-config.json；向量及最终导出脚本保存在 '
         'runtime/scripts-final。模型原生 pooling，完整文本、无 query instruction、float32，长度逐条预检。新视图优先 GPU，设备逐视图保存。\n\n'+
-        '实体类型、角色和核心内容是模型判断；原文定位有效率不代表语义准确率、召回率或匹配收益。'
+        '实体类型、角色和核心内容记录模型判断，原文定位有效率用于来源审计；语义准确性、召回率与匹配收益需独立评测。'
         '本实验未用人工金标准评估这些指标。文献用于自定义标注设计，并非训练复现。\n\n'+
         '文件级 SHA256 见 MANIFEST.sha256；完整大模型权重留在已固定版本的本地缓存，封存包保存外部资产校验值。\n')
     excluded={'AUDIT_MANIFEST.json','MANIFEST.sha256','pipeline.log','finalize.log'}

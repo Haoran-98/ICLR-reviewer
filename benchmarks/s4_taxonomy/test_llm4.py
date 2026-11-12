@@ -18,6 +18,22 @@ import numpy as np
 
 
 class EvidenceTests(unittest.TestCase):
+    def test_local_start_uses_configured_address(self):
+        args = SimpleNamespace(auth=Path('unused'))
+        with patch.object(s4, 'credentials', return_value={'qwen': {'base_url': ''}}), \
+             patch.object(s4.requests, 'get') as get:
+            with self.assertRaisesRegex(ValueError, 'QWEN_BASE_URL'):
+                s4.start_local(args)
+            get.assert_not_called()
+        config = {'qwen': {'base_url': 'http://local-model.invalid/v1'}}
+        with patch.object(s4, 'credentials', return_value=config), \
+             patch.object(s4.requests, 'get') as get:
+            get.return_value.status_code = 200
+            get.return_value.json.return_value = {'data': [{'id': 'qwen3.5-9b-q8'}]}
+            s4.start_local(args)
+            self.assertEqual([call.args[0] for call in get.call_args_list],
+                             ['http://local-model.invalid/health', 'http://local-model.invalid/v1/models'])
+
     def test_historical_candidates_remain_and_replacement_votes_are_masked_once(self):
         with tempfile.TemporaryDirectory() as directory:
             source=Path(directory)/'source'

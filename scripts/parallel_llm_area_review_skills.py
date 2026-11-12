@@ -338,7 +338,7 @@ class Progress:
             f'本进程并发峰值：{peaks}；冲突重新排队 {conflicts} 批。',
             f'候选状态：{dict(statuses)}。',
             f'累计已返回输入 {usage["input_tokens"]:,}、输出 {usage["output_tokens"]:,} token。',
-            f'ETA {p["phase_eta_seconds"]} 秒，按候选完成速度估计；unknown/unresolved 不代表科学问题已解决。',
+            f'ETA {p["phase_eta_seconds"]} 秒，按候选完成速度估计；unknown/unresolved 按各自状态保留。',
             f'停止原因：{error}' if error else '',
             '范围：仅基础与前沿模型（含 LLM）；全量运行保持暂停。', '']))
         old = s.read(self.root/'summary.json')

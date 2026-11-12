@@ -9,8 +9,8 @@
 - 固定 500 篇，2024/2025/2026 年分别 167/167/166 篇；覆盖 23 个跨年 canonical 一级领域，年份内按领域轮转均衡抽样。
 - 排除旧 200 篇实验的所有 paper_id，按归一化标题去重。不同年份可用领域选项并不完全相同。
 - `inputs.json` 只有 paper_id、title、abstract。作者 primary area 及年份保存在独立 `evaluation/gold.json`。
-- 生成和聚类不读取每篇真实领域；扁平方法已知类别数量 K=23，遵循 LiSA 论文主实验使用真实类别数量的设置。K=23 属于先验，不是完全未知主题数发现。
-- 无标签主题发现可以使用全部 500 篇；因此是 transductive 实验。均衡样本的准确率不代表全库自然分布准确率。
+- 生成和聚类不读取每篇真实领域；扁平方法已知类别数量 K=23，遵循 LiSA 论文主实验使用真实类别数量的设置。实验提供 K=23 的类别数量先验。
+- 无标签主题发现可以使用全部 500 篇；因此是 transductive 实验。准确率的统计范围为该均衡样本。
 - 作者提交的一级领域是比较目标，不能充当二三级主题、层级边或审稿人适配程度的标准答案。
 
 ## 统一模型和推理
@@ -30,7 +30,7 @@
 | LiSA | 候选主题与描述、双空间 KMeans、无标签 Hungarian 对齐、近邻 LLM 修正、双 TPN 及论文公式 5–11 的协同损失 | 官方仓库仅 README，按论文公式实现；K=23；256–256–K；Adagrad 1e-3；30 epochs；batch 125；tau=1.5、alpha=0.8；修正近邻 5、训练近邻 15；修正后的主题向量使用主题簇均值；输出网络列用不含 gold 的匹配对齐主题名 |
 | LLM-ITL | 官方 NVDM 网络结构、主题词 LLM 修订、word-intrusion 置信度、可微 EMD 损失回传训练 | K=23；CountVectorizer 至多 5000 词，min_df=3、max_df=.7；250 epochs，前 200 warmup、后 50 refinement；每五轮刷新 LLM 反馈，每 minibatch 都回传 OT；权重 200；BGE 替代 GloVe；将官方 uniform 噪声改为 Gaussian，将可能为负的 transport mass 改为 softmax |
 
-LLM-ITL 的低频反馈刷新是本地资源适配，不宣称等同于官方逐 minibatch 刷新配置。保留每次训练损失及非零 OT 梯度证据。LiSA 和 LLM-ITL 的主题结构原生扁平，深度按 1 记录。
+LLM-ITL 的低频反馈刷新是本地资源适配，刷新频率按本地配置记录。保留每次训练损失及非零 OT 梯度证据。LiSA 和 LLM-ITL 的主题结构原生扁平，深度按 1 记录。
 
 ## 评价
 
@@ -54,7 +54,7 @@ bash scripts/s4_qwen38_27b_64k.sh # 单独终端启动服务
 
 客户端与服务端均显式设置 enable_thinking=true 和 reasoning_effort=medium。客户端取消禁用思考的提示，初次 max_tokens 为方法原输出预算加 8192（包含思考和最终 JSON），长度中止时在 64K 容量内扩大预算重试。请求超时为 3600 秒。运行前核验权重路径与每槽上下文，防止误用旧服务。
 
-实际验证：runtime/model_switch_verification.json 记录真实论文请求，medium 思考内容非空、finish_reason=stop、JSON/schema 校验通过；服务器报告单槽 65536。单请求验证不代表 500 篇方法比较已完成。
+实际验证：runtime/model_switch_verification.json 记录真实论文请求，medium 思考内容非空、finish_reason=stop、JSON/schema 校验通过；服务器报告单槽 65536。该记录验证单请求传输，500 篇比较结果另行记录。
 
 当前持久运行服务：`iclr-s4-qwen38-medium-64k.service`；四方法及最终评价任务：`iclr-s4-repro500-qwen38.service`。使用 `systemctl --user status` 查看状态；逐请求缓存与日志保存在新实验根目录。实际任务从 runtime 代码快照执行，使用 CPU 计算增量向量。
 
@@ -77,3 +77,5 @@ bash scripts/s4_qwen38_27b_64k.sh # 单独终端启动服务
 仅在请求长度中止或 ReadTimeout 后，重试设置 reasoning_budget_tokens=8192，保持 enable_thinking=true、medium 思考强度与原 JSON schema；实际重试参数逐次保存。每次调用最多六次新尝试，历史失败尝试继续保留并递增编号。此规则统一适用于四种方法；此前成功响应不重算。
 
 TaxoAdapt 官方 expansion.py 保持原文件，在 runtime 生成本地副本，初始化 cluster_topics/cluster_outputs，修复失败诊断使用未赋值变量的问题。另加入批次开始事件，并以 workflow_status.json 持久保存实际退出状态，避免将已中断的任务显示为进行中。故障前代码及本次代码 hash 保存在 runtime。
+
+本地模型服务器地址通过 `S4_REPRO_QWEN_URL` 环境变量提供，值为服务 origin，调用方另行拼接 `/props` 等路径。
