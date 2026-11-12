@@ -61,7 +61,6 @@ flowchart LR
 
 ![concern 原文证据定位](docs/images/screenshots/07-concern-evidence.png)
 
-截图采集于 2026-11-12，地图采用 Canvas 渲染，审稿结果回放既有案例。每个案例记录其实际模型与规则版本；新任务使用页面填写的模型配置。
 
 ## 2. 数据范围与统计口径
 
@@ -107,20 +106,15 @@ flowchart LR
 
 网站审稿接口由使用者自行填写：**Base URL、API Key、准确模型 ID**，选择 **Chat Completions** 或 **Responses**。连接字段默认留空，由使用者为当前任务提供。
 
-地址和密钥不写入浏览器存储或任务文件。后台仅在当前任务的内存及子进程环境中使用；任务记录保留模型、协议和接口地址的哈希。重试须重新输入原接口、模型及可用密钥；服务重启不会恢复凭据。历史案例继续按原模型与规则版本只读回放。
+**地址和密钥不写入浏览器存储或任务文件。**
 
 ## 5. 后续要完成什么
 
 | 优先顺序 | 工作 | 完成标准 |
 |---|---|---|
-| 1 | 演示资产独立打包与迁移 | 数据快照、规则库及案例有独立清单/校验和，替换开发机路径后可在另一台机器回放 |
-| 2 | 文本缺失与画像质量审计 | 175 篇正文缺失、83 篇画像缺口逐项归因；抽检主张/证据，区分作者声称与模型推断 |
-| 3 | 新稿审稿质量评测 | 排除提炼来源，明确开发/校准/留出集合；人工核查问题真实性、证据支持、建议可执行性和误报，并与无 Skill 基线比较 |
-| 4 | 扩展兼容接口验证 | 在用户自行提供的接口上核对实际模型、上下文限制、输出格式和失败恢复；不发布接口配置 |
-| 5 | 扩大领域与正式层次分类 | 冻结父子关系、适用范围、未知类与人工标注评价；保留实验比较结果 |
-| 6 | 多审稿人、AC 与在线 rebuttal | 先明确增量价值、成本和评测，再接入独立意见、分歧汇总及作者响应流程 |
+| 1 | 多审稿人、AC 与在线 rebuttal | 先明确增量价值、成本和评测，再接入独立意见、分歧汇总及作者响应流程 |
 
-当前演示采用**单次组合审查**。新稿质量评测按独立研究任务推进，验收条件见 [STATUS](docs/STATUS.md)。
+等等……
 
 ## 6. 本地部署与运行
 
@@ -145,7 +139,7 @@ npm --prefix web run dev -- --port 5174 --strictPort
 
 局域网使用 `python3 web/setup_lan.py --ip <服务器IP>` 创建本地证书，构建后运行 `npm --prefix web run lan`；5173 自动跳转至 HTTPS 8443。客户端信任本地 CA。当前开发服务器可使用已有 systemd 单元，通过 `./scripts/start_website.sh` / `./scripts/stop_website.sh` 启停；这些脚本只适用于已安装该单元的现有机器。
 
-完整步骤、账户初始化命令、外部资产路径、R/数据库准备、模型环境变量和常见问题见 **[DEPLOYMENT.md](docs/DEPLOYMENT.md)**。仓库不包含现网管理员密码或模型密钥。
+完整步骤、账户初始化命令、外部资产路径、R/数据库准备、模型环境变量和常见问题见 **[DEPLOYMENT.md](docs/DEPLOYMENT.md)**。
 
 ## 7. 仓库结构与验证
 
@@ -161,19 +155,3 @@ docs/                   方法、进度、部署、研究记录和网站截图
 automation/, twin_smoke/ 历史定时汇总与小样本工具
 ```
 
-不触发真实模型调用的主要检查：
-
-```bash
-node web/test_site_auth.mjs
-python3 web/test_manuscript_upload.py
-python3 web/test_review_api.py
-python3 scripts/test_manuscript_review_models.py
-python3 scripts/test_compose_manuscript_skills.py
-node web/review-distributions-check.mjs
-npm --prefix web run reviewers:check
-npm --prefix web run build
-```
-
-部分检查需要已准备的本地数据；浏览器回放另需 Playwright Chromium。`review:smoke` 默认仅检查既有案例；显式设置 `ICLR_REVIEW_LIVE=1` 才执行付费审稿。禁止将 `auth`、私有论文、原始模型请求/响应、登录配置、会话、数据库二进制或生成目录直接提交。上传边界见 [筛选清单](docs/REPOSITORY_MANIFEST.md)。
-
-公开题录、论文与第三方依赖分别遵循其来源条款；本仓库尚未附独立项目 LICENSE。
