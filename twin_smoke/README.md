@@ -1,5 +1,7 @@
 # ICLR Twin Smoke Test
 
+> 历史小样本实验工具。当前论文理解、规则库与网站入口见 [项目首页](../README.md)。生成的 `output/` 仅保留本地，不随 Git 发布；旧实验不视为当前正式审稿评测。
+
 Build a deterministic 0.1% sample and count the current JSON corpus with the
 `o200k_base` tokenizer:
 

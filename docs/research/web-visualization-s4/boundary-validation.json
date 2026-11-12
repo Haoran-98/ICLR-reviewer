@@ -1,0 +1,151 @@
+{
+  "data_version": "s4-433874ad15af3800",
+  "papers": 12964,
+  "method": "normalized Gaussian KDE; argmax domains; marching squares at equal maximum densities; support >= 1.5% peak",
+  "grid": 160,
+  "sigma": 5,
+  "supported_domains": 23,
+  "source_domains": 23,
+  "domains": [
+    {
+      "domain": "alignment_fairness_safety_privacy",
+      "count": 1097,
+      "x": 64.41317531250002,
+      "y": -20.835309687500008
+    },
+    {
+      "domain": "applications_to_computer_vision_audio_language_and_other_modalities",
+      "count": 1361,
+      "x": -40.26888718750001,
+      "y": -39.67808093750001
+    },
+    {
+      "domain": "applications_to_neuroscience_cognitive_science",
+      "count": 243,
+      "x": -25.61339843750001,
+      "y": -6.179820937500011
+    },
+    {
+      "domain": "applications_to_physical_sciences_physics_chemistry_biology_etc",
+      "count": 575,
+      "x": -33.98796343750001,
+      "y": 1.1479234374999976
+    },
+    {
+      "domain": "applications_to_robotics_autonomy_planning",
+      "count": 340,
+      "x": -4.676985937500007,
+      "y": -31.30351593750001
+    },
+    {
+      "domain": "causal_reasoning",
+      "count": 139,
+      "x": -23.519757187500005,
+      "y": 12.662950312499987
+    },
+    {
+      "domain": "datasets_and_benchmarks",
+      "count": 874,
+      "x": 53.94496906250001,
+      "y": -17.694847812500008
+    },
+    {
+      "domain": "foundation_or_frontier_models_including_llms",
+      "count": 1319,
+      "x": 36.14901843749999,
+      "y": -6.179820937500011
+    },
+    {
+      "domain": "generative_models",
+      "count": 1177,
+      "x": -51.78391406250002,
+      "y": -7.226641562500006
+    },
+    {
+      "domain": "infrastructure_systems",
+      "count": 106,
+      "x": 3.6975790624999973,
+      "y": -13.50756531250002
+    },
+    {
+      "domain": "interpretability_explainability",
+      "count": 507,
+      "x": -2.583344687500002,
+      "y": -8.273462187500016
+    },
+    {
+      "domain": "learning_on_graphs_and_other_geometries_topologies",
+      "count": 386,
+      "x": -39.22206656250001,
+      "y": 38.833465937499994
+    },
+    {
+      "domain": "learning_on_time_series_and_dynamical_systems",
+      "count": 245,
+      "x": -48.64345218750001,
+      "y": 15.803412187500001
+    },
+    {
+      "domain": "learning_theory",
+      "count": 365,
+      "x": -18.285654062500008,
+      "y": 44.0675690625
+    },
+    {
+      "domain": "metric_learning_kernel_learning_and_sparse_coding",
+      "count": 12,
+      "x": -24.5665778125,
+      "y": -22.928950937500012
+    },
+    {
+      "domain": "neurosymbolic_hybrid_ai_systems_physics_informed_logic_formal_reasoning_etc",
+      "count": 144,
+      "x": -17.238833437500013,
+      "y": 30.458900937500005
+    },
+    {
+      "domain": "optimization",
+      "count": 527,
+      "x": 5.791220312500002,
+      "y": 41.97392781250001
+    },
+    {
+      "domain": "other_machine_learning",
+      "count": 722,
+      "x": 0.5571171874999976,
+      "y": 62.91034031250001
+    },
+    {
+      "domain": "probabilistic_methods_bayesian_methods_variational_inference_sampling_uq_etc",
+      "count": 268,
+      "x": -5.723806562500002,
+      "y": 23.131156562499996
+    },
+    {
+      "domain": "reinforcement_learning",
+      "count": 799,
+      "x": 37.19583906250001,
+      "y": 28.365259687499986
+    },
+    {
+      "domain": "representation_learning_for_computer_vision_audio_language_and_other_modalities",
+      "count": 350,
+      "x": -22.47293656250001,
+      "y": -30.256695312500014
+    },
+    {
+      "domain": "transfer_learning_meta_learning_and_lifelong_learning",
+      "count": 442,
+      "x": 11.025323437500006,
+      "y": 13.709770937499982
+    },
+    {
+      "domain": "unsupervised_self_supervised_semi_supervised_and_supervised_representation_learning",
+      "count": 966,
+      "x": -8.864268437500002,
+      "y": 9.522488437500002
+    }
+  ],
+  "contours": 66,
+  "passed": true
+}

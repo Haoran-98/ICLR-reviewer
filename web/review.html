@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," /><title>单篇审稿 · ICLR 研究工作台</title>
+  <link rel="stylesheet" href="/review.css" />
+</head>
+<body>
+<main>
+  <header class="page-heading"><div><p class="eyebrow">ICLR 研究工作台 / REVIEW</p><h1>单篇审稿</h1><p class="muted">从研究内容选择检查经验，让每条审稿意见回到论文依据。</p></div><a class="quiet-link" href="/">在论文地图中探索 ↗</a></header>
+  <div class="workspace">
+    <aside>
+      <section class="panel">
+        <h2>选择稿件</h2>
+        <div class="input-tabs" role="group" aria-label="稿件来源"><button id="choose-existing" aria-pressed="true">已有论文</button><button id="choose-upload" aria-pressed="false">上传新稿</button></div>
+        <form id="paper-form">
+          <div id="existing-input"><label for="paper-search">搜索论文标题或 ID</label><input id="paper-search" type="search" placeholder="如 Multi-Head Low-Rank Attention" autocomplete="off" /><div id="paper-results" class="paper-results"></div><p id="chosen-paper" class="muted">可从论文探索页面带入选中的稿件。</p></div>
+          <div id="upload-input" hidden><label for="upload-title">稿件标题</label><input id="upload-title" placeholder="填写标题" /><label for="manuscript-file">上传完整稿件</label><input id="manuscript-file" type="file" accept=".md,.txt,.tex,.doc,.docx,.docs,.pdf,text/plain,text/markdown,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf" /><small>支持 Word（DOC / DOCX / DOCS）、PDF、Markdown / TXT / LaTeX，文件上限 15 MB。Word 与 PDF 在本站服务器提取文本；扫描版 PDF 请先进行 OCR。</small><p id="upload-status" class="muted small" role="status" aria-live="polite"></p><label for="manuscript-text">检查提取结果，或粘贴完整稿件</label><textarea id="manuscript-text" rows="9" placeholder="粘贴正文及可用的附录文本…"></textarea></div>
+          <p class="scope-note">当前支持基础模型与大语言模型领域。历史来源论文可浏览经验，独立审稿请选择未参与提炼的稿件。</p>
+          <label for="review-model">审稿 API / 模型</label>
+          <select id="review-model" aria-describedby="model-status"><option value="">正在读取配置…</option></select>
+          <p id="model-status" class="muted small" role="status"></p>
+          <button id="start-review" class="primary" type="submit" disabled>开始审稿</button>
+        </form>
+        <p id="input-error" role="alert" class="error"></p>
+        <button id="load-example" class="text-button">查看 MLRA 已有组合案例</button>
+      </section>
+      <section class="panel"><h2>审稿记录</h2><p class="muted small">离开页面后，任务与已完成结果继续保留。</p><div id="run-list">正在读取…</div></section>
+    </aside>
+    <div class="main-column">
+      <section class="panel status-panel"><div class="section-heading"><h2 id="run-title">准备开始</h2><span id="state-badge" class="badge">待选择稿件</span></div><p id="run-message" role="status" aria-live="polite">选择论文或上传稿件，依次完成范围识别、Skill 组合和证据审查。</p><ol id="pipeline" class="pipeline"><li data-stage="input">论文输入</li><li data-stage="profile">领域与对象</li><li data-stage="composition">Skill 组合</li><li data-stage="review">证据审查</li><li data-stage="completed">Review</li></ol><button id="retry-run" hidden>保留结果并重试</button><p id="run-model" class="muted small"></p><p id="usage" class="muted small"></p></section>
+      <div class="result-tabs" role="group" aria-label="审稿子主题"><button data-view="overview" aria-pressed="true">领域与 Skill</button><button data-view="review" aria-pressed="false">Review 与优先级</button><button data-view="evidence" aria-pressed="false">论文依据</button></div>
+      <section id="view-overview"><div id="profile-panel" class="panel"><h2>领域、方法与技术对象</h2><p class="muted">模型将结合完整稿件识别适用范围。</p></div><div class="panel"><div class="section-heading"><h2>本稿加载的 Skill</h2><span id="budget" class="muted small"></span></div><div id="skill-list"><p class="muted">每条检查会展示加载理由、新稿依据及历史来源。</p></div><details id="decisions" hidden><summary>查看全部候选的适用性判断</summary><div id="decision-list"></div></details></div></section>
+      <section id="view-review" hidden><div id="review-panel" class="panel"><h2>Review 与修改优先级</h2><p class="muted">审稿完成后，分别展示有证据支持的缺陷、待核实问题和修改建议。</p></div></section>
+      <section id="view-evidence" hidden><div class="panel"><div class="section-heading"><h2>论文依据</h2><button id="show-full-text">阅读完整文本</button></div><p id="evidence-caption" class="muted">点击 Skill 或 concern 中的“查看论文依据”，定位原文段落。</p><div id="evidence-list"></div></div></section>
+      <p id="service-error" role="alert" class="error"></p>
+    </div>
+  </div>
+</main>
+<script type="module" src="/site-nav.js"></script><script type="module" src="/review.js"></script>
+</body></html>

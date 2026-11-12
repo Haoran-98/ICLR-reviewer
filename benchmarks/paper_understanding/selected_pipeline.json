@@ -1,0 +1,28 @@
+{
+  "policy_version": "paper_understanding_v1",
+  "selected_from": "50_paper_comparison",
+  "default_method": "one_shot",
+  "fallback_method": "grounded_hierarchical",
+  "extractor_model_env": "OPENAI_WEAK_MODEL_ID",
+  "strong_model_in_production": false,
+  "escalate_when": [
+    "required_core_field_missing",
+    "key_claim_has_no_evidence",
+    "evidence_cannot_be_located_in_input",
+    "profile_fields_conflict",
+    "strict_traceability_requested"
+  ],
+  "length_alone_triggers_escalation": false,
+  "after_fallback_failure": "needs_review",
+  "domain_representation_enabled": false,
+  "production_gates": {
+    "schema_success_rate": 1.0,
+    "idempotent_write_changes": 0,
+    "min_key_evidence_location_rate": 0.9,
+    "max_hierarchical_escalation_rate": 0.1,
+    "fuzzy_location_threshold": 0.7,
+    "per_paper_escalation_evidence_threshold": 0.6,
+    "sampling_seed": 1701,
+    "stages": [39, 389, 38890]
+  }
+}

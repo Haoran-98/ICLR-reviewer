@@ -1,0 +1,89 @@
+{
+  "base_url": "https://172.24.246.231:8443",
+  "listen": "0.0.0.0:8443",
+  "service": "iclr-web-lan.service",
+  "service_type": "user transient; no boot enablement",
+  "tls_verified_with_local_ca": true,
+  "ca_sha256": "e46ce8cb10d4a2f7490d62cd1bb3fbe4475da17d122e9a2d96a98b06a8698e50",
+  "resources": {
+    "/": {
+      "status": 200,
+      "bytes": 2108
+    },
+    "/generated/sample.json": {
+      "status": 200,
+      "bytes": 135027
+    },
+    "/generated/reviews.svg": {
+      "status": 200,
+      "bytes": 22533
+    },
+    "/iclr-lan-ca.crt": {
+      "status": 200,
+      "bytes": 1521
+    }
+  },
+  "browser": {
+    "passed": true,
+    "at": "2026-11-06T03:51:40.472Z",
+    "browser": "151.0.7922.34",
+    "gpu": {
+      "vendor": "amd",
+      "architecture": "rdna-3",
+      "shader_f16": true
+    },
+    "renderer": "atlas",
+    "webgpu_disabled_for_test": false,
+    "base_url": "http://172.24.246.231:5173",
+    "final_origin": "https://172.24.246.231:8443",
+    "secure_context": true,
+    "browser_certificate_trust": "pinned-leaf-spki",
+    "data_version": "v1-sample-520a224749858932",
+    "papers": 36,
+    "reviews": 153,
+    "selected_paper_ids": [
+      "8150",
+      "302"
+    ],
+    "selection_callback_verified": true,
+    "svg_loaded": true,
+    "page_errors": [],
+    "gpu_points_verified": 36,
+    "svg_points_verified": 0,
+    "screenshot_uses_gpu_readback": true,
+    "screenshot": "web/artifacts/lan-browser.png",
+    "semantic_projection": false
+  },
+  "client_trust_required": true,
+  "remote_physical_device_tested": true,
+  "http_entry": "http://172.24.246.231:5173/",
+  "windows_chrome_http_entry_confirmed_by_user": true,
+  "remote_device_evidence": "User confirmed Windows Chrome can open the HTTP entry; client GPU unavailable; SVG fallback deployed and tested by disabling WebGPU locally",
+  "compatible_browser": {
+    "passed": true,
+    "at": "2026-11-06T03:51:40.186Z",
+    "browser": "151.0.7922.34",
+    "gpu": null,
+    "renderer": "svg",
+    "webgpu_disabled_for_test": true,
+    "base_url": "http://172.24.246.231:5173",
+    "final_origin": "https://172.24.246.231:8443",
+    "secure_context": true,
+    "browser_certificate_trust": "pinned-leaf-spki",
+    "data_version": "v1-sample-520a224749858932",
+    "papers": 36,
+    "reviews": 153,
+    "selected_paper_ids": [
+      "8150",
+      "302"
+    ],
+    "selection_callback_verified": true,
+    "svg_loaded": true,
+    "page_errors": [],
+    "gpu_points_verified": 0,
+    "svg_points_verified": 36,
+    "screenshot_uses_gpu_readback": false,
+    "screenshot": "web/artifacts/compat-browser.png",
+    "semantic_projection": false
+  }
+}

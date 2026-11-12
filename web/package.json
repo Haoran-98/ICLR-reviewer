@@ -1,0 +1,26 @@
+{
+  "name": "iclr-visualization-v1",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "lan": "vite preview --host 0.0.0.0 --port 8443 --strictPort",
+    "build": "vite build",
+    "smoke": "node smoke.mjs",
+    "reviewers:check": "node review-match-check.mjs",
+    "reviewers:smoke": "node reviewers-smoke.mjs",
+    "review:smoke": "node review-smoke.mjs",
+    "access:smoke": "node access-upload-smoke.mjs"
+  },
+  "dependencies": {
+    "d3-chord": "3.0.2",
+    "d3-contour": "4.0.3",
+    "d3-shape": "3.2.1",
+    "embedding-atlas": "0.26.0"
+  },
+  "devDependencies": {
+    "playwright": "1.61.1",
+    "vite": "7.3.7"
+  }
+}

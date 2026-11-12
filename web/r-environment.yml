@@ -1,0 +1,9 @@
+name: iclr-web-v1-r
+channels:
+  - conda-forge
+dependencies:
+  - r-base=4.4.3
+  - r-ggdist=3.3.3
+  - r-ggplot2=4.0.3
+  - r-svglite=2.2.2
+  - r-jsonlite

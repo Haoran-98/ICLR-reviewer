@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import { pointRadius } from './map-labels.js';
+import { domainSurfaceGrid } from './map-surface.js';
+
+const papers = [{ x: -2, y: 0, domain: 'a' }, { x: 2, y: 0, domain: 'b' }];
+const colors = (p) => p.domain === 'a' ? '#ff0000' : '#0000ff';
+const extent = [-10, -10, 10, 10];
+const fine = domainSurfaceGrid(papers, colors, extent, 3, 81);
+const wide = domainSurfaceGrid(papers, colors, extent, 6, 81);
+const pixel = (field, x, y) => [...field.pixels.slice((y * field.size + x) * 4, (y * field.size + x) * 4 + 4)];
+const middle = pixel(wide, 40, 40), left = pixel(wide, 32, 40), right = pixel(wide, 48, 40);
+assert.ok(middle[0] > 110 && middle[2] > 110 && middle[1] === 0 && middle[3] > 0, 'Overlap must mix both domain colors');
+assert.ok(left[0] > left[2] && right[2] > right[0], 'Domain cores must retain their own color');
+assert.ok(Math.abs(left[0] - right[2]) <= 1 && Math.abs(left[2] - right[0]) <= 1, 'Symmetric sources must blend symmetrically');
+assert.equal(pixel(wide, 0, 0)[3], 0, 'Empty outskirts must fade to transparent');
+assert.ok(wide.coloredCells > fine.coloredCells, 'Wider smoothing must widen the transition');
+const empty = domainSurfaceGrid([], colors, extent, 3, 81);
+assert.ok(empty.pixels.every((x) => x === 0), 'Empty filters must clear the field');
+const single = domainSurfaceGrid(papers.slice(0, 1), colors, extent, 6, 81);
+assert.equal(pixel(single, 32, 40)[2], 0, 'A filtered-out domain must contribute no color');
+assert.deepEqual(papers, [{ x: -2, y: 0, domain: 'a' }, { x: 2, y: 0, domain: 'b' }]);
+console.log('Domain transition checks passed: mixtures, domain cores, symmetry, fading, bandwidth, empty and single-domain filters.');
+
+assert.ok(wide.boundaries.length === 2 && wide.anchors.length === 2);
+const interfacePoints = wide.boundaries.flatMap((f) => f.polygons.flat(2)).filter((p) => Math.abs(p[0] - 40.5) < 0.1 && p[1] > 30 && p[1] < 50);
+assert.ok(interfacePoints.length >= 8, 'Equal symmetric KDEs must meet at their mathematical bisector');
+const imbalanced = domainSurfaceGrid([...papers, ...Array.from({length:20}, () => ({...papers[0]}))], colors, extent, 6, 81);
+assert.deepEqual(imbalanced.anchors.map((a) => [a.domain,a.x,a.y]), wide.anchors.map((a) => [a.domain,a.x,a.y]), 'Duplicating a field must not shift normalized domain cores');
+assert.ok(empty.boundaries.length === 0 && empty.anchors.length === 0);
+assert.ok(pointRadius(1) < pointRadius(2.2) && pointRadius(2.2) < pointRadius(5) && pointRadius(80) <= 12);
+console.log('Boundary and zoom checks passed: equal-density bisector, sample-size normalization, empty contours and continuous point growth.');

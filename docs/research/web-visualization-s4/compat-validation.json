@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "at": "2026-11-06T12:36:04.922Z",
+  "browser": "151.0.7922.34",
+  "renderer": "canvas",
+  "webgpu_disabled_for_test": true,
+  "base_url": "http://172.24.246.231:5173",
+  "final_origin": "https://172.24.246.231:8443",
+  "data_version": "s4-433874ad15af3800",
+  "papers": 12964,
+  "reviews": 54900,
+  "selected_paper_ids": [
+    "66",
+    "76"
+  ],
+  "initial_map_ms": 498,
+  "selection_and_details_ms": 316,
+  "filter_ms": 342,
+  "initial_detail_requests": 0,
+  "pixel_readback": {
+    "sampled": 300,
+    "colored": 297
+  },
+  "year_decision_filter_verified": true,
+  "empty_search_verified": true,
+  "search_selection_verified": true,
+  "mobile_overflow": false,
+  "page_errors": [],
+  "semantic_projection": true,
+  "mathematical_domain_boundaries_verified": true,
+  "zoom_point_growth_verified": true,
+  "progressive_s4_labels_verified": true,
+  "zoom_paper_card_verified": true,
+  "chord_label_collisions_verified": true,
+  "domain_transition_field_verified": true,
+  "transition_field_colored_pixels": 151134,
+  "visible_map_labels_verified": true,
+  "map_domain_filter_verified": true,
+  "map_region_filter_verified": true,
+  "canonical_alias_union_verified": true,
+  "s4_entities_verified": true,
+  "chord_pair": [
+    89047,
+    35376
+  ],
+  "chord_joint_papers": 1,
+  "entity_topic_papers": 20,
+  "evidence_paper": "21251",
+  "screenshot": "web/artifacts/compat-browser.png",
+  "screenshot_uses_gpu_readback": false,
+  "mouse_wheel_zoom_reset_verified": true
+}

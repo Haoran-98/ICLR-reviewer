@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>领域 Skill 库</title>
+  <script type="module" src="/site-nav.js"></script>
+  <style>
+    :root { font: 15px/1.65 system-ui, sans-serif; color: #172b43; background: #f5f7fa; }
+    * { box-sizing: border-box; } body { margin: 0; } main { max-width: 1500px; padding: 28px; margin: auto; }
+    h1 { font-size: 29px; margin: 10px 0; } h2 { font-size: 21px; margin-top: 0; } h3 { font-size: 16px; }
+    a { color: #1d4f91; } p { margin: 8px 0 14px; } .muted, small { color: #526078; }
+    button, input, select, textarea { font: inherit; padding: 8px 12px; border: 1px solid #b8c7d9; border-radius: 6px; max-width: 100%; }
+    button { cursor: pointer; background: white; color: #1d4f91; } button:hover { background: #edf5ff; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #3b82f6; outline-offset: 2px; }
+    button[aria-pressed=true], button.primary { background: #1d4f91; color: white; border-color: #1d4f91; }
+    button:disabled { opacity: .5; cursor: default; } [hidden] { display: none !important; }
+    .panel { background: white; border: 1px solid #dce3ed; border-radius: 10px; padding: 22px; margin: 18px 0; min-width: 0; }
+    .stats, .filters, nav { display: flex; flex-wrap: wrap; gap: 12px; } nav { margin: 20px 0; }
+    .stat { flex: 1; min-width: 150px; background: #edf3fb; border-radius: 8px; padding: 14px 20px; } .stat strong { display: block; font-size: 28px; color: #1d4f91; }
+    .filters { align-items: end; } label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; } label.check { flex-direction: row; align-items: center; }
+    .columns { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 22px; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+    .card { text-align: left; padding: 14px; overflow-wrap: anywhere; } .card strong { display: block; color: #172b43; } .card small { display: block; margin-top: 6px; }
+    .tag { display: inline-block; border-radius: 4px; padding: 1px 6px; background: #eaf4ef; color: #24644a; font-size: 12px; margin-right: 5px; }
+    .candidate { background: #fff3dc; color: #8b5812; } .notice { background: #edf3fb; padding: 12px 16px; border-left: 3px solid #1d4f91; }
+    #overview { overflow-x: auto; } #overview svg { display: block; width: 100%; min-width: 730px; height: auto; } #overview [role=button] { cursor: pointer; }
+    #expert-detail { position: sticky; top: 16px; max-height: 85vh; overflow-y: auto; overflow-wrap: anywhere; }
+    details { border-top: 1px solid #dce3ed; padding: 12px 0; } summary { cursor: pointer; font-weight: 600; } dl { margin: 12px 0; } dt { font-weight: 600; margin-top: 10px; } dd { margin: 3px 0 12px; }
+    blockquote { margin: 10px 0; padding: 10px 14px; border-left: 3px solid #b8c7d9; background: #f5f7fa; white-space: pre-wrap; overflow-wrap: anywhere; }
+    code { overflow-wrap: anywhere; } textarea { width: 100%; min-height: 230px; resize: vertical; }
+    .pipeline { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 12px; margin: 22px 0; }
+    .stage { background: #edf3fb; border-top: 3px solid #1d4f91; border-radius: 6px; padding: 14px; min-width: 0; overflow-wrap: anywhere; } .stage h3 { margin: 0 0 10px; }
+    .rule { border-left: 3px solid #6c91bb; padding: 8px 16px; margin: 18px 0; overflow-wrap: anywhere; }
+    .pagination { display: flex; gap: 12px; align-items: center; margin-top: 18px; } #error { color: #a02020; }
+    .table-scroll { overflow-x: auto; } table { width: 100%; min-width: 720px; border-collapse: collapse; } th, td { padding: 10px; border-bottom: 1px solid #dce3ed; text-align: left; vertical-align: top; }
+    .source-links { display: flex; flex-wrap: wrap; gap: 8px; } .source-links a { font-size: 13px; }
+    @media (max-width: 950px) { .columns { grid-template-columns: 1fr; } #expert-detail { position: static; max-height: none; } .pipeline { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { main { padding: 16px; } .panel { padding: 16px; } .cards, .pipeline { grid-template-columns: 1fr; } h1 { font-size: 24px; } }
+  </style>
+</head>
+<body><main>
+  <a href="/">← 返回论文语义地图</a>
+  <h1>领域 Skill 库</h1>
+  <p class="muted">从稿件的研究内容，追到专家模块、检查关注点与正文证据。</p>
+  <p id="load-status" role="status">正在读取冻结技能库…</p><p id="error" role="alert"></p>
+  <div id="stats" class="stats"></div>
+  <nav aria-label="工作台视图">
+    <button data-tab="library" aria-pressed="true">① 专家库</button>
+    <button data-tab="match" aria-pressed="false">② 稿件匹配预览</button>
+    <button data-tab="replay" aria-pressed="false">③ 已有审稿回放</button>
+  </nav>
+  <section id="tab-library">
+    <div class="panel">
+      <h2>领域 → 专家层级 → 审查机制</h2>
+      <p>当前冻结库覆盖<strong>基础模型与大语言模型</strong>。下图单元格为专家模块数量，点击可筛选，再打开模块检查具体规则。</p>
+      <div id="overview"></div>
+      <p class="muted">“专家”指可组合的 Skill 模块；一个模块可包含多条条件检查，不对应真人或已独立运行的 Agent。来源支持表示配对来源达到门槛。</p>
+    </div>
+    <div class="columns">
+      <section class="panel">
+        <h2>全部模块可检索</h2>
+        <div class="filters">
+          <label>关键词<input id="expert-search" type="search" placeholder="如 attention、消融、证据" /></label>
+          <label>来源状态<select id="expert-status"><option value="source_supported">来源支持</option><option value="candidate">候选模块</option><option value="">全部有效模块</option></select></label>
+          <label>层级<select id="expert-level"><option value="">全部层级</option></select></label>
+          <label>审查机制<select id="expert-family"><option value="">全部机制</option></select></label>
+          <button id="reset-library">重置</button>
+        </div>
+        <p id="expert-count" role="status"></p><div id="expert-list" class="cards"></div>
+        <div class="pagination"><button id="prev">上一页</button><span id="page-index"></span><button id="next">下一页</button></div>
+      </section>
+      <aside id="expert-detail" class="panel"><h2>专家关心什么？</h2><p>选择左侧模块，查看适用条件、潜在失效机制、核查步骤、问题成立条件与消除证据。</p></aside>
+    </div>
+  </section>
+  <section id="tab-match" hidden>
+    <div class="panel">
+      <h2>输入稿件，预览专家匹配路径</h2>
+      <p class="notice">本页在浏览器内匹配词面线索，不上传文本、不调用模型。结果是推荐加载的模块及待检查项；尚未执行新稿审稿。</p>
+      <div class="filters">
+        <label>稿件标题<input id="paper-title" placeholder="输入标题" /></label>
+        <label>声明领域<select id="paper-area"><option value="unknown">尚未确定</option><option value="llm">基础模型与大语言模型</option><option value="other">其他领域（当前库未覆盖）</option></select></label>
+        <label>读取稿件文件<input id="paper-file" type="file" accept=".txt,.md,.tex,.doc,.docx,.docs,.pdf,text/plain,text/markdown,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf" /></label>
+        <label class="check"><input id="match-candidates" type="checkbox" />纳入候选模块</label>
+      </div>
+      <p class="muted">支持 Word（DOC / DOCX / DOCS）、PDF 和文本文件，上限 15 MB。Word / PDF 在本站服务器提取文本；扫描版请先进行 OCR。</p>
+      <p><label>稿件正文或摘要<textarea id="paper-text" placeholder="粘贴正文或摘要，或上传文件后检查提取结果。"></textarea></label></p>
+      <div class="filters"><button id="run-match" class="primary">预览匹配路径</button><button id="match-example">载入已有 LLM 论文摘要</button><button id="clear-match">清除稿件</button></div>
+      <p id="match-status" role="status"></p><div id="match-pipeline" class="pipeline"></div><div id="match-results"></div>
+    </div>
+  </section>
+  <section id="tab-replay" hidden>
+    <div class="panel">
+      <h2>已有审稿回放：实际加载了什么，提出了什么？</h2>
+      <p class="notice">回放采用 100 篇历史来源试验的 5 篇真实试审记录，保留当时的规则库版本。它们与上方 llm-area-v1 分开显示；未用新库重跑。</p>
+      <label>选择真实运行<select id="replay-select"><option value="">请选择论文</option></select></label>
+      <p id="replay-status" role="status"></p><div id="replay-detail"></div>
+    </div>
+  </section>
+  <p class="muted">第一版：专家库、词面匹配预览与真实记录回放。来源可追溯性已核对；规则的科学判断结合原文阅读。</p>
+</main><script type="module" src="/reviewers.js"></script></body></html>

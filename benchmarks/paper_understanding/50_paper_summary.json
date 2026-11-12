@@ -1,0 +1,131 @@
+{
+  "papers": 50,
+  "judged": 50,
+  "extractor_model": "gpt-5.6-luna",
+  "judge_model": "gpt-5.6-sol",
+  "methods": {
+    "one_shot": {
+      "completed": 50,
+      "failed": 0,
+      "wins": 22,
+      "mean_elapsed_seconds": 60.466,
+      "mean_total_tokens": 18013.6,
+      "evidence_quote_match_rate": 0.5406,
+      "evidence_quotes": 1763,
+      "judge_scores": {
+        "correctness": 4.38,
+        "completeness": 4.68,
+        "evidence_grounding": 4.3,
+        "cross_section_reasoning": 4.72,
+        "factual_restraint": 4.3,
+        "usefulness_for_review": 4.66
+      },
+      "composite_score": 4.5067,
+      "total_tokens": 900682
+    },
+    "grounded_hierarchical": {
+      "completed": 50,
+      "failed": 0,
+      "wins": 21,
+      "mean_elapsed_seconds": 194.728,
+      "mean_total_tokens": 62613.6,
+      "evidence_quote_match_rate": 0.5477,
+      "evidence_quotes": 1698,
+      "judge_scores": {
+        "correctness": 4.52,
+        "completeness": 4.54,
+        "evidence_grounding": 4.7,
+        "cross_section_reasoning": 4.56,
+        "factual_restraint": 4.3,
+        "usefulness_for_review": 4.42
+      },
+      "composite_score": 4.5067,
+      "total_tokens": 3130681
+    },
+    "docetl_style": {
+      "completed": 50,
+      "failed": 0,
+      "wins": 7,
+      "mean_elapsed_seconds": 159.318,
+      "mean_total_tokens": 49949.9,
+      "evidence_quote_match_rate": 0.4658,
+      "evidence_quotes": 1752,
+      "judge_scores": {
+        "correctness": 3.92,
+        "completeness": 4.38,
+        "evidence_grounding": 3.56,
+        "cross_section_reasoning": 4.34,
+        "factual_restraint": 3.74,
+        "usefulness_for_review": 4.26
+      },
+      "composite_score": 4.0333,
+      "total_tokens": 2497493
+    }
+  },
+  "mean_judge_confidence": 0.875,
+  "judge_tokens": 1186132,
+  "total_tokens": 7714988,
+  "paired_bootstrap": {
+    "one_shot_minus_grounded_hierarchical": {
+      "mean": 0.0,
+      "ci95_low": -0.1833,
+      "ci95_high": 0.1833
+    },
+    "one_shot_minus_docetl_style": {
+      "mean": 0.4733,
+      "ci95_low": 0.27,
+      "ci95_high": 0.69
+    },
+    "grounded_hierarchical_minus_docetl_style": {
+      "mean": 0.4733,
+      "ci95_low": 0.24,
+      "ci95_high": 0.7167
+    }
+  },
+  "wins_by_year": {
+    "2024": {
+      "one_shot": 10,
+      "grounded_hierarchical": 7
+    },
+    "2025": {
+      "one_shot": 6,
+      "docetl_style": 3,
+      "grounded_hierarchical": 8
+    },
+    "2026": {
+      "one_shot": 6,
+      "docetl_style": 4,
+      "grounded_hierarchical": 6
+    }
+  },
+  "wins_by_acceptance": {
+    "rejected": {
+      "one_shot": 12,
+      "grounded_hierarchical": 12,
+      "docetl_style": 2
+    },
+    "accepted": {
+      "one_shot": 10,
+      "grounded_hierarchical": 9,
+      "docetl_style": 5
+    }
+  },
+  "wins_by_length": {
+    "short": {
+      "one_shot": 6,
+      "grounded_hierarchical": 7,
+      "docetl_style": 2
+    },
+    "long": {
+      "one_shot": 10,
+      "grounded_hierarchical": 10,
+      "docetl_style": 1
+    },
+    "medium": {
+      "one_shot": 6,
+      "docetl_style": 4,
+      "grounded_hierarchical": 4
+    }
+  },
+  "generated_at": "2026-09-29T05:50:02+00:00"
+}

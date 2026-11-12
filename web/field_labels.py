@@ -1,0 +1,21 @@
+"""Chinese display names; original observed labels remain in the exported metadata."""
+LABELS = {
+ 'applications_to_neuroscience_cognitive_science': '神经与认知科学',
+ 'applications_to_physical_sciences_physics_chemistry_biology_etc': '物理、化学与生命科学',
+ 'applications_to_robotics_autonomy_planning': '机器人与规划', 'causal_reasoning': '因果推理',
+ 'datasets_and_benchmarks': '数据集与基准', 'other_machine_learning': '其他机器学习',
+ 'generative_models': '生成模型', 'infrastructure_systems': '基础设施与系统',
+ 'learning_on_graphs_and_other_geometries_topologies': '图学习与几何', 'learning_theory': '学习理论',
+ 'metric_learning_kernel_learning_and_sparse_coding': '度量、核方法与稀疏编码',
+ 'neurosymbolic_hybrid_ai_systems_physics_informed_logic_formal_reasoning_etc': '神经符号与混合系统',
+ 'optimization': '优化', 'probabilistic_methods_bayesian_methods_variational_inference_sampling_uq_etc': '概率与贝叶斯方法',
+ 'reinforcement_learning': '强化学习',
+ 'representation_learning_for_computer_vision_audio_language_and_other_modalities': '视觉、语音与语言表征',
+ 'alignment_fairness_safety_privacy': '对齐、公平、安全与隐私',
+ 'transfer_learning_meta_learning_and_lifelong_learning': '迁移、元学习与终身学习',
+ 'unsupervised_self_supervised_semi_supervised_and_supervised_representation_learning': '监督与自监督表征',
+ 'interpretability_explainability': '可解释性',
+ 'applications_to_computer_vision_audio_language_and_other_modalities': '视觉、语音与语言应用',
+ 'foundation_or_frontier_models_including_llms': '基础模型与大语言模型',
+ 'learning_on_time_series_and_dynamical_systems': '时间序列与动力系统',
+}

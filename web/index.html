@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>ICLR 论文探索</title>
+    <script type="module" src="/site-nav.js"></script>
+    <style>
+      body { margin: 0; font: 15px/1.6 system-ui, sans-serif; color: #14243a; background: #f5f7fa; }
+      main { max-width: 1600px; margin: auto; padding: 24px; }
+      h1 { margin: 0; font-size: 26px; } h2 { font-size: 19px; margin-top: 0; }
+      .muted { color: #526078; } .panel { background: white; border: 1px solid #dce3ed; border-radius: 10px; padding: 18px; margin: 18px 0; }
+      .columns { display: grid; grid-template-columns: minmax(0, 3fr) minmax(250px, 1fr); gap: 18px; align-items: start; }
+      .figure-layout { display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 18px; align-items: start; }
+      .figure-note { background: #f1f5fa; border-radius: 8px; padding: 14px; font-size: 13px; }
+      .figure-note h3 { margin: 0 0 10px; font-size: 15px; }
+      .figure-note p { margin: 0 0 12px; } .figure-note p:last-child { margin-bottom: 0; }
+      .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+      .swatch { display: inline-block; width: 9px; height: 9px; margin-right: 4px; border-radius: 50%; }
+      #atlas { height: 420px; position: relative; overflow: hidden; isolation: isolate; }
+      #map-panel .figure-layout { grid-template-columns: 1fr; }
+      #map-panel .figure-note { font-size: 12px; }
+      .map-surface-layer { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+      .map-label-layer { z-index: 2; position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+      .map-region-label { position: absolute; box-sizing: border-box; height: 43px; padding: 3px 6px; background: rgba(255,255,255,.88); border-left: 3px solid; border-radius: 3px; color: #14243a; line-height: 17px; box-shadow: 0 1px 4px #14243a22; }
+      .map-region-label strong, .map-region-label span { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+      .map-region-label strong { font-size: 11px; }
+      .map-domain-label { background: rgba(255,255,255,.94); }
+      .map-domain-label strong { font-size: 12px; }
+      button.map-paper-label { pointer-events: auto; cursor: pointer; text-align: left; font: inherit; line-height: 18px; border: 1px solid #94a3b8; border-left: 3px solid; padding: 4px 7px; }
+      button.map-paper-label:hover, button.map-paper-label:focus { background: #edf5ff; outline: 2px solid #2563eb; }
+      #map-level { font-size: 12px; } .map-region-label span { font-size: 10px; }
+      #map-legend { gap: 5px; } #map-legend button { font-size: 11px; padding: 3px 6px; background: white; border: 1px solid #dce3ed; border-radius: 4px; cursor: pointer; }
+      #map-legend button[aria-pressed=true] { background: #dbeafe; border-color: #2563eb; }
+      #map-regions, #concept-aliases { max-height: 260px; overflow: auto; }
+      #map-regions button { display: block; width: 100%; text-align: left; font-size: 12px; }
+      #concept-aliases p { white-space: pre-line; overflow-wrap: anywhere; font-size: 13px; }
+      #detail { min-height: 150px; } #detail { overflow-wrap: anywhere; max-height: 640px; overflow: auto; } #detail p { max-height: 230px; overflow: auto; }
+      #plot { width: 100%; min-height: 200px; } button, select, input { padding: 6px 10px; font: inherit; max-width: 100%; box-sizing: border-box; }
+      .filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; }
+      .filters label { min-width: 0; max-width: 100%; display: flex; flex-direction: column; font-size: 13px; }
+      #results { max-height: 240px; overflow: auto; } #results button { display: block; text-align: left; width: 100%; background: #f5f7fa; border: 1px solid #dce3ed; cursor: pointer; }
+      .columns > *, .figure-layout > * { min-width: 0; } #snapshot { font-size: 12px; overflow-wrap: anywhere; }
+      @media (max-width: 1100px) { .figure-layout { grid-template-columns: 1fr; } }
+      #topic-tree svg, #domain-scores svg, #domain-chord svg { width: 100%; height: auto; display: block; }
+      .paper-score-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+      .paper-score-card { min-width: 0; border: 1px solid #dce3ed; border-radius: 8px; padding: 12px; background: #fff; }
+      .paper-score-card h4 { margin: 0; font-size: 17px; } .paper-score-card p { margin: 5px 0; font-size: 13px; }
+      #score-papers { padding-left: 22px; } #score-papers li { margin: 12px 0; } #score-papers span { display: block; font-size: 12px; }
+      #ggdist-panel .figure-layout { grid-template-columns: minmax(0, 1fr) 260px; }
+      @media (max-width: 900px) { .paper-score-grid, #ggdist-panel .figure-layout { grid-template-columns: 1fr; } }
+      .table-scroll { overflow-x: auto; } table { border-collapse: collapse; width: 100%; font-size: 13px; }
+      th, td { padding: 8px; border-bottom: 1px solid #dce3ed; text-align: left; white-space: nowrap; }
+      #domain-facts { background: #eef5fc; padding: 12px; border-radius: 8px; }
+      #chord-labels { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; } #chord-labels button { overflow-wrap: anywhere; }
+      #chord-evidence { max-height: 260px; overflow: auto; display: flex; flex-wrap: wrap; gap: 6px; }
+      #candidate-tree { max-height: 620px; overflow: auto; margin-top: 15px; }
+      #candidate-tree ul { list-style: none; padding-left: 20px; border-left: 1px solid #cbd5e1; }
+      #candidate-tree li { margin: 8px 0; overflow-wrap: anywhere; } #candidate-tree blockquote { font-size: 13px; color: #526078; border-left: 3px solid #cbd5e1; margin: 8px; padding: 6px 12px; }
+      #tree-paper { max-width: 650px; } #domain-panel, #chord-panel, #candidate-panel { min-width: 0; }
+      #domain-chord .ribbon { cursor: pointer; opacity: 0.45; } #domain-chord .ribbon:hover, #domain-chord .ribbon:focus { opacity: 0.95; stroke: #14243a; }
+      #domain-chord { overflow-x: auto; } #domain-chord svg { min-width: 760px; }
+      #domain-chord .arc, #topic-tree g[role=button] { cursor: pointer; }
+      #fatal { color: #a02020; } @media (max-width: 800px) { .columns { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>ICLR 论文探索</h1>
+      <p><a href="/reviewers.html">进入领域 Skill 库 → 检查经验、稿件匹配与审稿案例</a></p>
+      <p class="muted">探索 12,964 篇 ICLR 论文的研究主题、领域分布、录用情况与审稿评分。</p>
+      <p id="status" role="status">正在加载论文地图…</p>
+      <p id="snapshot" class="muted"></p>
+      <p id="fatal" role="alert"></p>
+      <div class="columns">
+        <section class="panel" id="map-panel">
+          <h2>论文语义地图</h2>
+          <div class="filters">
+            <label>标题 / ID <input id="search" type="search" placeholder="搜索论文标题或 ID" /></label>
+            <label>年份 <select id="year"><option value="">全部年份</option><option>2024</option><option>2025</option><option>2026</option></select></label>
+            <label>决定 <select id="decision"><option value="">全部状态</option><option value="accepted">录用</option><option value="rejected">拒稿</option><option value="desk_rejected">直接拒稿</option><option value="withdrawn">撤稿</option><option value="unknown">未知</option></select></label>
+            <label>着色 <select id="map-color"><option value="domain">投稿领域</option><option value="year">年份</option></select></label>
+            <label>地图领域 <select id="map-domain"><option value="">全部领域</option></select></label>
+            <label><span>区域标注</span><input id="map-label-toggle" type="checkbox" checked aria-label="显示区域名称与代表主题" /></label>
+            <label><span>领域过渡</span><input id="map-surface-toggle" type="checkbox" checked aria-label="显示领域密度渐变层" /></label>
+            <label>过渡范围 <select id="map-surface-scale"><option value="3">细</option><option value="5" selected>中</option><option value="8">宽</option></select></label>
+            <label><span>领域边界</span><input id="map-boundaries-toggle" type="checkbox" checked aria-label="显示数学计算的领域边界" /></label>
+            <button id="zoom-in" type="button" aria-label="放大地图">＋</button>
+            <button id="zoom-out" type="button" aria-label="缩小地图">－</button>
+            <button id="reset-map" type="button">重置缩放</button>
+          </div>
+          <p id="map-level" class="muted" role="status"></p>
+          <p id="map-mode" class="muted" role="status"></p>
+          <div class="figure-layout">
+            <div id="atlas"></div>
+            <aside class="figure-note" aria-label="论文地图说明">
+              <h3>方法与作用</h3>
+              <p><strong>方法：</strong><span id="map-method">基于论文核心内容的 BGE-M3 向量（1024 维）→ PCA（50 维）→ t-SNE（2 维）；每点一篇论文，默认按原始投稿领域着色，可切换为年份。</span></p>
+              <p><strong>边界：</strong>分别对原始投稿领域的论文坐标作高斯核密度估计，按各领域论文数归一化。每处取密度最高的领域，用 Marching Squares 提取优势领域交替处的等密度线；无数据支撑的稀疏区不延伸。线条描述这批论文在二维地图上的领域分布。</p>
+              <p><strong>逐级阅读：</strong>全景仅显示原始投稿领域；放大到 2.2× 后显示“领域标记 + 研究主题”；5× 后显示部分论文标题、年份、录用状态与均分，点击卡片查看详情。论文点半径随缩放连续增大。</p>
+              <p><strong>领域过渡：</strong>领域密度混色层与边界均可开关，平滑范围可调；随当前筛选重算。研究主题来自所属投稿领域内的原始实体标签，用于细分浏览。</p>
+              <p class="muted">位置来自论文内容向量的固定投影。二维分界用于浏览当前样本；主题标签与原始投稿领域的对应可追溯到论文，未额外建立正式学科父子目录。</p>
+            </aside>
+          </div>
+          <div id="map-legend" class="legend" aria-label="地图颜色图例，可点击筛选"></div>
+          <details><summary>地图区域索引（领域 · 代表主题 · 论文数）</summary><div id="map-regions"></div></details>
+          <p id="domain-active" class="muted"></p><button id="clear-domain" type="button" hidden>清除领域/主题限定</button>
+          <p id="filter-count" class="muted" role="status"></p>
+          <details><summary>论文列表（支持键盘选择）</summary><div id="results"></div></details>
+        </section>
+        <section class="panel">
+          <h2>选中论文</h2><p id="selection" role="status">点击地图中的点查看论文</p>
+          <div id="detail"></div>
+        </section>
+      </div>
+      <section class="panel" id="domain-panel">
+        <h2>研究主题、投稿领域与录用情况</h2>
+        <p id="analysis-status" role="status">正在加载领域数据…</p>
+        <div class="filters">
+          <label>分析年份 <select id="analysis-year"><option value="">全部年份（评分分年展示）</option><option>2024</option><option>2025</option><option>2026</option></select></label>
+          <label>投稿领域 <select id="analysis-domain"><option value="">全部领域</option></select></label>
+          <label>主题标签搜索 <input id="topic-search" type="search" placeholder="如 diffusion、language models" /></label>
+          <label>实体类型 <select id="entity-type"><option value="">全部类型</option><option value="METHOD">方法</option><option value="TASK">任务</option><option value="RESEARCH_OBJECT">研究对象</option><option value="DATASET">数据集</option><option value="METRIC">指标</option><option value="OTHER_SCIENTIFIC_TERM">其他科学术语</option></select></label>
+          <label><span>通用词</span><input id="include-generic" type="checkbox" aria-label="纳入 framework、dataset 等通用标签" /></label>
+          <button id="clear-topic" type="button">清除主题/弦带选择</button>
+          <button id="show-analysis-map" type="button">在地图查看当前论文集合</button>
+        </div>
+        <p class="muted">分析独立于地图的标题和决定筛选。中稿率 = 录用论文数 / 总投稿量；总投稿量包含录用、拒稿、直接拒稿、撤稿和决定未知的论文。这些比率仅描述当前论文集合。同篇可含多个实体标签，各标签论文数不能直接相加。</p>
+        <p id="domain-facts" role="status"></p>
+        <div class="figure-layout">
+          <div><div id="topic-tree"></div><p id="topic-coverage" class="muted"></p></div>
+          <aside class="figure-note">
+            <h3>方法与作用</h3>
+            <p><strong>领域：</strong>按论文的原始投稿领域分组；悬停可查看原始名称。</p>
+            <p><strong>主题：</strong>使用从论文中提取的多个实体标签：纳入可定位原文的核心概念，归并明确同义词、单复数和跨类型同名概念，同篇同概念去重。</p>
+            <p class="muted">连线表示该投稿领域的论文中出现了该实体，不表示学科从属关系。原始领域、实体类型和科学术语分别保留。</p>
+          </aside>
+        </div>
+        <details><summary>各领域完整统计表</summary><div class="table-scroll"><table id="domain-table"><thead><tr><th>领域</th><th>总投稿量</th><th>中稿率（录用/总投稿量）</th><th>录用</th><th>拒稿</th><th>直接拒稿</th><th>撤稿</th><th>未知</th></tr></thead><tbody></tbody></table></div></details>
+        <h3>当前领域 / 主题 · 论文评分与审稿分歧</h3>
+        <div class="filters">
+          <label>论文分组 <select id="score-status"><option value="compare" selected>录用与拒稿对比</option><option value="">全部决定（含撤稿等）</option><option value="accepted">仅录用论文</option><option value="rejected">仅拒稿论文</option></select></label>
+          <label>分歧指标 <select id="score-disagreement"><option value="sd">篇内样本标准差</option><option value="range">篇内评分极差</option></select></label>
+        </div>
+        <div id="domain-scores" class="paper-score-grid"></div><p id="score-facts" class="muted" role="status"></p>
+        <aside class="figure-note" aria-label="论文组合分布图说明">
+          <p><strong>如何阅读：</strong>上方阶梯色块表示论文指标的分布；下方点阵在样本超过40篇时用40个等概率分位点概括（每点约2.5%），小组每点一篇论文。黑点表示中位数，粗线表示中央50%、细线表示中央90%的分位区间。区间描述论文差异，不是置信区间。</p>
+          <p><strong>分析单位：</strong>每篇论文等权。均分至少需要一条有效评分；标准差与极差至少需要两条。原始缺失评分不补零，各组显示有效论文数及排除数。各年分别阅读；分歧大小还受审稿人数影响。</p>
+          <p class="muted">本交互图以 SVG 实现 ggdist 的“分布主体＋点阵＋点区间”组合思想，随年份、领域、概念和弦带更新；下方全样本图由 R/ggdist 实际生成。分布厚度在同一指标图内共同缩放，不表示样本量。</p>
+        </aside>
+        <details><summary>查看当前集合中分歧较大的论文（前10篇，可回查原始评分）</summary><ol id="score-papers"></ol></details>
+      </section>
+      <section class="panel" id="chord-panel">
+        <h2>研究主题共现 · Chord diagram</h2>
+        <label>展示高频标签 <select id="chord-limit"><option value="16">前 16 个</option><option value="24">前 24 个</option><option value="32">前 32 个</option></select></label>
+        <div class="figure-layout">
+          <div id="domain-chord"></div>
+          <aside class="figure-note">
+            <h3>方法与作用</h3>
+            <p><strong>方法：</strong>D3 弦图。每个圆弧是一个归并后的 核心概念，弦宽表示同一论文中同时出现两标签的论文数量，每篇在每条弦中仅计一次。</p>
+            <p><strong>标签：</strong>左右分列、自动换行和避让，引导线对应原始圆弧；窄屏可横向滚动查看完整图。点击标签也可选择概念。</p>
+            <p><strong>作用：</strong>观察研究主题、方法与对象的交叉。点击弦带查看共现论文、录用情况与评分；点击圆弧查看该标签。年份、投稿领域和实体类型可筛选。</p>
+            <p class="muted">合并已列明的简称/全称、大小写、连字符及受控单复数；同名概念跨类型合并，原始类型保留为属性。同义词之间不再连弦。默认隐藏 framework 等通用词，可勾选纳入；圆弧长度为展示范围内共现权重之和。该图不表示引用或因果关系。</p>
+          </aside>
+        </div>
+        <p id="chord-facts" role="status"></p><div id="chord-labels" aria-label="弦图纳入的全部标签"></div>
+        <details><summary>查看当前概念的同义词归并与原始标签 ID</summary><div id="concept-aliases"></div></details>
+        <div id="chord-evidence"></div>
+      </section>
+      <section class="panel" id="candidate-panel">
+        <h2>实体标签与原文证据</h2>
+        <p id="candidate-status" class="muted"></p>
+        <div class="filters">
+          <label>查找证据论文 <input id="evidence-search" type="search" placeholder="论文标题或 ID" /></label>
+          <label>论文 <select id="tree-paper" aria-label="原文证据论文"></select></label>
+          <button id="tree-map" type="button">在地图查看这篇论文</button>
+        </div>
+        <p id="tree-paper-facts"></p><div id="candidate-tree"></div>
+        <p class="muted">提供实体标识、类型、论文中的角色、重要性、原文片段与字符位置。原文可定位表示可以追溯，模型标签的科学含义仍需结合论文阅读。</p>
+      </section>
+      <section class="panel" id="ggdist-panel">
+        <h2>全样本 · ggdist 评分与分歧组合图</h2>
+        <p class="muted">覆盖全部 12,964 篇论文，按年展示全部决定、录用与拒稿分组。该图为固定总览；上方组合图随主题选择更新。</p>
+        <div class="figure-layout">
+          <img id="plot" src="/generated/reviews.svg" alt="ggdist全样本组合图：按年份与决定状态展示论文均分和篇内标准差，包含分布主体、分位点阵、中位数及中央50%和90%区间" style="width:100%;height:auto" />
+          <aside class="figure-note" aria-label="审稿评分图说明">
+            <h3>怎样读这张图</h3>
+            <p><strong>左列看评分水平：</strong>每篇论文先计算均分，越靠右表示整体评分越高。可比较同一年录用与拒稿论文分布重叠的位置。</p>
+            <p><strong>右列看审稿分歧：</strong>每篇论文计算评分标准差，越靠右表示审稿人的评分越不一致。例如[5、5、5、5]和[1、5、6、8]均分都是5分，标准差分别为0和约2.94。</p>
+            <p><strong>40个点是什么意思：</strong>每一组用全部有效论文计算40个等概率分位点，每点约代表该组2.5%的论文。若有1,000篇，每点约对应25篇；不是只抽取40篇，也不是40名审稿人。点在某个分值附近堆叠，表示较多论文集中在那里。</p>
+            <p><strong>区间：</strong>粗线覆盖中央50%论文，细线覆盖中央90%论文，黑点为中位数；这些是经验分位区间，不是置信区间。</p>
+            <p class="muted">每篇论文等权；均分需要至少一条有效评分，篇内标准差需要至少两条。全部决定组包含录用、拒稿、撤稿等，与其下两组存在成员重叠。各年分别解释。</p>
+            <p id="review-coverage" class="muted">每条审稿取最新已采集版本，缺失评分单独计数。</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

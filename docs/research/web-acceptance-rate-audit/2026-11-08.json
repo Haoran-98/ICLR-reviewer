@@ -1,0 +1,719 @@
+{
+  "as_of": "2026-11-08",
+  "web_snapshot": "2026-11-06T09:05:09.404421+00:00",
+  "data_version": "s4-433874ad15af3800",
+  "database_snapshot": {
+    "at": "2026-11-07 16:23:35.32928+00",
+    "snapshot": "83381:83381:"
+  },
+  "sample": {
+    "papers": 12964,
+    "accepted": 3816,
+    "rejected": 5545,
+    "withdrawn": 3254,
+    "desk_rejected": 349,
+    "unknown": 0,
+    "acceptance_given_accept_or_reject": 40.764875547484245,
+    "accepted_over_all": 29.43535945695773,
+    "accepted_over_nonwithdrawn": 39.29969104016478
+  },
+  "local_corpus": {
+    "papers": 38890,
+    "accepted": 11315,
+    "rejected": 16728,
+    "withdrawn": 9816,
+    "desk_rejected": 1031,
+    "unknown": 0,
+    "acceptance_given_accept_or_reject": 40.34875013372321,
+    "accepted_over_all": 29.094883003342762,
+    "accepted_over_nonwithdrawn": 38.91793354887528
+  },
+  "years": [
+    {
+      "year": 2024,
+      "sample": {
+        "papers": 2468,
+        "accepted": 768,
+        "rejected": 1147,
+        "withdrawn": 536,
+        "desk_rejected": 17,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 40.10443864229765,
+        "accepted_over_all": 31.118314424635333,
+        "accepted_over_nonwithdrawn": 39.75155279503105
+      },
+      "corpus": {
+        "papers": 7404,
+        "accepted": 2260,
+        "rejected": 3431,
+        "withdrawn": 1660,
+        "desk_rejected": 53,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 39.71182568968547,
+        "accepted_over_all": 30.52404105888709,
+        "accepted_over_nonwithdrawn": 39.34540389972145
+      }
+    },
+    {
+      "year": 2025,
+      "sample": {
+        "papers": 3890,
+        "accepted": 1212,
+        "rejected": 1653,
+        "withdrawn": 1002,
+        "desk_rejected": 23,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 42.303664921465966,
+        "accepted_over_all": 31.15681233933162,
+        "accepted_over_nonwithdrawn": 41.96675900277008
+      },
+      "corpus": {
+        "papers": 11672,
+        "accepted": 3703,
+        "rejected": 4911,
+        "withdrawn": 2988,
+        "desk_rejected": 70,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 42.98815881123752,
+        "accepted_over_all": 31.725496915695683,
+        "accepted_over_nonwithdrawn": 42.64163979732842
+      }
+    },
+    {
+      "year": 2026,
+      "sample": {
+        "papers": 6606,
+        "accepted": 1836,
+        "rejected": 2745,
+        "withdrawn": 1716,
+        "desk_rejected": 309,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 40.078585461689585,
+        "accepted_over_all": 27.79291553133515,
+        "accepted_over_nonwithdrawn": 37.54601226993865
+      },
+      "corpus": {
+        "papers": 19814,
+        "accepted": 5352,
+        "rejected": 8386,
+        "withdrawn": 5168,
+        "desk_rejected": 908,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 38.95763575484059,
+        "accepted_over_all": 27.011204199051175,
+        "accepted_over_nonwithdrawn": 36.54240065546907
+      }
+    }
+  ],
+  "domains": [
+    {
+      "id": "alignment_fairness_safety_privacy",
+      "label": "对齐、公平、安全与隐私",
+      "sample": {
+        "papers": 1097,
+        "accepted": 316,
+        "rejected": 473,
+        "withdrawn": 278,
+        "desk_rejected": 30,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 40.050697084917616,
+        "accepted_over_all": 28.805834092980856,
+        "accepted_over_nonwithdrawn": 38.58363858363858
+      },
+      "corpus": {
+        "papers": 3292,
+        "accepted": 914,
+        "rejected": 1439,
+        "withdrawn": 846,
+        "desk_rejected": 93,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 38.84402889927752,
+        "accepted_over_all": 27.764277035236937,
+        "accepted_over_nonwithdrawn": 37.367130008176616
+      }
+    },
+    {
+      "id": "applications_to_computer_vision_audio_language_and_other_modalities",
+      "label": "视觉、语音与语言应用",
+      "sample": {
+        "papers": 1361,
+        "accepted": 389,
+        "rejected": 488,
+        "withdrawn": 452,
+        "desk_rejected": 32,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 44.3557582668187,
+        "accepted_over_all": 28.581925055106538,
+        "accepted_over_nonwithdrawn": 42.7942794279428
+      },
+      "corpus": {
+        "papers": 4081,
+        "accepted": 1153,
+        "rejected": 1429,
+        "withdrawn": 1403,
+        "desk_rejected": 96,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 44.65530596436871,
+        "accepted_over_all": 28.252879196275423,
+        "accepted_over_nonwithdrawn": 43.05451829723675
+      }
+    },
+    {
+      "id": "applications_to_neuroscience_cognitive_science",
+      "label": "神经与认知科学",
+      "sample": {
+        "papers": 243,
+        "accepted": 84,
+        "rejected": 101,
+        "withdrawn": 50,
+        "desk_rejected": 8,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 45.4054054054054,
+        "accepted_over_all": 34.5679012345679,
+        "accepted_over_nonwithdrawn": 43.523316062176164
+      },
+      "corpus": {
+        "papers": 729,
+        "accepted": 228,
+        "rejected": 323,
+        "withdrawn": 154,
+        "desk_rejected": 24,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 41.37931034482759,
+        "accepted_over_all": 31.275720164609055,
+        "accepted_over_nonwithdrawn": 39.65217391304348
+      }
+    },
+    {
+      "id": "applications_to_physical_sciences_physics_chemistry_biology_etc",
+      "label": "物理、化学与生命科学",
+      "sample": {
+        "papers": 575,
+        "accepted": 161,
+        "rejected": 259,
+        "withdrawn": 143,
+        "desk_rejected": 12,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 38.333333333333336,
+        "accepted_over_all": 28.0,
+        "accepted_over_nonwithdrawn": 37.26851851851852
+      },
+      "corpus": {
+        "papers": 1723,
+        "accepted": 494,
+        "rejected": 770,
+        "withdrawn": 417,
+        "desk_rejected": 42,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 39.08227848101266,
+        "accepted_over_all": 28.670922809053977,
+        "accepted_over_nonwithdrawn": 37.82542113323124
+      }
+    },
+    {
+      "id": "applications_to_robotics_autonomy_planning",
+      "label": "机器人与规划",
+      "sample": {
+        "papers": 340,
+        "accepted": 108,
+        "rejected": 134,
+        "withdrawn": 93,
+        "desk_rejected": 5,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 44.62809917355372,
+        "accepted_over_all": 31.764705882352942,
+        "accepted_over_nonwithdrawn": 43.7246963562753
+      },
+      "corpus": {
+        "papers": 1022,
+        "accepted": 326,
+        "rejected": 410,
+        "withdrawn": 264,
+        "desk_rejected": 22,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 44.29347826086956,
+        "accepted_over_all": 31.898238747553815,
+        "accepted_over_nonwithdrawn": 43.007915567282325
+      }
+    },
+    {
+      "id": "causal_reasoning",
+      "label": "因果推理",
+      "sample": {
+        "papers": 139,
+        "accepted": 35,
+        "rejected": 68,
+        "withdrawn": 34,
+        "desk_rejected": 2,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 33.980582524271846,
+        "accepted_over_all": 25.179856115107913,
+        "accepted_over_nonwithdrawn": 33.333333333333336
+      },
+      "corpus": {
+        "papers": 414,
+        "accepted": 111,
+        "rejected": 214,
+        "withdrawn": 79,
+        "desk_rejected": 10,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 34.15384615384615,
+        "accepted_over_all": 26.81159420289855,
+        "accepted_over_nonwithdrawn": 33.134328358208954
+      }
+    },
+    {
+      "id": "datasets_and_benchmarks",
+      "label": "数据集与基准",
+      "sample": {
+        "papers": 874,
+        "accepted": 256,
+        "rejected": 353,
+        "withdrawn": 229,
+        "desk_rejected": 36,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 42.03612479474548,
+        "accepted_over_all": 29.290617848970253,
+        "accepted_over_nonwithdrawn": 39.689922480620154
+      },
+      "corpus": {
+        "papers": 2623,
+        "accepted": 756,
+        "rejected": 1071,
+        "withdrawn": 693,
+        "desk_rejected": 103,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 41.37931034482759,
+        "accepted_over_all": 28.82195958825772,
+        "accepted_over_nonwithdrawn": 39.170984455958546
+      }
+    },
+    {
+      "id": "foundation_or_frontier_models_including_llms",
+      "label": "基础模型与大语言模型",
+      "sample": {
+        "papers": 1319,
+        "accepted": 423,
+        "rejected": 547,
+        "withdrawn": 306,
+        "desk_rejected": 43,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 43.608247422680414,
+        "accepted_over_all": 32.06974981046247,
+        "accepted_over_nonwithdrawn": 41.75715695952616
+      },
+      "corpus": {
+        "papers": 3957,
+        "accepted": 1314,
+        "rejected": 1615,
+        "withdrawn": 904,
+        "desk_rejected": 124,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 44.86172755206555,
+        "accepted_over_all": 33.206974981046244,
+        "accepted_over_nonwithdrawn": 43.03963314772355
+      }
+    },
+    {
+      "id": "generative_models",
+      "label": "生成模型",
+      "sample": {
+        "papers": 1177,
+        "accepted": 393,
+        "rejected": 437,
+        "withdrawn": 312,
+        "desk_rejected": 35,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 47.34939759036145,
+        "accepted_over_all": 33.38997451146984,
+        "accepted_over_nonwithdrawn": 45.433526011560694
+      },
+      "corpus": {
+        "papers": 3532,
+        "accepted": 1175,
+        "rejected": 1334,
+        "withdrawn": 933,
+        "desk_rejected": 90,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 46.831406935033876,
+        "accepted_over_all": 33.26727066817667,
+        "accepted_over_nonwithdrawn": 45.20969603693728
+      }
+    },
+    {
+      "id": "infrastructure_systems",
+      "label": "基础设施与系统",
+      "sample": {
+        "papers": 106,
+        "accepted": 28,
+        "rejected": 49,
+        "withdrawn": 27,
+        "desk_rejected": 2,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 36.36363636363637,
+        "accepted_over_all": 26.41509433962264,
+        "accepted_over_nonwithdrawn": 35.44303797468354
+      },
+      "corpus": {
+        "papers": 315,
+        "accepted": 85,
+        "rejected": 148,
+        "withdrawn": 70,
+        "desk_rejected": 12,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 36.48068669527897,
+        "accepted_over_all": 26.984126984126984,
+        "accepted_over_nonwithdrawn": 34.69387755102041
+      }
+    },
+    {
+      "id": "interpretability_explainability",
+      "label": "可解释性",
+      "sample": {
+        "papers": 507,
+        "accepted": 130,
+        "rejected": 240,
+        "withdrawn": 118,
+        "desk_rejected": 19,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 35.13513513513514,
+        "accepted_over_all": 25.641025641025642,
+        "accepted_over_nonwithdrawn": 33.419023136246786
+      },
+      "corpus": {
+        "papers": 1522,
+        "accepted": 417,
+        "rejected": 706,
+        "withdrawn": 353,
+        "desk_rejected": 46,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 37.132680320569904,
+        "accepted_over_all": 27.398160315374508,
+        "accepted_over_nonwithdrawn": 35.67151411462789
+      }
+    },
+    {
+      "id": "learning_on_graphs_and_other_geometries_topologies",
+      "label": "图学习与几何",
+      "sample": {
+        "papers": 386,
+        "accepted": 116,
+        "rejected": 188,
+        "withdrawn": 67,
+        "desk_rejected": 15,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 38.1578947368421,
+        "accepted_over_all": 30.05181347150259,
+        "accepted_over_nonwithdrawn": 36.36363636363637
+      },
+      "corpus": {
+        "papers": 1158,
+        "accepted": 316,
+        "rejected": 559,
+        "withdrawn": 248,
+        "desk_rejected": 35,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 36.114285714285714,
+        "accepted_over_all": 27.288428324697755,
+        "accepted_over_nonwithdrawn": 34.72527472527472
+      }
+    },
+    {
+      "id": "learning_on_time_series_and_dynamical_systems",
+      "label": "时间序列与动力系统",
+      "sample": {
+        "papers": 245,
+        "accepted": 54,
+        "rejected": 115,
+        "withdrawn": 66,
+        "desk_rejected": 10,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 31.952662721893493,
+        "accepted_over_all": 22.040816326530614,
+        "accepted_over_nonwithdrawn": 30.16759776536313
+      },
+      "corpus": {
+        "papers": 736,
+        "accepted": 161,
+        "rejected": 354,
+        "withdrawn": 197,
+        "desk_rejected": 24,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 31.262135922330096,
+        "accepted_over_all": 21.875,
+        "accepted_over_nonwithdrawn": 29.87012987012987
+      }
+    },
+    {
+      "id": "learning_theory",
+      "label": "学习理论",
+      "sample": {
+        "papers": 365,
+        "accepted": 147,
+        "rejected": 145,
+        "withdrawn": 63,
+        "desk_rejected": 10,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 50.342465753424655,
+        "accepted_over_all": 40.273972602739725,
+        "accepted_over_nonwithdrawn": 48.675496688741724
+      },
+      "corpus": {
+        "papers": 1093,
+        "accepted": 432,
+        "rejected": 460,
+        "withdrawn": 171,
+        "desk_rejected": 30,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 48.4304932735426,
+        "accepted_over_all": 39.52424519670631,
+        "accepted_over_nonwithdrawn": 46.85466377440347
+      }
+    },
+    {
+      "id": "metric_learning_kernel_learning_and_sparse_coding",
+      "label": "度量、核方法与稀疏编码",
+      "sample": {
+        "papers": 12,
+        "accepted": 5,
+        "rejected": 5,
+        "withdrawn": 2,
+        "desk_rejected": 0,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 50.0,
+        "accepted_over_all": 41.666666666666664,
+        "accepted_over_nonwithdrawn": 50.0
+      },
+      "corpus": {
+        "papers": 36,
+        "accepted": 8,
+        "rejected": 21,
+        "withdrawn": 7,
+        "desk_rejected": 0,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 27.586206896551722,
+        "accepted_over_all": 22.22222222222222,
+        "accepted_over_nonwithdrawn": 27.586206896551722
+      }
+    },
+    {
+      "id": "neurosymbolic_hybrid_ai_systems_physics_informed_logic_formal_reasoning_etc",
+      "label": "神经符号与混合系统",
+      "sample": {
+        "papers": 144,
+        "accepted": 33,
+        "rejected": 78,
+        "withdrawn": 26,
+        "desk_rejected": 7,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 29.72972972972973,
+        "accepted_over_all": 22.916666666666668,
+        "accepted_over_nonwithdrawn": 27.966101694915253
+      },
+      "corpus": {
+        "papers": 433,
+        "accepted": 106,
+        "rejected": 222,
+        "withdrawn": 90,
+        "desk_rejected": 15,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 32.31707317073171,
+        "accepted_over_all": 24.480369515011546,
+        "accepted_over_nonwithdrawn": 30.903790087463555
+      }
+    },
+    {
+      "id": "optimization",
+      "label": "优化",
+      "sample": {
+        "papers": 527,
+        "accepted": 152,
+        "rejected": 252,
+        "withdrawn": 110,
+        "desk_rejected": 13,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 37.62376237623762,
+        "accepted_over_all": 28.842504743833018,
+        "accepted_over_nonwithdrawn": 36.45083932853717
+      },
+      "corpus": {
+        "papers": 1579,
+        "accepted": 448,
+        "rejected": 767,
+        "withdrawn": 328,
+        "desk_rejected": 36,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 36.8724279835391,
+        "accepted_over_all": 28.372387587080432,
+        "accepted_over_nonwithdrawn": 35.81135091926459
+      }
+    },
+    {
+      "id": "other_machine_learning",
+      "label": "其他机器学习",
+      "sample": {
+        "papers": 722,
+        "accepted": 183,
+        "rejected": 331,
+        "withdrawn": 193,
+        "desk_rejected": 15,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 35.60311284046693,
+        "accepted_over_all": 25.346260387811633,
+        "accepted_over_nonwithdrawn": 34.593572778827976
+      },
+      "corpus": {
+        "papers": 2168,
+        "accepted": 531,
+        "rejected": 994,
+        "withdrawn": 591,
+        "desk_rejected": 52,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 34.81967213114754,
+        "accepted_over_all": 24.49261992619926,
+        "accepted_over_nonwithdrawn": 33.6715282181357
+      }
+    },
+    {
+      "id": "probabilistic_methods_bayesian_methods_variational_inference_sampling_uq_etc",
+      "label": "概率与贝叶斯方法",
+      "sample": {
+        "papers": 268,
+        "accepted": 87,
+        "rejected": 134,
+        "withdrawn": 40,
+        "desk_rejected": 7,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 39.366515837104075,
+        "accepted_over_all": 32.46268656716418,
+        "accepted_over_nonwithdrawn": 38.1578947368421
+      },
+      "corpus": {
+        "papers": 805,
+        "accepted": 270,
+        "rejected": 386,
+        "withdrawn": 127,
+        "desk_rejected": 22,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 41.15853658536585,
+        "accepted_over_all": 33.54037267080745,
+        "accepted_over_nonwithdrawn": 39.823008849557525
+      }
+    },
+    {
+      "id": "reinforcement_learning",
+      "label": "强化学习",
+      "sample": {
+        "papers": 799,
+        "accepted": 257,
+        "rejected": 360,
+        "withdrawn": 164,
+        "desk_rejected": 18,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 41.65316045380875,
+        "accepted_over_all": 32.16520650813517,
+        "accepted_over_nonwithdrawn": 40.47244094488189
+      },
+      "corpus": {
+        "papers": 2400,
+        "accepted": 742,
+        "rejected": 1146,
+        "withdrawn": 461,
+        "desk_rejected": 51,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 39.30084745762712,
+        "accepted_over_all": 30.916666666666668,
+        "accepted_over_nonwithdrawn": 38.26714801444043
+      }
+    },
+    {
+      "id": "representation_learning_for_computer_vision_audio_language_and_other_modalities",
+      "label": "视觉、语音与语言表征",
+      "sample": {
+        "papers": 350,
+        "accepted": 98,
+        "rejected": 139,
+        "withdrawn": 112,
+        "desk_rejected": 1,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 41.35021097046413,
+        "accepted_over_all": 28.0,
+        "accepted_over_nonwithdrawn": 41.1764705882353
+      },
+      "corpus": {
+        "papers": 1050,
+        "accepted": 307,
+        "rejected": 438,
+        "withdrawn": 298,
+        "desk_rejected": 7,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 41.20805369127517,
+        "accepted_over_all": 29.238095238095237,
+        "accepted_over_nonwithdrawn": 40.82446808510638
+      }
+    },
+    {
+      "id": "transfer_learning_meta_learning_and_lifelong_learning",
+      "label": "迁移、元学习与终身学习",
+      "sample": {
+        "papers": 442,
+        "accepted": 106,
+        "rejected": 191,
+        "withdrawn": 132,
+        "desk_rejected": 13,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 35.69023569023569,
+        "accepted_over_all": 23.981900452488688,
+        "accepted_over_nonwithdrawn": 34.193548387096776
+      },
+      "corpus": {
+        "papers": 1325,
+        "accepted": 299,
+        "rejected": 570,
+        "withdrawn": 416,
+        "desk_rejected": 40,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 34.407364787111625,
+        "accepted_over_all": 22.566037735849058,
+        "accepted_over_nonwithdrawn": 32.893289328932894
+      }
+    },
+    {
+      "id": "unsupervised_self_supervised_semi_supervised_and_supervised_representation_learning",
+      "label": "监督与自监督表征",
+      "sample": {
+        "papers": 966,
+        "accepted": 255,
+        "rejected": 458,
+        "withdrawn": 237,
+        "desk_rejected": 16,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 35.76437587657784,
+        "accepted_over_all": 26.39751552795031,
+        "accepted_over_nonwithdrawn": 34.97942386831276
+      },
+      "corpus": {
+        "papers": 2897,
+        "accepted": 722,
+        "rejected": 1352,
+        "withdrawn": 766,
+        "desk_rejected": 57,
+        "unknown": 0,
+        "acceptance_given_accept_or_reject": 34.81195756991321,
+        "accepted_over_all": 24.92233344839489,
+        "accepted_over_nonwithdrawn": 33.8808071328015
+      }
+    }
+  ],
+  "denominator_change_pp": 11.329516090526514,
+  "sample_minus_corpus_all_pp": 0.3404764536149685,
+  "sample_minus_corpus_conditional_pp": 0.41612541376103707,
+  "snapshot_decision_mismatches": 0,
+  "duplicate_corpus_ids": 0,
+  "duplicate_sample_ids": 0,
+  "decision_history": {
+    "papers_with_multiple_categories": 0
+  },
+  "official_acceptance_denominator_verified": false,
+  "website_modified": false
+}

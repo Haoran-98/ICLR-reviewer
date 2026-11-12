@@ -1,0 +1,94 @@
+{
+  "source": "Authors released SPECTER2 max pooling predictions; no model inference rerun",
+  "reviewers": 58,
+  "unique_papers": 463,
+  "observations": 477,
+  "old_new_main_metric_identical_on_10_files": true,
+  "means": {
+    "loss": 0.22147611818287982,
+    "easy": 0.889272030651341,
+    "hard": 0.6067146282973621
+  },
+  "iterations": [
+    {
+      "iteration": 1,
+      "loss": 0.220600256919304,
+      "easy": 0.8888888888888888,
+      "hard": 0.60431654676259,
+      "easy_n": 261,
+      "hard_n": 417
+    },
+    {
+      "iteration": 2,
+      "loss": 0.2189653158939624,
+      "easy": 0.8888888888888888,
+      "hard": 0.6139088729016786,
+      "easy_n": 261,
+      "hard_n": 417
+    },
+    {
+      "iteration": 3,
+      "loss": 0.21943244190120284,
+      "easy": 0.8888888888888888,
+      "hard": 0.60431654676259,
+      "easy_n": 261,
+      "hard_n": 417
+    },
+    {
+      "iteration": 4,
+      "loss": 0.22678967651523999,
+      "easy": 0.8850574712643678,
+      "hard": 0.60431654676259,
+      "easy_n": 261,
+      "hard_n": 417
+    },
+    {
+      "iteration": 5,
+      "loss": 0.21978278640663318,
+      "easy": 0.89272030651341,
+      "hard": 0.6139088729016786,
+      "easy_n": 261,
+      "hard_n": 417
+    },
+    {
+      "iteration": 6,
+      "loss": 0.2250379539880883,
+      "easy": 0.8850574712643678,
+      "hard": 0.6067146282973621,
+      "easy_n": 261,
+      "hard_n": 417
+    },
+    {
+      "iteration": 7,
+      "loss": 0.22024991241387365,
+      "easy": 0.8888888888888888,
+      "hard": 0.6067146282973621,
+      "easy_n": 261,
+      "hard_n": 417
+    },
+    {
+      "iteration": 8,
+      "loss": 0.2189653158939624,
+      "easy": 0.89272030651341,
+      "hard": 0.60431654676259,
+      "easy_n": 261,
+      "hard_n": 417
+    },
+    {
+      "iteration": 9,
+      "loss": 0.22468760948265795,
+      "easy": 0.8888888888888888,
+      "hard": 0.6067146282973621,
+      "easy_n": 261,
+      "hard_n": 417
+    },
+    {
+      "iteration": 10,
+      "loss": 0.22024991241387365,
+      "easy": 0.89272030651341,
+      "hard": 0.6019184652278178,
+      "easy_n": 261,
+      "hard_n": 417
+    }
+  ]
+}

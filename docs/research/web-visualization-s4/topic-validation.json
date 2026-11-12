@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "source_data_version": "s4-433874ad15af3800",
+  "domains_sha256": "94df395667ce022b64c575e9c3338994401c71958cf0a3407c873b58de651de5",
+  "sample_sha256": "3845cfd27da53c110c75673e36b4e02b2a2f4805e5922985948b5bf78ce94900",
+  "rules_sha256": "761b9057e4f20974dd785e51516e530f37a0fda47531bac5f9c0d005e841634a",
+  "policy": "Known aliases + case/spacing/hyphens + controlled terminal plurals; merge identical concepts across entity types; retain source IDs; deduplicate per paper",
+  "region_method": "KMeans(k=30,seed=42,n_init=10) on fixed 2-D map; regional topics ranked by paper-frequency TF-IDF",
+  "raw_entities": 124580,
+  "concepts": 119182,
+  "raw_memberships": 156103,
+  "concept_memberships": 153519,
+  "llm_union_papers": 1255,
+  "map_regions": 30,
+  "source_ids_preserved": true,
+  "domain_specific_topic_regions": 336,
+  "s4_topic_parent_domains_verified": true,
+  "per_paper_concepts_deduplicated": true,
+  "regional_topic_memberships_verified": true
+}

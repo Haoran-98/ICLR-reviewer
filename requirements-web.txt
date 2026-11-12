@@ -1,0 +1,7 @@
+# Website export and single-manuscript review; no local LLM/GPU runtime required.
+-r requirements.txt
+numpy>=2.0,<3
+scipy>=1.13,<2
+scikit-learn>=1.5,<2
+requests>=2.32,<3
+jsonschema>=4.23,<5

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "data_version": "s4-433874ad15af3800",
+  "papers": 12964,
+  "entities": 124580,
+  "unique_paper_entity_memberships": 156103,
+  "source_evidence_files_verified": 12964,
+  "by_year": {
+    "2024": 2468,
+    "2025": 3890,
+    "2026": 6606
+  },
+  "totals": {
+    "papers": 12964,
+    "reviews": 54900,
+    "valid_ratings": 49734,
+    "needs_review": 0
+  },
+  "source_membership_exact": true,
+  "original_s4_evidence_unchanged": true,
+  "latest_scores_match_database": true
+}

@@ -1,0 +1,15 @@
+{
+  "check": "passed",
+  "modules": 7795,
+  "replay_papers": 5,
+  "replay_concerns": 8,
+  "browser_errors": [],
+  "uploads": 0,
+  "local_matching": true,
+  "candidates_default_excluded": true,
+  "replay_evidence_exact": true,
+  "source_map_link": true,
+  "mobile_overflow": false,
+  "ready_ms": 222,
+  "url": "http://172.24.246.231:5173"
+}

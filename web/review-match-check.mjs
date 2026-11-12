@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import { phraseHit, rankModules } from './review-match.js';
+const module = (id, scopes, status = 'source_supported') => ({ id, scopes, status });
+const modules = [module('rag', ['retrieval augmented generation']), module('rl', ['reinforcement learning']), module('draft', ['retrieval augmented generation'], 'candidate')];
+assert.equal(phraseHit('small', 'LLM'), null, 'A short acronym cannot match a larger word');
+assert.ok(phraseHit('Retrieval-Augmented Generation improves search.', 'retrieval augmented generation'));
+assert.equal(phraseHit('a+b is an expression', 'a+b').start, 0, 'Scientific punctuation must be escaped');
+assert.equal(rankModules(modules, 'Retrieval augmented generation uses external evidence.')[0].module.id, 'rag');
+assert.ok(!rankModules(modules, 'Retrieval augmented generation').some(x => x.module.status === 'candidate'));
+assert.equal(rankModules(modules, 'Retrieval augmented generation', { area: 'other' }).length, 0);
+assert.equal(rankModules(modules, 'unrelated abstract').length, 0);
+assert.equal(rankModules(modules, '').length, 0);
+assert.equal(rankModules(modules, 'Retrieval augmented generation', { candidates: true }).length, 2);
+console.log('Matching checks passed: phrase boundaries, punctuation, status isolation, out-of-scope and empty input.');

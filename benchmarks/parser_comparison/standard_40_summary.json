@@ -1,0 +1,205 @@
+{
+  "scope": {
+    "requested_papers": 40,
+    "complete_triplets": 40,
+    "mineru_tier": "standard",
+    "mineru_source": "/data_big/iclr-parser-benchmark/outputs/mineru_standard_gpu_partial"
+  },
+  "methods": {
+    "existing": {
+      "label": "Existing Markdown",
+      "parsed": 40,
+      "missing": [],
+      "quality_score_mean": 96.4553,
+      "quality_score_median": 97.3549,
+      "title_recall_mean": 0.8781,
+      "abstract_recall_mean": 0.9877,
+      "keyword_recall_mean": 0.9657,
+      "section_score_mean": 0.9667,
+      "references_present_rate": 1.0,
+      "table_rows_mean": 0.6,
+      "formula_markers_mean": 0,
+      "formula_undecoded_total": 0,
+      "embedded_image_count": 0,
+      "figure_mentions_mean": 19.2,
+      "citation_markers_mean": 11.1,
+      "repeat_rate_mean": 0.0099,
+      "replacement_chars_total": 5,
+      "coverage_score_mean": 1.0,
+      "reference_token_recall_mean": 1.0,
+      "reference_token_precision_mean": 1.0,
+      "reference_token_f1_mean": 1.0,
+      "output_mib": 3.967,
+      "visible_text_mib": 3.967,
+      "embedded_image_mib": 0.0
+    },
+    "docling": {
+      "label": "Docling 2.130.0",
+      "parsed": 40,
+      "missing": [],
+      "quality_score_mean": 97.2052,
+      "quality_score_median": 97.769,
+      "title_recall_mean": 0.9935,
+      "abstract_recall_mean": 0.9903,
+      "keyword_recall_mean": 0.9657,
+      "section_score_mean": 0.9583,
+      "references_present_rate": 1.0,
+      "table_rows_mean": 69.8,
+      "formula_markers_mean": 0,
+      "formula_undecoded_total": 908,
+      "embedded_image_count": 0,
+      "figure_mentions_mean": 19.075,
+      "citation_markers_mean": 10.5,
+      "repeat_rate_mean": 0.0152,
+      "replacement_chars_total": 0,
+      "coverage_score_mean": 0.9643,
+      "reference_token_recall_mean": 0.9024,
+      "reference_token_precision_mean": 0.9703,
+      "reference_token_f1_mean": 0.9347,
+      "output_mib": 2.839,
+      "visible_text_mib": 2.839,
+      "embedded_image_mib": 0.0
+    },
+    "mineru_standard": {
+      "label": "MinerU standard",
+      "parsed": 40,
+      "missing": [],
+      "quality_score_mean": 95.3592,
+      "quality_score_median": 95.7355,
+      "title_recall_mean": 1.0,
+      "abstract_recall_mean": 0.9927,
+      "keyword_recall_mean": 0.9685,
+      "section_score_mean": 0.95,
+      "references_present_rate": 1.0,
+      "table_rows_mean": 41.975,
+      "formula_markers_mean": 45.325,
+      "formula_undecoded_total": 0,
+      "embedded_image_count": 673,
+      "figure_mentions_mean": 19.175,
+      "citation_markers_mean": 10.975,
+      "repeat_rate_mean": 0.0116,
+      "replacement_chars_total": 0,
+      "coverage_score_mean": 0.9005,
+      "reference_token_recall_mean": 0.9219,
+      "reference_token_precision_mean": 0.8519,
+      "reference_token_f1_mean": 0.8823,
+      "output_mib": 48.518,
+      "visible_text_mib": 3.143,
+      "embedded_image_mib": 45.374
+    }
+  },
+  "quality_score_wins": {
+    "existing": 19,
+    "docling": 16,
+    "mineru_standard": 5
+  },
+  "quality_score_ties": 0,
+  "conflict_audit": {
+    "cases": [
+      {
+        "sample_id": "p013",
+        "kind": "formula",
+        "page": 8,
+        "winner": "existing",
+        "confidence": 0.98,
+        "used_strong": true
+      },
+      {
+        "sample_id": "p020",
+        "kind": "formula",
+        "page": 8,
+        "winner": "existing",
+        "confidence": 0.88,
+        "used_strong": true
+      },
+      {
+        "sample_id": "p027",
+        "kind": "formula",
+        "page": 5,
+        "winner": "mineru_standard",
+        "confidence": 0.95,
+        "used_strong": true
+      },
+      {
+        "sample_id": "p038",
+        "kind": "formula",
+        "page": 5,
+        "winner": "existing",
+        "confidence": 0.98,
+        "used_strong": false
+      },
+      {
+        "sample_id": "p007",
+        "kind": "table",
+        "page": 7,
+        "winner": "mineru_standard",
+        "confidence": 0.99,
+        "used_strong": false
+      },
+      {
+        "sample_id": "p017",
+        "kind": "table",
+        "page": 5,
+        "winner": "mineru_standard",
+        "confidence": 0.87,
+        "used_strong": true
+      },
+      {
+        "sample_id": "p019",
+        "kind": "table",
+        "page": 7,
+        "winner": "mineru_standard",
+        "confidence": 0.93,
+        "used_strong": true
+      },
+      {
+        "sample_id": "p032",
+        "kind": "table",
+        "page": 8,
+        "winner": "mineru_standard",
+        "confidence": 0.9,
+        "used_strong": true
+      }
+    ],
+    "winners": {
+      "existing": 3,
+      "mineru_standard": 5
+    },
+    "winners_by_kind": {
+      "formula": {
+        "existing": 3,
+        "mineru_standard": 1
+      },
+      "table": {
+        "mineru_standard": 4
+      }
+    },
+    "average_scores": {
+      "existing": {
+        "text": 4.25,
+        "structure": 3,
+        "table": 2.875,
+        "math": 3.625
+      },
+      "docling": {
+        "text": 3.75,
+        "structure": 2.875,
+        "table": 3.125,
+        "math": 2.625
+      },
+      "mineru_standard": {
+        "text": 4.125,
+        "structure": 4,
+        "table": 3.75,
+        "math": 3.625
+      }
+    },
+    "strong_calls": 6,
+    "strong_changed_winner": 3,
+    "usage": {
+      "input_tokens": 150652,
+      "output_tokens": 10764,
+      "total_tokens": 161416
+    }
+  }
+}

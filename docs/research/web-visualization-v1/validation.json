@@ -1,0 +1,553 @@
+{
+  "phase": "V1",
+  "status": "passed",
+  "verified_at": "2026-11-05T10:17:42.140751+00:00",
+  "implementation": {
+    "entry": "web/",
+    "frontend": "Vite + vanilla JavaScript",
+    "data_access": "Python/psycopg read-only snapshot export",
+    "r": {
+      "version": "4.4.3",
+      "ggdist": "3.3.3",
+      "ggplot2": "4.0.3",
+      "svglite": "2.2.2"
+    },
+    "npm": {
+      "dependencies": {
+        "embedding-atlas": "0.26.0"
+      },
+      "devDependencies": {
+        "playwright": "1.61.1",
+        "vite": "7.3.7"
+      }
+    }
+  },
+  "checks": {
+    "consistent_read_only_export": true,
+    "deterministic_repeat_export": true,
+    "unique_paper_ids": true,
+    "one_version_per_review": true,
+    "actual_browser_selection": true,
+    "actual_gpu_points": true,
+    "ggdist_svg_loaded": true,
+    "browser_no_errors": true,
+    "production_build": true,
+    "dependency_audit": true
+  },
+  "snapshot": {
+    "counts": [
+      {
+        "papers": 38890,
+        "paper_versions": 38890,
+        "explicit_areas": 27,
+        "reviews": 164810,
+        "review_revisions": 164821,
+        "discussions": 431990,
+        "decisions": 38890,
+        "embeddings": 0,
+        "taxonomy_assignments": 0,
+        "edit_envelopes": 120183,
+        "edits_with_content": 22568,
+        "reviews_with_multiple_versions": 4
+      }
+    ],
+    "paper_coverage": [
+      {
+        "year": 2024,
+        "papers": 7404,
+        "with_title": 7404,
+        "with_abstract": 7404,
+        "with_keywords": 7404,
+        "with_area": 7404
+      },
+      {
+        "year": 2025,
+        "papers": 11672,
+        "with_title": 11672,
+        "with_abstract": 11672,
+        "with_keywords": 11672,
+        "with_area": 11672
+      },
+      {
+        "year": 2026,
+        "papers": 19814,
+        "with_title": 19814,
+        "with_abstract": 19814,
+        "with_keywords": 19814,
+        "with_area": 19814
+      }
+    ],
+    "review_coverage": [
+      {
+        "year": 2024,
+        "reviews": 28028,
+        "with_rating": 28028,
+        "with_confidence": 28028,
+        "with_soundness": 28028,
+        "with_contribution": 28028,
+        "with_presentation": 28028,
+        "observed_ratings": [
+          "1",
+          "3",
+          "5",
+          "6",
+          "8",
+          "10"
+        ],
+        "observed_confidence": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      {
+        "year": 2025,
+        "reviews": 46748,
+        "with_rating": 46748,
+        "with_confidence": 46748,
+        "with_soundness": 46748,
+        "with_contribution": 46748,
+        "with_presentation": 46748,
+        "observed_ratings": [
+          "1",
+          "3",
+          "5",
+          "6",
+          "8",
+          "10"
+        ],
+        "observed_confidence": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      {
+        "year": 2026,
+        "reviews": 90034,
+        "with_rating": 74540,
+        "with_confidence": 75859,
+        "with_soundness": 75859,
+        "with_contribution": 75859,
+        "with_presentation": 75859,
+        "observed_ratings": [
+          "2",
+          "4",
+          "6",
+          "8",
+          "10"
+        ],
+        "observed_confidence": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      }
+    ],
+    "decision_coverage": [
+      {
+        "year": 2024,
+        "decision_category": "Desk Reject",
+        "papers": 53
+      },
+      {
+        "year": 2024,
+        "decision_category": "Oral",
+        "papers": 86
+      },
+      {
+        "year": 2024,
+        "decision_category": "Poster",
+        "papers": 1807
+      },
+      {
+        "year": 2024,
+        "decision_category": "Reject",
+        "papers": 3431
+      },
+      {
+        "year": 2024,
+        "decision_category": "Spotlight",
+        "papers": 367
+      },
+      {
+        "year": 2024,
+        "decision_category": "Withdraw",
+        "papers": 1660
+      },
+      {
+        "year": 2025,
+        "decision_category": "Desk Reject",
+        "papers": 70
+      },
+      {
+        "year": 2025,
+        "decision_category": "Oral",
+        "papers": 213
+      },
+      {
+        "year": 2025,
+        "decision_category": "Poster",
+        "papers": 3110
+      },
+      {
+        "year": 2025,
+        "decision_category": "Reject",
+        "papers": 4911
+      },
+      {
+        "year": 2025,
+        "decision_category": "Spotlight",
+        "papers": 380
+      },
+      {
+        "year": 2025,
+        "decision_category": "Withdraw",
+        "papers": 2988
+      },
+      {
+        "year": 2026,
+        "decision_category": "Desk Reject",
+        "papers": 908
+      },
+      {
+        "year": 2026,
+        "decision_category": "Oral",
+        "papers": 224
+      },
+      {
+        "year": 2026,
+        "decision_category": "Poster",
+        "papers": 5128
+      },
+      {
+        "year": 2026,
+        "decision_category": "Reject",
+        "papers": 8386
+      },
+      {
+        "year": 2026,
+        "decision_category": "Withdraw",
+        "papers": 5168
+      }
+    ],
+    "rating_labels": [
+      {
+        "year": 2024,
+        "rating": "1",
+        "raw_rating": "1",
+        "revisions": 621
+      },
+      {
+        "year": 2024,
+        "rating": "3",
+        "raw_rating": "3",
+        "revisions": 6974
+      },
+      {
+        "year": 2024,
+        "rating": "3",
+        "raw_rating": "3: reject, not good enough",
+        "revisions": 5
+      },
+      {
+        "year": 2024,
+        "rating": "5",
+        "raw_rating": "5",
+        "revisions": 8102
+      },
+      {
+        "year": 2024,
+        "rating": "5",
+        "raw_rating": "5: marginally below the acceptance threshold",
+        "revisions": 1
+      },
+      {
+        "year": 2024,
+        "rating": "6",
+        "raw_rating": "6",
+        "revisions": 8341
+      },
+      {
+        "year": 2024,
+        "rating": "6",
+        "raw_rating": "6: marginally above the acceptance threshold",
+        "revisions": 1
+      },
+      {
+        "year": 2024,
+        "rating": "8",
+        "raw_rating": "8",
+        "revisions": 3887
+      },
+      {
+        "year": 2024,
+        "rating": "10",
+        "raw_rating": "10",
+        "revisions": 103
+      },
+      {
+        "year": 2025,
+        "rating": "1",
+        "raw_rating": "1",
+        "revisions": 1029
+      },
+      {
+        "year": 2025,
+        "rating": "3",
+        "raw_rating": "3",
+        "revisions": 11537
+      },
+      {
+        "year": 2025,
+        "rating": "5",
+        "raw_rating": "5",
+        "revisions": 13102
+      },
+      {
+        "year": 2025,
+        "rating": "6",
+        "raw_rating": "6",
+        "revisions": 14698
+      },
+      {
+        "year": 2025,
+        "rating": "8",
+        "raw_rating": "8",
+        "revisions": 6214
+      },
+      {
+        "year": 2025,
+        "rating": "10",
+        "raw_rating": "10",
+        "revisions": 172
+      },
+      {
+        "year": 2026,
+        "rating": "2",
+        "raw_rating": "2",
+        "revisions": 19865
+      },
+      {
+        "year": 2026,
+        "rating": "4",
+        "raw_rating": "4",
+        "revisions": 29765
+      },
+      {
+        "year": 2026,
+        "rating": "6",
+        "raw_rating": "6",
+        "revisions": 19712
+      },
+      {
+        "year": 2026,
+        "rating": "8",
+        "raw_rating": "8",
+        "revisions": 5010
+      },
+      {
+        "year": 2026,
+        "rating": "10",
+        "raw_rating": "10",
+        "revisions": 188
+      },
+      {
+        "year": 2026,
+        "rating": null,
+        "raw_rating": null,
+        "revisions": 15494
+      }
+    ],
+    "meta": {
+      "contract_version": "v1",
+      "data_version": "v1-sample-520a224749858932",
+      "content_sha256": "520a224749858932b5ab3147959a24bf39fc43c36d9e426b0e6285f4893b00ef",
+      "extracted_at": "2026-11-05T09:39:16.489456+00:00",
+      "transaction_snapshot": "83381:83381:",
+      "paper_version_policy": "max_version_no_then_paper_version_id",
+      "review_version_policy": "latest_observed_revision_no_then_revision_id",
+      "projection_version": "validation-grid-v1",
+      "semantic_projection": false,
+      "taxonomy_version": null,
+      "sample_method": "per_year_order_by_md5_forum_id",
+      "per_year": 12
+    }
+  },
+  "sample": {
+    "papers": 36,
+    "reviews": 153,
+    "valid_ratings": 142,
+    "missing_ratings": 11,
+    "hyperedges": 16
+  },
+  "browser_smoke": {
+    "passed": true,
+    "at": "2026-11-05T09:55:11.369Z",
+    "browser": "151.0.7922.34",
+    "gpu": {
+      "vendor": "amd",
+      "architecture": "rdna-3",
+      "shader_f16": true
+    },
+    "data_version": "v1-sample-520a224749858932",
+    "papers": 36,
+    "reviews": 153,
+    "selected_paper_ids": [
+      "8150",
+      "302"
+    ],
+    "selection_callback_verified": true,
+    "svg_loaded": true,
+    "page_errors": [],
+    "gpu_points_verified": 36,
+    "screenshot_uses_gpu_readback": true,
+    "screenshot": "web/artifacts/v1-browser.png",
+    "semantic_projection": false
+  },
+  "npm_audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "upstream_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/SamLee-dedeboy/HINTs/main/README.md",
+      "status": 200,
+      "sha256": "ed2b24edf123aa67fc5767126828fe0b199e3d958333927f330b452dc3faabf2",
+      "lines": 83,
+      "interface_evidence": [
+        "35: 2. Create a file called `openai_api_key` under the `server` directory, and copy and paste the api key from OpenAI's website.",
+        "69: 3. The data processing needs an [OpenAI api key](https://platform.openai.com/api-keys). Request one from OpenAI, create a file called `openai_api_key` under `reproduce` and copy an"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SamLee-dedeboy/HINTs/main/frontend-svelte/package.json",
+      "status": 200,
+      "sha256": "f46c9199c21114a161343babcb3915fd069b4057b35b05601fa2546f1604503d",
+      "lines": 28,
+      "interface_evidence": []
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SamLee-dedeboy/HINTs/main/frontend-svelte/src/lib/HyperMap.svelte",
+      "status": 200,
+      "sha256": "4cc53302b768c8b889f02449c812bdb648132756a6e997ac58f687c55cd92633",
+      "lines": 1272,
+      "interface_evidence": [
+        "3:   import { createEventDispatcher, onMount, tick } from \"svelte\";",
+        "76:   const dispatch = createEventDispatcher();",
+        "77:   export let svgId;",
+        "78:   export let article_graph: any | undefined;",
+        "79:   export let entity_graph: any | undefined;",
+        "80:   export let filtered: boolean;",
+        "81:   export let searchedArticleIds: string[] | undefined;",
+        "82:   export let peripheral: any | undefined = undefined;",
+        "83:   export let articleClusterColorDict: any | undefined;",
+        "84:   export let articleSubClusterColorDict: any | undefined;",
+        "85:   export let entityClusterColorDict: any;",
+        "86:   export let entitySubClusterColorDict: any | undefined;",
+        "87:   export let searchMode: boolean;",
+        "88:   export let showEntityClusterLabelDefault: boolean;",
+        "89:   export let showArticleClusterLabelDefault: boolean;",
+        "90:   export let gosper: any | undefined = undefined;",
+        "718:           dispatch(\"article-cluster-expanded\", d.cluster_label);",
+        "734:           dispatch(\"article-cluster-removed\", d.cluster_label);",
+        "750:             dispatch(\"article-label-clicked\", d.cluster_label);",
+        "812:             dispatch(\"article-cluster-removed\", d.cluster_label);",
+        "829:           dispatch(\"article-label-clicked\", d.cluster_label);",
+        "908:           dispatch(\"entity-cluster-clicked\", d.cluster_label);",
+        "923:           dispatch(\"entity-cluster-removed\", d.cluster_label);",
+        "1114:           dispatch(\"entity-label-clicked\", [",
+        "1138:           dispatch(\"entity-label-clicked\", ["
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SamLee-dedeboy/HINTs/main/server/app.py",
+      "status": 200,
+      "sha256": "a65824cfe3b7be29c56556f6bfd7e40c88ca0fa1bfe5c5c34f55c2f8f1b5365d",
+      "lines": 455,
+      "interface_evidence": [
+        "5: from DataUtils import GraphController, DataTransformer, Utils, ArticleController, pHilbert, gosper",
+        "11: openai_api_key = open(relative_path(\"openai_api_key\")).read()",
+        "12: client=OpenAI(api_key=openai_api_key, timeout=30)",
+        "19: # graph_controller = GraphController(relative_path(\"../reproduce/VisPub/data/result/server/\"))",
+        "20: graph_controller = GraphController(relative_path(\"data/{}/\".format(dataset)))",
+        "22: # article_controller = ArticleController(relative_path('../reproduce/VisPub/data/result/server/'.format(dataset)), openai_api_key)",
+        "23: article_controller = ArticleController(relative_path('data/{}/'.format(dataset)), openai_api_key)",
+        "40: @app.route(\"/user/hgraph/\", methods=[\"POST\"])",
+        "98: @app.route(\"/user/filter/\", methods=[\"POST\"])",
+        "166: @app.route(\"/user/expand_cluster/article/\", methods=[\"POST\"])",
+        "246: @app.route(\"/user/expand_cluster/entity/\", methods=[\"POST\"])",
+        "312: # @app.route(\"/user/optimize_partition/<uid>\", methods=[\"POST\"])",
+        "350: @app.route(\"/static/p_hilbert/\", methods=[\"POST\"])",
+        "357: @app.route(\"/static/gosper/\", methods=[\"POST\"])",
+        "364: @app.route(\"/static/search/\", methods=[\"POST\"])",
+        "382: @app.route(\"/static/articles/\", methods=[\"POST\"])",
+        "388: @app.route(\"/static/hierarchy\", methods=[\"GET\"])",
+        "392: # @app.route(\"/static/topic\", methods=[\"POST\"])",
+        "401: @app.route(\"/static/chat\", methods=[\"POST\"])",
+        "407: @app.route(\"/static/baseline_chat\", methods=[\"POST\"])",
+        "413: @app.route(\"/static/rag\", methods=[\"POST\"])"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SamLee-dedeboy/HINTs/main/LICENSE",
+      "status": 404
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SamLee-dedeboy/HINTs/main/LICENSE.md",
+      "status": 404
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SamLee-dedeboy/HINTs/main/LICENSE.txt",
+      "status": 404
+    },
+    {
+      "name": "atlas-package",
+      "url": "https://registry.npmjs.org/embedding-atlas/0.26.0",
+      "status": 200,
+      "sha256": "592afb7e825989a2f1e2fc030eda27ea493bce923740a1f46b3d4914a43448a9"
+    },
+    {
+      "name": "atlas-license",
+      "url": "https://raw.githubusercontent.com/apple/embedding-atlas/main/LICENSE",
+      "status": 200,
+      "sha256": "0526923dfe63e062f2ec8d6ab93c02038d0e76a8868e4a0744470c0e361a81c2"
+    },
+    {
+      "name": "ggdist-description",
+      "url": "https://raw.githubusercontent.com/mjskay/ggdist/master/DESCRIPTION",
+      "status": 200,
+      "sha256": "a2cd30ea7152849cb2a6cb0c912daa0d3fd1bb601707358cc21dd4f440ff77ed"
+    }
+  ],
+  "integration_decisions": {
+    "atlas": "embed native EmbeddingView",
+    "ggdist": "separate R process exporting SVG",
+    "hints": "method-inspired independent implementation; source reuse license unconfirmed"
+  },
+  "known_limits": [
+    "validation grid is not a semantic projection",
+    "SVG is static for the entire sample",
+    "No production business API or hypergraph renderer yet",
+    "Atlas requires WebGPU shader-f16",
+    "Year-specific official numeric score labels not fully retrieved; do not pool years",
+    "Only four normalized review histories currently have multiple versions",
+    "HINTs fixed release and recent maintenance not confirmed"
+  ],
+  "artifact_sha256": {
+    "web/public/generated/sample.json": "4242e3ccb064bcc4ce9f46823282fe9cc9b965d51d107a3086fce44514046609",
+    "web/public/generated/reviews.svg": "fc9a92c0c56a2bcac19580ed1e277e0ce31941612c35a58246d87dcc0307a308",
+    "web/artifacts/v1-atlas-canvas.png": "48c458fe35679b1741186835f286946c2d1c2c42184543a7ec533a8a9edcf772",
+    "web/artifacts/v1-browser.png": "285b64dd27ff0228704e4375ac3f3bc367868bc28f047566eae1d2134dc1e8cc"
+  }
+}

@@ -1,0 +1,14 @@
+[Unit]
+Description=ICLR Reviewer PostgreSQL 16
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/data_big/iclr-reviewer-db/runtime/bin/postgres -D /data_big/iclr-reviewer-db/postgres
+ExecStop=/data_big/iclr-reviewer-db/runtime/bin/pg_ctl -D /data_big/iclr-reviewer-db/postgres stop -m fast
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65536
+
+[Install]
+WantedBy=default.target

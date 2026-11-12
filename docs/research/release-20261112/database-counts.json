@@ -1,0 +1,79 @@
+{
+  "checked_at": "2026-11-12",
+  "source": "read-only PostgreSQL aggregate queries; no model calls",
+  "counts": [
+    [
+      "taxonomy_assignments",
+      0
+    ],
+    [
+      "rebuttal_outcome_rows",
+      0
+    ],
+    [
+      "reviewer_twin_rows",
+      0
+    ],
+    [
+      "profile_rows",
+      38807
+    ],
+    [
+      "papers",
+      38890
+    ],
+    [
+      "profile_distinct_papers",
+      38807
+    ],
+    [
+      "content_objects",
+      621166
+    ],
+    [
+      "review_revision_rows",
+      164821
+    ],
+    [
+      "reviews",
+      164810
+    ],
+    [
+      "openreview_edit_rows",
+      120183
+    ]
+  ],
+  "fulltext": [
+    [
+      "indexed",
+      38715
+    ],
+    [
+      "missing",
+      175
+    ]
+  ],
+  "year_total_accepted": [
+    [
+      2024,
+      7404,
+      2260
+    ],
+    [
+      2025,
+      11672,
+      3703
+    ],
+    [
+      2026,
+      19814,
+      5352
+    ]
+  ],
+  "profile_versions": [
+    [
+      "paper_understanding_v1",
+      38807
+    ]
+  ]
+}

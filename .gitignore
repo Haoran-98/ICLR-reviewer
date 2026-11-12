@@ -12,6 +12,10 @@ auth
 data/iclr_reviews/
 raw_data/
 
+# Local database runtime and generated inventory/validation reports.
+database/state/
+database/vendor/
+
 # Model requests and raw provider responses may contain large copied text.
 **/api_luna/
 **/luna_batches/
@@ -19,3 +23,31 @@ raw_data/
 
 # Scheduled extraction state contains source paths and model outputs.
 automation/state/
+
+# Generated paper-understanding progress, manifests, and model run logs.
+logs/paper_understanding/
+
+# Local S4 runtimes, model caches, queues, and smoke artifacts.
+logs/s4_taxonomy/
+
+# Local Web validation runtimes and generated corpus snapshots.
+web/node_modules/
+web/dist/
+web/public/generated/
+web/artifacts/
+web/public/iclr-lan-ca.crt
+logs/web_visualization/
+
+# Private sessions, runtime evidence and presentation/coursework workspaces.
+.codex/
+SESSION.md
+logs/
+output/
+docs/reports/
+twin_smoke/output/
+automation/public/
+docs/images/promo/
+.pytest_cache/
+
+# Local database/model storage when deployment paths are kept inside the repo.
+.local-data/

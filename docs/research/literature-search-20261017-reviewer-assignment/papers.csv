@@ -1,0 +1,9 @@
+id,title,year,venue,source_url,type,insight,completeness,numeric_evidence,relevance,notes
+P1,PeerReview4All: Fair and Accurate Reviewer Assignment in Peer Review,2021,JMLR,https://arxiv.org/abs/1806.06237,theory/proof,4,4,3,最不利论文公平性基线,摘要与作者实现核查；未审计全文实验
+P2,Paper Matching with Local Fairness Constraints,2019,KDD,https://arxiv.org/abs/1905.11924,pure method,4,4,3,局部公平约束及公开实例,核查摘要与fair-matching README；未重现实验
+P3,Mitigating Manipulation in Peer Review via Randomized Reviewer Assignments,2020,NeurIPS,https://arxiv.org/abs/2006.16437,pure method,4,4,3,边际概率上限与约束采样,摘要给出真实数据实验数值；未全文验证
+P4,A One-Size-Fits-All Approach to Improving Randomness in Paper Assignment,2023,NeurIPS,https://arxiv.org/abs/2310.05995,pure method,4,5,4,PM与NeurIPS 2024部署,官方部署补充具体参数与目标值；无本地复现
+P5,A Gold Standard Dataset for the Reviewer Assignment Problem,2025,TMLR,https://arxiv.org/abs/2303.16750,pure benchmark,4,4,N/A benchmark,专家自评适配主benchmark,58研究者477评分；小规模稀疏自评；仓库有数据与评价脚本
+P6,SciRepEval: A Multi-Format Benchmark for Scientific Document Representations,2023,EMNLP,https://arxiv.org/abs/2211.13308,method + benchmark,4,4,3,公开reviewer matching与SPECTER2,24任务；已核查matching配置但未下载数据
+P7,SPECTER: Document-level Representation Learning using Citation-informed Transformers,2020,ACL,https://aclanthology.org/2020.acl-main.207/,method + benchmark,4,4,3,经典引文监督表示基线,论文摘要与OpenReview实现；SciDocs不是独立专家自评匹配gold
+P8,Neighborhood Contrastive Learning for Scientific Document Representations with Citation Embeddings,2022,EMNLP,https://aclanthology.org/2022.emnlp-main.802/,pure method,4,4,3,SciNCL强语义基线,Anthology摘要与OpenReview组合实现核查；未全文审计数值

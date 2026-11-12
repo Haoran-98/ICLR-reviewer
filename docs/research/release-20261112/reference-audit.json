@@ -1,0 +1,535 @@
+{
+  "scope": "Targeted metadata/venue verification of method references already named in project records; not a literature search or method reproduction audit.",
+  "accessed_on": "2026-11-12",
+  "records": [
+    {
+      "label": "ggdist",
+      "url": "https://api.crossref.org/works/10.1109/TVCG.2023.3327195",
+      "retrieved_at": "2026-11-12",
+      "kind": "crossref",
+      "response_sha256": "4aecb4a7768a9a137af655f0c4d25b278da0cd6b5da6465765a9242fd9079bea",
+      "status": "metadata_retrieved",
+      "title": [
+        "ggdist: Visualizations of Distributions and Uncertainty in the Grammar of Graphics"
+      ],
+      "venue": [
+        "IEEE Transactions on Visualization and Computer Graphics"
+      ],
+      "year": {
+        "date-parts": [
+          [
+            2023
+          ]
+        ]
+      },
+      "doi": "10.1109/tvcg.2023.3327195",
+      "authors": [
+        {
+          "given": "Matthew",
+          "family": "Kay"
+        }
+      ]
+    },
+    {
+      "label": "HINTs",
+      "url": "https://api.crossref.org/works/10.1109/TVCG.2024.3459961",
+      "retrieved_at": "2026-11-12",
+      "kind": "crossref",
+      "response_sha256": "bbcada31cd7249999854b39d87897da773d51965534c49d906d0e11c3b73b8d0",
+      "status": "metadata_retrieved",
+      "title": [
+        "HINTs: Sensemaking on Large Collections of Documents With Hypergraph Visualization and INTelligent Agents"
+      ],
+      "venue": [
+        "IEEE Transactions on Visualization and Computer Graphics"
+      ],
+      "year": {
+        "date-parts": [
+          [
+            2025,
+            9
+          ]
+        ]
+      },
+      "doi": "10.1109/tvcg.2024.3459961",
+      "authors": [
+        {
+          "given": "Sam Yu-Te",
+          "family": "Lee"
+        },
+        {
+          "given": "Kwan-Liu",
+          "family": "Ma"
+        }
+      ]
+    },
+    {
+      "label": "AutoManual",
+      "url": "https://api2.openreview.net/notes?id=Pwl9n4zlf5",
+      "retrieved_at": "2026-11-12",
+      "kind": "openreview",
+      "status": "unavailable",
+      "error": "curl: (22) The requested URL returned error: 403"
+    },
+    {
+      "label": "ACE",
+      "url": "https://api2.openreview.net/notes?id=eC4ygDs02R",
+      "retrieved_at": "2026-11-12",
+      "kind": "openreview",
+      "status": "unavailable",
+      "error": "curl: (22) The requested URL returned error: 403"
+    },
+    {
+      "label": "ReviewGrounder",
+      "url": "https://aclanthology.org/2026.acl-long.1477/",
+      "retrieved_at": "2026-11-12",
+      "kind": "acl",
+      "response_sha256": "2db94a26682c462741aa1fb55bf61aee052eaea9bcb8ac751ef448a2b36212d0",
+      "status": "metadata_retrieved",
+      "metadata": {
+        "citation_title": [
+          "ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, Tool-Integrated Agents"
+        ],
+        "citation_author": [
+          "Zhuofeng Li",
+          "Yi Lu",
+          "Dongfu Jiang",
+          "Haoxiang Zhang",
+          "Yuyang Bai",
+          "Chuan Li",
+          "Yu Wang",
+          "Shuiwang Ji",
+          "Jianwen Xie",
+          "Yu Zhang"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
+        ],
+        "citation_publication_date": [
+          "2026/7"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2026.acl-long.1477.pdf"
+        ],
+        "citation_firstpage": [
+          "32015"
+        ],
+        "citation_lastpage": [
+          "32044"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2026.acl-long.1477"
+        ],
+        "og:title": [
+          "ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, Tool-Integrated Agents"
+        ],
+        "og:image": [
+          "https://aclanthology.org/thumb/2026.acl-long.1477.jpg"
+        ],
+        "og:image:alt": [
+          "First page of paper PDF."
+        ],
+        "og:type": [
+          "article"
+        ],
+        "og:site_name": [
+          "ACL Anthology"
+        ],
+        "og:url": [
+          "https://aclanthology.org/2026.acl-long.1477/"
+        ],
+        "og:description": [
+          "Zhuofeng Li, Yi Lu, Dongfu Jiang, Haoxiang Zhang, Yuyang Bai, Chuan Li, Yu Wang, Shuiwang Ji, Jianwen Xie, Yu Zhang. Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2026."
+        ]
+      },
+      "page_title": "ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, Tool-Integrated Agents - ACL Anthology"
+    },
+    {
+      "label": "TaxoAdapt",
+      "url": "https://aclanthology.org/2025.acl-long.1442/",
+      "retrieved_at": "2026-11-12",
+      "kind": "acl",
+      "response_sha256": "ff276ee0438b26dbd1222b7a2d9ae547686cea8501381c274da1a0e16bf7dc18",
+      "status": "metadata_retrieved",
+      "metadata": {
+        "citation_title": [
+          "TaxoAdapt: Aligning LLM-Based Multidimensional Taxonomy Construction to Evolving Research Corpora"
+        ],
+        "citation_author": [
+          "Priyanka Kargupta",
+          "Nan Zhang",
+          "Yunyi Zhang",
+          "Rui Zhang",
+          "Prasenjit Mitra",
+          "Jiawei Han"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
+        ],
+        "citation_publication_date": [
+          "2025/7"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2025.acl-long.1442.pdf"
+        ],
+        "citation_firstpage": [
+          "29834"
+        ],
+        "citation_lastpage": [
+          "29850"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2025.acl-long.1442"
+        ],
+        "og:title": [
+          "TaxoAdapt: Aligning LLM-Based Multidimensional Taxonomy Construction to Evolving Research Corpora"
+        ],
+        "og:image": [
+          "https://aclanthology.org/thumb/2025.acl-long.1442.jpg"
+        ],
+        "og:image:alt": [
+          "First page of paper PDF."
+        ],
+        "og:type": [
+          "article"
+        ],
+        "og:site_name": [
+          "ACL Anthology"
+        ],
+        "og:url": [
+          "https://aclanthology.org/2025.acl-long.1442/"
+        ],
+        "og:description": [
+          "Priyanka Kargupta, Nan Zhang, Yunyi Zhang, Rui Zhang, Prasenjit Mitra, Jiawei Han. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2025."
+        ]
+      },
+      "page_title": "TaxoAdapt: Aligning LLM-Based Multidimensional Taxonomy Construction to Evolving Research Corpora - ACL Anthology"
+    },
+    {
+      "label": "TopicGPT",
+      "url": "https://aclanthology.org/2024.naacl-long.164/",
+      "retrieved_at": "2026-11-12",
+      "kind": "acl",
+      "response_sha256": "a6b323933e4a4b3d64af75068bf2050fda779ee30e719a4fae2c0daa62bca1f9",
+      "status": "metadata_retrieved",
+      "metadata": {
+        "citation_title": [
+          "TopicGPT: A Prompt-based Topic Modeling Framework"
+        ],
+        "citation_author": [
+          "Chau Minh Pham",
+          "Alexander Miserlis Hoyle",
+          "Simeng Sun",
+          "Philip Resnik",
+          "Mohit Iyyer"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)"
+        ],
+        "citation_publication_date": [
+          "2024/6"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2024.naacl-long.164.pdf"
+        ],
+        "citation_firstpage": [
+          "2956"
+        ],
+        "citation_lastpage": [
+          "2984"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2024.naacl-long.164"
+        ],
+        "og:title": [
+          "TopicGPT: A Prompt-based Topic Modeling Framework"
+        ],
+        "og:image": [
+          "https://aclanthology.org/thumb/2024.naacl-long.164.jpg"
+        ],
+        "og:image:alt": [
+          "First page of paper PDF."
+        ],
+        "og:type": [
+          "article"
+        ],
+        "og:site_name": [
+          "ACL Anthology"
+        ],
+        "og:url": [
+          "https://aclanthology.org/2024.naacl-long.164/"
+        ],
+        "og:description": [
+          "Chau Minh Pham, Alexander Hoyle, Simeng Sun, Philip Resnik, Mohit Iyyer. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2024."
+        ]
+      },
+      "page_title": "TopicGPT: A Prompt-based Topic Modeling Framework - ACL Anthology"
+    },
+    {
+      "label": "RbtAct",
+      "url": "https://aclanthology.org/2026.findings-acl.1696/",
+      "retrieved_at": "2026-11-12",
+      "kind": "acl",
+      "response_sha256": "18aef4e4ac305147e4f9a61d0df7aea2375677270eb67c6ddaeeee9ccacaef0c",
+      "status": "metadata_retrieved",
+      "metadata": {
+        "citation_title": [
+          "RbtAct: Rebuttal as Supervision for Actionable Review Feedback Generation"
+        ],
+        "citation_author": [
+          "Sihong Wu",
+          "Yiling Ma",
+          "Yilun Zhao",
+          "Tiansheng Hu",
+          "Owen Jiang",
+          "Manasi Patwardhan",
+          "Arman Cohan"
+        ],
+        "citation_conference_title": [
+          "Findings of the Association for Computational Linguistics: ACL 2026"
+        ],
+        "citation_publication_date": [
+          "2026/7"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2026.findings-acl.1696.pdf"
+        ],
+        "citation_firstpage": [
+          "33965"
+        ],
+        "citation_lastpage": [
+          "33992"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2026.findings-acl.1696"
+        ],
+        "og:title": [
+          "RbtAct: Rebuttal as Supervision for Actionable Review Feedback Generation"
+        ],
+        "og:image": [
+          "https://aclanthology.org/thumb/2026.findings-acl.1696.jpg"
+        ],
+        "og:image:alt": [
+          "First page of paper PDF."
+        ],
+        "og:type": [
+          "article"
+        ],
+        "og:site_name": [
+          "ACL Anthology"
+        ],
+        "og:url": [
+          "https://aclanthology.org/2026.findings-acl.1696/"
+        ],
+        "og:description": [
+          "Sihong Wu, Yiling Ma, Yilun Zhao, Tiansheng Hu, Owen Jiang, Manasi Patwardhan, Arman Cohan. Findings of the Association for Computational Linguistics: ACL 2026. 2026."
+        ]
+      },
+      "page_title": "RbtAct: Rebuttal as Supervision for Actionable Review Feedback Generation - ACL Anthology"
+    },
+    {
+      "label": "DeepReview",
+      "url": "https://aclanthology.org/2025.acl-long.1420/",
+      "retrieved_at": "2026-11-12",
+      "kind": "acl",
+      "response_sha256": "9ed34ac4cff7f7c0bbd4029c1ffdb6d632a4c2cd50e0c170942b602550c86e82",
+      "status": "metadata_retrieved",
+      "metadata": {
+        "citation_title": [
+          "DeepReview: Improving LLM-based Paper Review with Human-like Deep Thinking Process"
+        ],
+        "citation_author": [
+          "Minjun Zhu",
+          "Yixuan Weng",
+          "Linyi Yang",
+          "Yue Zhang"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
+        ],
+        "citation_publication_date": [
+          "2025/7"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2025.acl-long.1420.pdf"
+        ],
+        "citation_firstpage": [
+          "29330"
+        ],
+        "citation_lastpage": [
+          "29355"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2025.acl-long.1420"
+        ],
+        "og:title": [
+          "DeepReview: Improving LLM-based Paper Review with Human-like Deep Thinking Process"
+        ],
+        "og:image": [
+          "https://aclanthology.org/thumb/2025.acl-long.1420.jpg"
+        ],
+        "og:image:alt": [
+          "First page of paper PDF."
+        ],
+        "og:type": [
+          "article"
+        ],
+        "og:site_name": [
+          "ACL Anthology"
+        ],
+        "og:url": [
+          "https://aclanthology.org/2025.acl-long.1420/"
+        ],
+        "og:description": [
+          "Minjun Zhu, Yixuan Weng, Linyi Yang, Yue Zhang. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2025."
+        ]
+      },
+      "page_title": "DeepReview: Improving LLM-based Paper Review with Human-like Deep Thinking Process - ACL Anthology"
+    },
+    {
+      "label": "TreeReview",
+      "url": "https://aclanthology.org/2025.emnlp-main.790/",
+      "retrieved_at": "2026-11-12",
+      "kind": "acl",
+      "response_sha256": "76cf62eba945d4179f64f02e157874b883ff0fa3d0970cabcf2401bd13342265",
+      "status": "metadata_retrieved",
+      "metadata": {
+        "citation_title": [
+          "TreeReview: A Dynamic Tree of Questions Framework for Deep and Efficient LLM-based Scientific Peer Review"
+        ],
+        "citation_author": [
+          "Yuan Chang",
+          "Ziyue Li",
+          "Hengyuan Zhang",
+          "Yuanbo Kong",
+          "Yanru Wu",
+          "Hayden Kwok-Hay So",
+          "Zhijiang Guo",
+          "Liya Zhu",
+          "Ngai Wong"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing"
+        ],
+        "citation_publication_date": [
+          "2025/11"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2025.emnlp-main.790.pdf"
+        ],
+        "citation_firstpage": [
+          "15651"
+        ],
+        "citation_lastpage": [
+          "15682"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2025.emnlp-main.790"
+        ],
+        "og:title": [
+          "TreeReview: A Dynamic Tree of Questions Framework for Deep and Efficient LLM-based Scientific Peer Review"
+        ],
+        "og:image": [
+          "https://aclanthology.org/thumb/2025.emnlp-main.790.jpg"
+        ],
+        "og:image:alt": [
+          "First page of paper PDF."
+        ],
+        "og:type": [
+          "article"
+        ],
+        "og:site_name": [
+          "ACL Anthology"
+        ],
+        "og:url": [
+          "https://aclanthology.org/2025.emnlp-main.790/"
+        ],
+        "og:description": [
+          "Yuan Chang, Ziyue Li, Hengyuan Zhang, Yuanbo Kong, Yanru Wu, Hayden Kwok-Hay So, Zhijiang Guo, Liya Zhu, Ngai Wong. Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing. 2025."
+        ]
+      },
+      "page_title": "TreeReview: A Dynamic Tree of Questions Framework for Deep and Efficient LLM-based Scientific Peer Review - ACL Anthology"
+    },
+    {
+      "label": "Embedding Atlas",
+      "url": "https://arxiv.org/abs/2505.06386",
+      "retrieved_at": "2026-11-12",
+      "kind": "arxiv",
+      "response_sha256": "80ec1637def22796da30e9faaae5d0d650c51a6b2472bcda3e165cdfc4701958",
+      "status": "metadata_retrieved",
+      "metadata": {
+        "og:type": [
+          "website"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Embedding Atlas: Low-Friction, Interactive Embedding Visualization"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2505.06386v2"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:description": [
+          "Embedding projections are popular for visualizing large datasets and models. However, people often encounter \"friction\" when using embedding visualization tools: (1) barriers to adoption, e.g., tedious data wrangling and loading, scalability limits, no integration of results into existing workflows, and (2) limitations in possible analyses, without integration with external tools to additionally show coordinated views of metadata. In this paper, we present Embedding Atlas, a scalable, interactive visualization tool designed to make interacting with large embeddings as easy as possible. Embedding Atlas uses modern web technologies and advanced algorithms -- including density-based clustering, and automated labeling -- to provide a fast and rich data analysis experience at scale. We evaluate Embedding Atlas with a competitive analysis against other popular embedding tools, showing that Embedding Atlas's feature set specifically helps reduce friction, and report a benchmark on its real-time rendering performance with millions of points. Embedding Atlas is available as open source to support future work in embedding-based analysis."
+        ],
+        "citation_title": [
+          "Embedding Atlas: Low-Friction, Interactive Embedding Visualization"
+        ],
+        "citation_author": [
+          "Ren, Donghao",
+          "Hohman, Fred",
+          "Lin, Halden",
+          "Moritz, Dominik"
+        ],
+        "citation_date": [
+          "2025/05/09"
+        ],
+        "citation_online_date": [
+          "2025/07/08"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2505.06386"
+        ],
+        "citation_arxiv_id": [
+          "2505.06386"
+        ],
+        "citation_abstract": [
+          "Embedding projections are popular for visualizing large datasets and models. However, people often encounter \"friction\" when using embedding visualization tools: (1) barriers to adoption, e.g., tedious data wrangling and loading, scalability limits, no integration of results into existing workflows, and (2) limitations in possible analyses, without integration with external tools to additionally show coordinated views of metadata. In this paper, we present Embedding Atlas, a scalable, interactive visualization tool designed to make interacting with large embeddings as easy as possible. Embedding Atlas uses modern web technologies and advanced algorithms -- including density-based clustering, and automated labeling -- to provide a fast and rich data analysis experience at scale. We evaluate Embedding Atlas with a competitive analysis against other popular embedding tools, showing that Embedding Atlas's feature set specifically helps reduce friction, and report a benchmark on its real-time rendering performance with millions of points. Embedding Atlas is available as open source to support future work in embedding-based analysis."
+        ]
+      },
+      "page_title": "[2505.06386] Embedding Atlas: Low-Friction, Interactive Embedding Visualization"
+    },
+    {
+      "label": "AutoManual",
+      "url": "https://openreview.net/forum?id=Pwl9n4zlf5",
+      "retrieved_at": "2026-11-12",
+      "kind": "openreview_html",
+      "status": "shape_unverified",
+      "metadata": {}
+    },
+    {
+      "label": "ACE",
+      "url": "https://openreview.net/forum?id=eC4ygDs02R",
+      "retrieved_at": "2026-11-12",
+      "kind": "openreview_html",
+      "status": "shape_unverified",
+      "metadata": {}
+    }
+  ]
+}

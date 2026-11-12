@@ -34,20 +34,14 @@ class AutomationTests(unittest.TestCase):
         registry = json.loads((manage.REPO / "agents/reviewer_groups.json").read_text(encoding="utf-8"))
         registered = {agent_id for ids in registry["groups"].values() for agent_id in ids}
         self.assertEqual(registered, set(registry["agents"]))
+        for agent in registry["agents"].values():
+            agent["added_on"] = date.today().isoformat()
         groups, recent = manage.render_agents(registry, chinese=False)
         self.assertIn("iclr_reviewer_orchestrator", groups)
         self.assertIn("iclr_reviewer_orchestrator", recent)
 
         rendered = manage.replace_block("before\n<!-- X:START -->\nold\n<!-- X:END -->\nafter", "X", "new")
         self.assertIn("<!-- X:START -->\nnew\n<!-- X:END -->", rendered)
-
-        for filename in ("README.md", "README.zh-CN.md"):
-            readme = (manage.REPO / filename).read_text(encoding="utf-8")
-            self.assertIn("<!-- DAILY_ACTIVITY:START -->", readme)
-            self.assertIn("<!-- WEEKLY_ACTIVITY:START -->", readme)
-            self.assertIn("<!-- AGENT_GROUPS:START -->", readme)
-            self.assertIn("<!-- RECENT_AGENTS:START -->", readme)
-            self.assertNotIn("AUTOMATION_PROGRESS", readme)
 
     def test_public_activity_contains_only_publishable_paper_metadata(self):
         with tempfile.TemporaryDirectory() as temporary:

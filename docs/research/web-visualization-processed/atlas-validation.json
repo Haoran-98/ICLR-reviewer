@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "at": "2026-11-06T05:28:26.852Z",
+  "browser": "151.0.7922.34",
+  "renderer": "atlas",
+  "webgpu_disabled_for_test": false,
+  "base_url": "http://172.24.246.231:5173",
+  "final_origin": "https://172.24.246.231:8443",
+  "data_version": "processed-b6d264e6f6804127",
+  "papers": 38807,
+  "reviews": 164438,
+  "selected_paper_ids": [
+    "1020",
+    "1739"
+  ],
+  "initial_map_ms": 714,
+  "selection_and_details_ms": 47,
+  "filter_ms": 66,
+  "initial_detail_requests": 0,
+  "pixel_readback": {
+    "sampled": 300,
+    "colored": 298
+  },
+  "year_decision_filter_verified": true,
+  "empty_search_verified": true,
+  "search_selection_verified": true,
+  "mobile_overflow": false,
+  "page_errors": [],
+  "semantic_projection": false,
+  "screenshot": "web/artifacts/lan-browser.png",
+  "screenshot_uses_gpu_readback": true
+}

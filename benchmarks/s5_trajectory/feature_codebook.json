@@ -1,0 +1,184 @@
+{
+  "source": "https://arxiv.org/html/2606.22166v1",
+  "source_sha256": "2dfa10704f702698a8ba295ee2d0599e636b112cfe2342a728fda10dde396336",
+  "extracted_at": "2026-11-01",
+  "adaptation": "Original labels retained; three-state prefix-aware observation coding added. Source polarity is an induction hypothesis, not a reward or causal effect. Original classifier definitions, weights, validation, and headline performance are not reproduced.",
+  "features": {
+    "F01": {
+      "source_polarity": "pos.",
+      "label": "Structured, point-by-point response format"
+    },
+    "F02": {
+      "source_polarity": "pos.",
+      "label": "Non-defensive, respectful, collaborative tone"
+    },
+    "F03": {
+      "source_polarity": "pos.",
+      "label": "Respectful opening / appreciation toward the reviewer"
+    },
+    "F04": {
+      "source_polarity": "pos.",
+      "label": "The rebuttal signals sincere engagement through detailed responses, length, added appendix content, or extensive explanation"
+    },
+    "F05": {
+      "source_polarity": "pos.",
+      "label": "Methodological detail and reproducibility clarification"
+    },
+    "F06": {
+      "source_polarity": "pos.",
+      "label": "Concrete empirical evidence tied to reviewer concerns"
+    },
+    "F07": {
+      "source_polarity": "pos.",
+      "label": "Baseline completion / comparator strengthening"
+    },
+    "F08": {
+      "source_polarity": "pos.",
+      "label": "Demonstrating understanding and acknowledging valid points before responding"
+    },
+    "F09": {
+      "source_polarity": "pos.",
+      "label": "Comprehensive concern coverage"
+    },
+    "F10": {
+      "source_polarity": "pos.",
+      "label": "Explicit cross-references to figures, tables, and sections by number"
+    },
+    "F11": {
+      "source_polarity": "pos.",
+      "label": "Ablation studies showing component-level impact"
+    },
+    "F12": {
+      "source_polarity": "pos.",
+      "label": "(Proactive and) honest limitation acknowledgment"
+    },
+    "F13": {
+      "source_polarity": "pos.",
+      "label": "Explicit manuscript revision signaling"
+    },
+    "F14": {
+      "source_polarity": "pos.",
+      "label": "Supplementary material and new visual evidence"
+    },
+    "F15": {
+      "source_polarity": "pos.",
+      "label": "Explaining novelty and broader impact"
+    },
+    "F16": {
+      "source_polarity": "pos.",
+      "label": "Conceptual explanations alongside empirical results"
+    },
+    "F17": {
+      "source_polarity": "pos.",
+      "label": "Clarification-oriented response strategy"
+    },
+    "F18": {
+      "source_polarity": "pos.",
+      "label": "Concerns-addressed checklist or summary"
+    },
+    "F19": {
+      "source_polarity": "pos.",
+      "label": "Rewriting and simplifying for clarity"
+    },
+    "F20": {
+      "source_polarity": "pos.",
+      "label": "Theoretical or mathematical grounding"
+    },
+    "F21": {
+      "source_polarity": "pos.",
+      "label": "Active dialogue and continued engagement"
+    },
+    "F22": {
+      "source_polarity": "pos.",
+      "label": "Concrete revision commitments"
+    },
+    "F23": {
+      "source_polarity": "pos.",
+      "label": "Going beyond the explicit ask and anticipating follow-ups"
+    },
+    "F24": {
+      "source_polarity": "neg.",
+      "label": "Defensive or dismissive tone"
+    },
+    "F25": {
+      "source_polarity": "neg.",
+      "label": "Superficial or partial addressal of reviewer concerns"
+    },
+    "F26": {
+      "source_polarity": "neg.",
+      "label": "Missing reproducibility details"
+    },
+    "F27": {
+      "source_polarity": "neg.",
+      "label": "Missing or insufficient baseline comparisons"
+    },
+    "F28": {
+      "source_polarity": "neg.",
+      "label": "Lack of quantitative/empirical evidence in rebuttal"
+    },
+    "F29": {
+      "source_polarity": "neg.",
+      "label": "No new requested experiments / analyses / ablations / reviewer “would-have-liked” checks"
+    },
+    "F30": {
+      "source_polarity": "neg.",
+      "label": "Vague future-oriented promises instead of concrete commitments"
+    },
+    "F31": {
+      "source_polarity": "neg.",
+      "label": "Narrow or insufficient evaluation scope"
+    },
+    "F32": {
+      "source_polarity": "neg.",
+      "label": "Incomplete empirical coverage even after rebuttal additions"
+    },
+    "F33": {
+      "source_polarity": "neg.",
+      "label": "Unresolved quality-of-execution concerns, methodological or experimental design issues that additional experiments do not fix"
+    },
+    "F34": {
+      "source_polarity": "neg.",
+      "label": "Silent acceptance of limitations with no mitigation"
+    },
+    "F35": {
+      "source_polarity": "neg.",
+      "label": "Lack of structured rebuttal format, no explicit rebuttal section, no clear author-response markers, no point-by-point Q&A with reviewer quotes"
+    },
+    "F36": {
+      "source_polarity": "neg.",
+      "label": "Weak novelty justification"
+    },
+    "F37": {
+      "source_polarity": "neg.",
+      "label": "Brevity or low-effort rebuttal"
+    },
+    "F38": {
+      "source_polarity": "neg.",
+      "label": "Section-referencing or paper-rephrasing instead of real clarification"
+    },
+    "F39": {
+      "source_polarity": "neg.",
+      "label": "Inadequate explanation or persistent clarity issues"
+    },
+    "F40": {
+      "source_polarity": "neg.",
+      "label": "Marginal quantitative improvements"
+    },
+    "F41": {
+      "source_polarity": "neg.",
+      "label": "Presentation or notation overload that worsens clarity"
+    },
+    "F42": {
+      "source_polarity": "neg.",
+      "label": "Vague or insufficient technical explanation"
+    },
+    "F43": {
+      "source_polarity": "neg.",
+      "label": "No explicit commitment to revise or improve the paper"
+    },
+    "F44": {
+      "source_polarity": "neg.",
+      "label": "Surfacing a previously unnoticed problem without proactive framing"
+    }
+  }
+}
