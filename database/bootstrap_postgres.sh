@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE="${ICLR_DATABASE_HOME:-/data_big/iclr-reviewer-db}"
+REPO="$(cd "$(dirname "$0")/.." && pwd)"
+BASE="${ICLR_DATABASE_HOME:-${ICLR_DATA_DIR:-$REPO/.local-data}/database}"
 PREFIX="$BASE/runtime"
 PGDATA="$BASE/postgres"
 SOCKET="$BASE/run"

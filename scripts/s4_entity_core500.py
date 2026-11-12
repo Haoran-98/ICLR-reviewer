@@ -6,7 +6,13 @@ from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from datetime import datetime, timedelta
 import hashlib
 import json
+import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import shutil
 import threading
 import time
@@ -18,8 +24,8 @@ import s4_entity_core5 as pilot
 import s4_taxoadapt100_api as api
 from s4_reproduce500 import digest, log, now, read, write
 
-ROOT = Path('/data_big/iclr-s4/experiments/entity_core500_gpt6luna_medium_dual_v1')
-SOURCE = Path('/data_big/iclr-s4/experiments/repro500_qwen38_27b_q3_medium_64k_v2')
+ROOT = storage_path('iclr-s4/experiments/entity_core500_gpt6luna_medium_dual_v1')
+SOURCE = storage_path('iclr-s4/experiments/repro500_qwen38_27b_q3_medium_64k_v2')
 PILOT = pilot.ROOT
 
 
@@ -87,7 +93,7 @@ def snapshot(root):
     inputs=read(SOURCE/'inputs.json');gold={p['paper_id']:p for p in read(SOURCE/'evaluation/gold.json')}
     ids=[p['paper_id'] for p in inputs]
     assert len(ids)==len(set(ids))==500
-    with psycopg.connect('postgresql://yhr@127.0.0.1:55432/iclr_reviewer',row_factory=dict_row) as c:
+    with psycopg.connect(os.environ.get('ICLR_DATABASE_URL', 'host=127.0.0.1 port=55432 dbname=iclr_reviewer'),row_factory=dict_row) as c:
         c.execute('SET TRANSACTION READ ONLY')
         versions={p['paper_id']:p for p in c.execute('SELECT paper_id,paper_version_id,source_record_id,content_hash,'
             'title,abstract,keywords FROM core.latest_paper_version WHERE paper_id=ANY(%s)',(ids,)).fetchall()}
@@ -231,7 +237,7 @@ def main():
     parser.add_argument('--stage',choices=['all','extract','embed'],default='all')
     args=parser.parse_args();root=args.root;root.mkdir(parents=True,exist_ok=True);(root/'runtime').mkdir(exist_ok=True)
     api.MODEL,api.EFFORT,api.VERSION='gpt-6-luna','medium',root.name
-    api.AUTH,api.GATE=Path('/home/yhr/auth'),threading.BoundedSemaphore(3)
+    api.AUTH,api.GATE=Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')),threading.BoundedSemaphore(3)
     progress=api.PROGRESS=Progress(root)
     stop=threading.Event()
     def refresh():

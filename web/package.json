@@ -11,7 +11,8 @@
     "reviewers:check": "node review-match-check.mjs",
     "reviewers:smoke": "node reviewers-smoke.mjs",
     "review:smoke": "node review-smoke.mjs",
-    "access:smoke": "node access-upload-smoke.mjs"
+    "access:smoke": "node access-upload-smoke.mjs",
+    "portable:smoke": "node portable-smoke.mjs"
   },
   "dependencies": {
     "d3-chord": "3.0.2",

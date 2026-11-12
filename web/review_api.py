@@ -23,9 +23,10 @@ REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO/'scripts'))
 import compose_manuscript_skills as c
 import manuscript_review_models as models
+import deployment_paths as paths
 s = c.s
-ROOT = Path(os.environ.get('ICLR_REVIEW_RUNS', c.s.ROOT.parent/'web_review_runs'))
-SEED = c.s.ROOT.parent/'manuscript_composition_mlra_v1'
+ROOT = paths.RUNS
+SEED = paths.SEED
 TOKEN = os.environ.get('ICLR_REVIEW_API_TOKEN', '')
 POOL = ThreadPoolExecutor(max_workers=1)
 LOCK = threading.RLock()
@@ -46,6 +47,7 @@ def save_job(path, **changes):
 def job_path(identifier):
     if not re.fullmatch(r'[a-f0-9]{32}', identifier): raise ValueError('任务标识无效')
     path = ROOT/identifier
+    if not (path/'job.json').exists(): path = paths.CASES/'runs'/identifier
     if not (path/'job.json').exists(): raise ValueError('任务不存在')
     return path
 
@@ -128,7 +130,8 @@ def execute(path, connection=None):
                     if (previous/name).exists(): shutil.copyfile(previous/name, composition/name)
                 for cached in previous.glob('requests/*/*/result.json'):
                     dest = composition/cached.parent.relative_to(previous); shutil.copytree(cached.parent, dest)
-            args = [REPO/'scripts/compose_manuscript_skills.py', 'run', '--root', composition, *model_args]
+            args = [REPO/'scripts/compose_manuscript_skills.py', 'run', '--root', composition,
+                    '--release', paths.RELEASE, *model_args]
             if job.get('paper_id'): args += ['--paper-id', job['paper_id']]
             else: args += ['--manuscript', path/'manuscript.md', '--title', job['title']]
             command(args, path, connection)
@@ -180,9 +183,13 @@ class Handler(BaseHTTPRequestHandler):
                 self.respond(200, dict(connection_required=True, protocols=['chat', 'responses'], library='llm-area-v1', max_rules=10, rule_tokens=4000,
                     example=dict(paper_id=33089, title='Multi-Head Low-Rank Attention')))
             elif self.command == 'GET' and route == '/runs':
-                self.respond(200, sorted([public_job(read(p)) for p in ROOT.glob('*/job.json')], key=lambda j:j['updated_at'], reverse=True)[:50])
+                jobs = {p.parent.name: public_job(read(p)) for folder in [paths.CASES/'runs', ROOT]
+                        for p in folder.glob('*/job.json')}
+                self.respond(200, sorted(jobs.values(), key=lambda j:j['updated_at'], reverse=True)[:50])
             elif self.command == 'GET' and route == '/example':
-                self.respond(200, dict(profile=read(SEED/'profile.json'), composition=public_composition(SEED),
+                example = read(paths.CASES/'example.json')
+                if example: self.respond(200, result(job_path(example['run_id'])))
+                else: self.respond(200, dict(profile=read(SEED/'profile.json'), composition=public_composition(SEED),
                     checks=read(SEED/'checks.json'), manuscript=read(SEED/'manuscript.json')))
             elif self.command == 'GET' and route.startswith('/runs/'):
                 self.respond(200, result(job_path(route.split('/')[-1])))
@@ -198,6 +205,7 @@ class Handler(BaseHTTPRequestHandler):
                 elif re.fullmatch(r'/runs/[a-f0-9]{32}/retry', route):
                     with LOCK:
                         path = job_path(route.split('/')[-2]); job = read(path/'job.json')
+                        if job.get('read_only'): raise ValueError('历史案例为只读回放，请新建审稿任务')
                         if job['state'] not in ['failed', 'interrupted']: raise ValueError('当前任务无需重试')
                         config = models.connection(payload.get('connection'))
                         if models.identity(config) != job.get('provider_identity'):

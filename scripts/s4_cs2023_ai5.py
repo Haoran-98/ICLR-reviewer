@@ -3,7 +3,13 @@
 from collections import Counter
 import hashlib
 import json
+import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import re
 import shutil
 import threading
@@ -12,8 +18,8 @@ import s4_acm5_api as shared
 import s4_taxoadapt100_api as api
 from s4_reproduce500 import read, write, now, digest
 
-ROOT = Path('/data_big/iclr-s4/experiments/cs2023_ai5_gpt6luna_medium_v1')
-REF = Path('/data_big/iclr-s4/reference/cs2023-ai')
+ROOT = storage_path('iclr-s4/experiments/cs2023_ai5_gpt6luna_medium_v1')
+REF = storage_path('iclr-s4/reference/cs2023-ai')
 
 
 def extract_taxonomy():
@@ -162,7 +168,7 @@ def main():
     ROOT.mkdir(parents=True, exist_ok=True)
     shared.ROOT = ROOT
     api.MODEL, api.EFFORT, api.VERSION = 'gpt-6-luna', 'medium', ROOT.name
-    api.AUTH, api.GATE = Path('/home/yhr/auth'), threading.BoundedSemaphore(3)
+    api.AUTH, api.GATE = Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')), threading.BoundedSemaphore(3)
     api.PROGRESS = shared.Progress(ROOT)
     api.PROGRESS.data.update(papers=5, phase='准备 CS2023 AI 官方知识体系')
     api.PROGRESS.save()

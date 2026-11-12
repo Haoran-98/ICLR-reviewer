@@ -19,6 +19,11 @@ from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from datetime import datetime, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 from typing import Any, Iterable
 
 import psycopg
@@ -31,7 +36,7 @@ from benchmarks.paper_understanding import benchmark as understanding  # noqa: E
 
 
 DATABASE_URL = os.environ.get(
-    "ICLR_DATABASE_URL", "postgresql://yhr@127.0.0.1:55432/iclr_reviewer"
+    "ICLR_DATABASE_URL", "host=127.0.0.1 port=55432 dbname=iclr_reviewer"
 )
 PROFILE_VERSION = "paper_understanding_v1"
 PIPELINE_NAME = "paper_understanding"
@@ -849,7 +854,7 @@ def stop_command(_args: argparse.Namespace) -> None:
 
 
 def calibrate_command(args: argparse.Namespace) -> None:
-    root = Path("/data_big/iclr-paper-understanding-benchmark")
+    root = storage_path('iclr-paper-understanding-benchmark')
     manifest = {row["sample_id"]: row for row in read_jsonl(root / "manifest_50.jsonl")}
     rows = [row for row in read_jsonl(root / "outputs/one_shot.jsonl") if "profile" in row]
     total = located = 0

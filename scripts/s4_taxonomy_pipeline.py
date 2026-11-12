@@ -14,6 +14,12 @@ import json
 import math
 import os
 from pathlib import Path
+import sys
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import re
 import shlex
 import signal
@@ -35,7 +41,7 @@ from sklearn.metrics import adjusted_rand_score, f1_score, silhouette_score
 from sklearn.preprocessing import normalize
 
 REPO = Path(__file__).resolve().parents[1]
-DEFAULT_ROOT = Path('/data_big/iclr-s4/smoke/taxonomy_smoke_200_v1')
+DEFAULT_ROOT = storage_path('iclr-s4/smoke/taxonomy_smoke_200_v1')
 VERSION = 'taxonomy_smoke_200_v1'
 PROFILE = 'paper_understanding_v1'
 PROMPT_VERSION = 's4_judge_proxy_v1'
@@ -235,7 +241,7 @@ def embed(args, test=False):
     torch.set_num_threads(8)
     previous_spec = read(args.root / 'embedding_stats.json', {}).get('spec', {})
     revision = previous_spec.get('model_revision', '5617a9f61b028005a4858fdac845db406aefb181')
-    model_cache = Path('/data_big/iclr-s4/models')
+    model_cache = storage_path('iclr-s4/models')
     model_path = model_cache / 'models--BAAI--bge-m3' / 'snapshots' / revision
     required_files = ['config.json', 'config_sentence_transformers.json', 'modules.json',
                       'sentence_bert_config.json', 'pytorch_model.bin', 'tokenizer.json',
@@ -1033,7 +1039,7 @@ def install_schedule(args):
         if line==begin: skipping=True; continue
         if line==end: skipping=False; continue
         if not skipping: kept.append(line)
-    command = ['timeout','--signal=TERM','--kill-after=5s','4h', '/data_big/iclr-s4/runtime/bin/python',str(Path(__file__).resolve()),
+    command = ['timeout','--signal=TERM','--kill-after=5s','4h', os.environ.get('ICLR_RESEARCH_PYTHON', sys.executable),str(Path(__file__).resolve()),
                'night-run','--root',str(args.root),'--auth',str(args.auth),'--database-url',args.database_url]
     block=[begin,'CRON_TZ=Asia/Shanghai','0 1 * * * CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=1 OMP_NUM_THREADS=8 '+
            shlex.join(command)+' >> '+shlex.quote(str(args.root/'night.log'))+' 2>&1',end]
@@ -1045,8 +1051,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command',choices=['sample','embed','cluster','name','assign','relate','judge','persist','report','status','run','night-run','install-schedule','finalize'])
     parser.add_argument('--root',type=Path,default=DEFAULT_ROOT)
-    parser.add_argument('--auth',type=Path,default=Path('/home/yhr/auth'))
-    parser.add_argument('--database-url',default=os.environ.get('ICLR_DATABASE_URL','postgresql://yhr@127.0.0.1:55432/iclr_reviewer'))
+    parser.add_argument('--auth',type=Path,default=Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')))
+    parser.add_argument('--database-url',default=os.environ.get('ICLR_DATABASE_URL','host=127.0.0.1 port=55432 dbname=iclr_reviewer'))
     parser.add_argument('--limit',type=int,default=200)
     parser.add_argument('--seed',type=int,default=1701)
     args=parser.parse_args()

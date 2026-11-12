@@ -17,9 +17,10 @@ from psycopg.rows import dict_row
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 import full_s4_review_skills as f
+import deployment_paths as paths
 
 s = f.s
-RELEASE = s.ROOT.parent.parent/'releases/llm-area-v1'
+RELEASE = paths.RELEASE
 VERSION = 'manuscript-composition-v1'
 INPUT_LIMIT = 64000
 
@@ -29,6 +30,9 @@ def load_library(root):
     s.require(s.sha(root/'RELEASE.json') == seal['release_sha256'], 'Release manifest changed')
     for name in ['rule_library.json', 'registry.json', 'candidates.json', 'PROVENANCE.json']:
         s.require(s.sha(root/name) == manifest['files'][name], 'Release artifact changed: '+name)
+    if manifest.get('source_identities'):
+        name = manifest['source_identities']
+        s.require(s.sha(root/name) == manifest['files'][name], 'Source identity index changed')
     state = s.read(root/'rule_library.json')
     s.require(s.digest(state) == manifest['library_hash'] == seal['library_hash'], 'Library identity mismatch')
     return manifest, state
@@ -208,7 +212,9 @@ def choose(ranked, evaluations, state, max_rules, token_budget):
 
 
 def historical_sources(release_root, manifest, rule, candidates):
-    root = Path(manifest['source_root']); index = s.read(release_root/'PROVENANCE.json')['sources'][str(root)]
+    key = manifest['source_root']; root = Path(key)
+    if not root.is_absolute(): root = release_root/root
+    index = s.read(release_root/'PROVENANCE.json')['sources'][key]
     examples = []; seen = set()
     def checked(name):
         s.require(name in index and s.sha(root/name) == index[name], 'Historical source changed: '+name)
@@ -254,28 +260,23 @@ def prepare(args):
                    forum_id=args.forum_id or '', object_path=str(args.manuscript.resolve()))
     else:
         s.require(args.paper_id is not None, 'Provide --paper-id or --manuscript')
-        with psycopg.connect(args.database_url, row_factory=dict_row, connect_timeout=10) as db:
-            db.execute('SET TRANSACTION READ ONLY')
-            row = db.execute('''SELECT p.paper_id,p.forum_id,pv.title,pv.abstract,ra.object_path
-                FROM core.paper p JOIN core.latest_paper_version pv USING(paper_id)
-                JOIN core.artifact a ON a.paper_id=p.paper_id AND a.artifact_role='markdown' AND a.availability='available'
-                JOIN raw.artifact ra ON ra.artifact_id=a.raw_artifact_id
-                WHERE p.paper_id=%s ORDER BY ra.artifact_id DESC LIMIT 1''', (args.paper_id,)).fetchone()
+        catalog = paths.CASES/'catalog.json'
+        local = s.read(catalog).get(str(args.paper_id)) if catalog.exists() else None
+        if local:
+            manuscript_path = paths.CASES/local['manuscript']
+            s.require(s.sha(manuscript_path) == local['manuscript_sha256'], 'Local manuscript changed')
+            row = dict(paper_id=local['paper_id'], forum_id=local['forum_id'], title=local['title'],
+                abstract=local['abstract'], object_path=str(manuscript_path))
+        else:
+            row = database_manuscript(args)
         s.require(row, 'No manuscript available')
     original = Path(row['object_path']).read_text(); text = original
     digest = s.digest(original); file_sha = s.sha(row['object_path'])
-    # Compare against ALL source inputs, including papers whose atoms produced no candidate rules.
-    provenance = s.read(release/'PROVENANCE.json'); source_root = Path(lib['source_root'])
-    source_index = provenance['sources'][str(source_root)]
-    for name, checksum in source_index.items():
-        if not re.fullmatch(r'inputs/\d+\.json', name): continue
-        s.require(s.sha(source_root/name) == checksum, 'Source input changed')
-        source = s.read(source_root/name)
-        source_text = s.paper_text(dict(object_path=source['manuscript_path'], sha256=source['manuscript_sha256']))
+    for source in source_identities(release, lib):
         s.require(row['paper_id'] != source['paper_id'] and
                   (not row['forum_id'] or row['forum_id'] != source['forum_id']) and
                   file_sha != source['manuscript_sha256'] and
-                  s.digest(source_text) != digest,
+                  source['text_digest'] != digest,
                   'Target overlaps a library source by ID, forum or full text')
     passages = [dict(passage_id=f'M:P{i:04d}', char_start=start, char_end=end, text=text[start:end])
                 for i, (start, end) in enumerate(f.spans(text), 1)]
@@ -290,12 +291,46 @@ def prepare(args):
     s.write(root/'manuscript.json', manuscript)
     manifest = dict(signature, jobs=0, paper_id=row['paper_id'], title=row['title'], forum_id=row['forum_id'],
         created_at=s.now(), source_file_sha256=file_sha, source_manuscript=str(row['object_path']),
-        source_isolation='ID, forum and normalized full text checked against every library source input',
+        source_isolation='ID, forum, file SHA-256 and exact full-text digest checked against every library source input',
         input_hashes={name: s.sha(root/name) for name in ['MANUSCRIPT.md', 'manuscript.json']})
     s.write(root/'manifest.json', manifest); s.write(root/'config.json', dict(concurrency_limit=1,
         model=s.MODEL, reasoning_effort='medium', input_tokens_proxy_limit=INPUT_LIMIT,
         profile_output_limit=4500, assessment_output_limit=10000, **settings))
     return manifest, lib, state
+
+
+def database_manuscript(args):
+    with psycopg.connect(args.database_url, row_factory=dict_row, connect_timeout=10) as db:
+        db.execute('SET TRANSACTION READ ONLY')
+        row = db.execute('''SELECT p.paper_id,p.forum_id,pv.title,pv.abstract,ra.object_path
+            FROM core.paper p JOIN core.latest_paper_version pv USING(paper_id)
+            JOIN core.artifact a ON a.paper_id=p.paper_id AND a.artifact_role='markdown' AND a.availability='available'
+            JOIN raw.artifact ra ON ra.artifact_id=a.raw_artifact_id
+            WHERE p.paper_id=%s ORDER BY ra.artifact_id DESC LIMIT 1''', (args.paper_id,)).fetchone()
+    return row
+
+
+def source_identities(release, lib):
+    # Compare against ALL source inputs, including papers whose atoms produced no candidate rules.
+    if lib.get('source_identities'):
+        name = lib['source_identities']
+        s.require(s.sha(release/name) == lib['files'][name], 'Source identity index changed')
+        index = s.read(release/name)
+        inputs = s.read(release/'PROVENANCE.json')['sources'][lib['source_root']]
+        s.require(index['count'] == len(index['papers']) == sum(bool(re.fullmatch(r'inputs/\d+\.json', n))
+                  for n in inputs), 'Incomplete source identity index')
+        yield from index['papers']
+        return
+    provenance = s.read(release/'PROVENANCE.json'); source_root = Path(lib['source_root'])
+    if not source_root.is_absolute(): source_root = release/source_root
+    source_index = provenance['sources'][lib['source_root']]
+    for name, checksum in source_index.items():
+        if not re.fullmatch(r'inputs/\d+\.json', name): continue
+        s.require(s.sha(source_root/name) == checksum, 'Source input changed')
+        source = s.read(source_root/name)
+        source_text = s.paper_text(dict(object_path=source['manuscript_path'], sha256=source['manuscript_sha256']))
+        yield dict(paper_id=source['paper_id'], forum_id=source['forum_id'],
+            manuscript_sha256=source['manuscript_sha256'], text_digest=s.digest(source_text))
 
 
 def run(args):

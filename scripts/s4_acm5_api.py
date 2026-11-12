@@ -5,7 +5,13 @@ from datetime import datetime, timedelta
 from functools import cache
 import hashlib
 import json
+import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import threading
 import time
 import xml.etree.ElementTree as ET
@@ -16,9 +22,9 @@ from psycopg.rows import dict_row
 import s4_taxoadapt100_api as api
 from s4_reproduce500 import read, write, now, digest
 
-ROOT = Path('/data_big/iclr-s4/experiments/acm5_gpt6luna_medium_v1')
-SOURCE = Path('/data_big/iclr-s4/experiments/taxoadapt100_gpt6luna_low_v1')
-REFERENCE = Path('/data_big/iclr-s4/reference/acm-ccs-2012')
+ROOT = storage_path('iclr-s4/experiments/acm5_gpt6luna_medium_v1')
+SOURCE = storage_path('iclr-s4/experiments/taxoadapt100_gpt6luna_low_v1')
+REFERENCE = storage_path('iclr-s4/reference/acm-ccs-2012')
 IDS = [19362, 3059, 35035, 36704, 30310]
 
 
@@ -59,7 +65,7 @@ def snapshot():
         return read(target)
     frozen = {p['paper_id']: p for p in read(SOURCE / 'inputs.json')}
     gold = {p['paper_id']: p for p in read(SOURCE / 'evaluation/gold.json')}
-    with psycopg.connect('postgresql://yhr@127.0.0.1:55432/iclr_reviewer', row_factory=dict_row) as conn:
+    with psycopg.connect(os.environ.get('ICLR_DATABASE_URL', 'host=127.0.0.1 port=55432 dbname=iclr_reviewer'), row_factory=dict_row) as conn:
         conn.execute('SET TRANSACTION READ ONLY')
         versions = {p['paper_id']: p for p in conn.execute(
             'SELECT paper_id,paper_version_id,source_record_id,content_hash,title,abstract,keywords '
@@ -178,7 +184,7 @@ def report(papers, results, nodes):
 def main():
     ROOT.mkdir(parents=True, exist_ok=True)
     api.MODEL, api.EFFORT, api.VERSION = 'gpt-6-luna', 'medium', ROOT.name
-    api.AUTH, api.GATE = Path('/home/yhr/auth'), threading.BoundedSemaphore(3)
+    api.AUTH, api.GATE = Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')), threading.BoundedSemaphore(3)
     api.PROGRESS = Progress(ROOT)
     api.PROGRESS.data.update(papers=5, phase='准备 ACM 词表与输入快照')
     api.PROGRESS.save()

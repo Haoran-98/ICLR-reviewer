@@ -28,11 +28,12 @@ sys.path.insert(0, str(REPO))
 from scripts.domain_review_skill import pack, tokens, paper_text, SYSTEM
 from scripts.s5_fused20 import read, write, digest, now, response_json, obj, arr, STRING
 from twin_smoke.run_api_smoke import load_auth
+from scripts import deployment_paths as paths
 
 MODEL = 'gpt-6-luna'
 VERSION = 'modular_skill100_automanual_ace_v1'
-SOURCE = Path('/data_big/iclr-s4/experiments/entity_core_third_gpt6luna_medium_dual_v1')
-ROOT = Path('/data_big/iclr-review/experiments')/VERSION
+SOURCE = paths.ENTITY
+ROOT = paths.configured('ICLR_PILOT_DIR', paths.DATA/'experiments'/VERSION)
 AREAS = ['generative_models', 'reinforcement_learning', 'foundation_or_frontier_models_including_llms',
          'alignment_fairness_safety_privacy', 'learning_theory']
 LEVELS = ['general', 'domain', 'method', 'task', 'specialty']

@@ -17,6 +17,11 @@ from itertools import groupby
 import json
 import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import re
 import shlex
 import subprocess
@@ -32,10 +37,10 @@ from psycopg.types.json import Jsonb
 import requests
 
 VERSION = 'taxonomy_llm4_200_v1'
-ROOT = Path('/data_big/iclr-s4/experiments') / VERSION
-OLD_ROOT = Path('/data_big/iclr-s4/smoke/taxonomy_smoke_200_v1')
+ROOT = storage_path('iclr-s4/experiments') / VERSION
+OLD_ROOT = storage_path('iclr-s4/smoke/taxonomy_smoke_200_v1')
 REVISION = '5617a9f61b028005a4858fdac845db406aefb181'
-MODEL_PATH = Path('/data_big/iclr-s4/models/models--BAAI--bge-m3/snapshots') / REVISION
+MODEL_PATH = storage_path('iclr-s4/models/models--BAAI--bge-m3/snapshots') / REVISION
 FIELDS = ('keywords', 'title', 'abstract', 'introduction', 'conclusion', 'related_work')
 PROVIDERS = ('deepseek', 'kimi', 'openai', 'qwen')
 PROMPT_VERSION = 's4_six_section_induction_v4.0'
@@ -697,13 +702,13 @@ def start_local(args):
             raise RuntimeError('Port 8080 belongs to another model')
     except requests.ConnectionError:
         pass
-    project=Path('/home/yhr/WorkSpace/Codex_Program/v100-16G')
+    project=Path(os.environ['ICLR_LLAMA_PROJECT'])
     server=project/'llama.cpp-v100/build-v100-cuda12/bin/llama-server'
     library=str(project/'.cuda12/lib')+':'+str(project/'.cuda12/targets/x86_64-linux/lib')
     command=['systemd-run','--user','--unit=s4-qwen35-9b-q8','--collect',
              '--property=WorkingDirectory='+str(project),'--setenv=CUDA_DEVICE_ORDER=PCI_BUS_ID',
              '--setenv=CUDA_VISIBLE_DEVICES=1','--setenv=LD_LIBRARY_PATH='+library,
-             str(server),'--model','/data_big/models/Qwen3.5-9B-Q8_0.gguf','--alias','qwen3.5-9b-q8',
+             str(server),'--model',str(storage_path('models/Qwen3.5-9B-Q8_0.gguf')),'--alias','qwen3.5-9b-q8',
              '--host','127.0.0.1','--port','8080','--ctx-size','32768','--parallel','1',
              '--n-gpu-layers','999','--flash-attn','on','--cache-type-k','q8_0','--cache-type-v','q8_0',
              '--batch-size','512','--ubatch-size','128']
@@ -775,8 +780,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('stage',choices=('prepare','embed','preflight','run'))
     parser.add_argument('--root',type=Path,default=ROOT)
-    parser.add_argument('--auth',type=Path,default=Path('/home/yhr/auth'))
-    parser.add_argument('--database-url',default='postgresql://yhr@127.0.0.1:55432/iclr_reviewer')
+    parser.add_argument('--auth',type=Path,default=Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')))
+    parser.add_argument('--database-url',default=os.environ.get('ICLR_DATABASE_URL', 'host=127.0.0.1 port=55432 dbname=iclr_reviewer'))
     parser.add_argument('--pilot-only',action='store_true')
     parser.add_argument('--providers',nargs='+',choices=PROVIDERS,default=list(PROVIDERS))
     parser.add_argument('--repair-round',help='Explicitly authorized repair round; preserves prior job and its budget')

@@ -6,12 +6,14 @@ import csv
 import hashlib
 import json
 import os
+import sys
 from pathlib import Path
 
 import psycopg
 from psycopg.rows import dict_row
 
-ROOT = Path('/data_big/iclr-s4/experiments/entity_core_third_gpt6luna_medium_dual_v1')
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
+from deployment_paths import ENTITY as ROOT
 
 
 def project_s4(papers, root):

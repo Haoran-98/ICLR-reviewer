@@ -5,7 +5,13 @@ from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 import json
+import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import time
 import threading
 from types import SimpleNamespace
@@ -17,7 +23,7 @@ import s4_dkta as dkta
 import s4_llm_taxonomy as s4
 
 
-ROOT = Path('/data_big/iclr-s4/experiments/dkta4060_200_v1')
+ROOT = storage_path('iclr-s4/experiments/dkta4060_200_v1')
 HISTORICAL = ('historical_deepseek', 'historical_openai', 'historical_qwen')
 
 
@@ -480,8 +486,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('stage', choices=('acm', 'matched-llm', 'recover-arbitration', 'judge', 'report'))
     parser.add_argument('--root', type=Path, default=ROOT)
-    parser.add_argument('--source-root', type=Path, default=Path('/data_big/iclr-s4/experiments/taxonomy_llm4_gpt_200_v1'))
-    parser.add_argument('--auth', type=Path, default=Path('/home/yhr/auth'))
+    parser.add_argument('--source-root', type=Path, default=storage_path('iclr-s4/experiments/taxonomy_llm4_gpt_200_v1'))
+    parser.add_argument('--auth', type=Path, default=Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')))
     parser.add_argument('--limit', type=int, default=200)
     parser.add_argument('--judge-papers', type=int, default=50)
     parser.add_argument('--baseline-provider', choices=('openai', 'deepseek'), default='openai')

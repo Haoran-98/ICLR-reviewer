@@ -17,10 +17,15 @@ import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
 
+try:
+    from .deployment_paths import OPENREVIEW_TOKEN
+except ImportError:
+    from deployment_paths import OPENREVIEW_TOKEN
+
 
 REPO = Path(__file__).resolve().parents[1]
 DEFAULT_AUTH = REPO / "auth"
-DEFAULT_TOKEN = Path("/data_big/iclr_reviews/fulltext/openreview.token")
+DEFAULT_TOKEN = OPENREVIEW_TOKEN
 TOKEN_EXPIRES_SECONDS = 7 * 24 * 60 * 60
 
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
-S4_ROOT=/data_big/iclr-s4/experiments/repro500_qwen38_27b_q3_medium_64k_v2
-S4_PYTHON=/data_big/iclr-s4/runtime-dkta/bin/python
+S4_ROOT="${ICLR_EXPERIMENT_DIR:-${ICLR_STORAGE_ROOT:-$PWD/.local-data/research}/iclr-s4/experiments/repro500_qwen38_27b_q3_medium_64k_v2}"
+S4_PYTHON="${ICLR_RESEARCH_PYTHON:-python3}"
 S4_SCRIPT="$S4_ROOT/runtime/s4_reproduce500.py"
 S4_STATUS="$S4_ROOT/runtime/workflow_status.json"
 

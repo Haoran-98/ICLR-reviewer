@@ -3,7 +3,13 @@
 import argparse
 from collections import Counter, defaultdict
 import math
+import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import random
 import shutil
 import subprocess
@@ -17,9 +23,9 @@ import s4_entity_core5 as extraction
 from s4_entity_core500_audit import sha
 from s4_reproduce500 import SEED, digest, log, now, read, write
 
-ROOT=Path('/data_big/iclr-s4/experiments/entity_core_third_gpt6luna_medium_dual_v1')
-PREVIOUS=Path('/data_big/iclr-s4/experiments/entity_core500_gpt6luna_medium_dual_v1')
-DATABASE='postgresql://yhr@127.0.0.1:55432/iclr_reviewer'
+ROOT=storage_path('iclr-s4/experiments/entity_core_third_gpt6luna_medium_dual_v1')
+PREVIOUS=storage_path('iclr-s4/experiments/entity_core500_gpt6luna_medium_dual_v1')
+DATABASE=os.environ.get('ICLR_DATABASE_URL', 'host=127.0.0.1 port=55432 dbname=iclr_reviewer')
 
 
 def select_third(population, seeds):

@@ -6,7 +6,13 @@ from datetime import datetime
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import shutil
 import tarfile
 
@@ -127,7 +133,7 @@ def main(root):
                 target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(file,target)
         write(root/'evidence/embedding_models'/slug/'MODEL_FILES.json',dict(
             model=model_id,revision=path.name,snapshot=str(path),files=assets))
-    ref=Path('/data_big/iclr-s4/reference/qwen3-embedding-0.6b')
+    ref=storage_path('iclr-s4/reference/qwen3-embedding-0.6b')
     for name in ['DOWNLOAD_MANIFEST.json','repository.json','source-0.json','official-github-README.md','download_model.py']:
         shutil.copyfile(ref/name,root/'evidence/embedding_models'/name)
     for item in read(root/'literature.json'):
@@ -171,7 +177,7 @@ def main(root):
     excluded={'AUDIT_MANIFEST.json','MANIFEST.sha256','pipeline.log','finalize.log'}
     files=sorted(p for p in root.rglob('*') if p.is_file() and '__pycache__' not in p.parts
         and p.name not in excluded and not p.name.endswith(('.tmp','.part')))
-    _,key=credentials(Path('/home/yhr/auth'))
+    _,key=credentials(Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')))
     for p in files:
         assert key.encode() not in p.read_bytes(), 'Credential unexpectedly present in artifact'
     listing=[dict(path=str(p.relative_to(root)),bytes=p.stat().st_size,sha256=sha(p)) for p in files]

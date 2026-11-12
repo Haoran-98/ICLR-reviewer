@@ -52,7 +52,7 @@ def issue_token(args: argparse.Namespace) -> None:
         or legacy.get("OPENREVIEW_PASSWORD")
     )
     if not username or not password:
-        raise RuntimeError("OpenReview username and password are required in auth or /home/yhr/auth")
+        raise RuntimeError("OpenReview username and password are required in auth or ICLR_AUTH_FILE")
 
     original_chooser = mfa._default_mfa_method_chooser
     mfa._default_mfa_method_chooser = choose_code_method

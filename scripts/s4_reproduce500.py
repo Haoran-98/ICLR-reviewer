@@ -16,6 +16,11 @@ import copy
 import json
 import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import random
 import re
 import time
@@ -25,10 +30,10 @@ from zoneinfo import ZoneInfo
 import numpy as np
 import requests
 
-ROOT = Path('/data_big/iclr-s4/experiments/repro500_qwen38_27b_q3_medium_64k_v2')
+ROOT = storage_path('iclr-s4/experiments/repro500_qwen38_27b_q3_medium_64k_v2')
 MODEL = 's4-qwen38-27b-q3-medium'
-MODEL_PATH = Path('/data_big/models/Qwen3.8-27B-GGUF/Qwen3.8-27B-UD-Q3_K_XL.gguf')
-BGE = Path('/data_big/iclr-s4/models/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181')
+MODEL_PATH = storage_path('models/Qwen3.8-27B-GGUF/Qwen3.8-27B-UD-Q3_K_XL.gguf')
+BGE = storage_path('iclr-s4/models/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181')
 SEED = 20261026
 VERSION = 'qwen38_27b_q3_medium_64k_v2'
 CONTEXT = 65536
@@ -67,7 +72,7 @@ def prepare(args):
         manifest = read(args.root / 'manifest.json')
         assert manifest['input_hash'] == digest(read(args.root / 'inputs.json'))
         return
-    old = read(Path('/data_big/iclr-s4/experiments/taxonomy_llm4_200_v1/manifest.json'))
+    old = read(storage_path('iclr-s4/experiments/taxonomy_llm4_200_v1/manifest.json'))
     excluded = {p['paper_id'] for p in old['papers']}
     with psycopg.connect(args.database_url, row_factory=dict_row, connect_timeout=10) as conn:
         conn.execute('SET statement_timeout=60000')
@@ -358,7 +363,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command', choices=['prepare', 'benchmark', 'embed', 'run', 'evaluate', 'all'])
     parser.add_argument('--root', type=Path, default=ROOT)
-    parser.add_argument('--database-url', default='postgresql://yhr@127.0.0.1:55432/iclr_reviewer')
+    parser.add_argument('--database-url', default=os.environ.get('ICLR_DATABASE_URL', 'host=127.0.0.1 port=55432 dbname=iclr_reviewer'))
     parser.add_argument('--papers', type=int, default=500)
     parser.add_argument('--concurrency', type=int, default=4)
     parser.add_argument('--context-size', type=int, default=CONTEXT,

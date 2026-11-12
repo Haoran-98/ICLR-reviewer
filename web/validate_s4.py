@@ -4,12 +4,14 @@ import csv
 import json
 import math
 import os
+import sys
 from collections import Counter
 from pathlib import Path
 import psycopg
 
 root = Path(__file__).parent / 'public/generated'
-s4 = Path('/data_big/iclr-s4/experiments/entity_core_third_gpt6luna_medium_dual_v1')
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
+from deployment_paths import ENTITY as s4
 sample = json.loads((root/'sample.json').read_text())
 analysis = json.loads((root/'domains.json').read_text())
 gold = json.loads((s4/'evaluation/gold.json').read_text())

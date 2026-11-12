@@ -5,11 +5,16 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 import json
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import statistics
 import subprocess
 import time
 
-ROOT = Path('/data_big/iclr-s4/experiments/repro500_qwen38_27b_q3_medium_64k_v2')
+ROOT = storage_path('iclr-s4/experiments/repro500_qwen38_27b_q3_medium_64k_v2')
 METHODS = ['taxoadapt', 'context', 'lisa', 'itl']
 
 

@@ -915,7 +915,7 @@ def main():
     p.add_argument('--source-root',type=Path,default=s.SOURCE)
     p.add_argument('--concurrency',type=int,choices=[1,2,3],default=3)
     p.add_argument('--auth',type=Path,default=Path(os.environ.get('ICLR_AUTH_FILE',Path.home()/'auth')))
-    p.add_argument('--database-url',default=os.environ.get('ICLR_DATABASE_URL','postgresql://yhr@127.0.0.1:55432/iclr_reviewer'))
+    p.add_argument('--database-url',default=os.environ.get('ICLR_DATABASE_URL','host=127.0.0.1 port=55432 dbname=iclr_reviewer'))
     args=p.parse_args();args.root.mkdir(parents=True,exist_ok=True)
     if args.command=='report':
         print(json.dumps(report(args.root),ensure_ascii=False));return

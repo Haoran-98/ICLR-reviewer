@@ -8,9 +8,9 @@ ICLR Reviewer 是面向 ICLR 主会论文的研究与展示系统：用可视化
 
 当前版本包含三个独立主题页：**论文探索、单篇审稿、领域 Skill 库**。原有可视化保留，审稿流程通过独立子页接入。当前自动审稿规则覆盖基础模型与大语言模型领域。
 
-> 更新：2026-11-12。网站与单篇真实运行闭环已完成；审稿准确性、质量提升及正式留出集评测仍待完成。GitHub 提供源码、公开题录、实验汇总和真实截图；完整论文数据库、冻结规则及运行快照须单独准备。
+> 更新：2026-11-12。网站与单篇真实运行闭环已完成；审稿准确性、质量提升及正式留出集评测仍待完成。版本化演示包提供论文地图、冻结规则与配对来源、已完成审稿案例。本地安装后可浏览地图、回放案例，并使用自填接口审查上传稿件。
 
-[部署说明](docs/DEPLOYMENT.md) · [方法与论文来源](docs/METHODS.md) · [进度与后续工作](docs/STATUS.md) · [上传内容清单](docs/REPOSITORY_MANIFEST.md) · [技术记录](docs/technical_details/README.md) · [论文图审查能力](docs/FIGURE_REVIEW.md)
+[演示下载与校验和](docs/DEMO_ASSETS.md) · [部署说明](docs/DEPLOYMENT.md) · [方法与论文来源](docs/METHODS.md) · [进度与后续工作](docs/STATUS.md) · [上传内容清单](docs/REPOSITORY_MANIFEST.md) · [技术记录](docs/technical_details/README.md) · [论文图审查能力](docs/FIGURE_REVIEW.md)
 
 ## 1. 展示故事线
 
@@ -104,7 +104,7 @@ flowchart LR
 - **领域可视化：** 12,964 篇实体/核心提取与 51,856 条双模型向量已封存；地图、弦图、录用统计、均分/分歧和证据回查可运行。
 - **领域库：** `llm-area-v1` 已冻结，待处理队列为 0；81 条 unresolved、3 条 needs_evidence 单独保留。
 - **新稿组合与审稿：** MLRA 已完成真实组合和 Review，3 条规则、1,605 代理 token；支持加载理由、历史来源和 concern 原文定位。单篇案例属于工程验证。
-- **网站：** 三个主题页、统一登录、Word/PDF 提取、持久化任务、重试、HTTPS 局域网访问已接入。
+- **网站：** 三个主题页、统一登录、Word/PDF 提取、持久化任务、重试、HTTPS 局域网访问已接入。版本化网站数据、规则来源与案例包支持新机器本地部署。
 
 网站审稿接口由使用者自行填写：**Base URL、API Key、准确模型 ID**，选择 **Chat Completions** 或 **Responses**。连接字段默认留空，由使用者为当前任务提供。
 
@@ -122,28 +122,27 @@ flowchart LR
 
 ## 6. 本地部署与运行
 
-**本地部署需要源码与数据资产。** 克隆并安装依赖后，准备 522 MiB 网站快照、完整稿件、PostgreSQL 实例及冻结来源包。可恢复已有资产，或按 [部署说明](docs/DEPLOYMENT.md) 从自己的研究资产导出。
+**环境：Linux、Python 3.11+、Node 20.19+ 或 22.12+。** 安装器会下载并校验[版本化演示包](docs/DEMO_ASSETS.md)。地图、历史回放及上传新稿审查使用随包资产即可运行；完整语料导出另需数据库与研究资产。
 
 ```bash
-git clone https://github.com/Haoran-98/ICLR-reviewer.git
+git clone --single-branch --branch main https://github.com/Haoran-98/ICLR-reviewer.git
 cd ICLR-reviewer
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements-web.txt
-npm --prefix web ci
+./scripts/install_website.sh
+.venv/bin/python scripts/init_web_account.py --username root
+./scripts/run_website.sh
 ```
 
-然后依次完成：**配置自己的管理员密码 → 准备数据快照/数据库与规则库 → 启动网站 → 在页面填写自己的模型接口 → 开始审稿**。
+浏览器访问 **http://127.0.0.1:5174/**，使用刚设置的账号密码登录。账号命令两次提示输入密码，在本机保存密码哈希。Ubuntu/Debian 先安装 `python3-venv`；PDF/DOC 提取另需 `poppler-utils` 与 `libreoffice-writer`。
 
-```bash
-# 已完成上述配置，且 web/public/generated/ 已准备好时：
-npm --prefix web run dev -- --port 5174 --strictPort
-# 浏览器访问 http://127.0.0.1:5174/，输入自行配置的账号密码。
-```
+1. 浏览论文地图和领域 Skill 库，回放库中的 5 篇历史试审。
+2. 在单篇审稿页加载案例，查看 MLRA 已完成的 Review，点击 concern 定位证据。
+3. 选择随包 MLRA 稿件或上传完整新稿，填写 **Base URL / API Key / 模型 ID / 协议**，创建新审稿任务。地图中其他论文需上传全文，或接入自己的数据库。
 
-局域网使用 `python3 web/setup_lan.py --ip <服务器IP>` 创建本地证书，构建后运行 `npm --prefix web run lan`；5173 自动跳转至 HTTPS 8443。客户端信任本地 CA。当前开发服务器可使用已有 systemd 单元，通过 `./scripts/start_website.sh` / `./scripts/stop_website.sh` 启停；这些脚本只适用于已安装该单元的现有机器。
+`ICLR_DATA_DIR` 统一设置数据根目录；`ICLR_RELEASE_DIR`、`ICLR_CASES_DIR`、`ICLR_REVIEW_RUNS` 可分别覆盖路径。安装和启动使用同一组环境变量。导入案例只读回放；新任务保存状态，失败后可重试。[干净环境验证记录](docs/DEPLOYMENT_VERIFICATION.md)列明已测范围。
 
-完整步骤、账户初始化命令、外部资产路径、R/数据库准备、模型环境变量和常见问题见 **[DEPLOYMENT.md](docs/DEPLOYMENT.md)**。
+局域网使用 `python3 web/setup_lan.py --ip <服务器IP>` 创建本地证书，构建后运行 `npm --prefix web run lan`；5173 自动跳转至 HTTPS 8443，客户端信任本地 CA。已有服务器的 `./scripts/start_website.sh` / `./scripts/stop_website.sh` 用于控制已安装的 systemd 单元。
+
+依赖、离线下载、路径配置、账号初始化、可选数据库与 R、常见问题见 **[DEPLOYMENT.md](docs/DEPLOYMENT.md)**。
 
 ## 7. 仓库结构
 

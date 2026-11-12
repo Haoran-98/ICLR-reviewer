@@ -6,12 +6,17 @@ from datetime import datetime
 import hashlib
 import json
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 from zoneinfo import ZoneInfo
 
 
 PROVIDERS = ('deepseek', 'openai', 'qwen')
-DEFAULT_SOURCE = Path('/data_big/iclr-s4/experiments/taxonomy_llm4_gpt_200_v1')
-DEFAULT_OUTPUT = Path('/data_big/iclr-s4/experiments/taxonomy_llm3_paper_trees_200_v1')
+DEFAULT_SOURCE = storage_path('iclr-s4/experiments/taxonomy_llm4_gpt_200_v1')
+DEFAULT_OUTPUT = storage_path('iclr-s4/experiments/taxonomy_llm3_paper_trees_200_v1')
 
 
 def read(path):

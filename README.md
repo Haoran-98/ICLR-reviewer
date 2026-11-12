@@ -8,9 +8,9 @@ ICLR Reviewer is a research and visualization system for ICLR main-track papers.
 
 The website has three separate pages: **Paper Explorer, Manuscript Review, and Domain Skill Library**. The review workflow uses its own page alongside the existing visualization. The current automated review library covers foundation models and large language models.
 
-> Updated: 2026-11-12. The website and one real manuscript review workflow are operational. Review accuracy, quality gains, and formal held-out evaluation remain on the research roadmap. This repository provides source code, public paper metadata, experiment summaries, and website screenshots. The full paper database, frozen rule library, and runtime snapshots are prepared separately.
+> Updated: 2026-11-12. The website and one real manuscript review workflow are operational. Review accuracy, quality gains, and formal held-out evaluation remain on the research roadmap. Versioned demo downloads provide the paper map, frozen rules with paired sources, and completed review cases. A local installation supports map exploration, case replay, and review of uploaded manuscripts with a user-supplied model connection.
 
-[Deployment](docs/DEPLOYMENT.md) · [Methods and References](docs/METHODS.md) · [Progress and Roadmap](docs/STATUS.md) · [Repository Manifest](docs/REPOSITORY_MANIFEST.md) · [Technical Records](docs/technical_details/README.md) · [Figure Review Capabilities](docs/FIGURE_REVIEW.md)
+[Demo Downloads & Checksums](docs/DEMO_ASSETS.md) · [Deployment](docs/DEPLOYMENT.md) · [Methods and References](docs/METHODS.md) · [Progress and Roadmap](docs/STATUS.md) · [Repository Manifest](docs/REPOSITORY_MANIFEST.md) · [Technical Records](docs/technical_details/README.md) · [Figure Review Capabilities](docs/FIGURE_REVIEW.md)
 
 ## 1. Walkthrough
 
@@ -103,7 +103,7 @@ Paper titles, publication venues, adopted mechanisms, and experiment results are
 - **Area visualization:** entity/core-content extraction for 12,964 papers and 51,856 embedding records are sealed. The map, chords, acceptance statistics, score/disagreement views, and evidence lookup are operational.
 - **Domain library:** `llm-area-v1` is frozen with 0 pending queue items; 81 unresolved and 3 needs-evidence items are retained separately.
 - **Composition and review:** MLRA completed a real composition and review using 3 rules and 1,605 proxy tokens, with selection reasons, historical sources, and concern-to-passage navigation. This case verifies the engineering workflow.
-- **Website:** three topic pages, shared authentication, Word/PDF extraction, persistent tasks, retry, and HTTPS LAN access are integrated.
+- **Website:** three topic pages, shared authentication, Word/PDF extraction, persistent tasks, retry, and HTTPS LAN access are integrated. Versioned portable data, rules/provenance and case packages support fresh local deployment.
 
 For website reviews, enter your own **Base URL, API Key, and exact model ID**, then choose **Chat Completions** or **Responses**. Connection fields start empty and are supplied for the current task.
 
@@ -113,34 +113,35 @@ For website reviews, enter your own **Base URL, API Key, and exact model ID**, t
 
 | Priority | Work | Completion criteria |
 |---|---|---|
-| 1 | Multiple reviewers, AC synthesis, and online rebuttals | Define incremental value, cost, and evaluation, then integrate independent opinions, disagreement synthesis, and author responses |
+| 1 | Complete the remaining literature | Process the remaining two thirds of the 2024–2026 manuscripts |
+| 2 | Multiple reviewers, AC synthesis, and online rebuttals | Define incremental value, cost, and evaluation, then integrate independent opinions, disagreement synthesis, and author responses |
+| 3 | Visualize reviews and Skill usage | Show manuscript domains, selected Skill combinations, and the evidence behind review concerns |
 
 More to come…
 
 ## 6. Local Deployment
 
-**Deployment requires source code and data assets.** After cloning and installing dependencies, prepare the 522 MiB website snapshot, manuscripts, PostgreSQL instance, and frozen provenance package. Restore existing assets or export your own research assets using the [deployment guide](docs/DEPLOYMENT.md).
+**Linux + Python 3.11+ + Node 20.19+ or 22.12+.** The installer downloads and verifies the [versioned demo packages](docs/DEMO_ASSETS.md). The demo map, historical replays, and uploaded-manuscript reviews run without PostgreSQL, GPU models, R, or the original research directories.
 
 ```bash
-git clone https://github.com/Haoran-98/ICLR-reviewer.git
+git clone --single-branch --branch main https://github.com/Haoran-98/ICLR-reviewer.git
 cd ICLR-reviewer
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements-web.txt
-npm --prefix web ci
+./scripts/install_website.sh
+.venv/bin/python scripts/init_web_account.py --username root
+./scripts/run_website.sh
 ```
 
-Then **set your administrator password → prepare snapshots/database and rule library → start the website → enter your model connection on the review page → start a review**.
+Open **http://127.0.0.1:5174/** and log in with the password you just set. The account command prompts twice and stores a local password hash. Ubuntu/Debian users install `python3-venv` before running the installer; PDF/DOC extraction additionally uses `poppler-utils` and `libreoffice-writer`.
 
-```bash
-# After configuration and preparation of web/public/generated/:
-npm --prefix web run dev -- --port 5174 --strictPort
-# Open http://127.0.0.1:5174/ and use your configured credentials.
-```
+1. Explore the map and the Domain Skill Library, including its five historical replays.
+2. On Manuscript Review, click the example button to replay the completed MLRA Review and inspect concern evidence.
+3. Select the packaged MLRA paper or upload a full manuscript, enter your **Base URL / API Key / model ID / protocol**, and start a new review. Other map papers require an uploaded full manuscript or your own database.
 
-For LAN access, create a local certificate with `python3 web/setup_lan.py --ip <SERVER_IP>`, build the website, and run `npm --prefix web run lan`. Port 5173 redirects to HTTPS on 8443; clients trust the local CA. On the existing development server, `./scripts/start_website.sh` and `./scripts/stop_website.sh` control its installed systemd unit.
+`ICLR_DATA_DIR` changes the data location; `ICLR_RELEASE_DIR`, `ICLR_CASES_DIR`, and `ICLR_REVIEW_RUNS` override individual paths. Set the same variables during installation and startup. Imported cases stay read-only, while new tasks keep their state and support retry. See [the clean-deployment verification record](docs/DEPLOYMENT_VERIFICATION.md) for tested coverage.
 
-See **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** for account initialization, external asset paths, R/database setup, model environment variables, and troubleshooting.
+For LAN access, create a certificate with `python3 web/setup_lan.py --ip <SERVER_IP>`, build the website, and run `npm --prefix web run lan`. Port 5173 redirects to HTTPS on 8443; clients trust the local CA. On an existing server, `./scripts/start_website.sh` and `./scripts/stop_website.sh` control its installed systemd unit.
+
+See **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** for prerequisites, offline downloads, path configuration, account initialization, optional database/R setup, and troubleshooting.
 
 ## 7. Repository Layout
 

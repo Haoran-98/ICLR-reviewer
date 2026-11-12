@@ -10,6 +10,11 @@ import hashlib
 import json
 import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path, DATA
+except ImportError:
+    from deployment_paths import storage_path, DATA
 import re
 import sys
 import time
@@ -25,6 +30,7 @@ sys.path.insert(0, str(REPO))
 from scripts.s5_fused20 import digest, read, write, now, load_auth, response_json, passage_catalog, obj, arr, STRING
 from benchmarks.paper_understanding.benchmark import section_group
 
+os.environ.setdefault('TIKTOKEN_CACHE_DIR', str(DATA/'tokenizer-cache'))
 ENC = tiktoken.get_encoding('cl100k_base')
 NODE = 'acm:3:#10010305'
 PROTOCOL = REPO/'skills/domain-review-grounder/SKILL.md'
@@ -354,8 +360,8 @@ def self_check():
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('command',choices=['prepare','run','self-check'])
-    p.add_argument('--root',type=Path,default=Path('/data_big/iclr-review/experiments/domain_skill_smoke_v1'))
-    p.add_argument('--assignments',type=Path,default=Path('/data_big/iclr-s4/experiments/dkta4060_200_v1/assignments/llm_deepseek'))
+    p.add_argument('--root',type=Path,default=storage_path('iclr-review/experiments/domain_skill_smoke_v1'))
+    p.add_argument('--assignments',type=Path,default=storage_path('iclr-s4/experiments/dkta4060_200_v1/assignments/llm_deepseek'))
     p.add_argument('--node-id',default=NODE)
     p.add_argument('--source-paper-ids',type=lambda s:[int(x) for x in s.split(',')],default=[1833,2505,2584])
     p.add_argument('--target-paper-id',type=int,default=33830)

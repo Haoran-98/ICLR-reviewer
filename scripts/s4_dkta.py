@@ -12,7 +12,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import gc
 import importlib.util
 import json
+import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import re
 import time
 
@@ -506,10 +512,10 @@ def align(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('stage', choices=('prepare', 'extract', 'index', 'align'))
-    parser.add_argument('--source-root', type=Path, default=Path('/data_big/iclr-s4/experiments/taxonomy_llm4_gpt_200_v1'))
-    parser.add_argument('--root', type=Path, default=Path('/data_big/iclr-s4/experiments/dkta_200_v1'))
+    parser.add_argument('--source-root', type=Path, default=storage_path('iclr-s4/experiments/taxonomy_llm4_gpt_200_v1'))
+    parser.add_argument('--root', type=Path, default=storage_path('iclr-s4/experiments/dkta_200_v1'))
     parser.add_argument('--taxonomy', type=Path)
-    parser.add_argument('--qwen-model', type=Path, default=Path('/data_big/models/Qwen3.5-9B'))
+    parser.add_argument('--qwen-model', type=Path, default=storage_path('models/Qwen3.5-9B'))
     parser.add_argument('--bart-model', type=Path)
     parser.add_argument('--bart-checkpoint-provenance')
     parser.add_argument('--routes', nargs='+', choices=METHODS[:2], default=list(METHODS[:2]))
@@ -530,7 +536,7 @@ def main():
     parser.add_argument('--top-l3', type=int, default=5)
     parser.add_argument('--arbitrator', choices=('deepseek', 'openai', 'none'), default='openai')
     parser.add_argument('--cache-only', action='store_true', help='Materialize existing decisions without embedding or API requests')
-    parser.add_argument('--auth', type=Path, default=Path('/home/yhr/auth'))
+    parser.add_argument('--auth', type=Path, default=Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')))
     parser.add_argument('--limit', type=int, default=200)
     args = parser.parse_args()
     if not 0 <= args.tau_low < args.tau_high <= 1 or min(args.top_m, args.top_l1, args.top_l2, args.top_l3, args.limit) <= 0:

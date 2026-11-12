@@ -12,6 +12,11 @@ import json
 import math
 import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import re
 import sys
 import time
@@ -26,7 +31,7 @@ sys.path.insert(0, str(REPO))
 from twin_smoke.run_api_smoke import load_auth, output_text
 
 VERSION = 's5_fused20_v1'
-ROOT = Path('/data_big/iclr-s5/experiments/fused20_gpt6luna_medium_v1')
+ROOT = storage_path('iclr-s5/experiments/fused20_gpt6luna_medium_v1')
 ACTIONS = ['CRP', 'SRP', 'VCR', 'DWC', 'DRF', 'not_addressed']
 STATES = ['resolved', 'partially_resolved', 'unresolved', 'unknown']
 EVIDENCE_STATES = ['none', 'author_claim_only', 'locatable_report', 'snapshot_supported', 'snapshot_contradicted']

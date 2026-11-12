@@ -23,15 +23,15 @@
 |---|---|
 | 实际模型 API 地址/密钥、`auth`、`.env*`、证书私钥、管理员配置 | 认证信息；部署说明仅给配置方法，不提供现网密码 |
 | `.codex/`、`SESSION.md` | 私有会话及指向会话记录的符号链接 |
-| `web/public/generated/` | 当前约 522 MiB、13,202 个文件的导出快照，含论文/审稿分块；从本地研究数据可重新导出 |
+| `web/public/generated/` | 本地生成快照；脱敏版本以独立下载包发布，主分支保存清单与校验和 |
 | `web/dist/`、`web/node_modules/`、`web/artifacts/` | 构建、依赖及浏览器测试运行产物 |
 | `logs/`、`output/`、数据库状态及模型缓存 | 运行时、请求响应、PPT 与图片生成产物；保留本地，避免与可运行源码混杂 |
 | `docs/reports/` | 课程作业、个人身份信息、汇报 PPT/DOCX 及重复素材；方法总结已由公开方法说明承接 |
 | `twin_smoke/output/`、`automation/public/` | 旧小样本结果和自动活动快照，从最新 Git 树中移除，磁盘文件保留；旧提交仍可查阅 |
 | `docs/images/promo/` | 早期概念宣传图，从最新 Git 树中移除；当前首页使用真实网站截图 |
-| `/data_big/` 下数据库、完整稿件、冻结库、模型请求及审稿运行 | 外部研究资产，不在 Git 源码包中。完整部署需要单独准备，参见 `DEPLOYMENT.md` |
+| `/data_big/` 下数据库、完整稿件、冻结库、模型请求及审稿运行 | 原始研究资产保持外部存储；演示所需网站、规则来源与案例通过独立资产标签发布，参见 `DEMO_ASSETS.md` |
 
-本次不删除本地实验原件，不改写 Git 历史。约 75.7 MiB 的 `raw/` 是既有公开题录；它与未上传的完整研究资产不同。
+本地实验原件保留。约 75.7 MiB 的 `raw/` 为既有公开题录；演示资产使用独立分支与版本标签，源码主分支只保存安装器、下载清单与校验和。
 
 ## 整理后的文档入口
 
@@ -47,3 +47,7 @@
 审稿接口由使用者在页面自行填写，公开内容不提供实际模型 API 地址与密钥。
 
 上传前检查 Git 暂存区：确认无账号、私有会话、论文全文、原始模型响应或课程身份资料；检查截图、相对链接、前端构建和现有无付费调用的验证。最终文件数与体积记录在发布核查报告中。
+
+## 可移植资产发布
+
+`docs/demo-assets.json` 固定三份演示包的分段与完整 SHA-256；`scripts/install_demo_assets.py` 下载、安全解压并逐文件核验。`scripts/deployment_paths.py` 统一配置路径。`scripts/install_website.sh`、`scripts/init_web_account.py`、`scripts/run_website.sh` 提供安装到启动命令。下载入口见 [DEMO_ASSETS.md](DEMO_ASSETS.md)，实测见 [DEPLOYMENT_VERIFICATION.md](DEPLOYMENT_VERIFICATION.md)。

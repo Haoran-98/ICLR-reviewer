@@ -1,10 +1,10 @@
 # ICLR Web：论文探索与单篇审稿
 
-> 新环境先阅读 [完整部署说明](../docs/DEPLOYMENT.md)：Git 不包含生成数据、冻结库及其来源资产；也须先初始化自己的管理员配置。当前工程进度见 [STATUS](../docs/STATUS.md)。
+> 新环境先阅读 [完整部署说明](../docs/DEPLOYMENT.md)：版本化演示包包含网站快照、规则来源和案例；先安装资产，再初始化本机账号。当前工程进度见 [STATUS](../docs/STATUS.md)。
 
 站点分为三个独立主题页：**论文探索** `/`、**单篇审稿** `/review.html`、**领域 Skill 库** `/reviewers.html`。地图保留原有图表、布局和筛选，只增加主题导航及论文详情中的“进入单篇审稿”链接。
 
-[单篇审稿](http://172.24.246.231:5173/review.html)支持地图选稿、搜索论文、上传 Word（DOC / DOCX / DOCS）、PDF、Markdown/TXT/LaTeX 完整稿件，展示领域识别、Skill 加载理由与历史来源、Review 与修改优先级，并可逐条定位原文。API 地址和密钥由使用者在页面自行填写；点击“开始审稿”才提交真实任务。已有 MLRA 案例可直接查看并继续审稿。运行记录和失败响应持久保存，重试复用成功阶段。完整说明见 [单篇审稿接入记录](../docs/technical_details/Web_single_paper_review.md)。
+[单篇审稿](/review.html)支持地图选稿、搜索论文、上传 Word（DOC / DOCX / DOCS）、PDF、Markdown/TXT/LaTeX 完整稿件，展示领域识别、Skill 加载理由与历史来源、Review 与修改优先级，并可逐条定位原文。API 地址和密钥由使用者在页面自行填写；点击“开始审稿”才提交真实任务。已有 MLRA 案例可只读回放，也可选择随包稿件创建新审稿。运行记录和失败响应持久保存，重试复用成功阶段。完整说明见 [单篇审稿接入记录](../docs/technical_details/Web_single_paper_review.md)。
 
 ## 登录与文档上传（2026-11-09）
 
@@ -14,9 +14,9 @@
 
 相关检查：`node web/test_site_auth.mjs`、`python3 web/test_manuscript_upload.py`、`python3 web/test_review_api.py`。浏览器测试通过环境变量 `ICLR_WEB_USERNAME`、`ICLR_WEB_PASSWORD` 提供凭据；在 `web/` 执行 `npm run access:smoke` 可验证已运行实例的登录和四种文档上传，需同时设置 `ICLR_WEB_BASE_URL`。测试不调用模型。
 
-[领域 Skill 库](http://172.24.246.231:5173/reviewers.html)：浏览冻结的 7,795 个有效模块、输入文本预览匹配、回放 5 篇历史试审的 concern 与正文证据。范围与复现见 [工作台说明](../docs/technical_details/Web_review_workbench.md)。更新该数据使用 `python3 web/export_reviewers.py`，再执行 `npm run build`；该页匹配在浏览器本地运行，真实审稿使用独立的 `/review.html` 页面。
+[领域 Skill 库](/reviewers.html)：浏览冻结的 7,795 个有效模块、输入文本预览匹配、回放 5 篇历史试审的 concern 与正文证据。范围与复现见 [工作台说明](../docs/technical_details/Web_review_workbench.md)。更新该数据使用 `python3 web/export_reviewers.py`，再执行 `npm run build`；该页匹配在浏览器本地运行，真实审稿使用独立的 `/review.html` 页面。
 
-审稿 API 通过 Vite 的 dev / preview 同源中间件按需启动本机 Python 服务，不影响地图的初始加载。Python 环境沿用项目依赖，默认任务目录为 experiments 下的 `web_review_runs`；可用 `ICLR_REVIEW_RUNS` 设置独立存储目录。每个存储目录只有一个协调服务，任务串行执行。新审稿只使用页面填写的 OpenAI 兼容地址、密钥和模型 ID，不读取服务器认证文件；地址和密钥不写入浏览器存储或任务文件。服务停止后在途记录保留，下次启动标记为可重试。
+审稿 API 通过 Vite 的 dev / preview 同源中间件按需启动本机 Python 服务，不影响地图的初始加载。Python 环境沿用项目依赖，默认任务目录为 `.local-data/runs`；可用 `ICLR_REVIEW_RUNS` 设置独立存储目录。每个存储目录只有一个协调服务，任务串行执行。新审稿只使用页面填写的 OpenAI 兼容地址、密钥和模型 ID，不读取服务器认证文件；地址和密钥不写入浏览器存储或任务文件。服务停止后在途记录保留，下次启动标记为可重试。
 
 新增检查：在仓库根目录执行 `python3 web/test_review_api.py`，在 `web/` 执行 `npm run review:smoke`。后者默认验证页面及已存在的真实案例，不触发模型；仅显式设置 `ICLR_REVIEW_LIVE=1` 才启动一次真实审稿。`ICLR_REVIEW_RETRY=<run-id>` 可验证失败任务的重试恢复。浏览器执行文件配置沿用下文现有验证方式。
 
@@ -92,16 +92,16 @@ npm run smoke
 
 ## 局域网 HTTPS 访问
 
-推荐入口为 <http://172.24.246.231:5173/>，自动跳转到 <https://172.24.246.231:8443/>，保留路径与查询参数。服务仅发布 `dist/` 构建结果。准备与启动命令（在仓库根目录执行）：
+推荐入口为 `http://SERVER_IP:5173/`，自动跳转到 `https://SERVER_IP:8443/`，保留路径与查询参数。服务仅发布 `dist/` 构建结果。准备与启动命令（在仓库根目录执行）：
 
 ```bash
-python3 web/setup_lan.py --ip 172.24.246.231
+python3 web/setup_lan.py --ip <SERVER_IP>
 cd web
 npm run build
 npm run lan
 ```
 
-首次在其他设备访问时，将 [本地 CA 证书](https://172.24.246.231:8443/iclr-lan-ca.crt) 导入该设备或浏览器的受信任证书颁发机构，再重新打开页面。也可以从服务器复制 `web/public/iclr-lan-ca.crt`。只有公开 CA 证书需要传给客户端；私钥保存在服务器被 Git 忽略的 `logs/web_visualization/lan/` 中。
+首次在其他设备访问时，将 本地 CA 证书（网站 `/iclr-lan-ca.crt`） 导入该设备或浏览器的受信任证书颁发机构，再重新打开页面。也可以从服务器复制 `web/public/iclr-lan-ca.crt`。只有公开 CA 证书需要传给客户端；私钥保存在服务器被 Git 忽略的 `logs/web_visualization/lan/` 中。
 
 - Windows：将证书导入当前用户的“受信任的根证书颁发机构”，再重启浏览器。
 - macOS：导入“钥匙串访问”，将该证书设为始终信任。

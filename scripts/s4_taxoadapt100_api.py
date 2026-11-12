@@ -6,6 +6,11 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 import json
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import random
 import shlex
 import signal
@@ -19,8 +24,8 @@ import requests
 from s4_reproduce500 import digest, log, now, read, write, SEED
 import s4_reproduce500_methods as methods
 
-ROOT = Path('/data_big/iclr-s4/experiments/taxoadapt100_gpt6luna_low_v1')
-SOURCE = Path('/data_big/iclr-s4/experiments/repro500_qwen38_27b_q3_medium_64k_v2')
+ROOT = storage_path('iclr-s4/experiments/taxoadapt100_gpt6luna_low_v1')
+SOURCE = storage_path('iclr-s4/experiments/repro500_qwen38_27b_q3_medium_64k_v2')
 MODEL, EFFORT, VERSION, CONCURRENCY = 'gpt-6-luna', 'low', 'taxoadapt100_gpt6luna_low_v1', 3
 
 

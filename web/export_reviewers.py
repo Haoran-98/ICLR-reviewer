@@ -4,10 +4,11 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+import sys
 
 REPO = Path(__file__).resolve().parents[1]
-RELEASE = Path('/data_big/iclr-review/releases/llm-area-v1')
-PILOT = Path('/data_big/iclr-review/experiments/modular_skill100_automanual_ace_v1')
+sys.path.insert(0, str(REPO/'scripts'))
+from deployment_paths import RELEASE, PILOT
 
 
 def read(path):

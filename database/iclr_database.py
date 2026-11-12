@@ -26,13 +26,15 @@ from psycopg.types.json import Jsonb
 
 YEARS = (2024, 2025, 2026)
 REPO = Path(__file__).resolve().parents[1]
-DEFAULT_SOURCE = Path(os.environ.get("ICLR_REVIEWS_ROOT", "/data_big/iclr_reviews"))
-DEFAULT_STORE = Path(os.environ.get("ICLR_OBJECT_STORE", "/data_big/iclr-reviewer-store/objects"))
-DEFAULT_STATE = Path(os.environ.get("ICLR_DATABASE_STATE", "/data_big/iclr-reviewer-db/state"))
+DATA = Path(os.environ.get('ICLR_DATA_DIR', REPO/'.local-data'))
+DATABASE_HOME = Path(os.environ.get('ICLR_DATABASE_HOME', DATA/'database'))
+DEFAULT_SOURCE = Path(os.environ.get("ICLR_REVIEWS_ROOT", DATA/'iclr_reviews'))
+DEFAULT_STORE = Path(os.environ.get("ICLR_OBJECT_STORE", DATA/'objects'))
+DEFAULT_STATE = Path(os.environ.get("ICLR_DATABASE_STATE", DATABASE_HOME/'state'))
 DEFAULT_URL = os.environ.get(
-    "ICLR_DATABASE_URL", "postgresql://yhr@127.0.0.1:55432/iclr_reviewer"
+    "ICLR_DATABASE_URL", "host=127.0.0.1 port=55432 dbname=iclr_reviewer"
 )
-DEFAULT_OPENREVIEW_TOKEN = Path("/data_big/iclr_reviews/fulltext/openreview.token")
+DEFAULT_OPENREVIEW_TOKEN = Path(os.environ.get('ICLR_OPENREVIEW_TOKEN_FILE', DEFAULT_SOURCE/'fulltext/openreview.token'))
 TOKEN_EXPIRES_SECONDS = 7 * 24 * 60 * 60
 TOKEN_REFRESH_SECONDS = TOKEN_EXPIRES_SECONDS - 60 * 60
 
@@ -1617,11 +1619,11 @@ def snapshot(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError("validation must pass before snapshot")
     manifest_path = state / "object_manifest.jsonl"
     manifest_hash = file_hash(manifest_path)
-    snapshot_dir = Path("/data_big/iclr-reviewer-db/snapshots")
+    snapshot_dir = DATABASE_HOME/'snapshots'
     snapshot_dir.mkdir(parents=True, exist_ok=True)
     raw_dump_path = snapshot_dir / "database_v1.dump.tmp"
     dump_path = snapshot_dir / "database_v1.dump.zst"
-    pg_dump = Path(os.environ.get("ICLR_PG_BIN", "/data_big/iclr-reviewer-db/runtime/bin")) / "pg_dump"
+    pg_dump = Path(os.environ.get("ICLR_PG_BIN", DATABASE_HOME/'runtime/bin')) / "pg_dump"
     subprocess.run([
         str(pg_dump), "--dbname", args.database_url, "--format=custom", "--compress=0",
         "--file", str(raw_dump_path),

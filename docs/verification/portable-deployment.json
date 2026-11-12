@@ -1,0 +1,83 @@
+{
+  "mode": "real-model",
+  "run_id": "ccce4ee5ca5f4849964c4ef027c0b281",
+  "state": "completed",
+  "attempts": 1,
+  "calls": {},
+  "manuscript_chars": 88275,
+  "model": "gpt-6.1-sol",
+  "selected_rules": [
+    "R6574",
+    "R8311",
+    "R1632",
+    "R1790",
+    "R0144",
+    "R2014",
+    "R6824"
+  ],
+  "budget": {
+    "max_rules": 10,
+    "rule_token_budget": 4000,
+    "loaded_rules": 7,
+    "loaded_rule_tokens_proxy": 3748,
+    "shortlist_rules": 24,
+    "not_assessed_rules": 1827
+  },
+  "concerns": 3,
+  "evidence_items": 6,
+  "elapsed_seconds": 187,
+  "browser_errors": [],
+  "compose": {
+    "input_tokens": 72031,
+    "output_tokens": 5622
+  },
+  "review": {
+    "input_tokens": 33913,
+    "output_tokens": 2427
+  },
+  "concern_kinds": {
+    "needs_verification": 2,
+    "supported_defect": 1
+  },
+  "successful_provider_calls": 3,
+  "local_recovery": false,
+  "assets_version": "demo-2026-11-12-v1",
+  "asset_commit": "08f0c4754c24e7cbc5cf217029ed2245af379548",
+  "simulator": {
+    "mode": "synthetic-compatible-provider",
+    "run_id": "dedae0ac68a64904ab6c9bcd5fd16947",
+    "state": "completed",
+    "attempts": 2,
+    "calls": {
+      "profile": 1,
+      "applicability": 1,
+      "review": 2
+    },
+    "manuscript_chars": 88275,
+    "selected_rules": [
+      "R6662",
+      "R0289"
+    ],
+    "budget": {
+      "max_rules": 10,
+      "rule_token_budget": 4000,
+      "loaded_rules": 2,
+      "loaded_rule_tokens_proxy": 974,
+      "shortlist_rules": 24,
+      "not_assessed_rules": 1827
+    },
+    "concerns": 1,
+    "evidence_items": 2,
+    "elapsed_seconds": 15,
+    "browser_errors": []
+  },
+  "weak_model_failures": {
+    "profile_attempts": 4,
+    "reason": "Exact quote or passage validation failed",
+    "preserved": true
+  },
+  "privacy": {
+    "task_files_scanned": 125,
+    "credential_or_endpoint_matches": 0
+  }
+}

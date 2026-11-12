@@ -12,16 +12,21 @@ import subprocess
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+
+try:
+    from .deployment_paths import DB_STATE, OPENREVIEW_TOKEN
+except ImportError:
+    from deployment_paths import DB_STATE, OPENREVIEW_TOKEN
 from typing import Any
 
 
-STATE_DIR = Path("/data_big/iclr-reviewer-db/state")
+STATE_DIR = DB_STATE
 CHECKPOINT = STATE_DIR / "revision_backfill_checkpoint.json"
 REPORT = STATE_DIR / "revision_backfill_report.json"
 LOG = STATE_DIR / "revision_backfill.log"
-TOKEN_FILE = Path("/data_big/iclr_reviews/fulltext/openreview.token")
+TOKEN_FILE = OPENREVIEW_TOKEN
 DATABASE_URL = os.environ.get(
-    "ICLR_DATABASE_URL", "postgresql://yhr@127.0.0.1:55432/iclr_reviewer"
+    "ICLR_DATABASE_URL", "host=127.0.0.1 port=55432 dbname=iclr_reviewer"
 )
 RENEW_COMMAND = "python3 scripts/get_openreview_token_with_code.py"
 BACKFILL_MARKER = "database/iclr_database.py revision-backfill"

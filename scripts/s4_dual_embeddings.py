@@ -3,13 +3,18 @@
 import gc
 import hashlib
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import time
 
 import numpy as np
 
 from s4_reproduce500 import BGE, digest, log, now, read, write
 
-QWEN = Path('/data_big/iclr-s4/models/models--Qwen--Qwen3-Embedding-0.6B/snapshots/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3')
+QWEN = storage_path('iclr-s4/models/models--Qwen--Qwen3-Embedding-0.6B/snapshots/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3')
 MODELS = [('bge-m3', 'BAAI/bge-m3', BGE, 'cls'),
           ('qwen3-embedding-0.6b', 'Qwen/Qwen3-Embedding-0.6B', QWEN, 'lasttoken')]
 MAX_LENGTH = 8192

@@ -3,7 +3,13 @@
 from collections import Counter
 import hashlib
 import json
+import os
 from pathlib import Path
+
+try:
+    from .deployment_paths import storage_path
+except ImportError:
+    from deployment_paths import storage_path
 import re
 import threading
 import unicodedata
@@ -15,8 +21,8 @@ import s4_cs2023_ai5 as previous
 import s4_taxoadapt100_api as api
 from s4_reproduce500 import BGE, digest, embed_texts, now, read, write
 
-ROOT = Path('/data_big/iclr-s4/experiments/entity_core5_gpt6luna_medium_v1')
-SOURCE = Path('/data_big/iclr-s4/experiments/cs2023_ai5_gpt6luna_medium_v1')
+ROOT = storage_path('iclr-s4/experiments/entity_core5_gpt6luna_medium_v1')
+SOURCE = storage_path('iclr-s4/experiments/cs2023_ai5_gpt6luna_medium_v1')
 FIELDS = ['research_problem', 'method', 'research_object']
 TYPES = ['TASK', 'METHOD', 'RESEARCH_OBJECT', 'DATASET', 'METRIC', 'TOOL', 'OTHER_SCIENTIFIC_TERM', 'GENERIC']
 ROLES = ['proposed', 'used', 'evaluation_target', 'background', 'baseline', 'unclear']
@@ -223,7 +229,7 @@ def main():
     ROOT.mkdir(parents=True,exist_ok=True)
     shared.ROOT = ROOT
     api.MODEL,api.EFFORT,api.VERSION = 'gpt-6-luna','medium',ROOT.name
-    api.AUTH,api.GATE = Path('/home/yhr/auth'),threading.BoundedSemaphore(3)
+    api.AUTH,api.GATE = Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')),threading.BoundedSemaphore(3)
     api.PROGRESS = shared.Progress(ROOT)
     api.PROGRESS.data.update(papers=5,phase='科学实体候选及核心内容提取')
     api.PROGRESS.save()

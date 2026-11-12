@@ -377,7 +377,7 @@ def run(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=s4.ROOT)
-    parser.add_argument('--auth', type=Path, default=Path('/home/yhr/auth'))
+    parser.add_argument('--auth', type=Path, default=Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')))
     args = parser.parse_args()
     with (args.root/'run.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
