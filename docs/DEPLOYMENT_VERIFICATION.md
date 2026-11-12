@@ -42,6 +42,16 @@ Debian 12 容器，Node 22.23.5、Python 3.11.2、Vite 7.3.7。使用 `scripts/d
 
 可复查的脱敏计数与规则 ID 见 [portable-deployment.json](verification/portable-deployment.json)。弱模型失败记录与强模型完成结果分别报告。
 
+## 公开源码与迁移复查
+
+从 GitHub 使用 `--depth 1 --single-branch --branch main` 新克隆源码，提交 `ba6fb7f`，在独立容器中执行安装命令并从公开地址下载资产。修复了新克隆不保留空目录的问题：安装器主动创建 `web/public`。
+
+随后把数据从 `/app/.local-data` 移到 `/srv/iclr-demo-data`，移除旧链接，设置 `ICLR_DATA_DIR` 并重新执行安装器。旧数据路径已不存在；规则、案例、任务和地图均使用新根目录。三份文件清单、全部来源排除及两篇配对证据再次通过核验。
+
+迁移后的浏览器复查再次完成地图加载、5 篇历史回放、88,275 字符全文上传、自填模拟接口、失败保留与重试。模拟任务 14 秒完成；profile/applicability 各执行一次，review 执行两次。模块数 7,795，浏览器错误为 0。生成数据链接同时纳入 `.gitignore`，本地安装不会把机器路径作为待提交内容。
+
+现有网站已接入相同的便携规则、案例和脱敏网站快照，使用显式路径配置启动。原网站导出与任务目录保留，原账号保持原样。
+
 ## 复查命令
 
 ```bash

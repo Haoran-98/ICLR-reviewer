@@ -33,7 +33,7 @@ logs/s4_taxonomy/
 # Local Web validation runtimes and generated corpus snapshots.
 web/node_modules/
 web/dist/
-web/public/generated/
+web/public/generated
 web/artifacts/
 web/public/iclr-lan-ca.crt
 logs/web_visualization/

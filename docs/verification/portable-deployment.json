@@ -3,7 +3,6 @@
   "run_id": "ccce4ee5ca5f4849964c4ef027c0b281",
   "state": "completed",
   "attempts": 1,
-  "calls": {},
   "manuscript_chars": 88275,
   "model": "gpt-6.1-sol",
   "selected_rules": [
@@ -79,5 +78,46 @@
   "privacy": {
     "task_files_scanned": 125,
     "credential_or_endpoint_matches": 0
+  },
+  "public_clone_verification": {
+    "source_commit": "ba6fb7f",
+    "source": "GitHub main shallow single-branch clone",
+    "downloaded_public_assets": true,
+    "container_mounts": 0,
+    "original_data_path_removed": true,
+    "configured_data_root": "/srv/iclr-demo-data",
+    "portable_provenance_check": "passed",
+    "map_papers": 12964,
+    "library_modules": 7795,
+    "replay_papers": 5,
+    "simulation": {
+      "mode": "synthetic-compatible-provider",
+      "run_id": "2dfcdde497af4536955d863d715e16c5",
+      "state": "completed",
+      "attempts": 2,
+      "calls": {
+        "profile": 1,
+        "applicability": 1,
+        "review": 2
+      },
+      "manuscript_chars": 88275,
+      "model": "portable-test-simulator",
+      "selected_rules": [
+        "R6662",
+        "R0289"
+      ],
+      "budget": {
+        "max_rules": 10,
+        "rule_token_budget": 4000,
+        "loaded_rules": 2,
+        "loaded_rule_tokens_proxy": 974,
+        "shortlist_rules": 24,
+        "not_assessed_rules": 1827
+      },
+      "concerns": 1,
+      "evidence_items": 2,
+      "elapsed_seconds": 14,
+      "browser_errors": []
+    }
   }
 }
