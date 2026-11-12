@@ -78,10 +78,14 @@ def result(path):
         manuscript=dict(title=manuscript.get('title'), coverage=manuscript.get('coverage'), passages=manuscript.get('passages', [])))
 
 
-def command(args, path):
+def command(args, path, connection=None):
+    environment = os.environ.copy()
+    environment.pop('ICLR_REVIEW_CONNECTION', None)
+    if connection:
+        environment['ICLR_REVIEW_CONNECTION'] = json.dumps(models.private_connection(connection))
     with (path/'worker.log').open('ab') as log:
         child = subprocess.Popen([sys.executable, '-X', 'pycache_prefix=/tmp/iclr-web-review-pycache', *map(str,args)],
-            cwd=REPO, stdout=log, stderr=log)
+            cwd=REPO, stdout=log, stderr=log, env=environment)
         with LOCK: CHILDREN.add(child)
         try:
             if child.wait():
@@ -98,17 +102,20 @@ def command(args, path):
             with LOCK: CHILDREN.discard(child)
 
 
-def execute(path):
+def execute(path, connection=None):
     job = read(path/'job.json'); attempt = path/f'attempt-{job["attempt"]}'; attempt.mkdir(exist_ok=True)
     composition = attempt/'compose'; review = attempt/'review'
     try:
         selection = job.get('review_provider')
         model_args = []
         if selection:
-            config = models.configuration(selection['id'])
-            if not config['configured']: raise RuntimeError('所选模型尚未配置，请补齐服务端配置后重试。')
+            config = connection
+            if not config or selection['id'] != 'custom':
+                raise RuntimeError('请重新填写接口配置并创建审稿任务；历史结果继续保留。')
             if models.identity(config) != job.get('provider_identity'): raise RuntimeError('任务模型配置已变化，请恢复原配置重试或创建新任务。')
-            model_args = ['--review-model', selection['id']]
+            model_args = ['--review-model', 'custom']
+        else:
+            raise RuntimeError('请使用自填接口创建新任务；历史结果继续保留。')
         save_job(path, state='running', phase='composing', error=None)
         previous = path/f'attempt-{job["attempt"]-1}'/'compose'
         seed = previous if (previous/'composition.json').exists() else SEED if job.get('paper_id') == 33089 and not selection else None
@@ -124,7 +131,7 @@ def execute(path):
             args = [REPO/'scripts/compose_manuscript_skills.py', 'run', '--root', composition, *model_args]
             if job.get('paper_id'): args += ['--paper-id', job['paper_id']]
             else: args += ['--manuscript', path/'manuscript.md', '--title', job['title']]
-            command(args, path)
+            command(args, path, connection)
         # Check the actual composition files before forwarding them to the reviewer.
         audit = s.read(composition/'AUDIT.json')
         for name, digest in audit['output_hashes'].items():
@@ -136,7 +143,7 @@ def execute(path):
             imported=review/'recovery_source';imported.mkdir(parents=True)
             shutil.copyfile(old_attempts[-1],imported/'attempt.json')
             shutil.copyfile(previous_review/'request.json',imported/'request.json')
-        command([REPO/'scripts/review_composed_manuscript.py', '--source', composition, '--root', review, *model_args], path)
+        command([REPO/'scripts/review_composed_manuscript.py', '--source', composition, '--root', review, *model_args], path, connection)
         save_job(path, state='completed', phase='completed', error=None)
     except Exception as error:
         save_job(path, state='failed', error=str(error) if isinstance(error, RuntimeError) else '任务未完成，记录已保留。可检查输入后重试。')
@@ -149,13 +156,12 @@ def submit(payload):
         if isinstance(pid, bool) or not isinstance(pid, int) or pid <= 0: raise ValueError('论文 ID 无效')
     elif not isinstance(text, str) or len(text.strip()) < 200: raise ValueError('请上传或粘贴完整稿件，至少 200 字符')
     if text is not None and (not isinstance(text, str) or len(text.encode()) > 1_500_000): raise ValueError('稿件过大')
-    config = models.configuration(payload.get('model', models.DEFAULT))
-    if not config['configured']: raise ValueError('所选模型尚未配置，请选择已配置的接口')
+    config = models.connection(payload.get('connection'))
     title = str(payload.get('title') or (f'论文 {pid}' if pid else '上传稿件'))[:300]
     path = ROOT/uuid.uuid4().hex; path.mkdir(parents=True)
     if pid is None: (path/'manuscript.md').write_text(text)
     record = save_job(path, id=path.name, paper_id=pid, title=title, review_provider=models.public(config), provider_identity=models.identity(config), attempt=1, state='queued', phase='queued', error=None)
-    POOL.submit(execute, path)
+    POOL.submit(execute, path, config)
     return public_job(record)
 
 
@@ -171,7 +177,7 @@ class Handler(BaseHTTPRequestHandler):
         route = urlsplit(self.path).path.removeprefix('/api/review').rstrip('/')
         try:
             if self.command == 'GET' and route == '/meta':
-                self.respond(200, dict(model=models.configuration(models.DEFAULT)['model'], default_model=models.DEFAULT, models=models.models(), library='llm-area-v1', max_rules=10, rule_tokens=4000,
+                self.respond(200, dict(connection_required=True, protocols=['chat', 'responses'], library='llm-area-v1', max_rules=10, rule_tokens=4000,
                     example=dict(paper_id=33089, title='Multi-Head Low-Rank Attention')))
             elif self.command == 'GET' and route == '/runs':
                 self.respond(200, sorted([public_job(read(p)) for p in ROOT.glob('*/job.json')], key=lambda j:j['updated_at'], reverse=True)[:50])
@@ -193,13 +199,20 @@ class Handler(BaseHTTPRequestHandler):
                     with LOCK:
                         path = job_path(route.split('/')[-2]); job = read(path/'job.json')
                         if job['state'] not in ['failed', 'interrupted']: raise ValueError('当前任务无需重试')
+                        config = models.connection(payload.get('connection'))
+                        if models.identity(config) != job.get('provider_identity'):
+                            raise ValueError('请填写此任务原接口与模型；历史任务可另建新任务审稿')
                         save_job(path, attempt=job['attempt']+1, state='queued', phase='queued', error=None)
-                    POOL.submit(execute, path); self.respond(202, public_job(read(path/'job.json')))
+                    POOL.submit(execute, path, config); self.respond(202, public_job(read(path/'job.json')))
                 else: self.respond(404, dict(error='接口不存在'))
             else: self.respond(404, dict(error='接口不存在'))
         except (ValueError, TypeError, json.JSONDecodeError) as error:
             message = str(error)
-            self.respond(400, dict(error=message if message in ('未知审稿模型', '所选模型尚未配置，请选择已配置的接口') else '输入无效，请检查论文 ID、稿件内容或任务状态'))
+            allowed = ('请填写审稿接口配置', '请填写有效的 Base URL、API Key 和模型 ID',
+                'Base URL 须为 HTTP(S) 地址，且不含账号、查询参数或片段',
+                '请填写 Base URL，不要包含末尾的模型调用接口路径', '请选择 OpenAI 兼容的接口格式',
+                '请填写此任务原接口与模型；历史任务可另建新任务审稿')
+            self.respond(400, dict(error=message if message in allowed else '输入无效，请检查论文 ID、稿件内容或任务状态'))
         except Exception: self.respond(500, dict(error='服务未能读取此记录，请稍后重试'))
     do_GET = dispatch
     do_POST = dispatch

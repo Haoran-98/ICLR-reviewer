@@ -405,7 +405,7 @@ def main():
     parser.add_argument('--include-candidates', action='store_true')
     parser.add_argument('--database-url', default=os.environ.get('ICLR_DATABASE_URL', 'host=127.0.0.1 port=55432 dbname=iclr_reviewer'))
     parser.add_argument('--auth', type=Path, default=Path(os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth')))
-    parser.add_argument('--review-model', choices=['openai-sol', 'deepseek-pro', 'qwen-local', 'claude-opus'])
+    parser.add_argument('--review-model', choices=['custom', 'openai-sol', 'deepseek-pro', 'qwen-local', 'claude-opus'])
     args = parser.parse_args()
     s.require(1 <= args.max_rules <= 30 and 1 <= args.shortlist <= 60 and args.rule_tokens >= 100,
               'Invalid composition budget')

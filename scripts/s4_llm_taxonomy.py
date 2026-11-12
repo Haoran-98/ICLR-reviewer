@@ -93,7 +93,7 @@ def credentials(path):
                 if strength not in ('none','minimal','low','medium','high','max'):
                     raise ValueError('Invalid Kimi reasoning effort')
                 result[provider]['reasoning_effort']=strength
-    result['qwen'] = {'base_url': 'https://provider.invalid/v1', 'key': '',
+    result['qwen'] = {'base_url': values.get('qwen_base_url', os.environ.get('QWEN_BASE_URL', '')).rstrip('/'), 'key': '',
                       'model': 'qwen3.5-9b-q8', 'concurrency': 1}
     return result
 

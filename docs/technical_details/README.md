@@ -34,6 +34,7 @@
 | 历史论文数据探索 | [`六步计划`](Web_visualization_plan.md)；[`V1 验证记录`](Web_visualization_V1.md) | 实体队列地图、领域边界、弦图及论文级评分/分歧已接入 |
 | 评分与分歧组合图 | [`ggdist 升级`](Web_ggdist_upgrade_2026-11-11.md) | R/交互统计一致性及浏览器验证通过 |
 | 登录与文档上传 | [`访问控制与上传`](Web_access_and_upload.md) | 页面/静态/API 认证与 Word/PDF 提取已实现 |
+| 用户自填审稿接口 | [`连接输入与隐私`](Web_user_api_configuration.md) | Base URL/Key/模型自行输入，地址密钥不持久化，重试重新输入 |
 | 独立单篇审稿页 | [`接入与验证记录`](Web_single_paper_review.md) | 已接入现有 Web；单篇真实运行、重试恢复与 HTTPS 验证通过 |
 
 ## 更新规则

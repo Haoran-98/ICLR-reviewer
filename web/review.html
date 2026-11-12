@@ -17,9 +17,17 @@
           <div id="existing-input"><label for="paper-search">搜索论文标题或 ID</label><input id="paper-search" type="search" placeholder="如 Multi-Head Low-Rank Attention" autocomplete="off" /><div id="paper-results" class="paper-results"></div><p id="chosen-paper" class="muted">可从论文探索页面带入选中的稿件。</p></div>
           <div id="upload-input" hidden><label for="upload-title">稿件标题</label><input id="upload-title" placeholder="填写标题" /><label for="manuscript-file">上传完整稿件</label><input id="manuscript-file" type="file" accept=".md,.txt,.tex,.doc,.docx,.docs,.pdf,text/plain,text/markdown,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf" /><small>支持 Word（DOC / DOCX / DOCS）、PDF、Markdown / TXT / LaTeX，文件上限 15 MB。Word 与 PDF 在本站服务器提取文本；扫描版 PDF 请先进行 OCR。</small><p id="upload-status" class="muted small" role="status" aria-live="polite"></p><label for="manuscript-text">检查提取结果，或粘贴完整稿件</label><textarea id="manuscript-text" rows="9" placeholder="粘贴正文及可用的附录文本…"></textarea></div>
           <p class="scope-note">当前支持基础模型与大语言模型领域。历史来源论文可浏览经验，独立审稿请选择未参与提炼的稿件。</p>
-          <label for="review-model">审稿 API / 模型</label>
-          <select id="review-model" aria-describedby="model-status"><option value="">正在读取配置…</option></select>
-          <p id="model-status" class="muted small" role="status"></p>
+          <fieldset class="connection-settings"><legend>审稿接口 · OpenAI 兼容格式</legend>
+            <label for="review-base-url">Base URL</label>
+            <input id="review-base-url" type="url" placeholder="填写接口的 Base URL" autocomplete="off" spellcheck="false" maxlength="2048" />
+            <label for="review-api-key">API Key</label>
+            <input id="review-api-key" type="password" placeholder="填写自己的 API Key" autocomplete="off" maxlength="8192" />
+            <label for="review-model">模型 ID</label>
+            <input id="review-model" placeholder="填写接口实际支持的模型 ID" autocomplete="off" spellcheck="false" maxlength="200" />
+            <label for="review-protocol">接口格式</label>
+            <select id="review-protocol"><option value="chat">Chat Completions</option><option value="responses">Responses</option></select>
+            <p class="muted small">填写 Base URL 即可，无需添加末尾的调用路径。地址和密钥仅用于当前任务，不保存在浏览器或任务文件中；重试时请重新填写。</p>
+          </fieldset>
           <button id="start-review" class="primary" type="submit" disabled>开始审稿</button>
         </form>
         <p id="input-error" role="alert" class="error"></p>

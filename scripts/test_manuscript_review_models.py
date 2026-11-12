@@ -1,5 +1,6 @@
 """No-network transport, model identity, cache isolation and recovery check."""
 import json
+import os
 from pathlib import Path
 import tempfile
 from types import SimpleNamespace
@@ -20,6 +21,23 @@ class Response:
 
 
 def main():
+    supplied=dict(base_url='https://user-endpoint.invalid/v1/',api_key='user-supplied-test-key',model='alias',protocol='chat')
+    cfg=m.connection(supplied)
+    assert cfg['base_url']==supplied['base_url'].rstrip('/') and cfg['id']=='custom'
+    assert 'user-endpoint' not in json.dumps(m.identity(cfg)) and cfg['key'] not in json.dumps(m.public(cfg))
+    for invalid in [None, {}, dict(supplied,api_key=''),dict(supplied,model=''),dict(supplied,base_url='file:///tmp'),
+                    dict(supplied,base_url='https://name:password@provider.invalid'),dict(supplied,base_url='https://provider.invalid?key=secret'),
+                    dict(supplied,base_url='https://provider.invalid/v1/chat/completions'),dict(supplied,api_key='header\r\ninjection'),dict(supplied,protocol='anthropic')]:
+        try:m.connection(invalid)
+        except ValueError:pass
+        else:raise AssertionError('Invalid custom connection accepted')
+    with patch.dict(os.environ,{'ICLR_REVIEW_CONNECTION':json.dumps(supplied)}):
+        assert m.configuration('custom')==cfg
+    with patch.dict(os.environ,{'ICLR_REVIEW_CONNECTION':''}):
+        try:m.configuration('custom')
+        except ValueError:pass
+        else:raise AssertionError('Custom configuration fell back to server credentials')
+    m.validate_response({'status':'completed','model':'alias-versioned'},cfg)
     schema = {'type':'object','properties':{'ok':{'type':'boolean'}},'required':['ok']}
     with tempfile.TemporaryDirectory() as directory:
         root = Path(directory)
@@ -79,6 +97,16 @@ def main():
         try:reviewer.recover(recovery,data,{'type':'object'},manuscript,[],dict(cfg,base_url='https://other.invalid'))
         except ValueError:pass
         else:raise AssertionError('Changed recovery provider accepted')
+        private=root/'custom';private.mkdir()
+        cfg=m.connection(supplied)
+        raw=dict(model='alias-versioned',choices=[dict(finish_reason='stop',message=dict(content=json.dumps(dict(ok=True))))],
+                 diagnostic=supplied['api_key']+' '+cfg['base_url'])
+        with patch.object(m.requests,'post',return_value=Response(raw)) as post:
+            assert m.Client(SimpleNamespace(root=private),cfg).ask('test','target',{},schema,4096,100)==dict(ok=True)
+            assert post.call_args.kwargs['headers']['Authorization']=='Bearer '+supplied['api_key']
+            assert not post.call_args.kwargs['allow_redirects']
+        for file in private.rglob('*.json'):
+            assert supplied['api_key'] not in file.read_text() and cfg['base_url'] not in file.read_text()
     print('passed: three transports, payload routing, exact model validation, cache identity, '
           'server-only keys, normalized exact-evidence recovery and provider mismatch rejection')
 

@@ -4,7 +4,7 @@
 
 站点分为三个独立主题页：**论文探索** `/`、**单篇审稿** `/review.html`、**领域 Skill 库** `/reviewers.html`。地图保留原有图表、布局和筛选，只增加主题导航及论文详情中的“进入单篇审稿”链接。
 
-[单篇审稿](http://172.24.246.231:5173/review.html)支持地图选稿、搜索论文、上传 Word（DOC / DOCX / DOCS）、PDF、Markdown/TXT/LaTeX 完整稿件，展示领域识别、Skill 加载理由与历史来源、Review 与修改优先级，并可逐条定位原文。凭据仅由本机后端读取；点击“开始审稿”才提交真实任务。已有 MLRA 案例可直接查看并继续审稿。运行记录和失败响应持久保存，重试复用成功阶段。完整说明见 [单篇审稿接入记录](../docs/technical_details/Web_single_paper_review.md)。
+[单篇审稿](http://172.24.246.231:5173/review.html)支持地图选稿、搜索论文、上传 Word（DOC / DOCX / DOCS）、PDF、Markdown/TXT/LaTeX 完整稿件，展示领域识别、Skill 加载理由与历史来源、Review 与修改优先级，并可逐条定位原文。API 地址和密钥由使用者在页面自行填写；点击“开始审稿”才提交真实任务。已有 MLRA 案例可直接查看并继续审稿。运行记录和失败响应持久保存，重试复用成功阶段。完整说明见 [单篇审稿接入记录](../docs/technical_details/Web_single_paper_review.md)。
 
 ## 登录与文档上传（2026-11-09）
 
@@ -16,7 +16,7 @@
 
 [领域 Skill 库](http://172.24.246.231:5173/reviewers.html)：浏览冻结的 7,795 个有效模块、输入文本预览匹配、回放 5 篇历史试审的 concern 与正文证据。范围与复现见 [工作台说明](../docs/technical_details/Web_review_workbench.md)。更新该数据使用 `python3 web/export_reviewers.py`，再执行 `npm run build`；该页匹配在浏览器本地运行，真实审稿使用独立的 `/review.html` 页面。
 
-审稿 API 通过 Vite 的 dev / preview 同源中间件按需启动本机 Python 服务，不影响地图的初始加载。Python 环境沿用项目依赖，默认任务目录为 experiments 下的 `web_review_runs`；可用 `ICLR_REVIEW_RUNS` 设置独立存储目录。每个存储目录只有一个协调服务，任务串行执行。模型调用沿用现有认证文件；浏览器不接触 API key。服务停止后在途记录保留，下次启动标记为可重试。
+审稿 API 通过 Vite 的 dev / preview 同源中间件按需启动本机 Python 服务，不影响地图的初始加载。Python 环境沿用项目依赖，默认任务目录为 experiments 下的 `web_review_runs`；可用 `ICLR_REVIEW_RUNS` 设置独立存储目录。每个存储目录只有一个协调服务，任务串行执行。新审稿只使用页面填写的 OpenAI 兼容地址、密钥和模型 ID，不读取服务器认证文件；地址和密钥不写入浏览器存储或任务文件。服务停止后在途记录保留，下次启动标记为可重试。
 
 新增检查：在仓库根目录执行 `python3 web/test_review_api.py`，在 `web/` 执行 `npm run review:smoke`。后者默认验证页面及已存在的真实案例，不触发模型；仅显式设置 `ICLR_REVIEW_LIVE=1` 才启动一次真实审稿。`ICLR_REVIEW_RETRY=<run-id>` 可验证失败任务的重试恢复。浏览器执行文件配置沿用下文现有验证方式。
 
@@ -144,9 +144,8 @@ systemctl --user stop iclr-web-lan.service
 
 地图现支持数学计算的领域边界与逐级阅读：全景只显示原始投稿领域；2.2× 后显示带领域标记的 S4 主题；5× 后显示可点击的论文信息卡片。论文点随缩放连续增大。领域边界来自归一化高斯核密度的优势分区与 Marching Squares 等值线，填色和边界可独立开关。完整数据导出会生成领域内的 S4 局部主题，既有快照更新时重新执行 `derive_topics.py`、`validate_topics.py` 与构建即可。数学检查仍使用 `node web/visual-checks.mjs`。
 
-### 审稿 API 选择
+### 审稿接口设置
 
-单篇审稿页提供 OpenAI 6.1 sol（默认）、DeepSeek v4-pro、本地 Qwen3.8-next flash、Claude Opus5.5。
-前两项已接入并通过最小真实调用；后两项按当前要求仅展示待配置状态。
-新任务的选择作用于 Skill 组合与审稿，历史任务保留原模型。密钥从服务器 `~/auth` 读取。
-配置字段、模型版本记录和重试规则见 [单篇审稿说明](../docs/technical_details/Web_single_paper_review.md#审稿模型配置2026-11-08)。
+在单篇审稿页自行输入 Base URL、API Key、模型 ID，选择 Chat Completions 或 Responses。所有字段初始为空，API Key 使用密码框；提交成功清空密钥。当前任务仅在内存和工作进程环境中使用配置，持久记录只保存接口哈希、模型和协议，错误及供应商回显脱敏。
+
+重试需重新输入原接口和模型，可使用更新后的有效密钥。服务重启保留结果和输入，不保留凭据。旧版预设接口案例继续只读回放，新任务不再使用服务器预设模型或 `~/auth`。详情见 [接口输入与隐私说明](../docs/technical_details/Web_user_api_configuration.md)。

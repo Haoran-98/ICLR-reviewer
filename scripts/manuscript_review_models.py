@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import shlex
 import time
+from urllib.parse import urlsplit
 
 import jsonschema
 import requests
@@ -20,6 +21,11 @@ CHOICES = {
 
 
 def configuration(identifier, auth=None):
+    if identifier == 'custom':
+        try:
+            return connection(json.loads(os.environ.get('ICLR_REVIEW_CONNECTION', '{}')))
+        except (TypeError, json.JSONDecodeError):
+            raise ValueError('请重新输入审稿接口配置') from None
     if identifier not in CHOICES: raise ValueError('未知审稿模型')
     values = {}
     path = Path(auth or os.environ.get('ICLR_AUTH_FILE', Path.home()/'auth'))
@@ -42,11 +48,42 @@ def configuration(identifier, auth=None):
                 base_url=base, key=key, configured=configured)
 
 
+def connection(value):
+    """Validate a user-supplied OpenAI-compatible connection; no ambient auth fallback."""
+    if not isinstance(value, dict): raise ValueError('请填写审稿接口配置')
+    fields = {}
+    for name, limit in [('base_url', 2048), ('api_key', 8192), ('model', 200)]:
+        text = value.get(name)
+        if not isinstance(text, str) or not text.strip() or len(text) > limit or any(ord(c) < 32 for c in text):
+            raise ValueError('请填写有效的 Base URL、API Key 和模型 ID')
+        fields[name] = text.strip()
+    base = fields['base_url'].rstrip('/')
+    try:
+        url = urlsplit(base)
+        valid = url.scheme in ('http', 'https') and url.hostname and url.port != 0
+        valid = valid and not (url.username or url.password or url.query or url.fragment or any(c.isspace() for c in base))
+    except ValueError:
+        valid = False
+    if not valid: raise ValueError('Base URL 须为 HTTP(S) 地址，且不含账号、查询参数或片段')
+    if url.path.endswith(('/chat/completions', '/responses')):
+        raise ValueError('请填写 Base URL，不要包含末尾的模型调用接口路径')
+    protocol = value.get('protocol', 'chat')
+    if protocol not in ('chat', 'responses'): raise ValueError('请选择 OpenAI 兼容的接口格式')
+    return dict(id='custom', label='自填 OpenAI 兼容接口', model=fields['model'], protocol=protocol,
+                base_url=base, key=fields['api_key'], configured=True)
+
+
+def private_connection(config):
+    return dict(base_url=config['base_url'], api_key=config['key'], model=config['model'], protocol=config['protocol'])
+
+
 def public(config):
     return {k:config[k] for k in ('id', 'label', 'model', 'protocol', 'configured')}
 
 
 def identity(config):
+    if config['id'] == 'custom':
+        return dict(public(config), endpoint_sha256=s.digest(config['base_url']), transport_sha256=s.sha(__file__))
     return dict(public(config), endpoint=config['base_url'], transport_sha256=s.sha(__file__))
 
 
@@ -56,7 +93,10 @@ def models():
 
 def validate_response(raw, config):
     s.require(raw.get('status') == 'completed', 'Provider response incomplete')
-    s.require(raw.get('model') == config['model'], 'Returned model mismatch')
+    if config['id'] == 'custom':
+        s.require(isinstance(raw.get('model'), str) and bool(raw['model'].strip()), 'Missing returned model identity')
+    else:
+        s.require(raw.get('model') == config['model'], 'Returned model mismatch')
     if config['protocol'] == 'responses':
         s.require((raw.get('reasoning') or {}).get('effort') == 'medium', 'Returned reasoning effort mismatch')
 
@@ -85,6 +125,15 @@ class Client:
 
     def validate_response(self, raw):
         validate_response(raw, self.config)
+
+    def redact(self, value):
+        if isinstance(value, str):
+            for secret in (self.config['key'], self.config['base_url']):
+                if secret: value = value.replace(secret, '[REDACTED]')
+            return value
+        if isinstance(value, list): return [self.redact(item) for item in value]
+        if isinstance(value, dict): return {self.redact(key):self.redact(item) for key,item in value.items()}
+        return value
 
     def ask(self, stage, key, data, schema, input_limit, output_limit, validator=None):
         cfg = self.config
@@ -134,9 +183,9 @@ class Client:
             self.active = 1; self.save()
             try:
                 with requests.post(cfg['base_url']+route, json=wire, headers=headers,
-                                   stream=cfg['protocol']=='responses', timeout=(20, 120)) as response:
+                                   stream=cfg['protocol']=='responses', timeout=(20, 120), allow_redirects=False) as response:
                     record['http_status'] = response.status_code
-                    if not response.ok:
+                    if not 200 <= response.status_code < 300:
                         record['retryable'] = response.status_code == 429 or response.status_code >= 500
                         raise RuntimeError(f'Provider HTTP {response.status_code}')
                     raw = None
@@ -151,6 +200,7 @@ class Client:
                             if event.get('type') == 'error': raise RuntimeError('Provider stream error')
                     else: raw = response.json()
                 s.require(raw is not None, 'Missing terminal response')
+                raw = self.redact(raw) if cfg['id'] == 'custom' else raw
                 record['provider_response'] = raw
                 if cfg['protocol'] == 'chat':
                     choice = raw['choices'][0]; usage = raw.get('usage') or {}
@@ -170,7 +220,9 @@ class Client:
             except Exception as error:
                 record['error'] = str(error).replace(cfg['key'], '[REDACTED]') if cfg['key'] else str(error)
             finally:
-                record['finished_at'] = s.now(); s.write(attempt, record); self.active = 0; self.save()
+                record['finished_at'] = s.now()
+                if cfg['id'] == 'custom': record = self.redact(record)
+                s.write(attempt, record); self.active = 0; self.save()
             if record['ok']: s.write(saved, record); return record['parsed']
             if not record['retryable']: break
         raise RuntimeError(f'{stage}/{key} failed; see preserved attempt')

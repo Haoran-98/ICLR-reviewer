@@ -1,6 +1,6 @@
 # 当前进度与后续验收
 
-核查日期：2026-11-12。当前工程以“论文探索 → 限预算 Skill 组合 → 单篇 Review → concern 原文依据”为演示闭环。下表覆盖已经运行的实现，也保留尚未完成的研究问题。
+核查日期：2026-11-12。网站审稿已改为自行填写 OpenAI 兼容的 Base URL、API Key、模型 ID，地址/密钥不持久化。当前工程以“论文探索 → 限预算 Skill 组合 → 单篇 Review → concern 原文依据”为演示闭环。下表覆盖已经运行的实现，也保留尚未完成的研究问题。
 
 ## 1. 数据核查快照
 
@@ -31,7 +31,7 @@
 | 历史交流诊断 | 20 篇开发案例，两阶段共 40/40 完成；时间边界、concern 与动作/状态记录 | 人工判定动作和 concern 状态；完整历史评分配对、可靠的效果评测 | [协议](../benchmarks/s5_trajectory/README.md)、[技术记录](technical_details/S5_review_rebuttal_trajectory.md) |
 | LLM 领域库 | 1,318 个提炼任务完成；领域库冻结、来源、模块和队列审计 | 84 条未解决/缺证据项单独处理；规则正确性、覆盖和冗余的人工评测 | [冻结记录](technical_details/S6_llm_area_library_release.md) |
 | 按稿组合 | 完整稿件、来源排除、24 条召回、适用性判断、规则/token 双预算；MLRA 真实运行 | 更广新稿领域/方法覆盖、错误适用与漏选规则评估 | [组合记录](technical_details/S6_manuscript_skill_composition.md) |
-| 单篇 Web 审稿 | 三主题导航、登录、文档上传、两个真实接口、运行记录、Review、依据与重试；一例真实完整闭环 | Qwen/Claude 准确接口、可迁移演示包、审稿科学质量评测 | [单篇审稿](technical_details/Web_single_paper_review.md)、[访问与上传](technical_details/Web_access_and_upload.md) |
+| 单篇 Web 审稿 | 三主题导航、登录、文档上传、用户自填 OpenAI 兼容接口、运行记录、Review、依据与重试；一例真实完整闭环 | 更多兼容接口验证、可迁移演示包、审稿科学质量评测 | [单篇审稿](technical_details/Web_single_paper_review.md)、[访问与上传](technical_details/Web_access_and_upload.md) |
 | 多审稿人及 AC | 旧通用 Skill 和角色配置可查阅 | 生产编排、独立意见、汇总策略及成本/收益验证 | [角色设计](../agents/reviewer_groups.json)、[原计划](ICLR_REVIEWER_MASTER_PLAN.md) |
 | 在线 rebuttal、趋势与正式评测 | 有历史方案与诊断原型 | 端到端产品实现、协议冻结、人工评测与跨年验证 | [在线 rebuttal 计划](technical_details/S9_online_rebuttal_mvp.md)、[评测计划](technical_details/S7_offline_evaluation.md) |
 
@@ -77,7 +77,7 @@
 1. 对网站快照、冻结库及既有案例制作独立资产清单与校验和，约定分发范围。
 2. 逐项处理硬编码开发机路径，至少在第二个数据目录验证恢复；新 clone 的数据依赖与源码依赖分开安装。
 3. 固定单篇案例和真实运行入口，失败时状态仍可读、可重试；采集真实运行耗时、token 与失败率。
-4. 完成本地 Qwen 和 Claude 的 model ID、接口协议、上下文预算及身份验证。
+4. 验证不同 OpenAI 兼容接口的模型 ID、协议和上下文预算；实际地址与密钥由使用者在页面输入，不发布。
 
 ### 研究：评测规则与审稿有效性
 

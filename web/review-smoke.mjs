@@ -16,11 +16,11 @@ try {
   await page.goto(base+'/review.html?paper=33089');
   await page.waitForFunction(()=>!document.querySelector('#start-review').disabled,null,{timeout:60000});
   assert.equal(await page.locator('.site-nav a').count(),3);
-  assert.equal(await page.locator('#review-model option').count(),4);
-  assert.equal(await page.locator('#review-model option:disabled').count(),2);
-  await page.selectOption('#review-model','deepseek-pro');
-  assert.match(await page.locator('#model-status').textContent(),/deepseek-v4-pro/);
-  await page.selectOption('#review-model','openai-sol');
+  for(const id of ['review-base-url','review-api-key','review-model'])assert.equal(await page.locator('#'+id).inputValue(),'');
+  assert.equal(await page.locator('#review-api-key').getAttribute('type'),'password');
+  assert.equal(await page.locator('#review-model').evaluate(n=>n.tagName),'INPUT');
+  const meta=await page.evaluate(()=>fetch('/api/review/meta').then(r=>r.json()));
+  assert.equal(meta.connection_required,true);assert.equal(meta.models,undefined);
   assert.equal(await page.locator('.site-nav [aria-current=page]').textContent(),'单篇审稿');
   await page.locator('#load-example').click();
   await page.waitForFunction(()=>document.querySelectorAll('.rule-card').length===3);
@@ -47,21 +47,34 @@ try {
     submitted=route.request().postDataJSON();
     await route.fulfill({status:400,contentType:'application/json',body:JSON.stringify({error:'selection captured'})});
   });
-  await page.selectOption('#review-model','deepseek-pro');
+  await page.locator('#review-base-url').fill('https://browser-test.invalid/v1');
+  await page.locator('#review-api-key').fill('browser-only-test-key');
+  await page.locator('#review-model').fill('user-chosen-model');
   await page.locator('#manuscript-text').fill('Full manuscript for UI transport validation. '.repeat(10));
   await page.locator('#start-review').click();
   await page.waitForFunction(()=>document.querySelector('#input-error').textContent==='selection captured');
-  assert.equal(submitted.model,'deepseek-pro');
+  assert.deepEqual(submitted.connection,{base_url:'https://browser-test.invalid/v1',api_key:'browser-only-test-key',model:'user-chosen-model',protocol:'chat'});
+  assert.ok(!JSON.stringify(await page.evaluate(()=>({...localStorage,...sessionStorage}))).includes('browser-only-test-key'));
+  await page.reload();await page.waitForFunction(()=>document.querySelector('#paper-search'));
+  for(const id of ['review-base-url','review-api-key','review-model'])assert.equal(await page.locator('#'+id).inputValue(),'');
   await page.unroute('**/api/review/runs');
-  await page.selectOption('#review-model','openai-sol');
+
   await page.locator('#choose-existing').click();
   let runId;
   if(process.env.ICLR_REVIEW_RETRY){
     runId=process.env.ICLR_REVIEW_RETRY;await page.goto(`${base}/review.html?run=${runId}`);
     await page.waitForFunction(()=>!document.querySelector('#retry-run').hidden,null,{timeout:30000});
+    await page.locator('#review-base-url').fill(process.env.ICLR_REVIEW_TEST_BASE_URL??'');
+    await page.locator('#review-api-key').fill(process.env.ICLR_REVIEW_TEST_API_KEY??'');
+    await page.locator('#review-model').fill(process.env.ICLR_REVIEW_TEST_MODEL_ID??'');
     await page.locator('#retry-run').click();
     await page.waitForFunction(()=>document.querySelector('#state-badge').textContent==='已完成',null,{timeout:60000});
   } else if(process.env.ICLR_REVIEW_LIVE==='1'){
+    assert.ok(process.env.ICLR_REVIEW_TEST_BASE_URL&&process.env.ICLR_REVIEW_TEST_API_KEY&&process.env.ICLR_REVIEW_TEST_MODEL_ID,'Supply test connection privately for live review');
+    await page.locator('#load-example').click();
+    await page.locator('#review-base-url').fill(process.env.ICLR_REVIEW_TEST_BASE_URL);
+    await page.locator('#review-api-key').fill(process.env.ICLR_REVIEW_TEST_API_KEY);
+    await page.locator('#review-model').fill(process.env.ICLR_REVIEW_TEST_MODEL_ID);
     await page.locator('#start-review').click();
     await page.waitForFunction(()=>new URL(location).searchParams.get('run'),null,{timeout:30000});
     runId=new URL(page.url()).searchParams.get('run');console.log('review smoke: live job',runId);
@@ -99,7 +112,7 @@ try {
   assert.deepEqual(errors,[]);
   const report={check:'passed',run_id:runId??null,real_run:process.env.ICLR_REVIEW_LIVE==='1'||!!process.env.ICLR_REVIEW_RETRY,
     retry_from_preserved_response:!!process.env.ICLR_REVIEW_RETRY,
-    independent_review_page:true,model_choices:4,configured_models:2,selected_model_forwarded:true,map_paper_handoff:true,skill_provenance:true,evidence_exact:true,
+    independent_review_page:true,user_connection:true,blank_initial_connection:true,no_browser_credential_storage:true,selected_model_forwarded:true,map_paper_handoff:true,skill_provenance:true,evidence_exact:true,
     input_upload:true,input_validation:true,mobile_overflow:false,browser_errors:errors};
   await writeFile('artifacts/single-review-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 } finally {await browser?.close();await server?.close();}

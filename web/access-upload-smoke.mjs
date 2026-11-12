@@ -24,7 +24,7 @@ try {
   const errors=[];page.on('pageerror',error=>errors.push(error.message));
   const posts=[];page.on('request',r=>{if(r.method()==='POST')posts.push(new URL(r.url()).pathname);});
   await page.goto(base+'/review.html');
-  await page.waitForFunction(()=>document.querySelector('#review-model option').value==='openai-sol');
+  await page.locator('#review-base-url').waitFor();
   await page.locator('#choose-upload').click();
   for(const suffix of ['doc','docx','docs','pdf']) {
     await page.locator('#manuscript-file').setInputFiles(join(folder,'manuscript.'+suffix));

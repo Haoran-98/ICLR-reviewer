@@ -57,7 +57,7 @@ OpenAI 沿用 `gpt-6-luna / medium`；DeepSeek 从 auth 读取 `deepseek-v4-flas
 最终审计分别检查 OpenAI 的历史授权并发区间和 DeepSeek 的 50 并发上限。
 离线检查：`python3 scripts/test_parallel_llm_area_review_skills.py`。
 
-随后按用户提供的本地接口增加第三通道：`https://provider.invalid/v1`，
+随后按用户提供的本地接口增加第三通道：用户在本机填写的 OpenAI 兼容地址（公开文档不记录具体地址），
 模型 `qwen-flash-iq3`，用户选择 1 并发；OpenAI 3、DeepSeek 50 保留，总 API 上限 54。
 `/v1/models` 确认模型已加载且 `n_ctx=262144`，真实 JSON 探测请求成功。
 本地客户端使用占位 key `local`，关闭模板 thinking，沿用相同输入/输出预算与候选规则校验，

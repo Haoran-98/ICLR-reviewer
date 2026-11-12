@@ -28,7 +28,7 @@ API 提供元信息、任务列表、创建任务、任务结果、重试和已�
 每个任务目录保存原始输入、job 状态和多个 attempt 子目录。
 服务协调锁保证同一任务存储只有一个服务，队列串行执行。
 每次重试保留旧 attempt，复用成功的组合或已成功请求；服务重启将未完成任务标为 interrupted。
-新任务可选择 OpenAI 6.1 sol 或 DeepSeek v4-pro；选择同时用于领域识别、Skill 组合和最终审稿。Qwen 与 Claude 按用户要求先展示待配置选项。历史 `gpt-6-luna / medium` 记录保持原模型标签，密钥只在服务端读取。
+新任务在页面填写自己的 Base URL、API Key 和模型 ID；同一配置用于领域识别、Skill 组合和最终审稿。历史 `gpt-6-luna / medium` 记录保持原模型标签，新任务的地址和密钥只在内存中使用。
 
 流程复用 [按稿组合入口](../../scripts/compose_manuscript_skills.py)，随后调用
 [review_composed_manuscript.py](../../scripts/review_composed_manuscript.py) 读取完整稿件及实际加载的规则。
@@ -68,39 +68,6 @@ concern 分为有证据支持的缺陷、待核实问题和修改建议，带 P1
 报告及截图位于被忽略的 `web/artifacts/`，真实任务保存在 experiments 的 `web_review_runs/`。
 重现方式与现有局域网入口见 [Web README](../../web/README.md)。
 
-## 审稿模型配置（2026-11-08）
+## 审稿接口设置（2026-11-12 更新）
 
-`/api/review/meta` 返回模型白名单、实际 model ID 和配置状态。POST `/runs` 的 `model`
-取 `openai-sol`（默认）、`deepseek-pro`、`qwen-local` 或 `claude-opus`；未知值和待配置模型返回 400。
-前端选择保存在本浏览器，下次新建任务沿用；任务详情按记录中的实际模型展示。
-
-服务端从 `ICLR_AUTH_FILE`（默认 `~/auth`）读取 export 赋值，再由同名环境变量覆盖。
-认证文件只解析，不通过 shell 执行。当前配置：
-
-| 选项 | model ID | 接口 | 状态 |
-|---|---|---|---|
-| OpenAI 6.1 sol | `gpt-6.1-sol` | Responses，medium | 已完成最小真实 JSON 调用 |
-| DeepSeek v4-pro | `deepseek-v4-pro` | Chat Completions，thinking disabled | 已完成最小真实 JSON 调用 |
-| 本地 Qwen3.8-next flash | 待确定 | 待确定 | 前端展示，禁止调用 |
-| Claude Opus5.5 | 待确定 | 待确定 | 前端展示，禁止调用 |
-
-OpenAI 使用 `OPENAI_BASE_URL`、`OPENAI_API_KEY`、`OPENAI_STRONG_MODEL_ID`；
-DeepSeek 使用既有 `DeepSeek_base_url`、`DeepSeek_api_key`、`DeepSeek_strong_model`。
-后续可通过 `QWEN_LOCAL_BASE_URL`、`QWEN_LOCAL_MODEL_ID`、可选 `QWEN_LOCAL_API_KEY`，
-以及 `ANTHROPIC_BASE_URL`、`ANTHROPIC_MODEL_ID`、`ANTHROPIC_API_KEY` 配置另外两项。
-配置 URL 是含 API 前缀的 base URL；程序追加 `/responses`、`/chat/completions` 或 `/messages`。
-默认 Claude 协议为原生 Messages；兼容接口可设 `ICLR_REVIEW_ANTHROPIC_PROTOCOL=chat`。
-各通道支持 `ICLR_REVIEW_<OPENAI|DEEPSEEK|QWEN_LOCAL|ANTHROPIC>_<BASE_URL|MODEL_ID|API_KEY|PROTOCOL>` 覆盖。
-
-新任务记录模型与接口快照，缓存摘要包含请求、接口、模型和 transport 代码版本。
-切换模型须新建任务；配置变化时旧任务停止并保留记录，不能跨模型冒用结果。
-新任务不复用弱模型 MLRA 组合；已有组合案例和历史任务继续独立回放。
-每个阶段至多两次 HTTP 尝试，仅连接失败、429 和 5xx 自动重试。
-原始供应商响应与规范化响应都保存在服务器，继续逐字校验引文和隔离无效条目。
-
-补充验证：`python3 scripts/test_manuscript_review_models.py`、
-`python3 web/test_review_api.py`、`python3 scripts/test_compose_manuscript_skills.py`。
-浏览器 smoke 同时检查四个模型选项、待配置禁用状态、选中模型提交、历史案例和证据。
-真实接口探针保存在被 Git 忽略的 `logs/web_visualization/model-probes/`；仅做最小调用，未新增完整论文审稿。
-接口格式参考 [OpenAI official documentation](https://developers.openai.com/api/docs/guides/structured-outputs)。
-本机网关的 model ID 以其 `/models` 和真实响应为准。
+当前网站已由预设模型选择改为使用者自行填写 OpenAI 兼容配置；初始字段为空，提供 Chat Completions 和 Responses。地址/密钥不写入浏览器存储或运行文件，不从服务器 `~/auth` 兜底读取。请求、任务和恢复的隐私边界见 [自填接口说明](Web_user_api_configuration.md)。上文真实运行保留当时模型身份，属于历史记录。

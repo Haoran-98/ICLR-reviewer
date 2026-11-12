@@ -4,8 +4,16 @@ const el = (tag, text, cls) => { const n = document.createElement(tag); if (text
 const kinds = { supported_defect:'有证据支持的缺陷', needs_verification:'待核实问题', suggestion:'修改建议' };
 const states = { queued:'等待执行', running:'运行中', completed:'已完成', failed:'未完成', interrupted:'已中断' };
 const dispositions = { applicable:'适用', not_applicable:'不适用', insufficient_evidence:'证据不足' };
-let modelChoices = [];
 let papers = [], chosen, mode = 'existing', activeId, current = {}, pollTimer, renderKey;
+
+function connection() {
+  const value = {base_url:$('review-base-url').value.trim(),api_key:$('review-api-key').value.trim(),
+    model:$('review-model').value.trim(),protocol:$('review-protocol').value};
+  if(!value.base_url||!value.api_key||!value.model)throw new Error('请填写 Base URL、API Key 和模型 ID。');
+  let url;try{url=new URL(value.base_url);}catch{throw new Error('请填写有效的 Base URL。');}
+  if(!['http:','https:'].includes(url.protocol)||url.username||url.password||url.search||url.hash)throw new Error('Base URL 须为 HTTP(S) 地址，且不含账号、查询参数或片段。');
+  return value;
+}
 
 async function api(path, payload) {
   const response = await fetch('/api/review'+path, payload === undefined ? {} : {
@@ -162,31 +170,20 @@ $('paper-form').onsubmit=async event=>{
   try{
     const payload=mode==='existing'?{paper_id:Number(chosen?.paper_id),title:chosen?.title}:{manuscript:$('manuscript-text').value,title:$('upload-title').value};
     if(mode==='upload'&&payload.manuscript.trim().length<200)throw new Error('请提供完整稿件，至少 200 字符。');
-    const selected=modelChoices.find(item=>item.id===$('review-model').value);
-    if(!selected?.configured)throw new Error('请选择已配置的审稿模型。');
-    payload.model=selected.id;
-    const job=await api('/runs',payload);await openRun(job.id);await listRuns();view('overview');
+    payload.connection=connection();
+    const job=await api('/runs',payload);$('review-api-key').value='';await openRun(job.id);await listRuns();view('overview');
   }catch(error){$('input-error').textContent=error.message;}finally{$('start-review').disabled=false;}
 };
-$('retry-run').onclick=async()=>{try{await api('/runs/'+activeId+'/retry',{});await refresh();}catch(error){$('service-error').textContent=error.message;}};
+$('retry-run').onclick=async()=>{try{await api('/runs/'+activeId+'/retry',{connection:connection()});$('review-api-key').value='';await refresh();}catch(error){$('service-error').textContent=error.message;}};
 $('load-example').onclick=async()=>{
   try{activeId=null;clearTimeout(pollTimer);const url=new URL(location);url.searchParams.delete('run');url.searchParams.set('paper','33089');history.replaceState(null,'',url);renderKey=null;render(await api('/example'));selectPaper(papers.find(p=>String(p.paper_id)==='33089')??{paper_id:33089,title:'Multi-Head Low-Rank Attention'});sourceMode('existing');view('overview');}
   catch(error){$('service-error').textContent=error.message;}
 };
 $('show-full-text').onclick=()=>evidence((current.manuscript?.passages??[]).map(p=>({passage_id:p.passage_id,quote:''})),'完整可用文本，包含文件中已有的附录；图像内容需单独核验。');
 async function init(){
-  const [sample,meta]=await Promise.all([fetch('/generated/sample.json').then(r=>{if(!r.ok)throw new Error('论文目录未加载');return r.json();}),api('/meta')]);
-  modelChoices=meta.models;
-  $('review-model').replaceChildren(...modelChoices.map(item=>{
-    const option=el('option',item.label+(item.configured?'':' · 待配置'));option.value=item.id;option.disabled=!item.configured;return option;
-  }));
-  const savedModel=localStorage.getItem('iclr-review-model');
-  $('review-model').value=modelChoices.find(m=>m.id===savedModel&&m.configured)?.id??meta.default_model;
-  const describeModel=()=>{
-    const selected=modelChoices.find(m=>m.id===$('review-model').value);
-    $('model-status').textContent=selected?.configured?`${selected.model} · 用于领域识别、Skill 组合与审稿。Qwen / Claude 待配置接口。`:'所选接口尚未配置。';
-  };
-  $('review-model').onchange=()=>{localStorage.setItem('iclr-review-model',$('review-model').value);describeModel();};describeModel();
+  const sample=await fetch('/generated/sample.json').then(r=>{if(!r.ok)throw new Error('论文目录未加载');return r.json();});
+  $('review-base-url').value='';$('review-api-key').value='';$('review-model').value='';
+  localStorage.removeItem('iclr-review-model');
   papers=sample.papers;await listRuns();const params=new URLSearchParams(location.search);
   const paper=papers.find(p=>String(p.paper_id)===params.get('paper'));if(paper)selectPaper(paper);
   if(params.get('run'))await openRun(params.get('run'));

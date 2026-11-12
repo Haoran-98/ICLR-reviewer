@@ -140,34 +140,26 @@ micromamba create -y -p ./logs/web_visualization/runtime/r -f web/r-environment.
 
 如使用系统 R，将上面的路径换为 `Rscript`。R 和前端共用论文级统计口径；刷新后重新构建。
 
-## 5. 配置审稿模型
+## 5. 在页面填写自己的审稿接口
 
-模型密钥放在服务器 `~/auth`，或用 `ICLR_AUTH_FILE` 指向权限 0600 的文件。解析器读取 `export KEY='value'` 赋值，不执行 shell。进程环境变量可以覆盖文件值。以下是字段示例，必须替换服务地址、准确 ID 与密钥：
+打开 `/review.html`，填写以下内容：
 
-```bash
-export ICLR_REVIEW_OPENAI_BASE_URL='https://your-provider.example/v1'
-export ICLR_REVIEW_OPENAI_MODEL_ID='your-exact-model-id'
-export ICLR_REVIEW_OPENAI_API_KEY='replace-locally'
-export ICLR_REVIEW_OPENAI_PROTOCOL='responses'
+| 字段 | 输入要求 |
+|---|---|
+| Base URL | 自己的 OpenAI 兼容 HTTP(S) 服务地址，包含 API 前缀，不含末尾调用路径 |
+| API Key | 自己的有效密钥，密码框输入 |
+| 模型 ID | 该接口实际支持的准确 ID，不预置模型 |
+| 接口格式 | Chat Completions（默认）或 Responses |
 
-export ICLR_REVIEW_DEEPSEEK_BASE_URL='https://your-provider.example/v1'
-export ICLR_REVIEW_DEEPSEEK_MODEL_ID='your-exact-model-id'
-export ICLR_REVIEW_DEEPSEEK_API_KEY='replace-locally'
-export ICLR_REVIEW_DEEPSEEK_PROTOCOL='chat'
-```
+程序根据选择追加 `/chat/completions` 或 `/responses`。Responses 当前使用 medium reasoning 与 JSON 输出；Chat Completions 使用标准 messages、JSON 输出及非流式返回。实际服务须支持所选格式。兼容服务可能将模型别名解析为版本 ID，运行记录保留返回的模型身份。
 
-程序自动追加 `/responses`、`/chat/completions` 或 `/messages`，base URL 包含 API 前缀但不包含末尾接口路径。OpenAI 路径要求响应 model ID 匹配、完成状态正确、reasoning effort 为 medium；接口必须支持项目使用的请求格式。当前开发机配置 `gpt-6.1-sol` 与 `deepseek-v4-pro`，不是对所有供应商可用性的承诺。
+**网站不读取 `~/auth` 或服务器默认模型设置来执行新审稿。** 这些文件仍可由历史研究 CLI 使用，不能作为 Web 新任务的凭据来源。
 
-也兼容已有 `OPENAI_BASE_URL / OPENAI_API_KEY / OPENAI_STRONG_MODEL_ID` 和 `DEEPSEEK_BASE_URL / DEEPSEEK_API_KEY / DEEPSEEK_STRONG_MODEL`。历史弱模型脚本另读 `OPENAI_WEAK_MODEL_ID`；不要通过修改旧结果把历史模型替换为新模型。
+接口地址与密钥只在当前页面内存、任务内存和对应子进程环境中使用，不写入 localStorage/sessionStorage、任务清单、配置文件、请求日志或 Git。任务文件只保存模型、协议和地址哈希；提供者响应中回显的地址/密钥会脱敏。地址不能带内嵌账号、查询参数或片段，避免意外把凭据放进 URL。
 
-本地 Qwen 与 Claude 当前按要求保留待配置选项。后续确定接口后可使用：
+成功提交后页面清空密钥。失败任务或服务重启后的中断任务仍保留原输入与成功阶段，重试时重新填写原 Base URL、模型、协议和有效密钥；可以更换已失效的密钥。地址/模型/协议不一致时拒绝复用旧任务，应另建新任务。旧版预设接口任务保留只读回放，重新审稿使用新的自填接口任务。
 
-| 通道 | 字段前缀 | 默认协议 | 要求 |
-|---|---|---|---|
-| 本地 Qwen | `ICLR_REVIEW_QWEN_LOCAL_` | `chat` | `BASE_URL`、准确 `MODEL_ID`；`API_KEY` 可选 |
-| Claude | `ICLR_REVIEW_ANTHROPIC_` | `anthropic` | `BASE_URL`、准确 `MODEL_ID`、`API_KEY`；兼容接口可指定 `PROTOCOL=chat` |
-
-配置变化后重启网站代理。旧任务记录了接口/模型身份，配置不一致时保留并停止，须恢复旧配置重试或新建任务。
+仓库仅提供字段名称及测试占位值，不发布实际模型接口地址与 API Key。不要把自己的输入写入截图、文档、共享脚本或提交文件。
 
 ## 6. 启动网站
 
@@ -233,7 +225,7 @@ npx playwright install chromium
 
 无 WebGPU 时可设置 `ICLR_WEB_FORCE_COMPAT=1` 运行 `npm run smoke`；支持 GPU 的机器使用默认 Atlas。自签证书按 Web README 的 CA/公钥验证配置，或在本机启动隔离的开发检查环境。`PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` 可指定已有 Chromium，默认使用 Playwright 安装版本。
 
-`review:smoke` 默认检查已有结果，不调用模型；显式设置 `ICLR_REVIEW_LIVE=1` 才做一次真实付费审稿。`ICLR_REVIEW_RETRY=<任务ID>` 会实际重试对应任务，需理解已有缓存和失败原因。结果存入忽略的 `web/artifacts/`。
+`review:smoke` 默认检查已有结果，不调用模型；显式设置 `ICLR_REVIEW_LIVE=1` 并私下提供 `ICLR_REVIEW_TEST_BASE_URL`、`ICLR_REVIEW_TEST_API_KEY`、`ICLR_REVIEW_TEST_MODEL_ID` 才做一次真实付费审稿。`ICLR_REVIEW_RETRY=<任务ID>` 会实际重试对应任务，需理解已有缓存和失败原因。结果存入忽略的 `web/artifacts/`。
 
 ## 8. 常见问题
 
@@ -244,7 +236,7 @@ npx playwright install chromium
 | 新任务找不到规则或来源 | 检查冻结库、`PROVENANCE.json` 依赖及开发机默认路径；仅复制规则 JSON 不够 |
 | API 无法启动 | 检查 `ICLR_PYTHON`、Python 依赖、任务目录写权限、同目录是否已存在协调器 |
 | DOC/PDF 提取失败 | 检查 LibreOffice/`pdftotext`、文件实际格式、加密/扫描件、15 MiB 限制 |
-| 模型选项不可用 | 检查服务端 base URL、准确 ID、密钥；Qwen/Claude 初始就是待配置状态 |
+| 模型调用失败 | 检查页面自行输入的 Base URL、准确模型 ID、密钥，以及 Chat/Responses 格式 |
 | 旧任务配置不匹配 | 恢复其原配置或新建任务，不能跨模型复用结果 |
 | HTTPS 失败/空响应 | 区分 5173 HTTP 入口与 8443 HTTPS；检查 CA 信任、IP 与路由 |
 

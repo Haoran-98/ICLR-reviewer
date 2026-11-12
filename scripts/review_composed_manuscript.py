@@ -126,5 +126,5 @@ if __name__ == '__main__':
     parser.add_argument('--source', type=Path, required=True)
     parser.add_argument('--root', type=Path, required=True)
     parser.add_argument('--auth', type=Path, default=Path(os.environ.get('ICLR_AUTH_FILE',Path.home()/'auth')))
-    parser.add_argument('--review-model', choices=['openai-sol', 'deepseek-pro', 'qwen-local', 'claude-opus'])
+    parser.add_argument('--review-model', choices=['custom', 'openai-sol', 'deepseek-pro', 'qwen-local', 'claude-opus'])
     args = parser.parse_args(); run(args.source, args.root, args.auth, args.review_model)
