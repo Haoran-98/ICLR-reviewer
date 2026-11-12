@@ -1,124 +1,125 @@
 # ICLR Reviewer
 
-**从历史论文与审稿经验，走向可解释、可定位原文的单篇审稿。**
+English | [简体中文](README.zh-CN.md)
 
-ICLR Reviewer 是面向 ICLR 主会论文的研究与展示系统：用可视化探索研究领域、论文主题与审稿分布，从历史 Review 和正文中提炼有来源的检查规则，再按新稿的方法、任务和技术对象组合 Skill，输出 Review、修改优先级和正文依据。
+**From historical papers and review experience to manuscript reviews with traceable evidence.**
 
-当前版本包含三个独立主题页：**论文探索、单篇审稿、领域 Skill 库**。原有可视化保留，审稿流程通过独立子页接入。当前自动审稿规则覆盖基础模型与大语言模型领域。
+ICLR Reviewer is a research and visualization system for ICLR main-track papers. It explores research areas, paper topics, and review distributions; distills inspection rules from historical reviews paired with manuscript passages; and composes Skills for a new manuscript based on its methods, tasks, and technical objects. Reviews include revision priorities and links to supporting passages.
 
-> 更新：2026-11-12。网站与单篇真实运行闭环已完成；审稿准确性、质量提升及正式留出集评测仍待完成。GitHub 提供源码、公开题录、实验汇总和真实截图；完整论文数据库、冻结规则及运行快照须单独准备。
+The website has three separate pages: **Paper Explorer, Manuscript Review, and Domain Skill Library**. The review workflow uses its own page alongside the existing visualization. The current automated review library covers foundation models and large language models.
 
-[部署说明](docs/DEPLOYMENT.md) · [方法与论文来源](docs/METHODS.md) · [进度与后续工作](docs/STATUS.md) · [上传内容清单](docs/REPOSITORY_MANIFEST.md) · [技术记录](docs/technical_details/README.md) · [论文图审查能力](docs/FIGURE_REVIEW.md)
+> Updated: 2026-11-12. The website and one real manuscript review workflow are operational. Review accuracy, quality gains, and formal held-out evaluation remain on the research roadmap. This repository provides source code, public paper metadata, experiment summaries, and website screenshots. The full paper database, frozen rule library, and runtime snapshots are prepared separately.
 
-## 1. 展示故事线
+[Deployment](docs/DEPLOYMENT.md) · [Methods and References](docs/METHODS.md) · [Progress and Roadmap](docs/STATUS.md) · [Repository Manifest](docs/REPOSITORY_MANIFEST.md) · [Technical Records](docs/technical_details/README.md) · [Figure Review Capabilities](docs/FIGURE_REVIEW.md)
+
+## 1. Walkthrough
 
 ```mermaid
 flowchart LR
-    A[历史论文与公开审稿] --> B[领域、主题与评分可视化]
-    A --> C[有来源的领域 Skill 库]
-    B --> D[选择论文或上传完整新稿]
-    D --> E[识别领域、方法、任务与对象]
-    C --> F[限预算组合适用规则]
+    A[Historical papers and public reviews] --> B[Area, topic, and score visualization]
+    A --> C[Domain Skills with source provenance]
+    B --> D[Select a paper or upload a full manuscript]
+    D --> E[Identify area, methods, tasks, and objects]
+    C --> F[Compose applicable rules within a budget]
     E --> F
-    F --> G[检查正文证据并生成 Review]
-    G --> H[修改优先级与 concern 原文定位]
+    F --> G[Inspect manuscript evidence and generate a review]
+    G --> H[Revision priorities and concern evidence]
 ```
 
-先用历史论文地图回答“研究集中在哪里、主题如何关联、审稿评分如何分布”；再展示审稿经验怎样形成带条件、带来源的规则；最后进入单篇新稿，解释“为什么加载这些 Skill、问题依据在哪里”。
+Start with the historical paper map to explore research concentrations, topic relationships, and review scores. Then inspect how historical experience becomes conditional rules with sources. Finally, review a new manuscript and see why each Skill was selected and which passages support each concern.
 
-### 论文探索 `/`
+### Paper Explorer `/`
 
-地图中的每个点代表一篇论文，支持年份、决定、投稿领域、实体主题筛选、缩放、点选和多选。领域边界与代表主题帮助逐层阅读，选中论文可进入单篇审稿。
+Each map point represents a paper. Filter by year, decision, submission area, or entity topic; zoom, select a paper, or select multiple papers. Area boundaries and representative topics support exploration at different scales. A selected paper can be opened in Manuscript Review.
 
-![论文语义地图与主题导航](docs/images/screenshots/01-paper-exploration.png)
+![Paper map and topic navigation](docs/images/screenshots/01-paper-exploration.png)
 
-评分区按年份比较论文均分与篇内分歧；弦图展示同一论文中的实体概念共现，并能回查相关论文和原文。
+The score panel compares paper means and within-paper reviewer disagreement by year. The chord diagram shows entity concepts appearing in the same papers, with links back to papers and source passages.
 
-![论文均分与篇内分歧](docs/images/screenshots/02-score-distributions.png)
+![Paper scores and reviewer disagreement](docs/images/screenshots/02-score-distributions.png)
 
 <details>
-<summary>展开查看主题共现弦图</summary>
+<summary>Show the concept co-occurrence diagram</summary>
 
-![主题共现弦图](docs/images/screenshots/03-concept-chord.png)
+![Concept co-occurrence diagram](docs/images/screenshots/03-concept-chord.png)
 
 </details>
 
-### 领域 Skill 库 `/reviewers.html`
+### Domain Skill Library `/reviewers.html`
 
-浏览冻结的领域模块、适用范围、检查步骤、失效机制和历史来源；可进行本地词面匹配预览，并回放旧版本的真实试审记录。这里的“专家模块”是可组合的规则集合。
+Browse frozen modules, their scope, inspection steps, failure mechanisms, and historical sources. Preview lexical matching locally and replay real trial reviews from earlier library versions. An “expert module” is a composable set of inspection rules.
 
-![领域 Skill 库](docs/images/screenshots/04-skill-library.png)
+![Domain Skill Library](docs/images/screenshots/04-skill-library.png)
 
-### 单篇审稿 `/review.html`
+### Manuscript Review `/review.html`
 
-从地图带入论文，或上传 DOC、DOCX、DOCS、PDF、Markdown、TXT、LaTeX。检查提取的完整稿件，填写自己的接口配置后开始审稿。页面分别展示领域与 Skill、Review 与优先级、论文依据；任务状态和失败记录保留，可重试。
+Open a paper from the map or upload DOC, DOCX, DOCS, PDF, Markdown, TXT, or LaTeX. Check the extracted manuscript, enter your model connection settings, and start the review. Separate views show the area and selected Skills, review and priorities, and manuscript evidence. Task state and failure records are preserved for retry.
 
-![按稿组合 Skill 与加载理由](docs/images/screenshots/05-skill-composition.png)
+![Skill composition and selection reasons](docs/images/screenshots/05-skill-composition.png)
 
-![Review 与修改优先级](docs/images/screenshots/06-review-result.png)
+![Review and revision priorities](docs/images/screenshots/06-review-result.png)
 
-点击 concern，可查看逐字核验的原文引文、段落编号和字符位置。
+Click a concern to inspect its exact source quotation, paragraph ID, and character offsets.
 
-![concern 原文证据定位](docs/images/screenshots/07-concern-evidence.png)
+![Manuscript evidence for a concern](docs/images/screenshots/07-concern-evidence.png)
 
+## 2. Data and Statistical Definitions
 
-## 2. 数据范围与统计口径
+These counts come from a read-only database audit, sealed experiments, and the frozen release manifest. Each row describes its own scope.
 
-下列数字来自本次只读数据库核查、封存实验和冻结发布清单，分别对应不同范围。
-
-| 数据范围 | 当前数量 | 含义 |
+| Scope | Current count | Description |
 |---|---:|---|
-| ICLR 2024–2026 主会公开题录 | 38,890 篇 | 2024：7,404；2025：11,672；2026：19,814；`raw/` 提供标题摘要索引 |
-| 数据库审稿记录 | 164,810 条 | Review 实体数；164,821 行版本记录另计，初始/最终评分配对需按时间核查 |
-| 可用正文索引 | 38,715 篇 | 另有 175 篇缺失；正文在外部对象存储中，数据库保存索引及出处 |
-| 论文理解画像 | 38,807 篇 | `paper_understanding_v1`，结构化研究问题、方法和证据；人工质量验收待完成 |
-| 网站封存样本 | 12,964 篇 / 54,900 条审稿 | 从主会题录按年份与领域分层取约三分之一，保留原 500 篇种子 |
-| 网站可用论文级评分 | 均分 12,738 篇 / 分歧 12,725 篇 | 均分至少 1 条有效评分，标准差/极差至少 2 条 |
-| 冻结领域库 | 7,795 个模块 / 9,175 条有效规则 | 1,851 条来源支持、7,324 条候选；当前为 LLM 领域 |
+| Public ICLR 2024–2026 main-track metadata | 38,890 papers | 2024: 7,404; 2025: 11,672; 2026: 19,814; title and abstract indexes in `raw/` |
+| Database review records | 164,810 reviews | Review entities; 164,821 revision rows are counted separately. Initial/final score pairs require temporal checks |
+| Available full-text indexes | 38,715 papers | Another 175 are missing. Text is kept in an external object store; the database records indexes and provenance |
+| Paper understanding profiles | 38,807 papers | `paper_understanding_v1`: structured research problems, methods, and evidence; human quality assessment is pending |
+| Sealed website sample | 12,964 papers / 54,900 reviews | Roughly one third of the corpus, stratified by year and area, retaining the original 500 seed papers |
+| Papers with usable review statistics | Mean: 12,738 / disagreement: 12,725 | A mean requires at least 1 valid rating; standard deviation and range require at least 2 |
+| Frozen domain library | 7,795 modules / 9,175 active rules | 1,851 source-supported and 7,324 candidate rules; currently the LLM area |
 
-**中稿率 = 当前筛选集合中录用论文数 ÷ 当前筛选集合的总投稿量。** 撤稿、直接拒稿与未知状态也进入分母；界面同时展示各类数量。网站统计范围为当前展示样本。
+**Acceptance rate = accepted papers in the current filtered set ÷ all submissions in that set.** Withdrawn, desk-rejected, and unknown decisions are included in the denominator. The interface also shows category counts. Website statistics describe the displayed sample.
 
-均分和分歧按论文等权，篇内标准差使用分母 `n−1`，缺失评分不补零。评分分年份展示；中央 50%/90% 区间表示观测分布范围。全部决定组与录用/拒稿组存在重叠。
+Each paper has equal weight in score and disagreement distributions. Within-paper sample standard deviation uses `n−1`; missing ratings stay missing. Years are shown separately. Central 50%/90% intervals describe observed distributions. The all-decision group overlaps the accepted and rejected groups.
 
-## 3. 各部分如何实现
+## 3. Methods and Implementation
 
-| 部分 | 当前方法 | 论文/方法关系 | 主要入口 |
+| Component | Current method | Relationship to prior work | Entry points |
 |---|---|---|---|
-| 数据与正文 | PostgreSQL 16 + pgvector；原始、业务、语义、孪生、运维五层；内容寻址、文本优先索引、审稿版本回填 | 工程数据管理与来源追踪 | [database](database/README.md) |
-| 解析器比较 | Existing Markdown、Docling、MinerU standard 的 40 篇同稿比较及 8 个困难页视觉冲突审计 | 直接使用解析工具作开发比较；三路融合是后续建议，未全量替换当前正文 | [解析报告](benchmarks/parser_comparison/standard_40_report.md) |
-| 论文理解 | One-shot 结构化提取优先，证据缺失等情况升级为分节层次提取；引用核验与断点恢复 | 自研三路径比较；DocETL-style 采用计划、分解与汇总思路 | [50 篇比较](benchmarks/paper_understanding/50_paper_report.md)、[流水线](scripts/paper_understanding_pipeline.py) |
-| 实体与领域表示 | 标题摘要抽取实体候选、核心问题/方法/对象；保留原文位置及无效候选；BGE-M3 与 Qwen 双模型、摘要/核心双视图向量 | TaxoAdapt、TopicGPT 用于早期分类方案比较；当前封存展示采用实体与核心内容方案 | [实体样本说明](docs/research/s4-entity-core-third/README.md)、[代码](scripts/s4_entity_core_third.py) |
-| 可视化 | 核心 BGE-M3 向量 → PCA(50) → t-SNE(2)；Atlas/WebGPU 与 Canvas；核密度领域边界；独立论文共现弦图；R/ggdist 分布 | 直接使用 Embedding Atlas 与 ggdist；HINTs 提供“总览—文档—证据”交互启发 | [Web](web/README.md)、[导出](web/export_s4.py) |
-| 历史交流诊断 | 20 篇开发案例，先按时间截断提取 concern/作者动作，再回放后续消息；未观察到回应保留 unknown | 借鉴 RbtAct 动作分析及证据约束响应规划，使用提示词实现 | [诊断协议](benchmarks/s5_trajectory/README.md)、[代码](scripts/s5_fused20.py) |
-| 领域 Skill 提炼 | 原子观察 → 规则合并/修订 → 机制/对象分模块 → 有界恢复 → 来源与文件哈希审计 → 冻结 | 借鉴 AutoManual 的手册构建、ACE 的增量规则维护、ReviewGrounder 的证据约束 | [冻结记录](docs/technical_details/S6_llm_area_library_release.md)、[冻结器](scripts/freeze_llm_area_library.py) |
-| 按新稿组合 | 完整稿件识别领域/方法/任务/对象；字符 TF-IDF 召回 24 条；模型逐条判断；最多 10 条、4,000 代理 token | 本项目实现的限预算选择流程；默认仅用来源支持规则 | [组合协议](docs/technical_details/S6_manuscript_skill_composition.md)、[代码](scripts/compose_manuscript_skills.py) |
-| 单篇审稿 Web | 一次组合审查；输出缺陷/待核实问题/建议，绑定原文证据；任务串行与失败恢复 | 采用 rubric 与正文 grounding 思路，执行单次组合审查 | [审稿代码](scripts/review_composed_manuscript.py)、[Web 接入](docs/technical_details/Web_single_paper_review.md) |
+| Data and full text | PostgreSQL 16 + pgvector; raw, core, semantic, twin, and operations layers; content addressing, text-first indexes, review revision backfill | Engineering data management and provenance tracking | [Database](database/README.md) |
+| Parser comparison | Existing Markdown, Docling, and MinerU standard compared on the same 40 papers; visual conflict audit on 8 difficult pages | Direct use of parsing tools for development comparison; full-corpus fusion is future work | [Parser report](benchmarks/parser_comparison/standard_40_report.md) |
+| Paper understanding | One-shot structured extraction, escalating to section-based hierarchical extraction when evidence or required fields are missing; quotation checks and resumable execution | Three project implementations; DocETL-style uses planning, decomposition, and aggregation | [50-paper comparison](benchmarks/paper_understanding/50_paper_report.md), [Pipeline](scripts/paper_understanding_pipeline.py) |
+| Entities and area representations | Extract entity candidates and core problem/method/object from titles and abstracts; preserve source offsets and invalid candidates; BGE-M3 and Qwen embeddings for abstract and core-content views | TaxoAdapt and TopicGPT informed earlier comparisons; the sealed visualization uses entities and core content | [Sample protocol](docs/research/s4-entity-core-third/README.md), [Code](scripts/s4_entity_core_third.py) |
+| Visualization | Core BGE-M3 → PCA(50) → t-SNE(2); Atlas/WebGPU and Canvas; kernel-density area boundaries; paper-deduplicated concept chords; R/ggdist distributions | Direct use of Embedding Atlas and ggdist; HINTs inspires overview-to-document-to-evidence navigation | [Web](web/README.md), [Exporter](web/export_s4.py) |
+| Historical exchange diagnostics | 20 development cases; extract concerns and author actions at a temporal cutoff, then replay later messages; unobserved responses remain unknown | Prompt-based adaptation of RbtAct action analysis and evidence-constrained response planning | [Protocol](benchmarks/s5_trajectory/README.md), [Code](scripts/s5_fused20.py) |
+| Domain Skill distillation | Atomic observations → rule merging/refinement → modules by mechanism/object → bounded recovery → source/hash audit → freeze | AutoManual-style manual construction, ACE-style incremental maintenance, and ReviewGrounder-style grounding | [Release record](docs/technical_details/S6_llm_area_library_release.md), [Freezer](scripts/freeze_llm_area_library.py) |
+| Manuscript-specific composition | Identify area/method/task/object from full text; retrieve 24 candidates with character TF-IDF; assess each candidate; load at most 10 rules and 4,000 proxy tokens | Project implementation of budgeted selection; source-supported rules are the default | [Protocol](docs/technical_details/S6_manuscript_skill_composition.md), [Code](scripts/compose_manuscript_skills.py) |
+| Web manuscript review | One composed review; separate supported defects, issues needing verification, and suggestions; attach evidence; serialize tasks and recover failures | Rubric-guided, evidence-grounded review | [Review runner](scripts/review_composed_manuscript.py), [Web integration](docs/technical_details/Web_single_paper_review.md) |
 
-论文题名、正式出处、采用程度与实验结果见 **[方法与论文来源](docs/METHODS.md)**；规则的人工质量评测列于后续计划。
+Paper titles, publication venues, adopted mechanisms, and experiment results are documented in **[Methods and References](docs/METHODS.md)**. Human assessment of rule quality is part of the roadmap.
 
-## 4. 当前完成进度
+## 4. Current Progress
 
-- **数据与理解：** 全量主会题录入库，正文索引与 38,807 篇画像已建立；审稿历史版本继续回填。
-- **领域可视化：** 12,964 篇实体/核心提取与 51,856 条双模型向量已封存；地图、弦图、录用统计、均分/分歧和证据回查可运行。
-- **领域库：** `llm-area-v1` 已冻结，待处理队列为 0；81 条 unresolved、3 条 needs_evidence 单独保留。
-- **新稿组合与审稿：** MLRA 已完成真实组合和 Review，3 条规则、1,605 代理 token；支持加载理由、历史来源和 concern 原文定位。单篇案例属于工程验证。
-- **网站：** 三个主题页、统一登录、Word/PDF 提取、持久化任务、重试、HTTPS 局域网访问已接入。
+- **Data and understanding:** main-track metadata is imported; full-text indexes and 38,807 profiles are available; historical review revisions continue to be backfilled.
+- **Area visualization:** entity/core-content extraction for 12,964 papers and 51,856 embedding records are sealed. The map, chords, acceptance statistics, score/disagreement views, and evidence lookup are operational.
+- **Domain library:** `llm-area-v1` is frozen with 0 pending queue items; 81 unresolved and 3 needs-evidence items are retained separately.
+- **Composition and review:** MLRA completed a real composition and review using 3 rules and 1,605 proxy tokens, with selection reasons, historical sources, and concern-to-passage navigation. This case verifies the engineering workflow.
+- **Website:** three topic pages, shared authentication, Word/PDF extraction, persistent tasks, retry, and HTTPS LAN access are integrated.
 
-网站审稿接口由使用者自行填写：**Base URL、API Key、准确模型 ID**，选择 **Chat Completions** 或 **Responses**。连接字段默认留空，由使用者为当前任务提供。
+For website reviews, enter your own **Base URL, API Key, and exact model ID**, then choose **Chat Completions** or **Responses**. Connection fields start empty and are supplied for the current task.
 
-**地址和密钥不写入浏览器存储或任务文件。**
+**Addresses and keys stay out of browser storage and task files.**
 
-## 5. 后续要完成什么
+## 5. Roadmap
 
-| 优先顺序 | 工作 | 完成标准 |
+| Priority | Work | Completion criteria |
 |---|---|---|
-| 1 | 多审稿人、AC 与在线 rebuttal | 先明确增量价值、成本和评测，再接入独立意见、分歧汇总及作者响应流程 |
+| 1 | Multiple reviewers, AC synthesis, and online rebuttals | Define incremental value, cost, and evaluation, then integrate independent opinions, disagreement synthesis, and author responses |
 
-等等……
+More to come…
 
-## 6. 本地部署与运行
+## 6. Local Deployment
 
-**本地部署需要源码与数据资产。** 克隆并安装依赖后，准备 522 MiB 网站快照、完整稿件、PostgreSQL 实例及冻结来源包。可恢复已有资产，或按 [部署说明](docs/DEPLOYMENT.md) 从自己的研究资产导出。
+**Deployment requires source code and data assets.** After cloning and installing dependencies, prepare the 522 MiB website snapshot, manuscripts, PostgreSQL instance, and frozen provenance package. Restore existing assets or export your own research assets using the [deployment guide](docs/DEPLOYMENT.md).
 
 ```bash
 git clone https://github.com/Haoran-98/ICLR-reviewer.git
@@ -129,29 +130,28 @@ python -m pip install -r requirements-web.txt
 npm --prefix web ci
 ```
 
-然后依次完成：**配置自己的管理员密码 → 准备数据快照/数据库与规则库 → 在页面填写自己的模型接口 → 启动**。
+Then **set your administrator password → prepare snapshots/database and rule library → start the website → enter your model connection on the review page → start a review**.
 
 ```bash
-# 已完成上述配置，且 web/public/generated/ 已准备好时：
+# After configuration and preparation of web/public/generated/:
 npm --prefix web run dev -- --port 5174 --strictPort
-# 浏览器访问 http://127.0.0.1:5174/，输入自行配置的账号密码。
+# Open http://127.0.0.1:5174/ and use your configured credentials.
 ```
 
-局域网使用 `python3 web/setup_lan.py --ip <服务器IP>` 创建本地证书，构建后运行 `npm --prefix web run lan`；5173 自动跳转至 HTTPS 8443。客户端信任本地 CA。当前开发服务器可使用已有 systemd 单元，通过 `./scripts/start_website.sh` / `./scripts/stop_website.sh` 启停；这些脚本只适用于已安装该单元的现有机器。
+For LAN access, create a local certificate with `python3 web/setup_lan.py --ip <SERVER_IP>`, build the website, and run `npm --prefix web run lan`. Port 5173 redirects to HTTPS on 8443; clients trust the local CA. On the existing development server, `./scripts/start_website.sh` and `./scripts/stop_website.sh` control its installed systemd unit.
 
-完整步骤、账户初始化命令、外部资产路径、R/数据库准备、模型环境变量和常见问题见 **[DEPLOYMENT.md](docs/DEPLOYMENT.md)**。
+See **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** for account initialization, external asset paths, R/database setup, model environment variables, and troubleshooting.
 
-## 7. 仓库结构与验证
+## 7. Repository Layout
 
 ```text
-web/                    三个主题页、导出器、审稿 API、认证、文件提取与浏览器验证
-database/               数据库模式、迁移、建库、导入与版本回填
-scripts/                画像、领域实体、Skill 提炼/冻结/组合、审稿及测试
-benchmarks/             方法比较代码、开发实验协议和汇总
-skills/                 通用审稿及证据约束/模块提炼协议
-agents/                 历史多角色设计与配置
-raw/                    公开标题摘要与领域题录
-docs/                   方法、进度、部署、研究记录和网站截图
-automation/, twin_smoke/ 历史定时汇总与小样本工具
+web/                    Three pages, exporters, review API, authentication, file extraction, browser checks
+database/               Schema, migrations, setup, ingestion, and revision backfill
+scripts/                Profiles, entities, Skill distillation/freezing/composition, reviews, and tests
+benchmarks/             Method comparisons, development protocols, and summaries
+skills/                 General review and evidence-grounding/distillation protocols
+agents/                 Historical multi-role designs and configurations
+raw/                    Public title/abstract and area metadata
+docs/                   Methods, status, deployment, research records, and screenshots
+automation/, twin_smoke/ Historical scheduled summaries and small-sample tools
 ```
-
